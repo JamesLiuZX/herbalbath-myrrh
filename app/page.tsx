@@ -6,29 +6,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { MessageCircle, Menu, CheckCircle, Phone, Zap, Heart, Sparkles } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
-import { TestimonialsGallery } from "@/components/testimonials-gallery" // Import the new component
+import { TestimonialsGallery } from "@/components/testimonials-gallery"
+import { testimonialImages } from "@/app/lib/testimonial-data" // Import from the new data file
 
 const useLanguage = () => {
   const [language, setLanguage] = useState<"zh" | "en">("zh")
   return { language, setLanguage }
 }
 
-const testimonialImages = [
-  "/images/testimonial-1.png",
-  "/images/testimonial-2.png",
-  "/images/testimonial-3.png",
-  "/images/testimonial-4.png",
-  "/images/testimonial-5.png",
-  "/images/testimonial-6.png",
-  "/images/testimonial-7.png",
-  "/images/testimonial-8.png",
-  "/images/testimonial-9.png",
-  "/images/testimonial-10.png",
-  "/images/testimonial-11.png",
-  "/images/testimonial-12.png",
-]
-
-// REFINED CONTENT for the new page structure and high-value feel
 const content = {
   zh: {
     nav: {
@@ -213,7 +198,7 @@ export default function HomePage() {
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
   const LanguageToggle = ({ isMobile = false }: { isMobile?: boolean }) => (
-    <div className={`flex items-center border rounded-full p-1 ${isMobile ? "text-base" : "text-sm"}`}>
+    <div className={`flex items-center border rounded-full p-1 bg-background ${isMobile ? "text-base" : "text-sm"}`}>
       <Button
         variant={language === "zh" ? "secondary" : "ghost"}
         size="sm"
@@ -242,7 +227,7 @@ export default function HomePage() {
             <a href="/" className="text-xl md:text-2xl font-serif font-semibold text-gray-800">
               HerbalBath SG
             </a>
-            <nav className="hidden md:flex items-center space-x-6 text-gray-600">
+            <nav className="hidden lg:flex items-center space-x-6 text-gray-600">
               <a href="#testimonials" className="hover:text-primary transition-colors">
                 {t.nav.testimonials}
               </a>
@@ -261,7 +246,7 @@ export default function HomePage() {
                 <LanguageToggle />
               </div>
               <Button
-                className="hidden md:flex bg-green-600 hover:bg-green-700"
+                className="hidden sm:flex bg-green-600 hover:bg-green-700"
                 onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
@@ -269,7 +254,7 @@ export default function HomePage() {
               </Button>
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
+                  <Button variant="ghost" size="icon" className="lg:hidden">
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
@@ -298,162 +283,169 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center bg-secondary/50">
-        <div className="container px-4">
-          <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm md:text-base font-medium mb-4">
-            {t.hero.badge}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">{t.hero.title}</h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t.hero.subtitle}</p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
-            onClick={() => document.getElementById("product-cta")?.scrollIntoView()}
-          >
-            {t.hero.cta}
-          </Button>
-        </div>
-      </section>
+      <main>
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 text-center bg-secondary/50">
+          <div className="container px-4">
+            <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm md:text-base font-medium mb-4">
+              {t.hero.badge}
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              {t.hero.title}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t.hero.subtitle}</p>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
+              onClick={() => document.getElementById("product-cta")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              {t.hero.cta}
+            </Button>
+          </div>
+        </section>
 
-      {/* NEW Testimonials Section - MOVED UP */}
-      <section id="testimonials" className="py-16 md:py-24">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.testimonials_section.title}</h2>
-            <p className="text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
-          </div>
-          <TestimonialsGallery
-            screenshots={testimonialImages}
-            videoPlaceholder={t.testimonials_section.video_placeholder}
-          />
-        </div>
-      </section>
-
-      {/* Pain Points Section */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
-            {t.problems.items.map((problem, index) => (
-              <div key={index} className="text-center p-4">
-                <div className="text-4xl md:text-5xl mb-3">{problem.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-1">{problem.title}</h3>
-                <p className="text-gray-600 text-sm">{problem.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-16 md:py-24">
-        <div className="container px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
-            <p className="text-lg text-gray-600">{t.how_it_works.intro}</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
-            {t.how_it_works.reasons.map((reason, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <reason.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
-                  <p className="text-gray-600">{reason.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section id="benefits" className="py-16 md:py-24 bg-secondary/50">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-2 lg:order-1 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
-              <ul className="space-y-4">
-                {t.benefits.items.map((benefit, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-lg text-gray-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-              <Card className="bg-background border-l-4 border-primary">
-                <CardContent className="p-6">
-                  <p className="text-lg text-gray-800 italic mb-4">"{t.benefits.testimonial.quote}"</p>
-                  <p className="font-semibold text-gray-600">{t.benefits.testimonial.author}</p>
-                </CardContent>
-              </Card>
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-16 md:py-24">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12 px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.testimonials_section.title}</h2>
+              <p className="text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
             </div>
-            <div className="order-1 lg:order-2">
-              <img
-                src="/images/product-hero.png"
-                alt="HerbalBath Myrrh Spray"
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+            <TestimonialsGallery
+              screenshots={testimonialImages}
+              videoPlaceholder={t.testimonials_section.video_placeholder}
+            />
+          </div>
+        </section>
+
+        {/* Pain Points Section */}
+        <section className="py-16 md:py-24 bg-secondary/50">
+          <div className="container px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
+              {t.problems.items.map((problem, index) => (
+                <div key={index} className="text-center p-4">
+                  <div className="text-4xl md:text-5xl mb-3">{problem.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-1">{problem.title}</h3>
+                  <p className="text-gray-600 text-sm">{problem.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Product CTA Section */}
-      <section id="product-cta" className="py-16 md:py-24">
-        <div className="container px-4">
-          <Card className="max-w-4xl mx-auto p-8 md:p-12 shadow-xl bg-card">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="text-center md:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
-                <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
-                  <span className="text-4xl font-bold text-primary">{t.product_cta.price}</span>
-                  <span className="text-xl text-gray-500 line-through">{t.product_cta.original_price}</span>
-                </div>
-                <p className="text-green-600 font-semibold">{t.product_cta.guarantee}</p>
-              </div>
-              <div className="flex flex-col gap-4">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-lg h-14 w-full"
-                  onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-16 md:py-24">
+          <div className="container px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
+              <p className="text-lg text-gray-600">{t.how_it_works.intro}</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+              {t.how_it_works.reasons.map((reason, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col sm:flex-row items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4"
                 >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  {t.product_cta.cta}
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg h-14 w-full bg-transparent"
-                  onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  电话订购
-                </Button>
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto sm:mx-0">
+                    <reason.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
+                    <p className="text-gray-600">{reason.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section id="benefits" className="py-16 md:py-24 bg-secondary/50">
+          <div className="container px-4">
+            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+              <div className="order-2 lg:order-1 space-y-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
+                <ul className="space-y-4">
+                  {t.benefits.items.map((benefit, index) => (
+                    <li key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-lg text-gray-700">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Card className="bg-background border-l-4 border-primary">
+                  <CardContent className="p-6">
+                    <p className="text-lg text-gray-800 italic mb-4">"{t.benefits.testimonial.quote}"</p>
+                    <p className="font-semibold text-gray-600">{t.benefits.testimonial.author}</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="order-1 lg:order-2">
+                <img
+                  src="/images/product-hero.png"
+                  alt="HerbalBath Myrrh Spray"
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
-          </Card>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-24 bg-secondary/50 text-center">
-        <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">{t.final_cta.subtitle}</p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
-            onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
-          >
-            {t.final_cta.cta}
-          </Button>
-        </div>
-      </section>
+        {/* Product CTA Section */}
+        <section id="product-cta" className="py-16 md:py-24">
+          <div className="container px-4">
+            <Card className="max-w-4xl mx-auto p-6 sm:p-8 md:p-12 shadow-xl bg-card">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="text-center md:text-left">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
+                  <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
+                    <span className="text-4xl font-bold text-primary">{t.product_cta.price}</span>
+                    <span className="text-xl text-gray-500 line-through">{t.product_cta.original_price}</span>
+                  </div>
+                  <p className="text-green-600 font-semibold">{t.product_cta.guarantee}</p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-lg h-14 w-full"
+                    onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    {t.product_cta.cta}
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-lg h-14 w-full bg-transparent"
+                    onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    电话订购
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-16 md:py-24 bg-secondary/50 text-center">
+          <div className="container px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">{t.final_cta.subtitle}</p>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
+              onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+            >
+              {t.final_cta.cta}
+            </Button>
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 border-t">
