@@ -24,167 +24,149 @@ const content = {
       blog: "健康知识",
     },
     hero: {
-      badge: "源自千年智慧的天然疗愈方案",
-      title: "唤醒身体的自愈力",
-      subtitle:
-        "HerbalBath 没药喷雾，不仅仅是缓解疼痛。它是一种生活方式的回归，让您重获行动的自由与喜悦。15,000+ 用户亲证的改变。",
-      cta: "体验焕然一新",
+      badge: "千年智慧 • 天然疗愈",
+      title: "告别疼痛，重获自由",
+      subtitle: "没药喷雾，15,000+用户见证的神奇效果。天然草本，深层舒缓，让您重新享受无痛生活。",
+      cta: "立即体验",
+      whatsapp_cta: "微信咨询",
     },
     testimonials_section: {
-      title: "听听超过15,000位用户的真实心声",
-      subtitle: "每一份见证，都是一个重获新生的故事。向右滑动查看更多 ->",
+      title: "15,000+用户真实见证",
+      subtitle: "每一份见证，都是重获新生的故事 →",
       video_placeholder: {
         title: "客户使用视频",
         coming_soon: "即将上线",
       },
     },
     problems: {
-      title: "疼痛，是否正在悄悄偷走您的生活？",
+      title: "疼痛正在偷走您的生活？",
       items: [
-        { icon: "🌄", title: "清晨的僵硬", desc: "起床时关节不适，需要慢慢活动才能恢复正常。" },
-        { icon: "🚶‍♀️", title: "活动的阻碍", desc: "上下楼梯、提东西、甚至抱孙子都感到力不从心。" },
-        { icon: "☁️", title: "旧伤的困扰", desc: "天气变化或劳累后，陈年旧伤就开始隐隐作痛。" },
-        { icon: "🌙", title: "睡眠的干扰", desc: "深夜因酸痛而辗转反侧，影响第二天的精神。" },
+        { icon: "🌄", title: "晨起僵硬", desc: "关节不适，需要慢慢活动" },
+        { icon: "🚶‍♀️", title: "行动受限", desc: "上楼梯、提重物都感到吃力" },
+        { icon: "☁️", title: "旧伤复发", desc: "天气变化时隐隐作痛" },
+        { icon: "🌙", title: "夜不能寐", desc: "疼痛影响睡眠质量" },
       ],
     },
     how_it_works: {
-      title: "神奇之源：古老智慧与现代科学的结晶",
-      intro:
-        "我们的配方核心，是两种传承千年的传奇植物精华——没药与乳香。它们曾是比黄金更贵重的圣物，如今，我们用科学让它们的治愈力重焕新生。",
+      title: "古老智慧 × 现代科学",
+      intro: "没药与乳香，曾比黄金更珍贵。现在，我们用科学释放它们的治愈力。",
       reasons: [
         {
           icon: Heart,
-          title: "没药：天然的镇痛大师",
-          desc: "数千年来，没药被用于缓解深层疼痛。它能温和地舒缓紧张的肌肉与关节，带来持久的舒适感。",
+          title: "没药：天然镇痛",
+          desc: "千年传承，温和舒缓肌肉关节，带来持久舒适。",
         },
         {
           icon: Zap,
-          title: "乳香：卓越的抗炎卫士",
-          desc: "乳香以其强大的抗炎特性闻名，能有效减少关节的肿胀与不适，从根源上解决问题。",
+          title: "乳香：强效抗炎",
+          desc: "减少肿胀不适，从根源解决问题。",
         },
         {
           icon: Sparkles,
-          title: "现代科技：深层渗透技术",
-          desc: "我们采用先进的提取技术，将活性成分制成微小分子，能快速穿透皮肤，直达不适之处，发挥最大功效。",
+          title: "深层渗透技术",
+          desc: "微分子配方，快速穿透皮肤，直达患处。",
         },
       ],
     },
     benefits: {
-      title: "感受非凡功效，重拾生活乐趣",
-      items: [
-        "快速舒缓关节与肌肉的紧张不适",
-        "提升关节灵活性，让行动更自如",
-        "改善局部血液循环，为身体注入活力",
-        "100%天然草本成分，温和亲肤，可安心长期使用",
-      ],
+      title: "感受神奇效果",
+      items: ["快速舒缓关节肌肉紧张", "提升关节灵活性", "改善局部血液循环", "100%天然成分，安心使用"],
       testimonial: {
-        quote: "用了三个星期，我僵硬了很久的肩膀松了很多，现在抬手很轻松。味道也很好闻，很天然。",
+        quote: "用了三周，僵硬的肩膀松了很多，抬手很轻松。味道也很天然。",
         author: "- 陈女士, 62岁",
       },
     },
     product_cta: {
-      title: "您的专属天然疗愈方案",
+      title: "您的天然疗愈方案",
       price: "S$28.90",
       original_price: "S$35.90",
-      cta: "立即订购，开启您的疗愈之旅",
-      guarantee: "我们承诺，30天内不满意，全额退款。",
+      cta: "微信订购",
+      phone_cta: "电话订购",
+      guarantee: "30天不满意，全额退款",
     },
     final_cta: {
-      title: "是时候，为自己选择一个更好的方案了",
-      subtitle: "不要再让疼痛定义您的生活。今天就开始您的天然疗愈之旅。",
-      cta: "立即体验神奇效果",
+      title: "选择更好的方案",
+      subtitle: "不要让疼痛定义您的生活。今天就开始天然疗愈之旅。",
+      cta: "微信咨询订购",
     },
   },
   en: {
     nav: {
       testimonials: "Testimonials",
       how_it_works: "How It Works",
-      benefits: "The Benefits",
+      benefits: "Benefits",
       blog: "Health Journal",
     },
     hero: {
-      badge: "A Natural Healing Solution from Ancient Wisdom",
-      title: "Awaken Your Body's Healing Power",
-      subtitle:
-        "HerbalBath Myrrh Spray is more than pain relief. It's a return to a lifestyle of freedom and joy in movement. A change witnessed by over 15,000 users.",
-      cta: "Experience a New Beginning",
+      badge: "Ancient Wisdom • Natural Healing",
+      title: "Say Goodbye to Pain",
+      subtitle: "Myrrh Spray with 15,000+ proven results. Natural herbs for deep relief and pain-free living.",
+      cta: "Try Now",
+      whatsapp_cta: "WhatsApp Us",
     },
     testimonials_section: {
-      title: "Hear From Over 15,000 Happy Users",
-      subtitle: "Every testimonial is a story of a life reclaimed. Scroll right for more ->",
+      title: "15,000+ Real User Stories",
+      subtitle: "Every testimonial is a life reclaimed →",
       video_placeholder: {
         title: "Customer Videos",
         coming_soon: "Coming Soon",
       },
     },
     problems: {
-      title: "Is Pain Quietly Stealing Your Life?",
+      title: "Is Pain Stealing Your Life?",
       items: [
-        { icon: "🌄", title: "Morning Stiffness", desc: "Waking up with joint discomfort, needing time to warm up." },
-        {
-          icon: "🚶‍♀️",
-          title: "Activity Hurdles",
-          desc: "Stairs, carrying groceries, or even lifting a grandchild feels daunting.",
-        },
-        {
-          icon: "☁️",
-          title: "Old Injury Woes",
-          desc: "Past injuries ache and throb with weather changes or after a long day.",
-        },
-        {
-          icon: "🌙",
-          title: "Sleep Disruption",
-          desc: "Tossing and turning from aches, ruining the next day's energy.",
-        },
+        { icon: "🌄", title: "Morning Stiffness", desc: "Joint discomfort upon waking" },
+        { icon: "🚶‍♀️", title: "Limited Movement", desc: "Stairs and lifting feel difficult" },
+        { icon: "☁️", title: "Old Injuries", desc: "Weather changes trigger pain" },
+        { icon: "🌙", title: "Sleepless Nights", desc: "Pain disrupts sleep quality" },
       ],
     },
     how_it_works: {
-      title: "The Source: Where Ancient Wisdom Meets Modern Science",
-      intro:
-        "At the heart of our formula are two legendary botanical resins—Myrrh and Frankincense. Once more precious than gold, we've unlocked their healing power with science.",
+      title: "Ancient Wisdom × Modern Science",
+      intro: "Myrrh and Frankincense, once more precious than gold. Now science unlocks their healing power.",
       reasons: [
         {
           icon: Heart,
-          title: "Myrrh: The Natural Soother",
-          desc: "For millennia, Myrrh has been used to soothe deep aches. It gently calms tense muscles and joints, providing lasting comfort.",
+          title: "Myrrh: Natural Soother",
+          desc: "Millennia-proven, gently calms muscles and joints for lasting comfort.",
         },
         {
           icon: Zap,
-          title: "Frankincense: The Anti-Inflammatory Guardian",
-          desc: "Renowned for its potent anti-inflammatory properties, Frankincense helps reduce swelling and discomfort at the source.",
+          title: "Frankincense: Anti-Inflammatory",
+          desc: "Reduces swelling and discomfort at the source.",
         },
         {
           icon: Sparkles,
-          title: "Modern Science: Deep-Penetration Technology",
-          desc: "Our advanced extraction creates micro-particles that penetrate quickly and deeply, delivering maximum benefits right where you need them.",
+          title: "Deep-Penetration Tech",
+          desc: "Micro-particles penetrate quickly to deliver maximum benefits.",
         },
       ],
     },
     benefits: {
-      title: "Feel the Benefits, Rediscover Your Joy",
+      title: "Feel the Difference",
       items: [
-        "Rapidly soothes tension in joints and muscles.",
-        "Enhances flexibility for more fluid movement.",
-        "Improves local circulation, revitalizing your body.",
-        "100% natural, gentle on the skin, and safe for long-term use.",
+        "Rapidly soothes joint and muscle tension",
+        "Enhances flexibility and movement",
+        "Improves local circulation",
+        "100% natural, safe for daily use",
       ],
       testimonial: {
-        quote:
-          "After three weeks, my stiff shoulder has loosened so much, and lifting my arm is easy now. The scent is lovely and natural too.",
+        quote: "After three weeks, my stiff shoulder loosened so much. Lifting my arm is easy now. Natural scent too.",
         author: "- Mdm. Tan, 62",
       },
     },
     product_cta: {
-      title: "Your Personal Natural Healing Solution",
+      title: "Your Natural Healing Solution",
       price: "S$28.90",
       original_price: "S$35.90",
-      cta: "Order Now & Begin Your Healing Journey",
-      guarantee: "Our Promise: 30-Day Money-Back Guarantee if you're not satisfied.",
+      cta: "WhatsApp Order",
+      phone_cta: "Call to Order",
+      guarantee: "30-Day Money-Back Guarantee",
     },
     final_cta: {
-      title: "It's Time to Choose a Better Path for Yourself",
+      title: "Choose a Better Path",
       subtitle: "Don't let pain define your life. Start your natural healing journey today.",
-      cta: "Experience the Miraculous Effects Now",
+      cta: "WhatsApp to Order",
     },
   },
 }
@@ -222,10 +204,10 @@ function HomePageContent() {
   return (
     <div className="min-h-screen bg-background font-sans">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-3 sm:px-4 py-3 max-w-7xl">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
+        <div className="container mx-auto px-4 py-3 max-w-7xl">
           <div className="flex items-center justify-between">
-            <a href="/" className="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-gray-800 truncate">
+            <a href="/" className="text-xl sm:text-2xl font-serif font-semibold text-gray-800 truncate">
               HerbalBath SG
             </a>
             <nav className="hidden lg:flex items-center space-x-6 text-gray-600">
@@ -247,11 +229,11 @@ function HomePageContent() {
                 <LanguageToggle />
               </div>
               <Button
-                className="hidden sm:flex bg-green-600 hover:bg-green-700 text-sm px-3 h-9"
+                className="hidden sm:flex bg-green-600 hover:bg-green-700 text-sm px-4 h-9"
                 onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
               >
                 <MessageCircle className="w-4 h-4 mr-1" />
-                WhatsApp
+                {t.hero.whatsapp_cta}
               </Button>
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
@@ -286,21 +268,19 @@ function HomePageContent() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-24 text-center bg-secondary/50">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <span className="inline-block bg-primary/10 text-primary px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium mb-4">
+        <section className="py-12 sm:py-16 lg:py-20 text-center bg-secondary/50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               {t.hero.badge}
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               {t.hero.title}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">{t.hero.subtitle}</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 md:text-lg md:h-14 md:px-10 w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 text-base h-12 px-8 w-full sm:w-auto"
                 onClick={() => document.getElementById("product-cta")?.scrollIntoView({ behavior: "smooth" })}
               >
                 {t.hero.cta}
@@ -311,7 +291,7 @@ function HomePageContent() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-sm sm:text-base h-11 sm:h-12 px-6 bg-background/80 backdrop-blur-sm w-full sm:w-auto"
+                  className="text-base h-12 px-8 bg-background/80 backdrop-blur-sm w-full sm:w-auto"
                   onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
                 >
                   {language === "zh" ? "English" : "中文"}
@@ -322,13 +302,13 @@ function HomePageContent() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-8 sm:py-12 md:py-16 lg:py-24">
+        <section id="testimonials" className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-3 sm:px-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+            <div className="text-center max-w-3xl mx-auto mb-12 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {t.testimonials_section.title}
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
+              <p className="text-base md:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
             </div>
             <TestimonialsGallery
               screenshots={testimonialImages}
@@ -338,17 +318,17 @@ function HomePageContent() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 px-2">{t.problems.title}</h2>
+        <section className="py-12 sm:py-16 lg:py-20 bg-secondary/50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {t.problems.items.map((problem, index) => (
-                <div key={index} className="text-center p-3 sm:p-4">
-                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{problem.icon}</div>
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">{problem.title}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{problem.desc}</p>
+                <div key={index} className="text-center p-4">
+                  <div className="text-4xl mb-3">{problem.icon}</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">{problem.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{problem.desc}</p>
                 </div>
               ))}
             </div>
@@ -356,17 +336,15 @@ function HomePageContent() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-8 sm:py-12 md:py-16 lg:py-24">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
-                {t.how_it_works.title}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 px-2">{t.how_it_works.intro}</p>
+        <section id="how-it-works" className="py-12 sm:py-16 lg:py-20">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
+              <p className="text-base md:text-lg text-gray-600">{t.how_it_works.intro}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
               {t.how_it_works.reasons.map((reason, index) => (
-                <div key={index} className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-3 sm:p-4">
+                <div key={index} className="flex flex-col items-center text-center space-y-4 p-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <reason.icon className="w-6 h-6 text-primary" />
                   </div>
@@ -381,25 +359,25 @@ function HomePageContent() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center max-w-6xl mx-auto">
-              <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
-                <ul className="space-y-3 sm:space-y-4">
+        <section id="benefits" className="py-12 sm:py-16 lg:py-20 bg-secondary/50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+              <div className="order-2 lg:order-1 space-y-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t.benefits.title}</h2>
+                <ul className="space-y-4">
                   {t.benefits.items.map((benefit, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0 mt-0.5 sm:mt-1" />
-                      <span className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">{benefit}</span>
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-base md:text-lg text-gray-700 leading-relaxed">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <Card className="bg-background border-l-4 border-primary">
-                  <CardContent className="p-4 sm:p-6">
-                    <p className="text-sm sm:text-base md:text-lg text-gray-800 italic mb-3 sm:mb-4 leading-relaxed">
+                  <CardContent className="p-6">
+                    <p className="text-base md:text-lg text-gray-800 italic mb-4 leading-relaxed">
                       "{t.benefits.testimonial.quote}"
                     </p>
-                    <p className="font-semibold text-gray-600 text-sm sm:text-base">{t.benefits.testimonial.author}</p>
+                    <p className="font-semibold text-gray-600">{t.benefits.testimonial.author}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -415,41 +393,37 @@ function HomePageContent() {
         </section>
 
         {/* Product CTA Section */}
-        <section id="product-cta" className="py-8 sm:py-12 md:py-16 lg:py-24">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <Card className="max-w-4xl mx-auto p-4 sm:p-6 md:p-10 shadow-xl bg-card">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <section id="product-cta" className="py-12 sm:py-16 lg:py-20">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <Card className="max-w-4xl mx-auto p-6 md:p-10 shadow-xl bg-card">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-                    {t.product_cta.title}
-                  </h2>
-                  <div className="flex items-baseline justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
-                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
-                      {t.product_cta.price}
-                    </span>
-                    <span className="text-base sm:text-lg md:text-xl text-gray-500 line-through">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
+                  <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
+                    <span className="text-4xl md:text-5xl font-bold text-primary">{t.product_cta.price}</span>
+                    <span className="text-lg md:text-xl text-gray-500 line-through">
                       {t.product_cta.original_price}
                     </span>
                   </div>
-                  <p className="text-green-600 font-semibold text-sm sm:text-base">{t.product_cta.guarantee}</p>
+                  <p className="text-green-600 font-semibold">{t.product_cta.guarantee}</p>
                 </div>
-                <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="flex flex-col gap-4">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 md:text-lg md:h-14 w-full"
+                    className="bg-green-600 hover:bg-green-700 text-base h-12 w-full"
                     onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
                   >
-                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    <MessageCircle className="w-5 h-5 mr-2" />
                     {t.product_cta.cta}
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-sm sm:text-base h-11 sm:h-12 md:text-lg md:h-14 w-full bg-transparent"
+                    className="text-base h-12 w-full bg-transparent"
                     onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
                   >
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    电话订购
+                    <Phone className="w-5 h-5 mr-2" />
+                    {t.product_cta.phone_cta}
                   </Button>
                 </div>
               </div>
@@ -458,19 +432,18 @@ function HomePageContent() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50 text-center">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
-              {t.final_cta.title}
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 leading-relaxed">
+        <section className="py-12 sm:py-16 lg:py-20 bg-secondary/50 text-center">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
               {t.final_cta.subtitle}
             </p>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 md:text-lg md:h-14 md:px-10"
+              className="bg-green-600 hover:bg-green-700 text-base h-12 px-8"
               onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
             >
+              <MessageCircle className="w-5 h-5 mr-2" />
               {t.final_cta.cta}
             </Button>
           </div>
@@ -478,10 +451,10 @@ function HomePageContent() {
       </main>
 
       {/* Footer */}
-      <footer className="py-6 sm:py-8 border-t">
-        <div className="container mx-auto px-3 sm:px-4 text-center text-gray-500 max-w-7xl">
-          <p className="text-sm sm:text-base">&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
-          <div className="flex justify-center gap-3 sm:gap-4 mt-3 sm:mt-4 text-sm sm:text-base">
+      <footer className="py-8 border-t">
+        <div className="container mx-auto px-4 text-center text-gray-500 max-w-7xl">
+          <p>&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
+          <div className="flex justify-center gap-4 mt-4">
             <a href="/partner" className="hover:text-primary">
               Partner Program
             </a>
@@ -494,13 +467,13 @@ function HomePageContent() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50">
+      <div className="fixed bottom-4 right-4 z-50">
         <Button
           size="icon"
-          className="rounded-full w-12 h-12 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
+          className="rounded-full w-14 h-14 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
           onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
         >
-          <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8" />
+          <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8" />
         </Button>
       </div>
     </div>
