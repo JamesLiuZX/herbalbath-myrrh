@@ -27,8 +27,8 @@ export function TestimonialsCarousel({
   const allItems = [...screenshots, ...videos]
 
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
         {allItems.map((item, index) => (
           <TestimonialCard
             key={`grid-${index}`}
@@ -44,15 +44,16 @@ export function TestimonialsCarousel({
 
       {/* View All Button */}
       {showViewAllButton && (
-        <div className="text-center pt-6">
+        <div className="text-center pt-4 sm:pt-6">
           <Button
             variant="outline"
             size="lg"
-            className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+            className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-sm sm:text-base px-4 sm:px-6 h-10 sm:h-12"
             onClick={() => window.open("/testimonials", "_blank")}
           >
-            <ExternalLink className="w-5 h-5 mr-2" />
-            查看全部见证 (50+ 图片 + 视频)
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <span className="hidden xs:inline">查看全部见证 (50+ 图片 + 视频)</span>
+            <span className="xs:hidden">查看全部见证</span>
           </Button>
         </div>
       )}
@@ -60,7 +61,7 @@ export function TestimonialsCarousel({
       {/* Image Dialog */}
       {selectedImage && (
         <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="p-0 max-w-md bg-transparent border-0 shadow-none">
+          <DialogContent className="p-0 max-w-[90vw] sm:max-w-md bg-transparent border-0 shadow-none">
             <img src={selectedImage || "/placeholder.svg"} alt="Testimonial" className="w-full h-auto rounded-lg" />
           </DialogContent>
         </Dialog>
@@ -113,28 +114,36 @@ function TestimonialCard({
             <div
               className={`bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center relative h-full ${aspectRatios[size]}`}
             >
-              <div className="text-center text-red-700">
+              <div className="text-center text-red-700 p-2">
                 <div
-                  className={`bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg ${
-                    size === "large" ? "w-16 h-16" : size === "regular" ? "w-12 h-12" : "w-8 h-8"
+                  className={`bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg ${
+                    size === "large"
+                      ? "w-12 h-12 sm:w-16 sm:h-16"
+                      : size === "regular"
+                        ? "w-8 h-8 sm:w-12 sm:h-12"
+                        : "w-6 h-6 sm:w-8 sm:h-8"
                   }`}
                 >
                   <Play
                     className={`text-red-600 ml-1 ${
-                      size === "large" ? "w-8 h-8" : size === "regular" ? "w-6 h-6" : "w-4 h-4"
+                      size === "large"
+                        ? "w-6 h-6 sm:w-8 sm:h-8"
+                        : size === "regular"
+                          ? "w-4 h-4 sm:w-6 sm:h-6"
+                          : "w-3 h-3 sm:w-4 sm:h-4"
                     }`}
                   />
                 </div>
                 <p
-                  className={`font-semibold px-4 ${
-                    size === "large" ? "text-base" : size === "regular" ? "text-sm" : "text-xs"
+                  className={`font-semibold ${
+                    size === "large" ? "text-sm sm:text-base" : size === "regular" ? "text-xs sm:text-sm" : "text-xs"
                   }`}
                 >
                   {size === "compact" ? "视频" : videoPlaceholder.title}
                 </p>
               </div>
               <div
-                className={`absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded font-bold ${
+                className={`absolute top-1 right-1 sm:top-2 sm:right-2 bg-red-500 text-white px-1 sm:px-2 py-0.5 sm:py-1 rounded font-bold ${
                   size === "compact" ? "text-xs" : "text-xs"
                 }`}
               >
@@ -150,11 +159,12 @@ function TestimonialCard({
   return (
     <div className={sizeClasses[size]} onClick={() => onImageClick(item)}>
       <Card className={cardClasses[size]}>
-        <CardContent className="p-0">
+        <CardContent className="p-0 relative">
           <img
             src={item || "/placeholder.svg?height=400&width=300&query=customer testimonial screenshot"}
             alt={`Testimonial ${index + 1}`}
             className={`w-full h-full object-cover ${aspectRatios[size]}`}
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none" />
         </CardContent>
