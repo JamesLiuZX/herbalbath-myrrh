@@ -22,7 +22,7 @@ export function TestimonialsGallery({ screenshots, videoPlaceholder }: Testimoni
         <div className="flex overflow-x-auto space-x-4 md:space-x-6 pb-4 -mx-4 px-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
           {/* Video Placeholders First */}
           {[1, 2].map((i) => (
-            <div key={`video-${i}`} className="flex-shrink-0 w-48 md:w-64 group">
+            <div key={`video-${i}`} className="flex-shrink-0 w-40 sm:w-48 md:w-64 group">
               <Card className="overflow-hidden h-full border-dashed border-2">
                 <CardContent className="p-0 h-full">
                   <div className="aspect-[9/16] bg-secondary/80 flex items-center justify-center relative h-full">
@@ -45,7 +45,7 @@ export function TestimonialsGallery({ screenshots, videoPlaceholder }: Testimoni
           {screenshots.map((src, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <div className="flex-shrink-0 w-48 md:w-64 group cursor-pointer">
+                <div className="flex-shrink-0 w-40 sm:w-48 md:w-64 group cursor-pointer">
                   <Card className="overflow-hidden h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                     <CardContent className="p-0">
                       <img

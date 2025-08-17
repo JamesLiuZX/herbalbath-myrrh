@@ -202,7 +202,7 @@ export default function HomePage() {
       <Button
         variant={language === "zh" ? "secondary" : "ghost"}
         size="sm"
-        className="rounded-full h-7 px-3"
+        className="rounded-full sm:h-7 sm:px-3"
         onClick={() => setLanguage("zh")}
       >
         中文
@@ -210,7 +210,7 @@ export default function HomePage() {
       <Button
         variant={language === "en" ? "secondary" : "ghost"}
         size="sm"
-        className="rounded-full h-7 px-3"
+        className="rounded-full sm:h-7 sm:px-3"
         onClick={() => setLanguage("en")}
       >
         EN
@@ -259,7 +259,7 @@ export default function HomePage() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent>
-                  <div className="flex flex-col space-y-6 mt-8 text-xl">
+                  <div className="flex flex-col space-y-4 mt-6 text-lg">
                     <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>
                       {t.nav.testimonials}
                     </a>
@@ -285,31 +285,45 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-16 md:py-24 text-center bg-secondary/50">
+        <section className="py-12 sm:py-16 md:py-24 text-center bg-secondary/50">
           <div className="container px-4">
             <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm md:text-base font-medium mb-4">
               {t.hero.badge}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               {t.hero.title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t.hero.subtitle}</p>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
-              onClick={() => document.getElementById("product-cta")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              {t.hero.cta}
-            </Button>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t.hero.subtitle}</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-base h-12 px-8 md:text-lg md:h-14 md:px-10"
+                onClick={() => document.getElementById("product-cta")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                {t.hero.cta}
+              </Button>
+
+              {/* Mobile Language Toggle Button */}
+              <div className="block md:hidden">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-base h-12 px-6 bg-background/80 backdrop-blur-sm"
+                  onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
+                >
+                  {language === "zh" ? "English" : "中文"}
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 md:py-24">
+        <section id="testimonials" className="py-12 sm:py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.testimonials_section.title}</h2>
-              <p className="text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.testimonials_section.title}</h2>
+              <p className="text-base sm:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
             </div>
             <TestimonialsGallery
               screenshots={testimonialImages}
@@ -319,15 +333,15 @@ export default function HomePage() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-16 md:py-24 bg-secondary/50">
+        <section className="py-12 sm:py-16 md:py-24 bg-secondary/50">
           <div className="container px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
               {t.problems.items.map((problem, index) => (
                 <div key={index} className="text-center p-4">
-                  <div className="text-4xl md:text-5xl mb-3">{problem.icon}</div>
+                  <div className="text-4xl mb-3">{problem.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">{problem.title}</h3>
                   <p className="text-gray-600 text-sm">{problem.desc}</p>
                 </div>
@@ -337,11 +351,11 @@ export default function HomePage() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-16 md:py-24">
+        <section id="how-it-works" className="py-12 sm:py-16 md:py-24">
           <div className="container px-4">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
-              <p className="text-lg text-gray-600">{t.how_it_works.intro}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
+              <p className="text-base sm:text-lg text-gray-600">{t.how_it_works.intro}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
               {t.how_it_works.reasons.map((reason, index) => (
@@ -363,22 +377,22 @@ export default function HomePage() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-16 md:py-24 bg-secondary/50">
+        <section id="benefits" className="py-12 sm:py-16 md:py-24 bg-secondary/50">
           <div className="container px-4">
             <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
               <div className="order-2 lg:order-1 space-y-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
                 <ul className="space-y-4">
                   {t.benefits.items.map((benefit, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                      <span className="text-lg text-gray-700">{benefit}</span>
+                      <span className="text-base sm:text-lg text-gray-700">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <Card className="bg-background border-l-4 border-primary">
                   <CardContent className="p-6">
-                    <p className="text-lg text-gray-800 italic mb-4">"{t.benefits.testimonial.quote}"</p>
+                    <p className="text-base sm:text-lg text-gray-800 italic mb-4">"{t.benefits.testimonial.quote}"</p>
                     <p className="font-semibold text-gray-600">{t.benefits.testimonial.author}</p>
                   </CardContent>
                 </Card>
@@ -395,22 +409,24 @@ export default function HomePage() {
         </section>
 
         {/* Product CTA Section */}
-        <section id="product-cta" className="py-16 md:py-24">
+        <section id="product-cta" className="py-12 sm:py-16 md:py-24">
           <div className="container px-4">
-            <Card className="max-w-4xl mx-auto p-6 sm:p-8 md:p-12 shadow-xl bg-card">
+            <Card className="max-w-4xl mx-auto p-6 md:p-10 shadow-xl bg-card">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
                   <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
-                    <span className="text-4xl font-bold text-primary">{t.product_cta.price}</span>
-                    <span className="text-xl text-gray-500 line-through">{t.product_cta.original_price}</span>
+                    <span className="text-4xl sm:text-5xl font-bold text-primary">{t.product_cta.price}</span>
+                    <span className="text-lg sm:text-xl text-gray-500 line-through">
+                      {t.product_cta.original_price}
+                    </span>
                   </div>
                   <p className="text-green-600 font-semibold">{t.product_cta.guarantee}</p>
                 </div>
                 <div className="flex flex-col gap-4">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-lg h-14 w-full"
+                    className="bg-primary hover:bg-primary/90 text-base h-12 md:text-lg md:h-14 w-full"
                     onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
                   >
                     <MessageCircle className="w-5 h-5 mr-2" />
@@ -419,7 +435,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-lg h-14 w-full bg-transparent"
+                    className="text-base h-12 md:text-lg md:h-14 w-full bg-transparent"
                     onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
                   >
                     <Phone className="w-5 h-5 mr-2" />
@@ -432,13 +448,13 @@ export default function HomePage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 md:py-24 bg-secondary/50 text-center">
+        <section className="py-12 sm:py-16 md:py-24 bg-secondary/50 text-center">
           <div className="container px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">{t.final_cta.subtitle}</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-8">{t.final_cta.subtitle}</p>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-lg h-14 px-10"
+              className="bg-primary hover:bg-primary/90 text-base h-12 px-8 md:text-lg md:h-14 md:px-10"
               onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
             >
               {t.final_cta.cta}

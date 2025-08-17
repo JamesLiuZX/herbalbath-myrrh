@@ -1,21 +1,21 @@
 import type React from "react"
-
-export interface BlogPost {
+export interface Post {
   slug: string
   title: string
   description: string
-  image?: string
+  image: string
   author: string
   date: string
   content: React.ReactNode
 }
 
-export const posts: BlogPost[] = [
+export const posts: Post[] = [
   {
     slug: "knee-pain-relief-singapore",
-    title: "新加坡膝盖疼痛缓解：10个实用建议",
-    description: "在新加坡的炎热气候下，学习如何有效管理和缓解膝盖疼痛的专业建议。",
-    image: "/placeholder.svg?height=400&width=600&text=膝盖疼痛缓解",
+    title: "新加坡膝盖痛怎么办？给乐龄人士的10个终极建议",
+    description:
+      "膝盖疼痛是许多新加坡乐龄人士的困扰。本文深入探讨了从日常习惯到天然疗法的10种有效缓解膝盖疼痛的方法，帮助您重获行动自由。",
+    image: "/senior-knee-pain-relief.png",
     author: "HerbalBath 健康专家",
     date: "2024-07-20",
     content: (
@@ -25,165 +25,145 @@ export const posts: BlogPost[] = [
         </p>
         <h3 className="font-bold mt-6 mb-2 text-xl">1. 保持健康的体重</h3>
         <p>
-          每增加一公斤体重，膝盖就要承受额外的4公斤压力。在新加坡丰富的美食文化中，保持健康体重确实是个挑战，但这是保护膝盖最重要的步骤之一。
+          您知道吗？您的身体每增加1公斤的重量，您的膝盖在走路时就要承受额外4公斤的压力。减轻体重是减轻膝盖负担最有效的方法之一。
         </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">2. 选择合适的运动</h3>
-        <p>游泳是膝盖友好的运动选择，新加坡有许多公共游泳池。水的浮力可以减轻膝盖压力，同时提供良好的心血管锻炼。</p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">3. 使用草药浴缓解疼痛</h3>
+        <h3 className="font-bold mt-6 mb-2 text-xl">2. 进行低冲击运动</h3>
         <p>
-          传统中医草药浴可以有效缓解膝盖疼痛和炎症。温热的草药水可以促进血液循环，减轻肌肉紧张，为疼痛的关节提供天然的舒缓效果。
+          许多人因为怕痛而不敢运动，但这反而会让关节更僵硬。选择游泳、水中健走或骑固定脚踏车等低冲击运动，可以在不伤害关节的情况下，强化腿部肌肉，为膝盖提供更好的支撑。
         </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">4. 正确的坐姿和站姿</h3>
-        <p>长时间保持同一姿势会加重膝盖负担。每30分钟起身活动一下，避免长时间跷二郎腿或蹲坐。</p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">5. 选择合适的鞋子</h3>
-        <p>穿着支撑性好的鞋子，避免高跟鞋或完全平底的鞋子。良好的足部支撑可以减轻膝盖的压力。</p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">3. 使用天然消炎喷雾</h3>
+        <p>
+          现代科学证实，一些古老的草药具有强大的消炎和镇痛效果。例如，HerbalBath使用的没药和乳香，自古以来就是皇室专用的“液体黄金”。它们能通过皮肤深层渗透，直达疼痛根源，安全且无副作用，是日常保养的绝佳选择。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">4. 注意饮食：多吃抗炎食物</h3>
+        <p>
+          三文鱼、坚果、橄榄油、姜黄和绿叶蔬菜等富含Omega-3和抗氧化剂的食物，可以帮助身体对抗炎症，从内部缓解关节不适。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">5. 定期进行关节活动</h3>
+        <p>即使疼痛，也要定期进行关节活动，以保持关节的灵活性和血液循环。简单的拉伸和旋转运动可以有效预防关节僵硬。</p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">6. 使用热敷或冷敷</h3>
+        <p>
+          热敷可以帮助放松肌肉，缓解疼痛；冷敷则可以减少炎症和肿胀。根据您的具体情况选择合适的方法，或交替使用以获得最佳效果。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">7. 保持良好的姿势</h3>
+        <p>错误的姿势会增加膝盖的负担。无论是站立、坐着还是走路，都要保持脊柱直立，避免长时间保持同一姿势。</p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">8. 使用护膝垫</h3>
+        <p>在上下楼梯或进行其他可能加重膝盖负担的活动时，使用护膝垫可以提供额外的支持，减轻疼痛。</p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">9. 保持积极心态</h3>
+        <p>研究表明，情绪对疼痛感知有很大影响。保持乐观，多与朋友家人交流，参加社区活动，有助于减轻疼痛感。</p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">10. 寻求专业帮助</h3>
+        <p>如果疼痛持续或加重，请务必咨询医生或物理治疗师。他们可以为您提供准确的诊断和个人化的治疗方案。</p>
+        <p className="mt-8 font-semibold text-lg">
+          结论：管理膝盖疼痛是一个综合性的过程。通过结合健康的生活方式、适当的运动和有效的天然疗法，您可以大大改善生活品质，重新享受无痛的自由生活。
+        </p>
       </>
     ),
   },
   {
-    slug: "herbal-bath-benefits",
-    title: "草药浴的神奇功效：传统智慧与现代科学",
-    description: "探索草药浴如何结合传统中医智慧和现代科学，为您的健康带来全面的益处。",
-    image: "/placeholder.svg?height=400&width=600&text=草药浴功效",
-    author: "中医养生专家",
+    slug: "myrrh-frankincense-miracle-herbs",
+    title: "没药和乳香：被遗忘的天然止痛神药",
+    description:
+      "您知道吗？在圣经时代，没药和乳香比黄金还要珍贵。探索这两种神奇草药的历史、科学原理，以及它们如何成为现代疼痛管理的革命性方案。",
+    image: "/myrrh-frankincense.png",
+    author: "HerbalBath 历史研究员",
+    date: "2024-07-18",
+    content: (
+      <>
+        <p className="lead">
+          当东方三博士拜访新生的耶稣时，他们带来了三样礼物：黄金、乳香和没药。为什么这两种树脂会与黄金相提并论？因为在古代世界，它们是公认的具有神奇疗效的“液体黄金”。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">没药 (Myrrh): 天然的镇痛剂</h3>
+        <p>
+          古埃及人用它来防腐和治疗伤口。古希腊医生则用它来处理战场创伤。现代科学发现，没药中含有的化合物可以直接作用于大脑的阿片受体，从而产生强大的镇痛效果，但又没有成瘾性。它能温和地舒缓深层、顽固的疼痛。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">乳香 (Frankincense): 强大的抗炎剂</h3>
+        <p>
+          乳香以其强大的抗炎特性而闻名。它含有的乳香酸可以有效抑制导致炎症的关键酶（如5-LOX），从而减轻关节炎等炎症性疾病引起的肿胀和疼痛，从根源上解决问题。
+        </p>
+        <h3 className="font-bold mt-6 mb-2 text-xl">古老智慧与现代科技的结合</h3>
+        <p>
+          HerbalBath通过先进的提取技术，将这两种神奇草药的活性成分最大化，并制成易于吸收的喷雾。我们确保每一滴精华都能快速渗透，发挥最大效用。当您使用它时，您不仅是在使用一种产品，更是在体验传承千年的自然治愈力量。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "anti-inflammatory-diet-guide",
+    title: "吃出健康：对抗关节炎的10大抗炎食物",
+    description: "食物就是你最好的医药。了解哪些食物可以帮助您对抗身体炎症，缓解关节疼痛，从餐桌上开始您的疗愈之旅。",
+    image: "/anti-inflammatory-foods.png",
+    author: "HerbalBath 营养师",
     date: "2024-07-15",
-    content: (
-      <>
-        <p className="lead">
-          草药浴作为传统中医的重要组成部分，已有数千年的历史。现代科学研究证实了许多传统草药的疗效，让这一古老的养生方法重新焕发生机。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">草药浴的科学原理</h3>
-        <p>
-          通过皮肤吸收，草药的有效成分可以直接进入血液循环，避免了口服药物可能对消化系统造成的负担。温热的水温还能促进血管扩张，增强药物吸收效果。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">主要功效</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>缓解肌肉和关节疼痛</li>
-          <li>改善血液循环</li>
-          <li>减轻压力和焦虑</li>
-          <li>促进新陈代谢</li>
-          <li>改善睡眠质量</li>
-        </ul>
-        <h3 className="font-bold mt-6 mb-2 text-xl">适合新加坡气候的草药配方</h3>
-        <p>在新加坡的热带气候下，我们特别推荐具有清热解毒、祛湿消肿功效的草药配方，如薄荷、艾叶、当归等。</p>
-      </>
-    ),
+    content: <p>文章内容即将上线...</p>,
   },
   {
-    slug: "back-pain-solutions",
-    title: "告别背痛：办公族的救星指南",
-    description: "针对长期坐办公室导致的背痛问题，提供实用的预防和缓解方案。",
-    image: "/placeholder.svg?height=400&width=600&text=背痛解决方案",
-    author: "物理治疗师",
+    slug: "improve-blood-circulation-naturally",
+    title: "手脚冰冷，时常麻痹？5个简单方法促进血液循环",
+    description:
+      "良好的血液循环是健康的关键。本文将教您几个简单有效的日常方法，来改善血液循环，为您的身体注入新的活力。",
+    image: "/blood-circulation-improvement.png",
+    author: "HerbalBath 健康专家",
+    date: "2024-07-12",
+    content: <p>文章内容即将上线...</p>,
+  },
+  {
+    slug: "office-neck-shoulder-pain",
+    title: "告别电脑肩：给上班族的5个肩颈放松秘诀",
+    description:
+      "长时间对着电脑工作，肩颈酸痛已成常态？别担心，这5个简单的办公室拉伸和放松技巧，能帮助您有效缓解不适。",
+    image: "/placeholder-0qqck.png",
+    author: "HerbalBath 物理治疗顾问",
     date: "2024-07-10",
-    content: (
-      <>
-        <p className="lead">
-          在新加坡快节奏的工作环境中，许多办公族都面临着背痛的困扰。长时间的久坐、不良的坐姿习惯，都是导致背痛的主要原因。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">背痛的常见原因</h3>
-        <p>
-          长时间保持同一姿势会导致肌肉僵硬，脊椎压力增加。加上现代人普遍缺乏运动，背部肌肉力量不足，更容易出现疼痛问题。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">预防措施</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>每小时起身活动5-10分钟</li>
-          <li>调整办公桌椅高度，保持正确坐姿</li>
-          <li>使用腰部支撑垫</li>
-          <li>定期进行背部伸展运动</li>
-        </ul>
-        <h3 className="font-bold mt-6 mb-2 text-xl">草药浴缓解背痛</h3>
-        <p>使用含有川芎、红花、当归等活血化瘀草药的药浴，可以有效缓解背部肌肉紧张，促进血液循环，减轻疼痛感。</p>
-      </>
-    ),
+    content: <p>文章内容即将上线...</p>,
   },
   {
-    slug: "stress-relief-natural",
-    title: "天然减压法：在繁忙生活中找到内心平静",
-    description: "学习如何使用天然方法缓解压力，在新加坡快节奏的生活中保持身心健康。",
-    image: "/placeholder.svg?height=400&width=600&text=天然减压",
-    author: "心理健康顾问",
+    slug: "tcm-vs-western-pain-relief",
+    title: "中医 vs 西医：如何选择适合您的关节痛疗法？",
+    description:
+      "针灸、推拿、止痛药、物理治疗... 面对五花八门的治疗方案，您该如何选择？本文为您深入分析中西疗法的利弊。",
+    image: "/chinese-medicine-herbs.png",
+    author: "HerbalBath 健康研究员",
+    date: "2024-07-08",
+    content: <p>文章内容即将上线...</p>,
+  },
+  {
+    slug: "better-sleep-with-chronic-pain",
+    title: "疼痛让您夜不能寐？7个技巧改善慢性疼痛患者的睡眠品质",
+    description:
+      "良好的睡眠对于疼痛恢复至关重要。学习如何创建一个舒适的睡眠环境，并掌握一些睡前放松技巧，让您安然入梦。",
+    image: "/better-sleep-quality.png",
+    author: "HerbalBath 睡眠顾问",
     date: "2024-07-05",
-    content: (
-      <>
-        <p className="lead">
-          现代生活的压力无处不在，特别是在新加坡这样的国际都市。学会使用天然的方法来缓解压力，对维护身心健康至关重要。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">压力对身体的影响</h3>
-        <p>
-          长期压力会导致肌肉紧张、睡眠质量下降、免疫力降低等问题。及时缓解压力不仅能改善心理状态，也能预防各种身体疾病。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">天然减压方法</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>深呼吸和冥想练习</li>
-          <li>规律的运动习惯</li>
-          <li>充足的睡眠</li>
-          <li>草药浴放松疗法</li>
-          <li>与大自然接触</li>
-        </ul>
-        <h3 className="font-bold mt-6 mb-2 text-xl">放松草药浴配方</h3>
-        <p>
-          薰衣草、洋甘菊、柠檬香茅等草药具有天然的镇静效果。在温热的草药浴中浸泡20-30分钟，可以有效缓解一天的疲劳和压力。
-        </p>
-      </>
-    ),
+    content: <p>文章内容即将上线...</p>,
   },
   {
-    slug: "joint-health-aging",
-    title: "关节健康与年龄：如何优雅地老去",
-    description: "随着年龄增长，了解如何保护关节健康，维持活跃的生活方式。",
-    image: "/placeholder.svg?height=400&width=600&text=关节健康",
-    author: "老年医学专家",
+    slug: "gentle-exercises-for-seniors",
+    title: "乐龄人士动起来！5种最适合新加坡乐龄的温和运动",
+    description:
+      "运动是保持关节灵活和身体健康的关键。我们为您推荐5种安全有效的温和运动，如太极和水中健走，让您动得开心又安心。",
+    image: "/gentle-exercises-seniors.png",
+    author: "HerbalBath 健身教练",
+    date: "2024-07-02",
+    content: <p>文章内容即将上线...</p>,
+  },
+  {
+    slug: "understanding-rheumatism",
+    title: "风湿痛怎么办？深入了解成因与日常护理",
+    description:
+      "天气一变，关节就痛？这可能是风湿痛的信号。本文将带您了解风湿痛的成因，并提供实用的日常护理和保暖建议。",
+    image: "/rheumatism-care.png",
+    author: "HerbalBath 健康专家",
     date: "2024-06-30",
-    content: (
-      <>
-        <p className="lead">
-          年龄的增长不应该成为活跃生活的障碍。通过正确的关节保养方法，我们可以在任何年龄都保持健康的活动能力。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">年龄对关节的影响</h3>
-        <p>
-          随着年龄增长，关节软骨逐渐磨损，关节液减少，这些都是自然的老化过程。但通过适当的保养，我们可以大大延缓这一过程。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">关节保养要点</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>保持适度的运动量</li>
-          <li>维持健康的体重</li>
-          <li>补充必要的营养素</li>
-          <li>定期进行关节保养</li>
-          <li>避免过度使用关节</li>
-        </ul>
-        <h3 className="font-bold mt-6 mb-2 text-xl">草药浴的关节保养作用</h3>
-        <p>含有杜仲、牛膝、独活等补肾强骨草药的药浴，可以帮助改善关节周围的血液循环，减轻关节僵硬，延缓关节老化。</p>
-      </>
-    ),
+    content: <p>文章内容即将上线...</p>,
   },
   {
-    slug: "sleep-quality-improvement",
-    title: "改善睡眠质量：夜晚的自然疗愈",
-    description: "探索如何通过天然方法改善睡眠质量，让每一夜都成为身体的修复时光。",
-    image: "/placeholder.svg?height=400&width=600&text=改善睡眠",
-    author: "睡眠专家",
-    date: "2024-06-25",
-    content: (
-      <>
-        <p className="lead">
-          良好的睡眠是健康的基石。在新加坡的都市生活中，许多人都面临着睡眠质量不佳的问题。让我们探索一些天然的改善方法。
-        </p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">睡眠的重要性</h3>
-        <p>睡眠期间，我们的身体进行修复和再生。充足的睡眠不仅能恢复体力，还能增强免疫力，改善记忆力和情绪状态。</p>
-        <h3 className="font-bold mt-6 mb-2 text-xl">影响睡眠的因素</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>压力和焦虑</li>
-          <li>不规律的作息时间</li>
-          <li>环境因素（光线、噪音、温度）</li>
-          <li>饮食习惯</li>
-          <li>缺乏运动</li>
-        </ul>
-        <h3 className="font-bold mt-6 mb-2 text-xl">睡前草药浴的益处</h3>
-        <p>
-          睡前1-2小时进行温热的草药浴，可以帮助身体放松，降低核心体温，促进自然的睡眠周期。推荐使用具有镇静效果的草药如酸枣仁、合欢皮等。
-        </p>
-      </>
-    ),
+    slug: "natural-remedies-vs-painkillers",
+    title: "天然草药 vs 止痛药：哪个才是长远之计？",
+    description:
+      "止痛药能快速缓解症状，但长期使用有副作用。天然草药温和而持久。本文为您分析两者的区别，帮助您做出明智的选择。",
+    image: "/natural-remedies-vs-painkillers.png",
+    author: "HerbalBath 药剂师顾问",
+    date: "2024-06-28",
+    content: <p>文章内容即将上线...</p>,
   },
 ]
