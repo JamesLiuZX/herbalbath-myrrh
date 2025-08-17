@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
-import { TestimonialsCarousel } from "@/components/testimonials-carousel"
+import { TestimonialsWall } from "@/components/testimonials-wall" // Updated import
 import { testimonialImages } from "@/app/lib/testimonial-data" // Import from the new data file
 import { Suspense } from "react"
 
@@ -403,7 +403,7 @@ function HomePageContent() {
               </h2>
               <p className="text-base md:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
             </div>
-            <TestimonialsCarousel
+            <TestimonialsWall
               screenshots={testimonialImages}
               videoPlaceholder={t.testimonials_section.video_placeholder}
               showViewAllButton={true}
