@@ -18,6 +18,9 @@ const config: Config = {
       },
     },
     extend: {
+      screens: {
+        xs: "475px",
+      },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         serif: ["var(--font-lora)", ...fontFamily.serif],

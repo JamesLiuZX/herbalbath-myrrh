@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Lora } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
@@ -17,8 +17,13 @@ export const metadata: Metadata = {
     description: "源自千年智慧的天然疗愈方案，15,000+用户信赖之选。",
     images: ["/images/product-hero.png"],
   },
-  viewport: "width=device-width, initial-scale=1",
   generator: "v0.dev",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -28,9 +33,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh" className={`${inter.variable} ${lora.variable}`}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-      </head>
       <body className="font-sans">
         {children}
         <Toaster />
