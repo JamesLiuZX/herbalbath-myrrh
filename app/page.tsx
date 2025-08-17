@@ -30,10 +30,16 @@ const content = {
       subtitle: "没药喷雾，15,000+用户见证的神奇效果。天然草本，深层舒缓，让您重新享受无痛生活。",
       cta: "立即体验",
       whatsapp_cta: "WhatsApp咨询",
+      trust_badges: {
+        users: "15,000+ 新加坡人信赖",
+        rating: "4.9星好评",
+        platforms: "多平台销售",
+      },
     },
     testimonials_section: {
       title: "15,000+用户真实见证",
-      subtitle: "每一份见证，都是重获新生的故事 →",
+      subtitle:
+        "真实回购客户的故事：从半信半疑到大量囤货，因为它真的解决了困扰多年的疼痛问题，现在全家人都在用，还推荐给亲朋好友 →",
       video_placeholder: {
         title: "客户使用视频",
         coming_soon: "即将上线",
@@ -138,10 +144,16 @@ const content = {
       subtitle: "Myrrh Spray with 15,000+ proven results. Natural herbs for deep relief and pain-free living.",
       cta: "Try Now",
       whatsapp_cta: "WhatsApp Us",
+      trust_badges: {
+        users: "Trusted by 15,000+ Singaporeans",
+        rating: "4.9 Star Rating",
+        platforms: "Available on Multiple Platforms",
+      },
     },
     testimonials_section: {
       title: "15,000+ Real User Stories",
-      subtitle: "Every testimonial is a life reclaimed →",
+      subtitle:
+        "Stories of loyal customers: From skepticism to bulk buying, because it actually solved their long-standing pain problems. Now their whole family uses it and they recommend it to friends →",
       video_placeholder: {
         title: "Customer Videos",
         coming_soon: "Coming Soon",
@@ -370,6 +382,42 @@ function HomePageContent() {
               {t.hero.title}
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">{t.hero.subtitle}</p>
+
+            {/* Trust Badges Section */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8 text-sm">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span className="font-medium text-gray-700">{t.hero.trust_badges.users}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="flex text-yellow-500">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-xs">
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <span className="font-medium text-gray-700">{t.hero.trust_badges.rating}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="flex gap-1">
+                  <div className="w-4 h-4 bg-orange-500 rounded-sm flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">C</span>
+                  </div>
+                  <div className="w-4 h-4 bg-pink-500 rounded-sm flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">T</span>
+                  </div>
+                  <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">F</span>
+                  </div>
+                  <div className="w-4 h-4 bg-orange-600 rounded-sm flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">S</span>
+                  </div>
+                </div>
+                <span className="font-medium text-gray-700">{t.hero.trust_badges.platforms}</span>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 size="lg"
@@ -608,6 +656,25 @@ function HomePageContent() {
       {/* Footer */}
       <footer className="py-8 border-t">
         <div className="container mx-auto px-4 text-center text-gray-500 max-w-7xl">
+          {/* Ecommerce Platform Logos */}
+          <div className="flex justify-center items-center gap-6 mb-6">
+            <span className="text-sm font-medium text-gray-600">Available on:</span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1 bg-orange-500 text-white px-3 py-1 rounded text-xs font-bold">
+                <span>Carousell</span>
+              </div>
+              <div className="flex items-center gap-1 bg-pink-500 text-white px-3 py-1 rounded text-xs font-bold">
+                <span>TikTok Shop</span>
+              </div>
+              <div className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+                <span>Facebook</span>
+              </div>
+              <div className="flex items-center gap-1 bg-orange-600 text-white px-3 py-1 rounded text-xs font-bold">
+                <span>Shopee</span>
+              </div>
+            </div>
+          </div>
+
           <p>&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
           <div className="flex justify-center gap-4 mt-4">
             <a href="/partner" className="hover:text-primary">

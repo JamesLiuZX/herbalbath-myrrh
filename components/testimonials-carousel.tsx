@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { Play, ExternalLink, Grid3X3, List } from "lucide-react"
+import { Play, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface TestimonialsCarouselProps {
@@ -23,173 +23,32 @@ export function TestimonialsCarousel({
   showViewAllButton = true,
 }: TestimonialsCarouselProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
-  const [viewMode, setViewMode] = useState<"wall" | "grid">("wall")
 
   const allItems = [...screenshots, ...videos]
 
-  const featuredItems = allItems.slice(0, 4) // Large featured testimonials
-  const regularItems = allItems.slice(4, 10) // Medium sized testimonials
-  const compactItems = allItems.slice(10) // Small testimonials
-
-  if (viewMode === "grid") {
-    return (
-      <div className="space-y-6">
-        {/* View Mode Toggle */}
-        <div className="flex justify-center gap-2">
-          <Button
-            variant={viewMode === "wall" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setViewMode("wall")}
-            className="h-8"
-          >
-            <Grid3X3 className="w-4 h-4 mr-1" />
-            Wall View
-          </Button>
-          <Button
-            variant={viewMode === "grid" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setViewMode("grid")}
-            className="h-8"
-          >
-            <List className="w-4 h-4 mr-1" />
-            Grid View
-          </Button>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {allItems.map((item, index) => (
-            <TestimonialCard
-              key={`grid-${index}`}
-              item={item}
-              index={index}
-              isVideo={item.includes("video") || videos.includes(item)}
-              videoPlaceholder={videoPlaceholder}
-              onImageClick={setSelectedImage}
-              size="regular"
-            />
-          ))}
-        </div>
-
-        {/* View All Button */}
-        {showViewAllButton && (
-          <div className="text-center pt-6">
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
-              onClick={() => window.open("/testimonials", "_blank")}
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              查看全部见证 (50+ 图片 + 视频)
-            </Button>
-          </div>
-        )}
-
-        {/* Image Dialog */}
-        {selectedImage && (
-          <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-            <DialogContent className="p-0 max-w-md bg-transparent border-0 shadow-none">
-              <img src={selectedImage || "/placeholder.svg"} alt="Testimonial" className="w-full h-auto rounded-lg" />
-            </DialogContent>
-          </Dialog>
-        )}
-      </div>
-    )
-  }
-
   return (
     <div className="space-y-6">
-      {/* View Mode Toggle */}
-      <div className="flex justify-center gap-2">
-        <Button
-          variant={viewMode === "wall" ? "default" : "outline"}
-          size="sm"
-          onClick={() => setViewMode("wall")}
-          className="h-8"
-        >
-          <Grid3X3 className="w-4 h-4 mr-1" />
-          Wall View
-        </Button>
-        <Button
-          variant={viewMode === "grid" ? "default" : "outline"}
-          size="sm"
-          onClick={() => setViewMode("grid")}
-          className="h-8"
-        >
-          <List className="w-4 h-4 mr-1" />
-          Grid View
-        </Button>
-      </div>
-
-      <div className="space-y-8">
-        {/* Featured Section - Large testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuredItems.map((item, index) => (
-            <TestimonialCard
-              key={`featured-${index}`}
-              item={item}
-              index={index}
-              isVideo={item.includes("video") || videos.includes(item)}
-              videoPlaceholder={videoPlaceholder}
-              onImageClick={setSelectedImage}
-              size="large"
-            />
-          ))}
-        </div>
-
-        <div className="flex items-center justify-center">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-          <div className="px-4 text-sm text-gray-500 font-medium">更多真实见证</div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-        </div>
-
-        {/* Regular Section - Medium testimonials */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {regularItems.map((item, index) => (
-            <TestimonialCard
-              key={`regular-${index}`}
-              item={item}
-              index={index}
-              isVideo={item.includes("video") || videos.includes(item)}
-              videoPlaceholder={videoPlaceholder}
-              onImageClick={setSelectedImage}
-              size="regular"
-            />
-          ))}
-        </div>
-
-        {/* Compact Section - Small testimonials */}
-        {compactItems.length > 0 && (
-          <>
-            <div className="flex items-center justify-center">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-              <div className="px-4 text-xs text-gray-400 font-medium">精选见证</div>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-            </div>
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {compactItems.map((item, index) => (
-                <TestimonialCard
-                  key={`compact-${index}`}
-                  item={item}
-                  index={index}
-                  isVideo={item.includes("video") || videos.includes(item)}
-                  videoPlaceholder={videoPlaceholder}
-                  onImageClick={setSelectedImage}
-                  size="compact"
-                />
-              ))}
-            </div>
-          </>
-        )}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {allItems.map((item, index) => (
+          <TestimonialCard
+            key={`grid-${index}`}
+            item={item}
+            index={index}
+            isVideo={item.includes("video") || videos.includes(item)}
+            videoPlaceholder={videoPlaceholder}
+            onImageClick={setSelectedImage}
+            size="regular"
+          />
+        ))}
       </div>
 
       {/* View All Button */}
       {showViewAllButton && (
-        <div className="text-center pt-8">
+        <div className="text-center pt-6">
           <Button
             variant="outline"
             size="lg"
-            className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+            className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             onClick={() => window.open("/testimonials", "_blank")}
           >
             <ExternalLink className="w-5 h-5 mr-2" />
