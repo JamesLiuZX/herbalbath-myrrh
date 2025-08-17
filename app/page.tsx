@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
 import { TestimonialsGallery } from "@/components/testimonials-gallery"
 import { testimonialImages } from "@/app/lib/testimonial-data" // Import from the new data file
+import { Suspense } from "react"
 
 const useLanguage = () => {
   const [language, setLanguage] = useState<"zh" | "en">("zh")
@@ -188,7 +189,7 @@ const content = {
   },
 }
 
-export default function HomePage() {
+function HomePageContent() {
   const { language, setLanguage } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = content[language]
@@ -202,7 +203,7 @@ export default function HomePage() {
       <Button
         variant={language === "zh" ? "secondary" : "ghost"}
         size="sm"
-        className="rounded-full sm:h-7 sm:px-3"
+        className="rounded-full h-7 px-3 text-xs sm:text-sm"
         onClick={() => setLanguage("zh")}
       >
         中文
@@ -210,7 +211,7 @@ export default function HomePage() {
       <Button
         variant={language === "en" ? "secondary" : "ghost"}
         size="sm"
-        className="rounded-full sm:h-7 sm:px-3"
+        className="rounded-full h-7 px-3 text-xs sm:text-sm"
         onClick={() => setLanguage("en")}
       >
         EN
@@ -222,9 +223,9 @@ export default function HomePage() {
     <div className="min-h-screen bg-background font-sans">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto px-3 sm:px-4 py-3 max-w-7xl">
           <div className="flex items-center justify-between">
-            <a href="/" className="text-xl md:text-2xl font-serif font-semibold text-gray-800">
+            <a href="/" className="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-gray-800 truncate">
               HerbalBath SG
             </a>
             <nav className="hidden lg:flex items-center space-x-6 text-gray-600">
@@ -246,16 +247,16 @@ export default function HomePage() {
                 <LanguageToggle />
               </div>
               <Button
-                className="hidden sm:flex bg-green-600 hover:bg-green-700"
+                className="hidden sm:flex bg-green-600 hover:bg-green-700 text-sm px-3 h-9"
                 onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
+                <MessageCircle className="w-4 h-4 mr-1" />
                 WhatsApp
               </Button>
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="lg:hidden">
-                    <Menu className="h-6 w-6" />
+                  <Button variant="ghost" size="icon" className="lg:hidden h-9 w-9">
+                    <Menu className="h-5 w-5" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent>
@@ -285,30 +286,32 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 sm:py-16 md:py-24 text-center bg-secondary/50">
-          <div className="container px-4">
-            <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm md:text-base font-medium mb-4">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24 text-center bg-secondary/50">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <span className="inline-block bg-primary/10 text-primary px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm md:text-base font-medium mb-4">
               {t.hero.badge}
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 px-2">
               {t.hero.title}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t.hero.subtitle}</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
+              {t.hero.subtitle}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-base h-12 px-8 md:text-lg md:h-14 md:px-10"
+                className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 md:text-lg md:h-14 md:px-10 w-full sm:w-auto"
                 onClick={() => document.getElementById("product-cta")?.scrollIntoView({ behavior: "smooth" })}
               >
                 {t.hero.cta}
               </Button>
 
               {/* Mobile Language Toggle Button */}
-              <div className="block md:hidden">
+              <div className="block md:hidden w-full sm:w-auto">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-base h-12 px-6 bg-background/80 backdrop-blur-sm"
+                  className="text-sm sm:text-base h-11 sm:h-12 px-6 bg-background/80 backdrop-blur-sm w-full sm:w-auto"
                   onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
                 >
                   {language === "zh" ? "English" : "中文"}
@@ -319,11 +322,13 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-12 sm:py-16 md:py-24">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12 px-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.testimonials_section.title}</h2>
-              <p className="text-base sm:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
+        <section id="testimonials" className="py-8 sm:py-12 md:py-16 lg:py-24">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-3 sm:px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                {t.testimonials_section.title}
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
             </div>
             <TestimonialsGallery
               screenshots={testimonialImages}
@@ -333,17 +338,17 @@ export default function HomePage() {
         </section>
 
         {/* Pain Points Section */}
-        <section className="py-12 sm:py-16 md:py-24 bg-secondary/50">
-          <div className="container px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{t.problems.title}</h2>
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 px-2">{t.problems.title}</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
               {t.problems.items.map((problem, index) => (
-                <div key={index} className="text-center p-4">
-                  <div className="text-4xl mb-3">{problem.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-1">{problem.title}</h3>
-                  <p className="text-gray-600 text-sm">{problem.desc}</p>
+                <div key={index} className="text-center p-3 sm:p-4">
+                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{problem.icon}</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">{problem.title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{problem.desc}</p>
                 </div>
               ))}
             </div>
@@ -351,24 +356,23 @@ export default function HomePage() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-12 sm:py-16 md:py-24">
-          <div className="container px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.how_it_works.title}</h2>
-              <p className="text-base sm:text-lg text-gray-600">{t.how_it_works.intro}</p>
+        <section id="how-it-works" className="py-8 sm:py-12 md:py-16 lg:py-24">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
+                {t.how_it_works.title}
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 px-2">{t.how_it_works.intro}</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
               {t.how_it_works.reasons.map((reason, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col sm:flex-row items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto sm:mx-0">
+                <div key={index} className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-3 sm:p-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <reason.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
-                    <p className="text-gray-600">{reason.desc}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{reason.desc}</p>
                   </div>
                 </div>
               ))}
@@ -377,23 +381,25 @@ export default function HomePage() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-12 sm:py-16 md:py-24 bg-secondary/50">
-          <div className="container px-4">
-            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
-              <div className="order-2 lg:order-1 space-y-8">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
-                <ul className="space-y-4">
+        <section id="benefits" className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+              <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">{t.benefits.title}</h2>
+                <ul className="space-y-3 sm:space-y-4">
                   {t.benefits.items.map((benefit, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                      <span className="text-base sm:text-lg text-gray-700">{benefit}</span>
+                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0 mt-0.5 sm:mt-1" />
+                      <span className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 <Card className="bg-background border-l-4 border-primary">
-                  <CardContent className="p-6">
-                    <p className="text-base sm:text-lg text-gray-800 italic mb-4">"{t.benefits.testimonial.quote}"</p>
-                    <p className="font-semibold text-gray-600">{t.benefits.testimonial.author}</p>
+                  <CardContent className="p-4 sm:p-6">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-800 italic mb-3 sm:mb-4 leading-relaxed">
+                      "{t.benefits.testimonial.quote}"
+                    </p>
+                    <p className="font-semibold text-gray-600 text-sm sm:text-base">{t.benefits.testimonial.author}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -401,7 +407,7 @@ export default function HomePage() {
                 <img
                   src="/images/product-hero.png"
                   alt="HerbalBath Myrrh Spray"
-                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  className="w-full h-auto rounded-2xl shadow-2xl max-w-md mx-auto lg:max-w-none"
                 />
               </div>
             </div>
@@ -409,36 +415,40 @@ export default function HomePage() {
         </section>
 
         {/* Product CTA Section */}
-        <section id="product-cta" className="py-12 sm:py-16 md:py-24">
-          <div className="container px-4">
-            <Card className="max-w-4xl mx-auto p-6 md:p-10 shadow-xl bg-card">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+        <section id="product-cta" className="py-8 sm:py-12 md:py-16 lg:py-24">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <Card className="max-w-4xl mx-auto p-4 sm:p-6 md:p-10 shadow-xl bg-card">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{t.product_cta.title}</h2>
-                  <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
-                    <span className="text-4xl sm:text-5xl font-bold text-primary">{t.product_cta.price}</span>
-                    <span className="text-lg sm:text-xl text-gray-500 line-through">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    {t.product_cta.title}
+                  </h2>
+                  <div className="flex items-baseline justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
+                      {t.product_cta.price}
+                    </span>
+                    <span className="text-base sm:text-lg md:text-xl text-gray-500 line-through">
                       {t.product_cta.original_price}
                     </span>
                   </div>
-                  <p className="text-green-600 font-semibold">{t.product_cta.guarantee}</p>
+                  <p className="text-green-600 font-semibold text-sm sm:text-base">{t.product_cta.guarantee}</p>
                 </div>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-base h-12 md:text-lg md:h-14 w-full"
+                    className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 md:text-lg md:h-14 w-full"
                     onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
                   >
-                    <MessageCircle className="w-5 h-5 mr-2" />
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     {t.product_cta.cta}
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-base h-12 md:text-lg md:h-14 w-full bg-transparent"
+                    className="text-sm sm:text-base h-11 sm:h-12 md:text-lg md:h-14 w-full bg-transparent"
                     onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
                   >
-                    <Phone className="w-5 h-5 mr-2" />
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     电话订购
                   </Button>
                 </div>
@@ -448,13 +458,17 @@ export default function HomePage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-12 sm:py-16 md:py-24 bg-secondary/50 text-center">
-          <div className="container px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.final_cta.title}</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-8">{t.final_cta.subtitle}</p>
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-secondary/50 text-center">
+          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
+              {t.final_cta.title}
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 leading-relaxed">
+              {t.final_cta.subtitle}
+            </p>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-base h-12 px-8 md:text-lg md:h-14 md:px-10"
+              className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 md:text-lg md:h-14 md:px-10"
               onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
             >
               {t.final_cta.cta}
@@ -464,10 +478,10 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="container px-4 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
-          <div className="flex justify-center gap-4 mt-4">
+      <footer className="py-6 sm:py-8 border-t">
+        <div className="container mx-auto px-3 sm:px-4 text-center text-gray-500 max-w-7xl">
+          <p className="text-sm sm:text-base">&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
+          <div className="flex justify-center gap-3 sm:gap-4 mt-3 sm:mt-4 text-sm sm:text-base">
             <a href="/partner" className="hover:text-primary">
               Partner Program
             </a>
@@ -480,15 +494,32 @@ export default function HomePage() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-5 right-5 z-50">
+      <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50">
         <Button
           size="icon"
-          className="rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
+          className="rounded-full w-12 h-12 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
           onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
         >
-          <MessageCircle className="w-8 h-8" />
+          <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8" />
         </Button>
       </div>
     </div>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading...</p>
+          </div>
+        </div>
+      }
+    >
+      <HomePageContent />
+    </Suspense>
   )
 }
