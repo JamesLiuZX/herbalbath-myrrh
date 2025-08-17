@@ -34,6 +34,7 @@ const content = {
         users: "15,000+ 新加坡人信赖",
         rating: "4.9星好评",
         platforms: "多平台销售",
+        years: "8年品牌",
       },
     },
     testimonials_section: {
@@ -44,6 +45,7 @@ const content = {
         title: "客户使用视频",
         coming_soon: "即将上线",
       },
+      view_all: "查看全部见证 (50+ 图片 + 视频)",
     },
     problems: {
       title: "其他产品让您失望了吗？",
@@ -73,6 +75,7 @@ const content = {
         },
       ],
       benefits: ["10秒内产生强烈热感", "深层渗透至筋骨组织", "解决风湿、关节炎根本问题", "一瓶可用3-4个月（每日2次）"],
+      benefits_title: "为什么效果这么好？",
     },
     how_it_works: {
       title: "耶稣时代的神奇配方",
@@ -148,6 +151,7 @@ const content = {
         users: "Trusted by 15,000+ Singaporeans",
         rating: "4.9 Star Rating",
         platforms: "Available on Multiple Platforms",
+        years: "8 Years Running",
       },
     },
     testimonials_section: {
@@ -158,6 +162,7 @@ const content = {
         title: "Customer Videos",
         coming_soon: "Coming Soon",
       },
+      view_all: "View All Testimonials (50+ Images + Videos)",
     },
     problems: {
       title: "Tired of Products That Don't Work?",
@@ -203,6 +208,7 @@ const content = {
         "Addresses root cause of arthritis & rheumatism",
         "One bottle lasts 3-4 months (twice daily)",
       ],
+      benefits_title: "Why Is It So Effective?",
     },
     how_it_works: {
       title: "The Jesus-Era Miracle Formula",
@@ -384,7 +390,7 @@ function HomePageContent() {
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">{t.hero.subtitle}</p>
 
             {/* Trust Badges Section */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 text-sm">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span className="font-medium text-gray-700">{t.hero.trust_badges.users}</span>
@@ -400,19 +406,15 @@ function HomePageContent() {
                 <span className="font-medium text-gray-700">{t.hero.trust_badges.rating}</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span className="font-medium text-gray-700">{t.hero.trust_badges.years}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
                 <div className="flex gap-1">
-                  <div className="w-4 h-4 bg-orange-500 rounded-sm flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">C</span>
-                  </div>
-                  <div className="w-4 h-4 bg-pink-500 rounded-sm flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">T</span>
-                  </div>
-                  <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">F</span>
-                  </div>
-                  <div className="w-4 h-4 bg-orange-600 rounded-sm flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">S</span>
-                  </div>
+                  <img src="/images/carousell-logo.png" alt="Carousell" className="w-4 h-4 rounded-sm" />
+                  <img src="/images/tiktok-shop-logo.png" alt="TikTok Shop" className="w-4 h-4 rounded-sm" />
+                  <img src="/images/facebook-logo.png" alt="Facebook" className="w-4 h-4 rounded-sm" />
+                  <img src="/images/shopee-logo.png" alt="Shopee" className="w-4 h-4 rounded-sm" />
                 </div>
                 <span className="font-medium text-gray-700">{t.hero.trust_badges.platforms}</span>
               </div>
@@ -450,6 +452,7 @@ function HomePageContent() {
                 {t.testimonials_section.title}
               </h2>
               <p className="text-base md:text-lg text-gray-600">{t.testimonials_section.subtitle}</p>
+              <p className="text-base md:text-lg text-gray-600 mt-4">{t.testimonials_section.view_all}</p>
             </div>
             <TestimonialsCarousel
               screenshots={testimonialImages}
@@ -509,7 +512,7 @@ function HomePageContent() {
             </div>
 
             <div className="bg-green-50 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">为什么效果这么好？</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{t.usage.benefits_title}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {t.usage.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-3">
@@ -560,9 +563,11 @@ function HomePageContent() {
               <h3 className="text-xl font-bold text-center mb-8">{t.benefits.comparison.title}</h3>
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="grid grid-cols-3 bg-gray-50 font-semibold text-sm md:text-base">
-                  <div className="p-4 text-center">对比项目</div>
-                  <div className="p-4 text-center bg-green-100 text-green-800">我们的产品</div>
-                  <div className="p-4 text-center">其他产品</div>
+                  <div className="p-4 text-center">{language === "zh" ? "对比项目" : "Comparison"}</div>
+                  <div className="p-4 text-center bg-green-100 text-green-800">
+                    {language === "zh" ? "我们的产品" : "Our Product"}
+                  </div>
+                  <div className="p-4 text-center">{language === "zh" ? "其他产品" : "Other Products"}</div>
                 </div>
                 {t.benefits.comparison.items.map((item, index) => (
                   <div key={index} className="grid grid-cols-3 border-t text-sm md:text-base">
@@ -660,18 +665,10 @@ function HomePageContent() {
           <div className="flex justify-center items-center gap-6 mb-6">
             <span className="text-sm font-medium text-gray-600">Available on:</span>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1 bg-orange-500 text-white px-3 py-1 rounded text-xs font-bold">
-                <span>Carousell</span>
-              </div>
-              <div className="flex items-center gap-1 bg-pink-500 text-white px-3 py-1 rounded text-xs font-bold">
-                <span>TikTok Shop</span>
-              </div>
-              <div className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
-                <span>Facebook</span>
-              </div>
-              <div className="flex items-center gap-1 bg-orange-600 text-white px-3 py-1 rounded text-xs font-bold">
-                <span>Shopee</span>
-              </div>
+              <img src="/images/carousell-logo.png" alt="Carousell" className="h-8 w-8" />
+              <img src="/images/tiktok-shop-logo.png" alt="TikTok Shop" className="h-8 w-8" />
+              <img src="/images/facebook-logo.png" alt="Facebook" className="h-8 w-8" />
+              <img src="/images/shopee-logo.png" alt="Shopee" className="h-8 w-8" />
             </div>
           </div>
 
