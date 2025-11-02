@@ -12,7 +12,7 @@ export default function BlogPostClientPage({ params }: { params: { slug: string 
     notFound()
   }
 
-  const whatsappNumber = "+6594606058"
+  const whatsappNumber = "+6584261225"
   const whatsappMessage = encodeURIComponent(
     `Hi! I just read your blog post "${post.title}" and I'm interested in the Myrrh spray.`,
   )

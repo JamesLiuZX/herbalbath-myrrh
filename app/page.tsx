@@ -280,7 +280,7 @@ function HomePageContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = content[language]
 
-  const whatsappNumber = "+6594606058"
+  const whatsappNumber = "+6584261225"
   const baseWhatsappMessage = "Hi! I'm interested in the HerbalBath Myrrh Spray and would like to order."
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
