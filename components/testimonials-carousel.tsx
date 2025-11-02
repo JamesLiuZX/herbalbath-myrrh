@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { Play, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface TestimonialsCarouselProps {
   screenshots: string[]
@@ -38,6 +39,7 @@ export function TestimonialsCarousel({
             videoPlaceholder={videoPlaceholder}
             onImageClick={setSelectedImage}
             size="regular"
+            priority={index < 6}
           />
         ))}
       </div>
@@ -62,7 +64,14 @@ export function TestimonialsCarousel({
       {selectedImage && (
         <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
           <DialogContent className="p-0 max-w-[90vw] sm:max-w-md bg-transparent border-0 shadow-none">
-            <img src={selectedImage || "/placeholder.svg"} alt="Testimonial" className="w-full h-auto rounded-lg" />
+            <Image
+              src={selectedImage || "/placeholder.svg"}
+              alt="Testimonial"
+              width={600}
+              height={800}
+              className="w-full h-auto rounded-lg"
+              quality={90}
+            />
           </DialogContent>
         </Dialog>
       )}
@@ -77,6 +86,7 @@ function TestimonialCard({
   videoPlaceholder,
   onImageClick,
   size = "regular",
+  priority = false,
 }: {
   item: string
   index: number
@@ -84,6 +94,7 @@ function TestimonialCard({
   videoPlaceholder: any
   onImageClick: (image: string) => void
   size?: "large" | "regular" | "compact"
+  priority?: boolean
 }) {
   const sizeClasses = {
     large: "w-full group cursor-pointer",
@@ -160,11 +171,16 @@ function TestimonialCard({
     <div className={sizeClasses[size]} onClick={() => onImageClick(item)}>
       <Card className={cardClasses[size]}>
         <CardContent className="p-0 relative">
-          <img
+          <Image
             src={item || "/placeholder.svg?height=400&width=300&query=customer testimonial screenshot"}
             alt={`Testimonial ${index + 1}`}
+            width={300}
+            height={533}
             className={`w-full h-full object-cover ${aspectRatios[size]}`}
-            loading="lazy"
+            loading={priority ? undefined : "lazy"}
+            priority={priority}
+            quality={75}
+            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none" />
         </CardContent>

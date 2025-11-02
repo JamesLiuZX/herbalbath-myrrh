@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame } from "lucide-react"
@@ -25,9 +25,10 @@ const content = {
     },
     hero: {
       badge: "千年智慧 • 天然疗愈",
-      title: "告别疼痛，重获自由",
+      title: "告别疼痛,重获自由",
       subtitle: "没药喷雾，15,000+用户见证的神奇效果。天然草本，深层舒缓，让您重新享受无痛生活。",
       cta: "立即体验",
+      shopee_cta: "Shopee购买",
       whatsapp_cta: "WhatsApp咨询",
       trust_badges: {
         users: "15,000+ 新加坡人信赖",
@@ -145,6 +146,7 @@ const content = {
       title: "Say Goodbye to Pain",
       subtitle: "Myrrh Spray with 15,000+ proven results. Natural herbs for deep relief and pain-free living.",
       cta: "Try Now",
+      shopee_cta: "View on Shopee",
       whatsapp_cta: "WhatsApp Us",
       trust_badges: {
         users: "Trusted by 15,000+ Singaporeans",
@@ -465,6 +467,21 @@ function HomePageContent() {
                 {t.hero.cta}
               </Button>
 
+              {/* Secondary Shopee CTA Button */}
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-orange-500 hover:bg-orange-600 text-white border-orange-600 hover:border-orange-700 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 w-full sm:w-auto max-w-xs"
+                onClick={() =>
+                  window.open(
+                    "https://shopee.sg/Myrrh-Soreness-Muscle-Relief-Spray-Herbalbath-Singapore-i.177895131.41413960917",
+                    "_blank",
+                  )
+                }
+              >
+                {t.hero.shopee_cta}
+              </Button>
+
               {/* Mobile Language Toggle Button */}
               <div className="block md:hidden w-full sm:w-auto max-w-xs">
                 <Button
@@ -774,4 +791,19 @@ function HomePageContent() {
   )
 }
 
-export default HomePageContent
+export default function HomePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading...</p>
+          </div>
+        </div>
+      }
+    >
+      <HomePageContent />
+    </Suspense>
+  )
+}
