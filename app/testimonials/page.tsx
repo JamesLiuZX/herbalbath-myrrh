@@ -40,7 +40,7 @@ function TestimonialsPageContent() {
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("masonry")
 
   const whatsappNumber = "+6594606058"
-  const baseWhatsappMessage = "Hi! I want to purchase the Myrrh Spray too. Please assist me with the order."
+  const baseWhatsappMessage = "Hi! I saw all the amazing testimonials. I want to try the Myrrh Spray too!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
   const getFilteredTestimonials = () => {
