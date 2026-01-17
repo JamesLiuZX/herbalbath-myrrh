@@ -7,7 +7,7 @@ import { MessageCircle, Star, Users, Shield, Truck, Award, Zap, Heart } from "lu
 import { useReferral } from "@/app/hooks/useReferral"
 
 export default function FacebookLandingContent() {
-  const whatsappNumber = "+6584261225"
+  const whatsappNumber = "+6594606058"
   const baseWhatsappMessage = "Hi! I saw your Facebook ad about the Myrrh Spray. I'm interested!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
