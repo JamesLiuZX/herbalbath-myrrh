@@ -14,7 +14,7 @@ export default function PartnerPage() {
   const [partnerId, setPartnerId] = useState("")
   const [generatedLink, setGeneratedLink] = useState("")
   const { toast } = useToast()
-  const whatsappNumber = "+6584261225"
+  const whatsappNumber = "+6594606058"
   const partnerInquiryMessage = encodeURIComponent("Hi! I'm interested in becoming a partner for HerbalBath SG.")
 
   const handleGenerateLink = () => {

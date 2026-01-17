@@ -12,43 +12,17 @@ import { testimonialImages } from "@/app/lib/testimonial-data"
 const videoTestimonials = [
   {
     id: "video-1",
-    title: "陈女士的膝盖康复之路",
-    description: "3周内从无法上楼到轻松爬山",
-    thumbnail: "/images/video-thumb-1.png",
-    duration: "2:15",
-    featured: true,
+    title: "客户见证合集 (第一集)",
+    description: "真实客户分享使用效果",
+    duration: "Shorts",
+    youtubeId: "", // Add your YouTube Shorts ID here
   },
   {
     id: "video-2",
-    title: "李先生的肩膀疼痛缓解",
-    description: "办公室白领的神奇体验",
-    thumbnail: "/images/video-thumb-2.png",
-    duration: "1:45",
-    featured: true,
-  },
-  {
-    id: "video-3",
-    title: "王阿姨的风湿改善",
-    description: "雨天不再疼痛难忍",
-    thumbnail: "/images/video-thumb-3.png",
-    duration: "3:20",
-    featured: false,
-  },
-  {
-    id: "video-4",
-    title: "张先生的运动恢复",
-    description: "运动员的专业推荐",
-    thumbnail: "/images/video-thumb-4.png",
-    duration: "2:30",
-    featured: false,
-  },
-  {
-    id: "video-5",
-    title: "林女士的关节灵活",
-    description: "从僵硬到灵活的转变",
-    thumbnail: "/images/video-thumb-5.png",
-    duration: "1:55",
-    featured: false,
+    title: "客户见证合集 (第二集)",
+    description: "更多客户真实体验",
+    duration: "Shorts",
+    youtubeId: "", // Add your YouTube Shorts ID here
   },
 ]
 
@@ -65,13 +39,12 @@ function TestimonialsPageContent() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("masonry")
 
-  const whatsappNumber = "+6584261225"
+  const whatsappNumber = "+6594606058"
   const baseWhatsappMessage = "Hi! I saw all the amazing testimonials. I want to try the Myrrh Spray too!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
   const getFilteredTestimonials = () => {
     if (activeCategory === "all") return testimonialImages
-    // In a real app, you'd have category metadata for each image
     const categorySize = Math.floor(testimonialImages.length / 3)
     switch (activeCategory) {
       case "whatsapp":
@@ -154,92 +127,86 @@ function TestimonialsPageContent() {
               <p className="text-gray-600">客户亲自分享使用效果</p>
             </div>
             <Badge variant="secondary" className="bg-red-100 text-red-800 px-3 py-1">
-              {videoTestimonials.length} 个视频
+              2 个视频
             </Badge>
           </div>
 
-          {/* Featured Videos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {videoTestimonials
-              .filter((v) => v.featured)
-              .map((video, index) => (
-                <Dialog key={video.id}>
-                  <DialogTrigger asChild>
-                    <Card className="overflow-hidden cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <CardContent className="p-0 relative">
-                        <div className="aspect-video bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                              <Play className="w-10 h-10 text-red-600 ml-1" />
-                            </div>
-                            <h3 className="font-bold text-gray-800 text-lg mb-1">{video.title}</h3>
-                            <p className="text-sm text-gray-600 mb-2">{video.description}</p>
-                            <Badge variant="outline" className="text-xs">
-                              {video.duration}
-                            </Badge>
-                          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
+            {videoTestimonials.map((video) => (
+              <Dialog key={video.id}>
+                <DialogTrigger asChild>
+                  <Card className="overflow-hidden cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto">
+                    <CardContent className="p-0 relative">
+                      {/* YouTube Shorts vertical aspect ratio 9:16 */}
+                      <div className="aspect-[9/16] w-full sm:w-[280px] relative overflow-hidden rounded-lg">
+                        {/* Better placeholder with product-themed gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-50 to-red-100">
+                          {/* Decorative elements */}
+                          <div className="absolute top-6 left-6 w-20 h-20 bg-amber-200/50 rounded-full blur-xl" />
+                          <div className="absolute bottom-12 right-4 w-28 h-28 bg-red-200/40 rounded-full blur-2xl" />
+                          <div className="absolute top-1/3 right-8 w-16 h-16 bg-orange-200/60 rounded-full blur-lg" />
+
+                          {/* Subtle pattern overlay */}
+                          <div
+                            className="absolute inset-0 opacity-10"
+                            style={{
+                              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,0,0,0.15) 1px, transparent 0)`,
+                              backgroundSize: "24px 24px",
+                            }}
+                          />
                         </div>
-                        <div className="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
+
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                          {/* Play button */}
+                          <div className="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform mb-6 backdrop-blur-sm">
+                            <Play className="w-10 h-10 text-red-600 ml-1" />
+                          </div>
+
+                          {/* Video info */}
+                          <h3 className="font-bold text-gray-800 text-lg mb-2 text-center">{video.title}</h3>
+                          <p className="text-sm text-gray-600 mb-3 text-center">{video.description}</p>
+                          <Badge variant="outline" className="bg-white/80 text-xs">
+                            {video.duration}
+                          </Badge>
+                        </div>
+
+                        {/* Featured badge */}
+                        <div className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
                           精选视频
                         </div>
-                      </CardContent>
-                    </Card>
-                  </DialogTrigger>
-                  <DialogContent className="p-0 max-w-2xl bg-transparent border-0 shadow-none">
-                    <div className="bg-black rounded-lg overflow-hidden">
-                      <div className="aspect-video bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
-                        <div className="text-center text-gray-800">
-                          <Play className="w-16 h-16 mx-auto mb-4" />
-                          <p className="text-lg font-semibold mb-2">{video.title}</p>
-                          <p className="text-sm opacity-75">视频即将上线</p>
-                        </div>
                       </div>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="p-0 max-w-sm bg-transparent border-0 shadow-none">
+                  <div className="bg-black rounded-lg overflow-hidden">
+                    {/* YouTube Shorts vertical aspect ratio for dialog */}
+                    <div className="aspect-[9/16] w-full">
+                      {video.youtubeId ? (
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                          title={video.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-900 text-white">
+                          <p className="text-center p-4">
+                            视频即将上线
+                            <br />
+                            Video coming soon
+                          </p>
+                        </div>
+                      )}
                     </div>
-                  </DialogContent>
-                </Dialog>
-              ))}
-          </div>
-
-          {/* Regular Videos */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videoTestimonials
-              .filter((v) => !v.featured)
-              .map((video, index) => (
-                <Dialog key={video.id}>
-                  <DialogTrigger asChild>
-                    <Card className="overflow-hidden cursor-pointer group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <CardContent className="p-0 relative">
-                        <div className="aspect-[4/3] bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-110 transition-transform">
-                              <Play className="w-8 h-8 text-red-600 ml-1" />
-                            </div>
-                            <h4 className="font-semibold text-gray-800 text-sm mb-1">{video.title}</h4>
-                            <p className="text-xs text-gray-600 mb-2 px-2">{video.description}</p>
-                            <Badge variant="outline" className="text-xs">
-                              {video.duration}
-                            </Badge>
-                          </div>
-                        </div>
-                        <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
-                          视频
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </DialogTrigger>
-                  <DialogContent className="p-0 max-w-lg bg-transparent border-0 shadow-none">
-                    <div className="bg-black rounded-lg overflow-hidden">
-                      <div className="aspect-video bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
-                        <div className="text-center text-gray-800">
-                          <Play className="w-12 h-12 mx-auto mb-3" />
-                          <p className="font-semibold mb-1">{video.title}</p>
-                          <p className="text-sm opacity-75">视频即将上线</p>
-                        </div>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
           </div>
         </section>
 

@@ -5,7 +5,7 @@ import { MessageCircle, Star, CheckCircle, Clock, Users } from "lucide-react"
 import { useReferral } from "@/app/hooks/useReferral"
 
 export default function TikTokLandingContent() {
-  const whatsappNumber = "+6584261225"
+  const whatsappNumber = "+6594606058"
   const baseWhatsappMessage = "Hi! I saw your TikTok video about the Myrrh Spray. I want to order!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 

@@ -45,7 +45,6 @@ const content = {
         title: "客户使用视频",
         coming_soon: "即将上线",
       },
-      view_all: "查看全部见证 (50+ 图片 + 视频)",
     },
     problems: {
       title: "其他产品让您失望了吗？",
@@ -163,7 +162,6 @@ const content = {
         title: "Customer Videos",
         coming_soon: "Coming Soon",
       },
-      view_all: "View All Testimonials (50+ Images + Videos)",
     },
     problems: {
       title: "Tired of Products That Don't Work?",
@@ -282,7 +280,7 @@ function HomePageContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = content[language]
 
-  const whatsappNumber = "+6584261225"
+  const whatsappNumber = "+6594606058"
   const baseWhatsappMessage = "Hi! I'm interested in the HerbalBath Myrrh Spray and would like to order."
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
@@ -506,9 +504,6 @@ function HomePageContent() {
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 {t.testimonials_section.subtitle}
-              </p>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-3 sm:mt-4 leading-relaxed">
-                {t.testimonials_section.view_all}
               </p>
             </div>
             <div className="px-3 sm:px-4">
