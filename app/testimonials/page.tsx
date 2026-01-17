@@ -15,14 +15,14 @@ const videoTestimonials = [
     title: "客户见证合集 (第一集)",
     description: "真实客户分享使用效果",
     duration: "Shorts",
-    youtubeId: "https://youtube.com/shorts/hkTuQsdXSrQ?si=x116HWGtkLFwxapU", 
+    youtubeId: "https://youtube.com/embed/hkTuQsdXSrQ?si=x116HWGtkLFwxapU", 
   },
   {
     id: "video-2",
     title: "客户见证合集 (第二集)",
     description: "更多客户真实体验",
     duration: "Shorts",
-    youtubeId: "https://youtube.com/shorts/nMsJT527FWY?si=gm949M8mpAjduWcg", 
+    youtubeId: "https://youtube.com/embed/nMsJT527FWY?si=gm949M8mpAjduWcg", 
   },
 ]
 
