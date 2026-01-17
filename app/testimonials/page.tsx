@@ -15,14 +15,14 @@ const videoTestimonials = [
     title: "客户见证合集 (第一集)",
     description: "真实客户分享使用效果",
     duration: "Shorts",
-    youtubeId: "", // Add your YouTube Shorts ID here
+    youtubeId: "https://youtube.com/shorts/hkTuQsdXSrQ?si=x116HWGtkLFwxapU", 
   },
   {
     id: "video-2",
     title: "客户见证合集 (第二集)",
     description: "更多客户真实体验",
     duration: "Shorts",
-    youtubeId: "", // Add your YouTube Shorts ID here
+    youtubeId: "https://youtube.com/shorts/nMsJT527FWY?si=gm949M8mpAjduWcg", 
   },
 ]
 
@@ -40,7 +40,7 @@ function TestimonialsPageContent() {
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("masonry")
 
   const whatsappNumber = "+6594606058"
-  const baseWhatsappMessage = "Hi! I saw all the amazing testimonials. I want to try the Myrrh Spray too!"
+  const baseWhatsappMessage = "Hi! I want to purchase the Myrrh Spray too. Please assist me with the order."
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
   const getFilteredTestimonials = () => {
