@@ -8,6 +8,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { testimonialImages } from "@/app/lib/testimonial-data" // Import from the new data file
+import { FAQSection } from "@/components/faq-section"
+import Link from "next/link"
 
 const useLanguage = () => {
   const [language, setLanguage] = useState<"zh" | "en">("zh")
@@ -725,7 +727,115 @@ function HomePageContent() {
           </div>
         </section>
 
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white text-center">
+        {/* FAQ Section */}
+        <FAQSection language={language} />
+
+        {/* Pain Points Quick Links Section */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-3 font-serif">
+                {language === "zh" ? "常见疼痛问题" : "Common Pain Points"}
+              </h2>
+              <p className="text-lg text-stone-600">
+                {language === "zh" 
+                  ? "了解更多关于您的疼痛问题和天然解决方案"
+                  : "Learn more about your pain issues and natural solutions"}
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Link
+                href="/pain-points/knee-pain"
+                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+              >
+                <span className="text-3xl mb-2 block">🦵</span>
+                <span className="font-medium text-emerald-800 block">膝盖疼痛</span>
+                <span className="text-sm text-stone-500">Knee Pain</span>
+              </Link>
+              <Link
+                href="/pain-points/back-pain"
+                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+              >
+                <span className="text-3xl mb-2 block">🔙</span>
+                <span className="font-medium text-emerald-800 block">腰酸背痛</span>
+                <span className="text-sm text-stone-500">Back Pain</span>
+              </Link>
+              <Link
+                href="/pain-points/joint-arthritis"
+                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+              >
+                <span className="text-3xl mb-2 block">🦴</span>
+                <span className="font-medium text-emerald-800 block">风湿关节炎</span>
+                <span className="text-sm text-stone-500">Arthritis</span>
+              </Link>
+              <Link
+                href="/pain-points/neck-shoulder-stiffness"
+                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+              >
+                <span className="text-3xl mb-2 block">💪</span>
+                <span className="font-medium text-emerald-800 block">肩颈僵硬</span>
+                <span className="text-sm text-stone-500">Neck Stiffness</span>
+              </Link>
+            </div>
+            <div className="text-center mt-6">
+              <Link
+                href="/pain-points"
+                className="inline-flex items-center text-emerald-700 hover:text-emerald-600 font-medium text-lg"
+              >
+                {language === "zh" ? "查看全部疼痛问题" : "View All Pain Points"} →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Blog Articles Section */}
+        <section className="py-12 md:py-16 bg-stone-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-3 font-serif">
+                {language === "zh" ? "健康知识库" : "Health Knowledge"}
+              </h2>
+              <p className="text-lg text-stone-600">
+                {language === "zh" 
+                  ? "专为新加坡乐龄人士编写的健康指南"
+                  : "Health guides written for Singapore seniors"}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link
+                href="/blog/knee-pain-relief-singapore"
+                className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-stone-100"
+              >
+                <h3 className="font-bold text-emerald-800 mb-2">膝盖痛缓解指南</h3>
+                <p className="text-stone-600 text-sm">10个帮助乐龄人士缓解膝盖疼痛的实用建议...</p>
+              </Link>
+              <Link
+                href="/blog/myrrh-frankincense-miracle-herbs"
+                className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-stone-100"
+              >
+                <h3 className="font-bold text-emerald-800 mb-2">没药乳香的神奇功效</h3>
+                <p className="text-stone-600 text-sm">探索这两种千年草药的历史与科学原理...</p>
+              </Link>
+              <Link
+                href="/blog/gentle-exercises-for-seniors"
+                className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-stone-100"
+              >
+                <h3 className="font-bold text-emerald-800 mb-2">乐龄温和运动</h3>
+                <p className="text-stone-600 text-sm">5种最适合新加坡乐龄人士的安全运动...</p>
+              </Link>
+            </div>
+            <div className="text-center mt-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-emerald-700 hover:text-emerald-600 font-medium text-lg"
+              >
+                {language === "zh" ? "阅读更多健康文章" : "Read More Articles"} →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-emerald-700 to-emerald-800 text-white text-center">
           <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-2">
               {t.final_cta.title}
@@ -735,7 +845,7 @@ function HomePageContent() {
             </p>
             <Button
               size="lg"
-              className="bg-white text-red-600 hover:bg-gray-100 text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-10 font-bold shadow-2xl"
+              className="bg-white text-emerald-700 hover:bg-gray-100 text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-10 font-bold shadow-2xl"
               onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
             >
               <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
@@ -745,29 +855,144 @@ function HomePageContent() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="py-6 sm:py-8 border-t">
-        <div className="container mx-auto px-3 sm:px-4 text-center text-gray-500 max-w-7xl">
-          {/* Ecommerce Platform Logos */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 mb-4 sm:mb-6">
-            <span className="text-xs sm:text-sm font-medium text-gray-600">Available on:</span>
-            <div className="flex items-center gap-3 sm:gap-4">
-              <img src="/images/carousell-logo.png" alt="Carousell" className="h-6 w-6 sm:h-8 sm:w-8" />
-              <img src="/images/tiktok-shop-logo.png" alt="TikTok Shop" className="h-6 w-6 sm:h-8 sm:w-8" />
-              <img src="/images/facebook-logo.png" alt="Facebook" className="h-6 w-6 sm:h-8 sm:w-8" />
-              <img src="/images/shopee-logo.png" alt="Shopee" className="h-6 w-6 sm:h-8 sm:w-8" />
+      {/* Enhanced Footer with Internal Links for SEO */}
+      <footer className="py-10 sm:py-12 bg-stone-100 border-t">
+        <div className="container mx-auto px-4 max-w-7xl">
+          {/* Footer Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            {/* About */}
+            <div>
+              <h3 className="font-bold text-emerald-800 mb-4 text-lg">HerbalBath SG</h3>
+              <p className="text-stone-600 text-sm leading-relaxed mb-3">
+                {language === "zh" 
+                  ? "新加坡天然草药疼痛缓解品牌。8年品质保证，15,000+用户信赖。"
+                  : "Singapore's natural herbal pain relief brand. 8 years quality assurance, trusted by 15,000+ users."}
+              </p>
+              <div className="flex items-center gap-2 text-emerald-700 font-medium">
+                <Phone className="h-4 w-4" />
+                <a href="tel:+6594606058" className="hover:underline">9460 6058</a>
+              </div>
+            </div>
+
+            {/* Pain Points */}
+            <div>
+              <h3 className="font-bold text-emerald-800 mb-4 text-lg">
+                {language === "zh" ? "疼痛问题" : "Pain Points"}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/pain-points/knee-pain" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    膝盖疼痛 Knee Pain
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pain-points/back-pain" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    腰酸背痛 Back Pain
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pain-points/joint-arthritis" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    风湿关节炎 Arthritis
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pain-points/neck-shoulder-stiffness" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    肩颈僵硬 Neck Pain
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pain-points" className="text-emerald-700 hover:text-emerald-600 font-medium transition-colors">
+                    {language === "zh" ? "查看全部 →" : "View All →"}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Health Articles */}
+            <div>
+              <h3 className="font-bold text-emerald-800 mb-4 text-lg">
+                {language === "zh" ? "健康知识" : "Health Articles"}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/blog/knee-pain-relief-singapore" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    膝盖痛缓解指南
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/myrrh-frankincense-miracle-herbs" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    没药乳香的功效
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/anti-inflammatory-diet-guide" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    抗炎饮食指南
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/gentle-exercises-for-seniors" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    乐龄温和运动
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-emerald-700 hover:text-emerald-600 font-medium transition-colors">
+                    {language === "zh" ? "查看全部 →" : "View All →"}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-bold text-emerald-800 mb-4 text-lg">
+                {language === "zh" ? "快速链接" : "Quick Links"}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    {language === "zh" ? "首页 Home" : "Home"}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/testimonials" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    {language === "zh" ? "客户评价 Reviews" : "Testimonials"}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/partner" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    {language === "zh" ? "成为合作伙伴" : "Partner Program"}
+                  </Link>
+                </li>
+                <li>
+                  <a href="#faq" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    {language === "zh" ? "常见问题 FAQ" : "FAQ"}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm">&copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.</p>
-          <div className="flex flex-col xs:flex-row justify-center gap-2 xs:gap-4 mt-3 sm:mt-4 text-xs sm:text-sm">
-            <a href="/partner" className="hover:text-primary">
-              Partner Program
-            </a>
-            <span className="hidden xs:inline">&bull;</span>
-            <a href="/blog" className="hover:text-primary">
-              Health Journal
-            </a>
+          {/* Ecommerce Platform Logos */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 py-6 border-t border-stone-200">
+            <span className="text-sm font-medium text-stone-600">
+              {language === "zh" ? "购买渠道：" : "Available on:"}
+            </span>
+            <div className="flex items-center gap-4">
+              <img src="/images/carousell-logo.png" alt="Carousell" className="h-7 w-7 sm:h-8 sm:w-8" />
+              <img src="/images/tiktok-shop-logo.png" alt="TikTok Shop" className="h-7 w-7 sm:h-8 sm:w-8" />
+              <img src="/images/facebook-logo.png" alt="Facebook" className="h-7 w-7 sm:h-8 sm:w-8" />
+              <img src="/images/shopee-logo.png" alt="Shopee" className="h-7 w-7 sm:h-8 sm:w-8" />
+            </div>
+          </div>
+
+          {/* Copyright and SEO Text */}
+          <div className="text-center pt-6 border-t border-stone-200">
+            <p className="text-sm text-stone-500">
+              &copy; {new Date().getFullYear()} HerbalBath SG. All Rights Reserved.
+            </p>
+            <p className="text-xs text-stone-400 mt-2">
+              HerbalBath | Herbal Bath Singapore | HerbalBath SG | 新加坡天然草药疼痛缓解 | Natural Herbal Pain Relief
+            </p>
           </div>
         </div>
       </footer>
