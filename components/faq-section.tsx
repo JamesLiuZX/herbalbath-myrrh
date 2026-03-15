@@ -1,11 +1,7 @@
 "use client"
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 interface FAQItem {
   question: string
@@ -71,7 +67,63 @@ interface FAQSectionProps {
   language?: "zh" | "en"
 }
 
+function FAQItemComponent({ 
+  item, 
+  language, 
+  isOpen, 
+  onToggle 
+}: { 
+  item: FAQItem
+  language: "zh" | "en"
+  isOpen: boolean
+  onToggle: () => void
+}) {
+  return (
+    <div className="bg-white rounded-xl border border-stone-200 overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 hover:bg-stone-50 transition-colors"
+        aria-expanded={isOpen}
+      >
+        <div>
+          <span className="text-lg font-semibold text-emerald-800 block">
+            {language === "zh" ? item.question : item.questionEn}
+          </span>
+          <span className="text-base text-stone-500 block mt-1">
+            {language === "zh" ? item.questionEn : item.question}
+          </span>
+        </div>
+        <ChevronDown 
+          className={`w-5 h-5 text-emerald-600 flex-shrink-0 mt-1 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`} 
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-200 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 pb-5">
+          <p className="text-stone-700 text-lg leading-relaxed mb-3">
+            {language === "zh" ? item.answer : item.answerEn}
+          </p>
+          <p className="text-stone-500 text-base leading-relaxed">
+            {language === "zh" ? item.answerEn : item.answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function FAQSection({ language = "zh" }: FAQSectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
     <>
       {/* FAQ Schema for SEO */}
@@ -93,34 +145,17 @@ export function FAQSection({ language = "zh" }: FAQSectionProps) {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem
+              <FAQItemComponent
                 key={index}
-                value={`item-${index}`}
-                className="bg-white rounded-xl border border-stone-200 px-6 overflow-hidden"
-              >
-                <AccordionTrigger className="text-left py-5 hover:no-underline">
-                  <div>
-                    <span className="text-lg font-semibold text-emerald-800 block">
-                      {language === "zh" ? item.question : item.questionEn}
-                    </span>
-                    <span className="text-base text-stone-500 block mt-1">
-                      {language === "zh" ? item.questionEn : item.question}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-5">
-                  <p className="text-stone-700 text-lg leading-relaxed mb-3">
-                    {language === "zh" ? item.answer : item.answerEn}
-                  </p>
-                  <p className="text-stone-500 text-base leading-relaxed">
-                    {language === "zh" ? item.answerEn : item.answer}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                item={item}
+                language={language}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />
             ))}
-          </Accordion>
+          </div>
 
           {/* Additional SEO Keywords (visually hidden) */}
           <div className="sr-only">
