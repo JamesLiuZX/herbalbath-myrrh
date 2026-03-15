@@ -96,3 +96,191 @@ html {
 .animate-scroll-left:hover {
   animation-play-state: paused;
 }
+
+/* ============================================
+   SENIOR-FRIENDLY UX IMPROVEMENTS (55+)
+   ============================================ */
+
+/* Increased base font size for better readability */
+html {
+  font-size: 18px; /* Base 18px instead of 16px */
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 17px; /* Slightly smaller on mobile but still readable */
+  }
+}
+
+/* Improved line height for easier reading */
+body {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* Larger touch targets for buttons and links */
+@layer components {
+  .senior-button {
+    @apply min-h-[56px] px-6 text-lg font-medium;
+  }
+  
+  .senior-link {
+    @apply py-2 px-1 text-lg underline-offset-4;
+  }
+  
+  .senior-card {
+    @apply p-6 md:p-8;
+  }
+}
+
+/* High contrast focus states for accessibility */
+*:focus-visible {
+  outline: 3px solid #166534;
+  outline-offset: 2px;
+}
+
+/* Larger checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Better form input sizing */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  font-size: 1.125rem;
+  padding: 0.875rem 1rem;
+  min-height: 3.5rem;
+}
+
+/* Sticky call-to-action bar styles */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  z-index: 50;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Phone number highlight for click-to-call */
+.phone-highlight {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #166534;
+  letter-spacing: 0.05em;
+}
+
+.phone-highlight:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* WhatsApp floating button - larger for seniors */
+.whatsapp-float {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 40;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 90px;
+    right: 16px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Trust badges styling */
+.trust-badge {
+  @apply flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-3 text-emerald-800;
+}
+
+/* Improved table readability */
+table {
+  font-size: 1.125rem;
+}
+
+th, td {
+  padding: 1rem;
+}
+
+/* Better list spacing */
+ul, ol {
+  line-height: 2;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Heading sizes optimized for seniors */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.625rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Print styles for seniors who might print pages */
+@media print {
+  body {
+    font-size: 14pt;
+    line-height: 1.6;
+  }
+  
+  .sticky-cta,
+  .whatsapp-float {
+    display: none !important;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
