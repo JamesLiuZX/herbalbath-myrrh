@@ -255,7 +255,7 @@ export const posts: Post[] = [
     slug: "office-neck-shoulder-pain",
     title: "告别电脑肩：给上班族的5个肩颈放松秘诀",
     description:
-      "长时间对着电脑工作，肩颈酸痛已成常态？别担心，这5个简单的办公室拉伸和放松技巧，能帮助您有效缓解不适。",
+      "长时间对着电脑工作，肩颈酸痛已成常态？别担��，这5个简单的办公室拉伸和放松技巧，能帮助您有效缓解不适。",
     image: "/placeholder-0qqck.png",
     author: "HerbalBath 物理治疗顾问",
     date: "2024-07-10",
@@ -572,7 +572,7 @@ export const posts: Post[] = [
     content: (
       <>
         <p className="lead">
-          "生命在于运动"，但对于乐龄人士来说，选择合适的运动方式至关重要。在新加坡，许多乐龄人士因为担心受伤而不敢运动，但适度的运动实际上是维持关节健康、预防疼痛的最佳方法。这里为您推荐5种安全有效的温和运动。
+          "生命在于运动"，但对于乐龄人士来说，选择合适的运动方式至关重要。在新��坡，许多乐龄人士因为担心受伤而不敢运动，但适度的运动实际上是维持关节健康、预防疼痛的最佳方法。这里为您推荐5种安全有效的温和运动。
         </p>
 
         <h3 className="font-bold mt-6 mb-2 text-xl">1. 太极：动中有静的东方智慧</h3>
@@ -898,7 +898,7 @@ export const posts: Post[] = [
             <strong>没药：</strong>强效镇痛，无成瘾性
           </li>
           <li>
-            <strong>乳香：</strong>天然抗炎，减少关节炎症
+            <strong>乳香：</strong>天然抗炎，减少关���炎症
           </li>
           <li>
             <strong>姜黄：</strong>含姜黄素，抗炎效果显著
@@ -1047,6 +1047,991 @@ export const posts: Post[] = [
 
         <p className="mt-8 font-semibold text-lg">
           选择止痛药还是天然草药，没有标准答案。关键是要根据自己的具体情况，在专业指导下做出明智的选择。对于大多数慢性疼痛患者来说，以天然草药为主，必要时辅以止痛药的综合方法，往往能取得最佳效果。记住，最好的治疗方案是最适合您的方案。
+        </p>
+      </>
+    ),
+  },
+  // ============================================
+  // NEW BLOG POSTS FOR SEO EXPANSION
+  // ============================================
+  {
+    slug: "hdb-stair-climbing-knee-protection",
+    title: "HDB组屋楼梯：如何保护您的膝盖不受伤？",
+    description:
+      "新加坡HDB组屋楼梯是膝盖的隐形杀手。学习正确的上下楼梯技巧，保护您的膝关节免受损伤。",
+    image: "/hdb-stairs-knee.png",
+    author: "HerbalBath 物理治疗顾问",
+    date: "2024-08-01",
+    content: (
+      <>
+        <p className="lead">
+          在新加坡，超过80%的人口住在HDB组屋中。对于许多乐龄人士来说，每天上下楼梯已经成为生活的一部分。然而，您可能不知道，错误的上下楼梯方式正在悄悄损害您的膝盖。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">为什么HDB楼梯对膝盖伤害大？</h3>
+        <p>
+          当您走下楼梯时，您的膝盖需要承受相当于体重3-4倍的压力。如果您体重60公斤，每走一级楼梯，您的膝盖就承受180-240公斤的压力！如果您住在8楼，每天上下两次，您的膝盖一天就要承受数千次这样的冲击。
+        </p>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">膝盖压力计算：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>平地走路：</strong>膝盖承受约1.5倍体重</li>
+            <li>• <strong>上楼梯：</strong>膝盖承受约2-3倍体重</li>
+            <li>• <strong>下楼梯：</strong>膝盖承受约3-4倍体重</li>
+            <li>• <strong>跑下楼梯：</strong>膝盖承受约5-6倍体重</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">正确的上楼梯技巧</h3>
+        <p>上楼梯时，膝盖需要弯曲发力，如果方法不对，会加速关节磨损。</p>
+        
+        <div className="bg-blue-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">上楼梯正确步骤：</h4>
+          <ol className="text-sm space-y-2 list-decimal list-inside">
+            <li>用整个脚掌踏在台阶上，不要只用脚尖</li>
+            <li>让好腿先上，把身体重心转移到好腿上</li>
+            <li>用大腿肌肉发力，不要只用膝盖撑</li>
+            <li>身体略微前倾，减少膝盖弯曲角度</li>
+            <li>扶好扶手，借助上肢力量</li>
+          </ol>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">正确的下楼梯技巧</h3>
+        <p>下楼梯对膝盖的冲击更大，正确的技巧更为重要。</p>
+        
+        <div className="bg-green-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">下楼梯正确步骤：</h4>
+          <ol className="text-sm space-y-2 list-decimal list-inside">
+            <li>紧握扶手，让上肢分担部分体重</li>
+            <li>让痛腿先下（记住：好上坏下）</li>
+            <li>慢慢放下脚，控制速度，避免冲击</li>
+            <li>膝盖保持微弯，不要完全伸直锁死</li>
+            <li>一步一级，不要跳级或跑下</li>
+          </ol>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">上下楼梯前的准备</h3>
+        <p>如果您的膝盖已经有不适，上下楼梯前做好准备可以减少疼痛。</p>
+        
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li><strong>喷上没药喷雾：</strong>在膝盖周围喷上HerbalBath没药喷雾，温热感能帮助肌肉放松</li>
+          <li><strong>简单热身：</strong>在楼梯前做几个膝盖弯曲动作，让关节液流动</li>
+          <li><strong>使用护膝：</strong>如果膝盖较弱，考虑使用护膝提供额外支撑</li>
+          <li><strong>穿对鞋子：</strong>避免穿拖鞋或高跟鞋上下楼梯</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">什么时候应该使用电梯？</h3>
+        <p>虽然爬楼梯是好运动，但在某些情况下，您应该优先使用电梯：</p>
+        
+        <div className="bg-yellow-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">建议使用电梯的情况：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 膝盖正在疼痛或发炎</li>
+            <li>• 刚做完关节手术或受伤</li>
+            <li>• 携带重物（超过5公斤）</li>
+            <li>• 感到头晕或身体不适</li>
+            <li>• 楼层超过4层</li>
+            <li>• 雨天楼梯湿滑</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">强化膝盖的居家运动</h3>
+        <p>强壮的大腿肌肉可以保护膝盖，减少上下楼梯时的压力。</p>
+        
+        <div className="bg-purple-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">每天5分钟膝盖保护运动：</h4>
+          <ol className="text-sm space-y-2 list-decimal list-inside">
+            <li><strong>坐姿抬腿：</strong>坐在椅子上，慢慢抬起一条腿伸直，保持5秒，放下。每腿10次。</li>
+            <li><strong>靠墙半蹲：</strong>背靠墙，慢慢下蹲到大腿与地面平行，保持10-30秒。</li>
+            <li><strong>单腿站立：</strong>扶住椅子，单腿站立30秒，锻炼平衡。每腿3次。</li>
+            <li><strong>脚跟抬起：</strong>双手扶椅子，慢慢踮起脚跟，再放下。15次一组，做2组。</li>
+          </ol>
+        </div>
+
+        <p className="mt-8 font-semibold text-lg">
+          保护膝盖是一个长期的过程。通过正确的上下楼梯技巧、适当的锻炼和天然草药护理，您可以大大减少HDB楼梯对膝盖的伤害，让您的关节更健康、更长寿。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "monsoon-joint-care-guide",
+    title: "新加坡雨季来了！您的关节准备好了吗？",
+    description:
+      "新加坡雨季（11月-1月）是关节疼痛的高发期。学习如何在雨季保护您的关节，减少疼痛发作。",
+    image: "/monsoon-joint-care.png",
+    author: "HerbalBath 健康专家",
+    date: "2024-08-05",
+    content: (
+      <>
+        <p className="lead">
+          每年11月到1月，新加坡进入东北季风季节，也就是我们俗称的"雨季"。对于许多有关节问题的乐龄人士来说，这也是最难熬的季节——天气一变，关节就开始"预警"。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">为什么雨季关节更痛？</h3>
+        <p>
+          虽然科学界对此仍有争议，但大多数研究和临床经验都支持天气变化确实会影响关节疼痛。主要原因包括：
+        </p>
+
+        <div className="bg-blue-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">天气影响关节的科学解释：</h4>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <strong>气压变化：</strong>下雨前气压下降，关节囊内的压力相对增加，导致肿胀和不适。这就是为什么很多人能"预测"下雨。
+            </li>
+            <li>
+              <strong>湿度增加：</strong>高湿度可能增加组织水肿，影响关节润滑液的粘度，导致关节更僵硬。
+            </li>
+            <li>
+              <strong>温度下降：</strong>虽然新加坡温差不大，但雨天温度略低，可能导致血管收缩，减少关节血供。
+            </li>
+            <li>
+              <strong>活动减少：</strong>雨天人们往往减少外出和运动，久坐不动会加重关节僵硬。
+            </li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">雨季关节护理日历</h3>
+        
+        <div className="bg-green-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">11月：准备阶段</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 备好HerbalBath没药喷雾</li>
+            <li>• 检查除湿机是否正常工作</li>
+            <li>• 准备保暖衣物和护膝</li>
+            <li>• 开始每天使用没药喷雾预防</li>
+          </ul>
+        </div>
+
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">12月：高峰阶段</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 每天早晚使用没药喷雾</li>
+            <li>• 关注天气预报，提前防护</li>
+            <li>• 保持室内干燥</li>
+            <li>• 坚持室内运动</li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">1月：缓解阶段</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 继续维持护理习惯</li>
+            <li>• 逐渐恢复户外活动</li>
+            <li>• 评估雨季期间的症状变化</li>
+            <li>• 为下一个雨季做记录</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">雨季居家关节护理</h3>
+        
+        <h4 className="font-semibold mt-4 mb-2">1. 保持温暖干燥</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>使用除湿机保持室内湿度在50-60%</li>
+          <li>空调温度不要设置太低（24-26°C）</li>
+          <li>避免冷气直接吹向关节</li>
+          <li>准备薄毛毯覆盖膝盖和肩膀</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">2. 坚持室内运动</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>太极和简单瑜伽</li>
+          <li>椅子运动</li>
+          <li>关节活动操</li>
+          <li>观看运动视频跟着做</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">3. 热敷和按摩</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>每天热敷疼痛关节15-20分钟</li>
+          <li>使用没药喷雾配合按摩</li>
+          <li>温水泡脚促进全身循环</li>
+          <li>睡前放松护理</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">雨季饮食建议</h3>
+        <p>雨季期间，选择温热和抗炎的食物有助于缓解关节不适。</p>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">雨季关节友好食物：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>生姜：</strong>温暖身体，抗炎止痛。可以泡姜茶或加入菜肴。</li>
+            <li>• <strong>姜黄：</strong>强效抗炎，可以加入汤或热饮。</li>
+            <li>• <strong>温热汤品：</strong>如鸡汤、药材汤，温暖关节。</li>
+            <li>• <strong>辛香料：</strong>如胡椒、肉桂，促进血液循环。</li>
+            <li>• <strong>深海鱼：</strong>富含Omega-3，减少炎症。</li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">雨季应避免的食物：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 冰冷饮料和食物</li>
+            <li>• 过多的糖分</li>
+            <li>• 油炸食品</li>
+            <li>• 高嘌呤食物（如果有痛风风险）</li>
+          </ul>
+        </div>
+
+        <p className="mt-8 font-semibold text-lg">
+          雨季虽然对关节是挑战，但通过提前准备和正确护理，您完全可以舒适地度过这个季节。记得关注天气预报，提前使用HerbalBath没药喷雾，让您的关节在雨季也能保持灵活舒适。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "diabetes-joint-care",
+    title: "糖尿病患者的关节护理：您需要知道的一切",
+    description:
+      "糖尿病不仅影响血糖，还会影响关节健康。了解糖尿病患者如何保护关节，预防神经病变。",
+    image: "/diabetes-joint-care.png",
+    author: "HerbalBath 健康研究员",
+    date: "2024-08-10",
+    content: (
+      <>
+        <p className="lead">
+          在新加坡，糖尿病是最常见的慢性疾病之一。许多糖尿病患者可能不知道，糖尿病不仅影响血糖控制，还会对关节和神经系统产生深远影响。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">糖尿病如何影响关节？</h3>
+        
+        <h4 className="font-semibold mt-4 mb-2">1. 糖尿病性关节病</h4>
+        <p>
+          长期高血糖会导致关节软骨中的糖分子异常积累，影响软骨的弹性和功能。这可能导致关节僵硬、活动受限，严重时可能发展为"糖尿病性骨关节病"。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">2. 糖尿病周围神经病变</h4>
+        <p>
+          高血糖会损害末梢神经，导致手脚麻木、刺痛、烧灼感。约50%的糖尿病患者最终会发展出某种程度的神经病变。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">3. 冻结肩（五十肩）</h4>
+        <p>
+          糖尿病患者发生冻结肩的风险是正常人的2-4倍。肩关节逐渐僵硬，活动范围明显受限。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">4. 腕管综合症</h4>
+        <p>
+          糖尿病患者更容易发生腕管综合症，导致手指麻木、无力，影响日常生活。
+        </p>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">糖尿病关节问题的警示信号：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 手脚持续麻木或刺痛</li>
+            <li>• 关节活动范围明显减少</li>
+            <li>• 手指难以完全伸直或弯曲</li>
+            <li>• 脚底感觉异常或丧失</li>
+            <li>• 关节僵硬持续超过30分钟</li>
+            <li>• 夜间手脚疼痛或不适</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">糖尿病患者的关节护理策略</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">1. 控制血糖是基础</h4>
+        <p>良好的血糖控制是预防糖尿病并发症的关键。定期检测血糖，遵医嘱用药，保持HbA1c在目标范围内。</p>
+
+        <h4 className="font-semibold mt-4 mb-2">2. 每天检查双脚</h4>
+        <p>糖尿病患者应每天检查双脚，因为神经病变可能导致感觉减退，小伤口可能不被察觉。</p>
+
+        <div className="bg-blue-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">每日足部检查清单：</h4>
+          <ul className="text-sm space-y-1">
+            <li>✓ 检查脚底、脚趾缝有无伤口</li>
+            <li>✓ 观察皮肤颜色变化</li>
+            <li>✓ 检查有无红肿或水泡</li>
+            <li>✓ 感觉有无麻木或异常</li>
+            <li>✓ 检查指甲是否需要修剪</li>
+          </ul>
+        </div>
+
+        <h4 className="font-semibold mt-4 mb-2">3. 适度运动</h4>
+        <p>运动不仅有助于控制血糖，还能保持关节灵活。但糖尿病患者需要注意：</p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-2">
+          <li>选择低冲击运动（游泳、骑车、太极）</li>
+          <li>穿着合适的鞋子保护双脚</li>
+          <li>避免脚部受伤的运动</li>
+          <li>运动前后检查血糖</li>
+          <li>携带糖果预防低血糖</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">4. 使用天然护理产品</h4>
+        <p>
+          HerbalBath没药喷雾可以帮助改善局部血液循环，缓解关节不适。对于糖尿病患者来说，天然成分更加安全，避免了化学药物可能的相互作用。
+        </p>
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">糖尿病患者使用提示：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 使用前确保皮肤完整无伤口</li>
+            <li>• 避免在溃疡或感染部位使用</li>
+            <li>• 感觉减退区域使用时注意观察</li>
+            <li>• 如有任何异常反应立即停用</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">饮食对关节的影响</h3>
+        <p>糖尿病患者的饮食选择对关节健康也有重要影响。</p>
+
+        <div className="bg-green-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">对血糖和关节都友好的食物：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>深海鱼：</strong>Omega-3抗炎，蛋白质稳定血糖</li>
+            <li>• <strong>绿叶蔬菜：</strong>低糖高纤维，富含抗氧化剂</li>
+            <li>• <strong>坚果（少量）：</strong>健康脂肪，有益关节</li>
+            <li>• <strong>豆类：</strong>低升糖指数，富含蛋白质</li>
+            <li>• <strong>姜黄和生姜：</strong>抗炎，有助血糖控制</li>
+          </ul>
+        </div>
+
+        <p className="mt-8 font-semibold text-lg">
+          糖尿病患者的关节护理需要综合方法：控制血糖、适度运动、日常护理和定期检查。如果您是糖尿病患者并有关节问题，请务必与医生讨论，制定适合您的护理计划。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "posture-correction-seniors",
+    title: "姿势不对，全身都累！乐龄人士的正确姿势指南",
+    description:
+      "不良姿势是许多疼痛问题的根源。学习如何在日常生活中保持正确姿势，减少颈肩腰背的负担。",
+    image: "/posture-correction.png",
+    author: "HerbalBath 物理治疗顾问",
+    date: "2024-08-15",
+    content: (
+      <>
+        <p className="lead">
+          "站有站相，坐有坐相"——这句老话不仅是礼仪，更是健康。研究显示，不良姿势是导致颈肩痛、腰背痛的主要原因之一。对于乐龄人士来说，正确的姿势尤为重要，因为它直接影响关节健康和生活质量。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">不良姿势的危害</h3>
+        
+        <div className="bg-red-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">长期姿势不良会导致：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>颈椎问题：</strong>头痛、颈痛、手麻</li>
+            <li>• <strong>肩膀疼痛：</strong>肩周炎、肌肉紧张</li>
+            <li>• <strong>腰椎问题：</strong>腰痛、坐骨神经痛</li>
+            <li>• <strong>呼吸受限：</strong>驼背压迫胸腔</li>
+            <li>• <strong>消化不良：</strong>弯腰压迫腹部</li>
+            <li>• <strong>平衡问题：</strong>增加跌倒风险</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">正确的站立姿势</h3>
+        <p>想象有一条线从头顶穿过身体到脚底，这条线应该是直的。</p>
+        
+        <div className="bg-blue-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">站立姿势检查点：</h4>
+          <ul className="text-sm space-y-2">
+            <li>✓ 头部正直，下巴微收</li>
+            <li>✓ 双肩放松，略向后展</li>
+            <li>✓ 胸部自然挺起</li>
+            <li>✓ 腹部略微收紧</li>
+            <li>✓ 膝盖放松，不要锁死</li>
+            <li>✓ 双脚与肩同宽，重心均匀</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">正确的坐姿</h3>
+        <p>新加坡人平均每天坐着超过8小时，正确的坐姿至关重要。</p>
+        
+        <div className="bg-green-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">坐姿检查点：</h4>
+          <ul className="text-sm space-y-2">
+            <li>✓ 臀部坐到椅子最里面</li>
+            <li>✓ 背部靠在椅背上</li>
+            <li>✓ 腰部有支撑（可加腰垫）</li>
+            <li>✓ 大腿与地面平行</li>
+            <li>✓ 双脚平放地面</li>
+            <li>✓ 膝盖弯曲90度</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">看手机和电视的正确姿势</h3>
+        
+        <h4 className="font-semibold mt-4 mb-2">看手机时：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>将手机抬高至眼睛水平</li>
+          <li>避免低头看屏幕</li>
+          <li>每20分钟休息一下</li>
+          <li>考虑使用手机支架</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">看电视时：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>电视屏幕与眼睛平视</li>
+          <li>不要躺着看电视</li>
+          <li>坐在有支撑的椅子或沙发上</li>
+          <li>每小时起身活动</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">日常活动的正确姿势</h3>
+
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">捡东西：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 弯膝蹲下，而不是弯腰</li>
+            <li>• 背部保持直立</li>
+            <li>• 站起来时用腿部力量</li>
+          </ul>
+        </div>
+
+        <div className="bg-purple-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">提东西：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 物品靠近身体</li>
+            <li>• 重物分两次拿</li>
+            <li>• 用双手而不是单手</li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">做家务：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 扫地拖地时保持背部直立</li>
+            <li>• 使用长柄工具减少弯腰</li>
+            <li>• 避免长时间保持同一姿势</li>
+            <li>• 每30分钟换一个动作</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">姿势矫正配合疼痛护理</h3>
+        <p>
+          改善姿势需要时间，在这个过程中，可能会出现肌肉酸痛。HerbalBath没药喷雾可以帮助缓解因姿势调整导致的肌肉不适。
+        </p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>练习正确姿势后，在酸痛部位使用没药喷雾</li>
+          <li>睡前按摩放松一天的肌肉紧张</li>
+          <li>感到疲劳时及时舒缓</li>
+        </ul>
+
+        <p className="mt-8 font-semibold text-lg">
+          改变多年的姿势习惯不是一朝一夕的事。每天提醒自己检查姿势，坚持练习，配合适当的疼痛护理，您会逐渐感受到正确姿势带来的好处——更少的疼痛，更好的精神，更健康的身体。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "walking-tips-seniors",
+    title: "走路也是学问：新加坡乐龄人士的健康步行指南",
+    description:
+      "步行是最适合乐龄人士的运动之一。学习正确的走路姿势、时间和地点选择，让每一步都走得健康。",
+    image: "/walking-tips-seniors.png",
+    author: "HerbalBath 健康专家",
+    date: "2024-08-20",
+    content: (
+      <>
+        <p className="lead">
+          步行被誉为"最完美的运动"。它简单、免费、随时可做，而且对关节的冲击远小于跑步。对于新加坡乐龄人士来说，每天步行30分钟可以带来显著的健康益处。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">步行对乐龄人士的好处</h3>
+        
+        <div className="bg-green-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">每天步行30分钟可以：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 增强心肺功能，降低心脏病风险</li>
+            <li>• 控制血糖，有益糖尿病患者</li>
+            <li>• 保持关节灵活，减少僵硬</li>
+            <li>• 增强骨骼密度，预防骨质疏松</li>
+            <li>• 改善平衡，降低跌倒风险</li>
+            <li>• 提升心情，减少抑郁和焦虑</li>
+            <li>• 帮助控制体重</li>
+            <li>• 改善睡眠质量</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">正确的步行姿势</h3>
+        <p>走路姿势不对，可能会加重关节负担，适得其反。</p>
+
+        <div className="bg-blue-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">头部和颈部：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 眼睛看前方3-6米处</li>
+            <li>• 下巴微收，不要低头</li>
+            <li>• 颈部放松，不要前倾</li>
+          </ul>
+        </div>
+
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">肩膀和手臂：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 肩膀放松下沉，不要耸肩</li>
+            <li>• 手臂自然摆动</li>
+            <li>• 手肘弯曲约90度</li>
+            <li>• 手不要握拳太紧</li>
+          </ul>
+        </div>
+
+        <div className="bg-purple-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">核心和腿部：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 腹部微微收紧</li>
+            <li>• 背部挺直，不要驼背</li>
+            <li>• 脚跟先着地，然后过渡到脚尖</li>
+            <li>• 步幅适中，不要过大</li>
+            <li>• 膝盖略微弯曲，不要锁死</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡步行的最佳时间和地点</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">最佳时间：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li><strong>早晨6-8点：</strong>天气凉爽，空气清新</li>
+          <li><strong>傍晚5-7点：</strong>太阳不那么猛烈</li>
+          <li><strong>避免：</strong>中午11点-3点最热时段</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">新加坡适合步行的地点：</h4>
+        <div className="bg-orange-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">户外选择：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 公园连道（Park Connectors）</li>
+            <li>• 东海岸公园</li>
+            <li>• 植物园</li>
+            <li>• 组屋楼下有遮盖的走道</li>
+            <li>• 碧山-宏茂桥公园</li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">室内选择（雨天或太热时）：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 购物中心（早上人少）</li>
+            <li>• 社区中心室内</li>
+            <li>• 有空调的连道</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">步行前后的护理</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">步行前：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>在关节部位喷上没药喷雾，预防不适</li>
+          <li>做5分钟简单热身</li>
+          <li>喝一杯水</li>
+          <li>穿合适的运动鞋</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">步行后：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>做5分钟拉伸放松</li>
+          <li>在疲劳的关节喷上没药喷雾</li>
+          <li>补充水分</li>
+          <li>休息后检查双脚（尤其是糖尿病患者）</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">步行计划建议</h3>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">初学者4周计划：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>第1周：</strong>每天10分钟，走走停停也可以</li>
+            <li>• <strong>第2周：</strong>每天15分钟，逐渐连续</li>
+            <li>• <strong>第3周：</strong>每天20分钟</li>
+            <li>• <strong>第4周：</strong>每天25-30分钟</li>
+            <li>• <strong>之后：</strong>保持每天30分钟，每周5天</li>
+          </ul>
+        </div>
+
+        <p className="mt-8 font-semibold text-lg">
+          走路是最简单却最有效的运动。在新加坡这个花园城市，有无数适合步行的地方。选择正确的时间和地点，保持正确的姿势，配合适当的护理，让每一步都成为通向健康的阶梯。今天就开始您的步行计划吧！
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "singapore-tcm-pain-relief",
+    title: "新加坡中医疼痛治疗：传统智慧与现代生活的融合",
+    description:
+      "中医在新加坡有着悠久的历史。了解中医如何看待和治疗疼痛，以及如何结合现代生活进行调理。",
+    image: "/tcm-pain-relief-sg.png",
+    author: "HerbalBath 中医研究员",
+    date: "2024-08-25",
+    content: (
+      <>
+        <p className="lead">
+          新加坡是一个多元文化的社会，中医在这里有着深厚的根基。许多乐龄人士从小就接触中医，对针灸、推拿、草药等疗法并不陌生。今天，我们来深入了解中医如何看待和治疗各种疼痛问题。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">中医对疼痛的理解</h3>
+        <p>
+          中医认为，疼痛的根本原因是"不通则痛"。当气血运行受阻时，就会产生疼痛。这可能由多种原因引起：
+        </p>
+
+        <div className="bg-blue-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">中医疼痛病因：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>风：</strong>疼痛游走不定，一会儿这里痛，一会儿那里痛</li>
+            <li>• <strong>寒：</strong>疼痛固定，遇冷加重，遇热缓解</li>
+            <li>• <strong>湿：</strong>疼痛伴有沉重感，阴雨天加重</li>
+            <li>• <strong>热：</strong>疼痛伴有红肿发热</li>
+            <li>• <strong>瘀：</strong>疼痛固定如针刺，夜间加重</li>
+            <li>• <strong>虚：</strong>隐隐作痛，劳累后加重</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡气候与中医调理</h3>
+        <p>
+          新加坡属于热带海洋性气候，全年高温高湿。从中医角度看，这种环境容易导致"湿邪"入侵，影响关节健康。
+        </p>
+
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">新加坡常见的中医证型：</h4>
+          <ul className="text-sm space-y-2">
+            <li>• <strong>风湿痹阻：</strong>关节酸痛，遇雨天加重</li>
+            <li>• <strong>寒湿凝滞：</strong>关节冷痛，空调房加重</li>
+            <li>• <strong>气血瘀滞：</strong>疼痛固定，夜间明显</li>
+            <li>• <strong>肝肾亏虚：</strong>腰膝酸软，劳累后加重</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">常见的中医疼痛治疗方法</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">1. 针灸</h4>
+        <p>
+          针灸通过刺激特定穴位，调节气血运行，是治疗各种疼痛的有效方法。在新加坡，针灸需要由注册中医师进行。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">2. 推拿</h4>
+        <p>
+          推拿按摩可以放松肌肉，促进血液循环，缓解关节僵硬。在新加坡有许多提供中医推拿的诊所。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">3. 中药内服</h4>
+        <p>
+          根据个人体质配制的中药汤剂或中成药，从内部调理身体。需要中医师诊断后开方。
+        </p>
+
+        <h4 className="font-semibold mt-4 mb-2">4. 外用药物</h4>
+        <p>
+          如药油、药酒、药膏等，直接作用于疼痛部位。这也是HerbalBath没药喷雾的原理——将古老的外用草药智慧与现代科技结合。
+        </p>
+
+        <div className="bg-green-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">没药和乳香：中医经典外用药材</h4>
+          <p className="text-sm mb-3">
+            没药（Myrrh）和乳香（Frankincense）在中医典籍中都有记载，被归为活血化瘀、消肿止痛的良药。
+          </p>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>没药：</strong>活血止痛，消肿生肌</li>
+            <li>• <strong>乳香：</strong>活血行气，消肿止痛</li>
+            <li>• <strong>两者配合：</strong>增强活血化瘀效果</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">中医养生建议</h3>
+
+        <div className="bg-purple-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">饮食调理：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 少吃生冷食物，尤其是空调房里</li>
+            <li>• 适量吃姜、葱等温性食物</li>
+            <li>• 雨季多喝祛湿汤水（薏米、茯苓）</li>
+            <li>• 避免油腻和过甜的食物</li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">生活起居：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 避免久坐，定时活动</li>
+            <li>• 空调温度不要太低</li>
+            <li>• 雨天注意保暖，避免淋雨</li>
+            <li>• 睡眠充足，不要熬夜</li>
+          </ul>
+        </div>
+
+        <div className="bg-red-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">运动养生：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 太极拳：调和气血，柔韧关节</li>
+            <li>• 八段锦：简单易学，适合乐龄</li>
+            <li>• 散步：每天30分钟，促进气血运行</li>
+            <li>• 避免大汗淋漓的剧烈运动</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡中医资源</h3>
+        <p>新加坡有完善的中医注册和监管制度，寻找正规的中医服务很方便：</p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>中华医院和善济医院提供可负担的中医服务</li>
+          <li>许多综合诊所有中医门诊</li>
+          <li>选择注册中医师（可在TCM Practitioners Board网站查询）</li>
+          <li>部分中医服务可使用MediSave</li>
+        </ul>
+
+        <p className="mt-8 font-semibold text-lg">
+          中医与西医各有所长，在新加坡这个多元社会，我们有幸能够结合两种医学的优势。对于慢性疼痛，中医的整体调理理念和天然疗法值得尝试。HerbalBath没药喷雾正是将中医外用草药的智慧与现代技术相结合，让古老的疗法更方便地融入现代生活。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "air-con-joint-pain-singapore",
+    title: "空调是关节的敌人？新加坡人必读的空调与关节健康指南",
+    description:
+      "新加坡号称'空调之国'，但长期暴露在空调环境可能伤害关节。学习如何在空调环境中保护您的关节。",
+    image: "/aircon-joint-pain.png",
+    author: "HerbalBath 健康研究员",
+    date: "2024-08-30",
+    content: (
+      <>
+        <p className="lead">
+          新加坡被称为"空调之国"。无论是办公室、购物中心、公共交通还是家里，空调几乎无处不在。对于怕热的人来说这是福音，但对于关节来说，这可能是一个隐形的健康威胁。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">空调如何影响关节健康？</h3>
+
+        <div className="bg-blue-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">空调对关节的影响：</h4>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <strong>血管收缩：</strong>低温使血管收缩，减少关节部位的血液供应，导致僵硬和不适。
+            </li>
+            <li>
+              <strong>肌肉紧张：</strong>在冷环境中，身体会不自觉地收缩肌肉以保暖，长期可导致肌肉紧张和疼痛。
+            </li>
+            <li>
+              <strong>关节液粘度增加：</strong>低温可能使关节润滑液变得更粘稠，增加关节摩擦。
+            </li>
+            <li>
+              <strong>温差刺激：</strong>频繁进出空调房，温差刺激可能引发关节不适。
+            </li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">哪些人最容易受影响？</h3>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>已有关节炎的人</li>
+          <li>血液循环不好的人</li>
+          <li>经常穿短袖短裤在空调房的人</li>
+          <li>办公室工作者，每天在空调下超过8小时</li>
+          <li>乐龄人士，关节本身较脆弱</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">空调房关节保护策略</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">1. 温度管理</h4>
+        <div className="bg-green-50 p-4 rounded-lg mt-2">
+          <ul className="text-sm space-y-1">
+            <li>• 空调温度设置在24-26°C</li>
+            <li>• 避免温度低于22°C</li>
+            <li>• 使用风扇配合空调，提高感知温度</li>
+            <li>• 夜间可设置稍高温度或使用定时功能</li>
+          </ul>
+        </div>
+
+        <h4 className="font-semibold mt-4 mb-2">2. 着装保护</h4>
+        <div className="bg-yellow-50 p-4 rounded-lg mt-2">
+          <ul className="text-sm space-y-1">
+            <li>• 办公室准备薄外套或披肩</li>
+            <li>• 穿长裤保护膝盖</li>
+            <li>• 考虑使用护膝或护肘</li>
+            <li>• MRT和巴士上带件外套</li>
+          </ul>
+        </div>
+
+        <h4 className="font-semibold mt-4 mb-2">3. 定时活动</h4>
+        <div className="bg-purple-50 p-4 rounded-lg mt-2">
+          <ul className="text-sm space-y-1">
+            <li>• 每小时起身活动5分钟</li>
+            <li>• 做简单的关节活动操</li>
+            <li>• 转动颈部、耸肩、活动手腕</li>
+            <li>• 如果可能，到户外走动，让身体暖和</li>
+          </ul>
+        </div>
+
+        <h4 className="font-semibold mt-4 mb-2">4. 空调出风口管理</h4>
+        <div className="bg-orange-50 p-4 rounded-lg mt-2">
+          <ul className="text-sm space-y-1">
+            <li>• 调整出风口方向，避免直吹关节</li>
+            <li>• 如果座位在出风口下方，考虑换位置</li>
+            <li>• 家里可以安装导风板</li>
+            <li>• 睡觉时关闭正对床的出风口</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">进出空调房的保护</h3>
+        <p>
+          频繁进出空调房，温差可能高达10°C以上。这种温差刺激对关节是很大的负担。
+        </p>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">进出空调房的建议：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>进入空调房前：</strong>喷上没药喷雾，让关节先暖起来</li>
+            <li>• <strong>刚进入时：</strong>在门口停留片刻，让身体适应</li>
+            <li>• <strong>准备离开前：</strong>收好外套，准备迎接户外高温</li>
+            <li>• <strong>离开后：</strong>避免立即进入另一个空调房</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">HerbalBath空调关节护理方案</h3>
+        <p>
+          没药喷雾的温热感特别适合对抗空调带来的寒凉：
+        </p>
+
+        <div className="bg-gray-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">办公室使用：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 早上到达办公室后使用</li>
+            <li>• 午休后使用</li>
+            <li>• 感觉关节冷或僵硬时使用</li>
+            <li>• 下班前使用，为回家做准备</li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">居家使用：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 睡前使用，确保关节温暖入睡</li>
+            <li>• 早晨起床前使用，缓解晨僵</li>
+            <li>• 长时间看电视后使用</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">空调与睡眠</h3>
+        <p>
+          许多新加坡人习惯开着空调睡觉。虽然凉爽的环境有助于睡眠，但也需要保护关节：
+        </p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>空调温度设置在25-26°C</li>
+          <li>使用薄被盖住肩膀和膝盖</li>
+          <li>考虑使用定时功能，后半夜关闭</li>
+          <li>睡前在关节部位使用没药喷雾</li>
+          <li>如果半夜醒来感觉冷，及时调整温度</li>
+        </ul>
+
+        <p className="mt-8 font-semibold text-lg">
+          在新加坡，完全避免空调是不现实的。但通过正确的防护措施、适当的着装、定时活动和使用天然护理产品，您可以享受空调带来的凉爽，同时保护您的关节健康。记住，预防胜于治疗，今天的保护是为了明天的健康。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "grandparent-grandchild-activities",
+    title: "带孙乐：如何在照顾孙子时保护您的关节",
+    description:
+      "照顾孙子是许多乐龄人士的日常，但抱孩子、追孩子可能伤害关节。学习如何在享受天伦之乐的同时保护自己。",
+    image: "/grandparent-activities.png",
+    author: "HerbalBath 健康专家",
+    date: "2024-09-01",
+    content: (
+      <>
+        <p className="lead">
+          在新加坡，许多乐龄人士都承担着照顾孙子的重任。抱孙子、追着孩子跑、蹲下陪玩——这些都是幸福的时刻，但也可能对关节造成负担。如何在享受天伦之乐的同时保护好自己的身体？
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">照顾孙子对关节的常见挑战</h3>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">高风险动作：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>长时间抱孩子：</strong>手臂、肩膀、腰部负担</li>
+            <li>• <strong>弯腰捡玩具：</strong>腰椎压力</li>
+            <li>• <strong>蹲下陪玩：</strong>膝盖压力</li>
+            <li>• <strong>追着跑：</strong>膝盖和脚踝冲击</li>
+            <li>• <strong>抱起放下：</strong>腰部扭转风险</li>
+            <li>• <strong>推婴儿车：</strong>手腕和肩膀疲劳</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">安全抱孩子的技巧</h3>
+
+        <div className="bg-blue-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">正确的抱姿：</h4>
+          <ol className="text-sm space-y-2 list-decimal list-inside">
+            <li>蹲下到孩子的高度，而不是弯腰</li>
+            <li>让孩子靠近您的身体</li>
+            <li>用腿部力量站起来</li>
+            <li>孩子的重量分散在两只手臂</li>
+            <li>避免用单手抱太久</li>
+            <li>定时换手或放下休息</li>
+          </ol>
+        </div>
+
+        <div className="bg-green-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">放下孩子时：</h4>
+          <ol className="text-sm space-y-2 list-decimal list-inside">
+            <li>蹲下而不是弯腰</li>
+            <li>保持背部直立</li>
+            <li>慢慢放下，不要突然</li>
+            <li>站起来时用腿部发力</li>
+          </ol>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">陪玩时的关节保护</h3>
+
+        <h4 className="font-semibold mt-4 mb-2">地面活动：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>使用坐垫或瑜伽垫</li>
+          <li>选择坐着而不是蹲着</li>
+          <li>定时站起来活动</li>
+          <li>让孩子到您的高度来，而不是您蹲下去</li>
+        </ul>
+
+        <h4 className="font-semibold mt-4 mb-2">户外活动：</h4>
+        <ul className="list-disc list-inside space-y-2 ml-4">
+          <li>选择平坦的场地</li>
+          <li>穿着有支撑的鞋子</li>
+          <li>让孩子跑，您慢走跟着</li>
+          <li>使用推车代替长时间抱</li>
+          <li>找有椅子的地方休息</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">照顾孙子前后的护理</h3>
+
+        <div className="bg-yellow-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">开始前：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 在容易疲劳的关节喷上没药喷雾</li>
+            <li>• 做5分钟简单伸展</li>
+            <li>• 准备好坐垫、护膝等辅助工具</li>
+            <li>• 确保穿着舒适的鞋子</li>
+          </ul>
+        </div>
+
+        <div className="bg-purple-50 p-4 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">结束后：</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 在酸痛部位使用没药喷雾</li>
+            <li>• 做放松拉伸</li>
+            <li>• 如果可能，热水泡脚</li>
+            <li>• 好好休息</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">适合祖孙一起做的温和活动</h3>
+        <p>选择对关节友好的活动，让您和孙子都能享受：</p>
+
+        <div className="bg-orange-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">推荐活动：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>阅读故事：</strong>坐着进行，对关节没有压力</li>
+            <li>• <strong>拼图和积木：</strong>在桌子上进行，不用蹲下</li>
+            <li>• <strong>画画和手工：</strong>坐着创作，锻炼手指灵活性</li>
+            <li>• <strong>唱歌和音乐：</strong>坐着进行，愉悦心情</li>
+            <li>• <strong>散步：</strong>让孩子走或坐推车，您悠闲地走</li>
+            <li>• <strong>园艺：</strong>使用升高的花盆，避免弯腰</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">与家人沟通</h3>
+        <p>照顾孙子是全家人的事，不要一个人扛：</p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>告诉子女您的身体状况和限制</li>
+          <li>商量合理的照顾时间和强度</li>
+          <li>请求帮助做重体力活动</li>
+          <li>保留自己休息和运动的时间</li>
+          <li>必要时聘请帮手分担</li>
+        </ul>
+
+        <p className="mt-8 font-semibold text-lg">
+          照顾孙子是幸福的天伦之乐，但不应该以牺牲自己的健康为代价。通过正确的姿势、适当的护理和合理的安排，您可以在享受与孙子共处时光的同时，保护好自己的关节。记住，只有自己健康，才能更长久地陪伴孙子成长。
         </p>
       </>
     ),
