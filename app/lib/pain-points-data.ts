@@ -21,8 +21,8 @@ export const painPointsData: PainPoint[] = [
     slug: 'knee-pain',
     titleZh: '膝盖疼痛 | 新加坡乐龄膝关节护理专家',
     titleEn: 'Knee Pain Relief Singapore | Natural Herbal Treatment for Seniors',
-    descriptionZh: '新加坡乐龄人士膝盖疼痛的天然解决方案。HerbalBath没药喷雾帮助15,000+用户缓解膝盖痛，爬楼梯更轻松。免费咨询9460 6058。',
-    descriptionEn: 'Natural knee pain relief for Singapore seniors. HerbalBath Myrrh Spray helps 15,000+ users relieve knee pain. Climb HDB stairs easier. Free consultation 9460 6058.',
+    descriptionZh: '新加坡乐龄人士膝盖疼痛的天然解决方案。HerbalBath没药喷雾帮助15,000+用户缓解膝盖痛，爬楼梯更轻松。免费咨询8426 1225。',
+    descriptionEn: 'Natural knee pain relief for Singapore seniors. HerbalBath Myrrh Spray helps 15,000+ users relieve knee pain. Climb HDB stairs easier. Free consultation 8426 1225.',
     keywords: [
       '膝盖疼痛', '膝盖痛', 'knee pain singapore', 'knee pain relief', 'herbalbath', 
       'herbal bath singapore', 'herbal bath sg', '膝关节炎', 'knee arthritis treatment',
@@ -94,7 +94,7 @@ export const painPointsData: PainPoint[] = [
 
 ✅ **8年品牌历史** - 新加坡本土品牌，了解本地需求
 ✅ **15,000+满意用户** - 口碑推荐，好评如潮
-✅ **免费咨询服务** - WhatsApp 9460 6058 随时答疑
+✅ **免费咨询服务** - WhatsApp 8426 1225 随时答疑
 ✅ **100%满意保证** - 无效退款，零风险尝试
     `,
     contentEn: `
@@ -161,7 +161,7 @@ Our Myrrh Spray uses ancient myrrh and frankincense formula, optimized for Singa
 
 ✅ **8 years brand history** - Local Singapore brand, understands local needs
 ✅ **15,000+ satisfied users** - Word-of-mouth recommendations
-✅ **Free consultation** - WhatsApp 9460 6058 anytime
+✅ **Free consultation** - WhatsApp 8426 1225 anytime
 ✅ **100% satisfaction guarantee** - Money back if not satisfied
     `,
     relatedBlogSlugs: ['knee-pain-relief-singapore', 'anti-inflammatory-diet-guide', 'gentle-exercises-for-seniors', 'hdb-stair-climbing-knee-protection'],
@@ -1496,7 +1496,7 @@ The small bottle design of Myrrh Spray is perfect for finger care:
 - 天气热但需要走动
 
 **鞋子问题：**
-- 拖鞋虽凉但缺乏支撑
+- 拖鞋��凉但缺乏支撑
 - 便宜鞋子质量差
 - 很少穿适合的运动鞋
 - 鞋子磨损后仍继续穿
@@ -1638,7 +1638,7 @@ Myrrh Spray effectively soothes foot discomfort:
 **抽筋后护理：**
 1. 继续轻柔按摩
 2. 使用没药喷雾缓解残留酸痛
-3. 喝一杯温水补充水分
+3. 喝一杯温水��充水分
 4. 做几分钟轻柔拉伸
 
 ### HerbalBath抽筋预防方案
@@ -2037,7 +2037,7 @@ Myrrh Spray can help relieve sciatica-related discomfort:
 **生活因素：**
 - 久坐办公室工作
 - 缺乏运动
-- 水分摄入不足
+- 水分摄入���足
 - 压力大睡眠差
 
 ### 痛风发作时的处理
@@ -2054,7 +2054,7 @@ Myrrh Spray can help relieve sciatica-related discomfort:
 **HerbalBath辅助护理：**
 - 在非发作期使用
 - 帮助促进血液循环
-- 缓解残留不适
+- 缓��残留不适
 - 日常关节保养
 
 ### 预防痛风发作

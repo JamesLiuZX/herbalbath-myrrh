@@ -77,14 +77,14 @@ export default function BlogPage() {
             </nav>
             <div className="flex items-center gap-3">
               <a
-                href="tel:+6594606058"
+                href="tel:+6584261225"
                 className="hidden md:flex items-center gap-2 text-lg font-medium hover:text-emerald-200 transition-colors"
               >
                 <Phone className="h-5 w-5" />
-                <span>9460 6058</span>
+                <span>8426 1225</span>
               </a>
               <a
-                href="https://wa.me/6594606058"
+                href="https://wa.me/6584261225"
                 className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-base font-medium transition-colors"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -239,7 +239,7 @@ export default function BlogPage() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href="https://wa.me/6594606058"
+                href="https://wa.me/6584261225"
                 className="inline-flex items-center justify-center gap-2 border-2 border-emerald-700 text-emerald-700 hover:bg-emerald-50 text-lg px-8 py-4 rounded-xl transition-colors font-medium"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -323,14 +323,14 @@ export default function BlogPage() {
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 p-4 md:hidden z-50">
           <div className="flex gap-3">
             <a
-              href="tel:+6594606058"
+              href="tel:+6584261225"
               className="flex-1 flex items-center justify-center gap-2 bg-emerald-700 text-white py-4 rounded-xl text-lg font-medium"
             >
               <Phone className="h-5 w-5" />
               立即拨打
             </a>
             <a
-              href="https://wa.me/6594606058"
+              href="https://wa.me/6584261225"
               className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-4 rounded-xl text-lg font-medium"
             >
               <MessageCircle className="h-5 w-5" />
