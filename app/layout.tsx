@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter, Lora } from "next/font/google"
-import Script from "next/script"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -212,6 +211,18 @@ export default function RootLayout({
   return (
     <html lang="zh" className={`${inter.variable} ${lora.variable}`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF0GB41LM" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8XF0GB41LM');
+            `,
+          }}
+        />
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -241,19 +252,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Toaster />
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-8XF0GB41LM"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-8XF0GB41LM');
-          `}
-        </Script>
       </body>
     </html>
   )
