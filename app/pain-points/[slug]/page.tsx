@@ -103,15 +103,15 @@ export default async function PainPointPage({ params }: PageProps) {
             </Link>
             <div className="flex items-center gap-4">
               <a
-                href="tel:+6588930000"
+                href="tel:+6584261225"
                 className="hidden md:flex items-center gap-2 text-lg font-medium hover:text-emerald-200 transition-colors"
               >
                 <Phone className="h-5 w-5" />
-                <span>8893 0XXX</span>
+                <span>8426 1225</span>
               </a>
               <a
-                href="https://wa.me/6588930000"
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-base font-medium transition-colors"
+                    href="https://wa.me/6584261225"
+                      className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-base font-medium transition-colors"
               >
                 <MessageCircle className="h-5 w-5" />
                 <span className="hidden sm:inline">WhatsApp</span>
@@ -248,7 +248,7 @@ export default async function PainPointPage({ params }: PageProps) {
                     variant="outline"
                     className="border-white text-white hover:bg-emerald-600 text-lg px-8 py-6 h-auto"
                   >
-                    <a href="https://wa.me/6588930000">
+                    <a href="https://wa.me/6584261225">
                       <MessageCircle className="h-5 w-5 mr-2" />
                       WhatsApp 下单
                     </a>
@@ -367,14 +367,14 @@ export default async function PainPointPage({ params }: PageProps) {
                   </p>
                   <div className="space-y-3">
                     <a
-                      href="tel:+6588930000"
+                      href="tel:+6584261225"
                       className="flex items-center justify-center gap-2 w-full bg-emerald-700 text-white py-3 rounded-lg hover:bg-emerald-800 transition-colors font-medium"
                     >
                       <Phone className="h-5 w-5" />
                       立即拨打
                     </a>
                     <a
-                      href="https://wa.me/6588930000"
+                      href="https://wa.me/6584261225"
                       className="flex items-center justify-center gap-2 w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
                     >
                       <MessageCircle className="h-5 w-5" />
@@ -401,14 +401,14 @@ export default async function PainPointPage({ params }: PageProps) {
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 p-4 md:hidden z-50">
           <div className="flex gap-3">
             <a
-              href="tel:+6588930000"
+              href="tel:+6584261225"
               className="flex-1 flex items-center justify-center gap-2 bg-emerald-700 text-white py-4 rounded-xl text-lg font-medium"
             >
               <Phone className="h-5 w-5" />
               立即拨打
             </a>
             <a
-              href="https://wa.me/6588930000"
+              href="https://wa.me/6584261225"
               className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-4 rounded-xl text-lg font-medium"
             >
               <MessageCircle className="h-5 w-5" />

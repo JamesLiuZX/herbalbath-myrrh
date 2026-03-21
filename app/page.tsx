@@ -282,7 +282,7 @@ function HomePageContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = content[language]
 
-  const whatsappNumber = "+6594606058"
+  const whatsappNumber = "+6584261225"
   const baseWhatsappMessage = "Hi! I'm interested in the HerbalBath Myrrh Spray and would like to order."
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
@@ -870,7 +870,7 @@ function HomePageContent() {
               </p>
               <div className="flex items-center gap-2 text-emerald-700 font-medium">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+6594606058" className="hover:underline">9460 6058</a>
+                <a href="tel:+6584261225" className="hover:underline">8426 1225</a>
               </div>
             </div>
 
