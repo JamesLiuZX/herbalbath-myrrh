@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { CheckCircle, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -45,6 +46,15 @@ export default function ThankYouPage() {
             <Button asChild variant="outline" className="w-full h-12">
               <Link href="/">Back to Home</Link>
             </Button>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-border">
+            <p className="text-xs text-muted-foreground mb-3">
+              One bottle lasts about 3 months. Want us to remind you?
+              <br />
+              一瓶大约可用3个月，需要我们提醒您补货吗？
+            </p>
+            <ReorderReminderButton className="w-full" />
           </div>
         </div>
       </main>
