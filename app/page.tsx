@@ -9,6 +9,10 @@ import { useReferral } from "@/app/hooks/useReferral"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { testimonialImages } from "@/app/lib/testimonial-data" // Import from the new data file
 import { FAQSection } from "@/components/faq-section"
+import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
+import { BundleSelector } from "@/components/bundle-selector"
+import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
+import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import Link from "next/link"
 
 const useLanguage = () => {
@@ -120,8 +124,8 @@ const content = {
     },
     product_cta: {
       title: "限时特惠 - 立即订购",
-      price: "$38",
-      original_price: "$58",
+      price: "S$39",
+      original_price: "S$49",
       offer: "买3送1 + 免费送货",
       cta: "WhatsApp咨询",
       phone_cta: "电话订购",
@@ -255,8 +259,8 @@ const content = {
     },
     product_cta: {
       title: "Limited Time Offer - Order Now",
-      price: "$38",
-      original_price: "$58",
+      price: "S$39",
+      original_price: "S$49",
       offer: "Buy 3 Get 1 Free + Free Delivery",
       cta: "WhatsApp Order",
       phone_cta: "Call to Order",
@@ -280,6 +284,7 @@ const content = {
 function HomePageContent() {
   const { language, setLanguage } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null)
   const t = content[language]
 
   const whatsappNumber = "+6584261225"
@@ -308,7 +313,7 @@ function HomePageContent() {
   )
 
   return (
-    <div className="min-h-screen bg-background font-sans">
+    <div className="min-h-screen bg-background font-sans pb-20 md:pb-0">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
         <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 max-w-7xl">
@@ -511,7 +516,10 @@ function HomePageContent() {
             <div className="px-3 sm:px-4">
               <TestimonialsCarousel
                 screenshots={testimonialImages}
-                videoPlaceholder={t.testimonials_section.video_placeholder}
+                videoPlaceholder={{
+                  title: t.testimonials_section.video_placeholder.title,
+                  comingSoon: t.testimonials_section.video_placeholder.coming_soon,
+                }}
                 showViewAllButton={true}
               />
             </div>
@@ -676,6 +684,9 @@ function HomePageContent() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
                   {t.product_cta.title}
                 </h2>
+                <div className="mb-4">
+                  <MonthlyOfferCountdown language={language} />
+                </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-green-600">
                     {t.product_cta.price}
@@ -687,6 +698,13 @@ function HomePageContent() {
                     <div className="text-red-600 font-bold text-sm md:text-base">{t.product_cta.offer}</div>
                   </div>
                 </div>
+              </div>
+
+              <div className="max-w-2xl mx-auto mb-6 sm:mb-8">
+                <p className="text-center text-sm sm:text-base font-medium text-gray-700 mb-3">
+                  {language === "zh" ? "选择您的套餐" : "Choose your package"}
+                </p>
+                <BundleSelector language={language} onSelect={setSelectedPackage} />
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
@@ -701,13 +719,22 @@ function HomePageContent() {
                       {t.product_cta.guarantee}
                     </p>
                   </div>
+                  <ReorderReminderButton language={language} className="mt-2" />
                 </div>
 
                 <div className="flex flex-col gap-3 sm:gap-4">
                   <Button
                     size="lg"
                     className="bg-green-600 hover:bg-green-700 text-sm sm:text-base md:text-lg h-12 sm:h-14 w-full font-semibold"
-                    onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+                    onClick={() =>
+                      window.open(
+                        getWhatsAppLink(
+                          whatsappNumber,
+                          selectedPackage ? `(${language === "zh" ? "套餐" : "Package"}: ${selectedPackage})` : undefined,
+                        ),
+                        "_blank",
+                      )
+                    }
                   >
                     <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                     {t.product_cta.cta}
@@ -997,16 +1024,22 @@ function HomePageContent() {
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 z-50">
+      {/* Floating WhatsApp Button - desktop only; mobile uses the sticky call+WhatsApp bar below */}
+      <div className="hidden md:block fixed bottom-4 right-4 z-50">
         <Button
           size="icon"
-          className="rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
+          className="rounded-full w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 shadow-2xl animate-pulse-green"
           onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
         >
-          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+          <MessageCircle className="w-7 h-7 md:w-8 md:h-8" />
         </Button>
       </div>
+
+      <StickyMobileCTA
+        onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+        whatsappLabel={t.hero.whatsapp_cta}
+        callLabel={language === "zh" ? "立即拨打" : "Call Now"}
+      />
     </div>
   )
 }

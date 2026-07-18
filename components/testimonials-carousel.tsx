@@ -54,7 +54,7 @@ export function TestimonialsCarousel({
             onClick={() => window.open("/testimonials", "_blank")}
           >
             <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            <span className="hidden xs:inline">查看全部见证 (50+ 图片 + 视频)</span>
+            <span className="hidden xs:inline">查看全部见证 ({screenshots.length}+ 张图片 + 视频)</span>
             <span className="xs:hidden">查看全部见证</span>
           </Button>
         </div>

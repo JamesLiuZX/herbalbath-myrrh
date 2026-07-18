@@ -8,6 +8,7 @@ import { ArrowLeft, Play, MessageCircle, Star, Users, Clock, Award, Filter, Grid
 import { Badge } from "@/components/ui/badge"
 import { useReferral } from "@/app/hooks/useReferral"
 import { testimonialImages } from "@/app/lib/testimonial-data"
+import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
 
 const videoTestimonials = [
   {
@@ -61,7 +62,7 @@ function TestimonialsPageContent() {
   const filteredTestimonials = getFilteredTestimonials()
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 md:pb-0">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
         <div className="container mx-auto px-4 py-4 max-w-7xl">
@@ -327,7 +328,7 @@ function TestimonialsPageContent() {
                   立即体验 - WhatsApp咨询
                 </Button>
                 <div className="flex flex-col sm:flex-row gap-2 text-sm opacity-90">
-                  <span>💰 $38 (原价$58)</span>
+                  <span>💰 S$39 (原价S$49)</span>
                   <span>🚚 免费送货</span>
                   <span>📞 买3送1</span>
                 </div>
@@ -337,6 +338,8 @@ function TestimonialsPageContent() {
           </Card>
         </section>
       </main>
+
+      <StickyMobileCTA onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")} />
     </div>
   )
 }

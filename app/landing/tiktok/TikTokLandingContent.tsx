@@ -48,7 +48,7 @@ export default function TikTokLandingContent() {
                 <MessageCircle className="w-6 h-6 mr-2" />
                 立即 WhatsApp 订购
               </Button>
-              <p className="text-sm text-gray-500">💰 特价 S$28.90 | 🚚 当日送达</p>
+              <p className="text-sm text-gray-500">💰 特价 S$39 | 🚚 当日送达</p>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function TikTokLandingContent() {
 
             <div className="mt-8 p-6 bg-red-100 rounded-lg text-center">
               <p className="text-2xl font-bold text-red-800 mb-2">体验几千年来最神奇的治愈力量</p>
-              <p className="text-red-700">TikTok 特价：S$28.90 (原价 S$35.90)</p>
+              <p className="text-red-700">TikTok 特价：S$39 (原价 S$49)</p>
             </div>
 
             <div className="mt-8 text-center">

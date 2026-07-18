@@ -2,22 +2,26 @@
 
 import { Badge } from "@/components/ui/badge"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Copy, MessageCircle, Share2, Award, DollarSign, Users } from "lucide-react"
+import { Copy, MessageCircle, Share2, Award, DollarSign, Users, TrendingUp } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { useReferral } from "@/app/hooks/useReferral"
+import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
+import { getReferralStats, type ReferralStats } from "@/app/actions/trackReferral"
 
-export default function PartnerPage() {
+function PartnerPageContent() {
   const [partnerId, setPartnerId] = useState("")
   const [generatedLink, setGeneratedLink] = useState("")
+  const [stats, setStats] = useState<ReferralStats | null>(null)
   const { toast } = useToast()
   const whatsappNumber = "+6584261225"
-  const partnerInquiryMessage = encodeURIComponent("Hi! I'm interested in becoming a partner for HerbalBath SG.")
+  const { getWhatsAppLink } = useReferral("Hi! I'm interested in becoming a partner for HerbalBath SG.")
 
-  const handleGenerateLink = () => {
+  const handleGenerateLink = async () => {
     if (!partnerId.trim()) {
       toast({
         title: "Error",
@@ -28,6 +32,7 @@ export default function PartnerPage() {
     }
     const link = `${window.location.origin}/?ref=${encodeURIComponent(partnerId.trim())}`
     setGeneratedLink(link)
+    setStats(await getReferralStats(partnerId.trim()))
   }
 
   const handleCopyLink = () => {
@@ -40,7 +45,7 @@ export default function PartnerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-20 md:pb-0">
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <a href="/" className="text-2xl font-bold text-red-700">
@@ -114,6 +119,19 @@ export default function PartnerPage() {
                     <Copy className="h-5 w-5" />
                   </Button>
                 </div>
+                {stats?.configured ? (
+                  <div className="flex items-center gap-2 text-sm text-gray-700 bg-white rounded-md px-3 py-2 border">
+                    <TrendingUp className="h-4 w-4 text-green-600 flex-shrink-0" />
+                    <span>
+                      Tracked clicks so far: <strong>{stats.totalClicks}</strong>
+                    </span>
+                  </div>
+                ) : (
+                  <p className="text-xs text-gray-500">
+                    Click tracking connects once a Redis store is set up for this project — ask the
+                    team if you'd like live referral counts here.
+                  </p>
+                )}
               </div>
             )}
           </CardContent>
@@ -127,12 +145,31 @@ export default function PartnerPage() {
           <Button
             size="lg"
             className="bg-green-600 hover:bg-green-700 text-lg"
-            onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${partnerInquiryMessage}`, "_blank")}
+            onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
           >
             <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp Us
           </Button>
         </div>
       </main>
+
+      <StickyMobileCTA onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")} callLabel="Call Now" />
     </div>
+  )
+}
+
+export default function PartnerPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading...</p>
+          </div>
+        </div>
+      }
+    >
+      <PartnerPageContent />
+    </Suspense>
   )
 }

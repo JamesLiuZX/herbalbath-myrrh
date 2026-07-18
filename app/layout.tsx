@@ -90,9 +90,9 @@ export const metadata: Metadata = {
       "en-SG": BASE_URL,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification
-  },
+  // TODO: Verify this domain in Google Search Console (search.google.com/search-console),
+  // then add the verification code here, e.g.:
+  // verification: { google: "abc123..." },
 }
 
 export const viewport: Viewport = {
@@ -115,7 +115,7 @@ const localBusinessSchema = {
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo.png`,
   image: `${BASE_URL}/images/product-hero.png`,
-  telephone: "+65 8893 0ستقم", // Replace with actual number
+  telephone: "+65 8426 1225",
   email: "hello@herbalbathsg.com",
   address: {
     "@type": "PostalAddress",
@@ -141,7 +141,7 @@ const localBusinessSchema = {
   sameAs: [
     "https://www.facebook.com/herbalbathsg",
     "https://www.tiktok.com/@herbalbathsg",
-    "https://wa.me/6588930XXX", // Replace with actual WhatsApp
+    "https://wa.me/6584261225",
   ],
 }
 
@@ -159,6 +159,7 @@ const productSchema = {
   offers: {
     "@type": "Offer",
     url: BASE_URL,
+    price: "39",
     priceCurrency: "SGD",
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
@@ -173,6 +174,23 @@ const productSchema = {
     reviewCount: "15000",
     bestRating: "5",
     worstRating: "1",
+  },
+  // Mirrors the testimonial already published in the on-page copy
+  // (see product_cta/benefits section) — structured data should describe
+  // real, existing content, not invented quotes.
+  review: {
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+    author: {
+      "@type": "Person",
+      name: "陈女士 (Mdm. Tan)",
+    },
+    reviewBody:
+      "用了三周，僵硬的肩膀松了很多，抬手很轻松。那种热感真的很神奇，比虎标万金油强太多了！ (After three weeks, my stiff shoulder loosened so much. The heat sensation is amazing - much stronger than Tiger Balm!)",
   },
 }
 
@@ -203,6 +221,15 @@ const websiteSchema = {
   },
 }
 
+// Ad platform pixels are opt-in via env vars so the site never ships a broken
+// or empty pixel call. Set these in Vercel (Project Settings > Environment
+// Variables) once you have real IDs from Meta Events Manager / TikTok Ads
+// Manager:
+//   NEXT_PUBLIC_META_PIXEL_ID=1234567890
+//   NEXT_PUBLIC_TIKTOK_PIXEL_ID=ABCDEFG
+const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID
+const tiktokPixelId = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID
+
 export default function RootLayout({
   children,
 }: {
@@ -223,6 +250,36 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Meta (Facebook) Pixel - only loads once NEXT_PUBLIC_META_PIXEL_ID is set */}
+        {metaPixelId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '${metaPixelId}');
+                fbq('track', 'PageView');
+              `,
+            }}
+          />
+        )}
+        {/* TikTok Pixel - only loads once NEXT_PUBLIC_TIKTOK_PIXEL_ID is set */}
+        {tiktokPixelId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function (w, d, t) {
+                  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+                  ttq.load('${tiktokPixelId}');
+                  ttq.page();
+                }(window, document, 'ttq');
+              `,
+            }}
+          />
+        )}
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"

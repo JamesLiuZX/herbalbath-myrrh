@@ -165,7 +165,7 @@ export default function FacebookLandingContent() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Facebook 独家体验价</h2>
             <p className="text-xl mb-6">体验几千年来最神奇的治愈力量！</p>
-            <p className="text-lg mb-8">原价 S$35.90，现在只需 S$28.90</p>
+            <p className="text-lg mb-8">原价 S$49，现在只需 S$39</p>
             <p className="text-lg mb-8">限时优惠，数量有限，先到先得！</p>
 
             <Button
