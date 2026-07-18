@@ -31,9 +31,9 @@ const relatedPostsMap: Record<string, string[]> = {
     "better-sleep-with-chronic-pain",
   ],
   "office-neck-shoulder-pain": [
+    "back-pain-prevention",
     "improve-blood-circulation-naturally",
-    "better-sleep-with-chronic-pain",
-    "gentle-exercises-for-seniors",
+    "posture-correction-seniors",
   ],
   "tcm-vs-western-pain-relief": [
     "myrrh-frankincense-miracle-herbs",
@@ -49,6 +49,31 @@ const relatedPostsMap: Record<string, string[]> = {
     "knee-pain-relief-singapore",
     "improve-blood-circulation-naturally",
     "better-sleep-with-chronic-pain",
+  ],
+  "gout-diet-singapore": [
+    "anti-inflammatory-diet-guide",
+    "understanding-rheumatism",
+    "natural-remedies-vs-painkillers",
+  ],
+  "back-pain-prevention": [
+    "office-neck-shoulder-pain",
+    "improve-blood-circulation-naturally",
+    "posture-correction-seniors",
+  ],
+  "post-surgery-rehabilitation-tips": [
+    "home-safety-seniors",
+    "gentle-exercises-for-seniors",
+    "walking-tips-seniors",
+  ],
+  "home-safety-seniors": [
+    "post-surgery-rehabilitation-tips",
+    "air-con-joint-pain-singapore",
+    "walking-tips-seniors",
+  ],
+  "understanding-rheumatism": [
+    "gout-diet-singapore",
+    "monsoon-joint-care-guide",
+    "anti-inflammatory-diet-guide",
   ],
 }
 

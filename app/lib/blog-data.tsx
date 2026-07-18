@@ -2036,4 +2036,265 @@ export const posts: Post[] = [
       </>
     ),
   },
+  {
+    slug: "gout-diet-singapore",
+    title: "痛风饮食新加坡指南：远离尿酸飙升的美食陷阱",
+    description:
+      "新加坡是美食天堂，也是痛风高发地。海鲜、火锅、啤酒都是尿酸飙升的隐形陷阱。本文教您如何在享受本地美食的同时，聪明管理痛风风险。",
+    image: "/placeholder.svg?height=400&width=600&query=gout diet singapore seafood hotpot healthy alternative",
+    author: "HerbalBath 营养师",
+    date: "2024-09-05",
+    content: (
+      <>
+        <p className="lead">
+          痛风曾被称为"帝王病"，但在新加坡，它早已不是有钱人的专利。随着生活水平提高、饮食习惯改变，痛风已经成为本地非常普遍的健康问题——而这很大程度上与我们钟爱的美食文化息息相关。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡人为什么容易痛风？</h3>
+        <p>
+          痛风是血液中尿酸过高，导致尿酸结晶沉积在关节中引起的疾病。新加坡的饮食与生活方式，恰好踩中了几个高风险点：
+        </p>
+        <div className="bg-red-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">本地饮食风险因素：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>海鲜文化：</strong>虾、蟹、贝类是嘌呤大户，也是本地餐桌常客</li>
+            <li>• <strong>火锅与烧烤：</strong>汤底久煮，嘌呤浓度随时间飙升</li>
+            <li>• <strong>动物内脏美食：</strong>猪腰、鸡肝等传统美食嘌呤含量极高</li>
+            <li>• <strong>含糖饮料：</strong>Teh Tarik、汽水等果糖摄入过多会推高尿酸</li>
+            <li>• <strong>久坐少动：</strong>办公室文化加上缺乏运动，加重代谢负担</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">痛风急性发作的信号</h3>
+        <p>认识这些信号，能帮助您及时就医，避免病情拖延：</p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>突然发作，常在夜间把人痛醒</li>
+          <li>疼痛剧烈，难以忍受，甚至碰到床单都痛</li>
+          <li>关节红肿发热，摸上去明显比周围皮肤热</li>
+          <li>最常见于大脚趾，也可能出现在脚踝、膝盖</li>
+          <li>若不处理，可能持续几天到几周</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">本地美食这样吃，风险更低</h3>
+        <div className="bg-green-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">吃货的痛风友善小技巧：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 吃火锅时少喝汤底——嘌呤大多溶在汤里，不在肉里</li>
+            <li>• 海鲜适量享用，避免整餐都是虾蟹贝类</li>
+            <li>• 啤酒和含糖饮料换成水或无糖绿茶</li>
+            <li>• 每天喝8-10杯水，帮助身体排出多余尿酸</li>
+            <li>• 选择清蒸、白灼等少油做法，取代重口味炒炸</li>
+            <li>• 多吃蔬菜水果和全谷类，帮助整体代谢平衡</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">急性发作期：医疗优先</h3>
+        <p>
+          需要特别提醒的是：痛风急性发作时，第一要务是就医并遵医嘱服药，抬高患肢、避免触碰患处、多喝水辅助排酸。HerbalBath没药喷雾更适合用在<strong>非发作期</strong>的日常关节保养——帮助促进血液循环，缓解发作后残留的僵硬不适，而不能替代急性期的药物治疗。
+        </p>
+
+        <p className="mt-8 font-semibold text-lg">
+          痛风管理是一场"饮食+生活习惯"的持久战，而不是一次性的忌口。了解哪些本地美食是高风险陷阱、学会聪明的替代吃法，再配合规律作息与充足水分，您依然可以放心享受新加坡的美食天堂，同时把尿酸控制在健康范围内。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "back-pain-prevention",
+    title: "腰背痛预防指南：新加坡打工族与乐龄人士必读",
+    description:
+      "久坐办公、组屋沙发支撑不足、抱孙姿势不当——新加坡人腰背痛的成因五花八门。掌握这些预防技巧，从源头减少腰背痛困扰。",
+    image: "/placeholder.svg?height=400&width=600&query=back pain prevention office ergonomic singapore",
+    author: "HerbalBath 物理治疗顾问",
+    date: "2024-09-08",
+    content: (
+      <>
+        <p className="lead">
+          据统计，约80%的成年人一生中会经历至少一次严重的腰背疼痛，而新加坡55岁以上人群更是腰背痛的高发群体。好消息是，大部分腰背痛都可以通过日常习惯的调整来预防。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡人腰背痛的三大成因</h3>
+        <div className="bg-blue-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">成因一：久坐文化</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 办公室工作长时间坐着，缺乏活动</li>
+            <li>• 看电视、玩手机时姿势不良</li>
+            <li>• 组屋客厅沙发支撑力不足，越坐越塌</li>
+          </ul>
+        </div>
+        <div className="bg-cyan-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">成因二：空调环境</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 冷气直吹腰部，导致肌肉紧张僵硬</li>
+            <li>• 室内外温差大，影响局部血液循环</li>
+            <li>• 长期处于低温环境，加重晨起僵硬感</li>
+          </ul>
+        </div>
+        <div className="bg-orange-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">成因三：日常动作</h4>
+          <ul className="text-sm space-y-1">
+            <li>• 抱孙子时姿势不当，腰部承受额外扭力</li>
+            <li>• 做家务时弯腰过多，缺乏正确发力方式</li>
+            <li>• 床垫软硬不合适，睡醒反而更酸痛</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">腰背痛不只是"痛"：认识不同类型</h3>
+        <p>了解自己属于哪一种，有助于选择正确的处理方式：</p>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li><strong>急性腰痛：</strong>通常由扭伤引起，疼痛剧烈但多在几周内好转</li>
+          <li><strong>慢性腰痛：</strong>持续超过3个月，程度时好时坏，需要长期管理</li>
+          <li><strong>坐骨神经痛：</strong>疼痛从腰部沿大腿后侧放射到小腿，常伴随麻木或刺痛，由神经受压引起</li>
+        </ul>
+
+        <div className="bg-red-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">出现这些信号，请立即就医：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• 症状持续超过6周仍未改善</li>
+            <li>• 出现大小便控制问题</li>
+            <li>• 腿部麻木或无力持续加重</li>
+            <li>• 自我护理数周后完全没有效果</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">三个每天都能做的预防习惯</h3>
+        <ol className="list-decimal list-inside space-y-2 ml-4 mt-4">
+          <li>每坐45-60分钟，起身活动5分钟，让腰部肌肉放松</li>
+          <li>电脑屏幕与视线平齐，椅子加一个腰部支撑垫</li>
+          <li>抱孩子或捡重物时蹲下用腿部发力，而不是弯腰用腰部硬抗</li>
+        </ol>
+
+        <p className="mt-6">
+          游泳是对腰背最友善的运动，其次是核心肌群训练和温和的背部拉伸。睡眠时，仰睡可在膝下垫枕头，侧睡则在双腿间夹枕头，都能有效减轻腰椎压力。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">HerbalBath在日常预防中的角色</h3>
+        <p>
+          没药喷雾的深层渗透配方特别适合腰背日常保养：早晨起床前喷在腰部、办公室久坐后使用、睡前配合热敷，都能借助温和的发热感促进血液循环，帮助放松紧绷的肌肉。
+        </p>
+
+        <p className="mt-8 font-semibold text-lg">
+          腰背痛的预防，关键在于打破"久坐不动、姿势不良"的日常循环。从今天开始，每小时起身活动、调整坐姿、抱重物时蹲下而不弯腰，这些看似微小的改变，长期累积下来就是腰背健康的最大保障。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "post-surgery-rehabilitation-tips",
+    title: "术后康复指南：新加坡乐龄人士膝髋关节置换后的护理",
+    description:
+      "膝关节或髋关节置换手术后，正确的康复期护理和心态调整同样重要。了解术后不同阶段的变化，安心走好康复每一步。",
+    image: "/placeholder.svg?height=400&width=600&query=post surgery knee hip rehabilitation elderly singapore",
+    author: "HerbalBath 健康专家",
+    date: "2024-09-12",
+    content: (
+      <>
+        <p className="lead">
+          随着新加坡人口老化，膝关节和髋关节置换手术已经变得越来越普遍。对许多乐龄人士来说，手术是改善生活品质的重要一步，但手术只是康复旅程的开始——术后的护理和心态调整同样关键。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">认识常见的关节手术</h3>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li><strong>膝关节置换术：</strong>最常见的关节置换手术，适用于严重膝关节炎，康复期通常3-6个月，大多数患者效果良好</li>
+          <li><strong>髋关节置换术：</strong>适用于严重髋关节问题，康复相对较快，但需特别注意防止脱位</li>
+          <li><strong>关节镜手术：</strong>微创手术，用于修复软骨、半月板等较轻问题，恢复速度较快</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">术后康复的三个阶段</h3>
+        <div className="bg-stone-50 p-6 rounded-lg mt-4">
+          <h4 className="font-semibold mb-2">术后1-2周：</h4>
+          <p className="text-sm mb-4">疼痛和肿胀较明显是正常现象，需按时服用止痛药，开始轻柔的活动。</p>
+          <h4 className="font-semibold mb-2">术后2-6周：</h4>
+          <p className="text-sm mb-4">疼痛逐渐减轻，开始正式物理治疗，活动范围逐渐增加，止痛药用量可以减少。</p>
+          <h4 className="font-semibold mb-2">术后6周以后：</h4>
+          <p className="text-sm">大部分疼痛消退，继续康复训练，逐渐恢复日常活动，偶有轻微不适属正常现象。</p>
+        </div>
+
+        <div className="bg-yellow-50 p-6 rounded-lg mt-6">
+          <h4 className="font-bold text-lg mb-3">重要提醒：</h4>
+          <p className="text-sm">
+            术后护理必须遵循医生和物理治疗师的指导。HerbalBath没药喷雾只能作为<strong>辅助护理</strong>，不能替代药物治疗或专业物理治疗。使用时请避免直接喷在伤口上，通常建议在伤口完全愈合（一般术后6-8周后）才在手术部位周围使用，帮助缓解僵硬感、促进局部血液循环。使用前请先咨询您的医疗团队。
+          </p>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">康复期的日常护理建议</h3>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>按时服药，完成每一次物理治疗，定期复诊</li>
+          <li>保持伤口清洁干燥，留意红肿、异常渗液等报告给医生</li>
+          <li>善用拐杖、助行器等辅助器具，降低跌倒风险</li>
+          <li>改善家居安全——移除地面杂物、加装扶手、保持通道畅通</li>
+          <li>穿着舒适、防滑的鞋子，避免赶时间快步走</li>
+        </ul>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">心理调适同样重要</h3>
+        <p>
+          康复需要时间和耐心，进度时快时慢都是正常的。设定合理的期望，多与家人沟通您的需求和感受，寻求他们的陪伴与支持，保持积极的心态——这些都是加速康复的重要因素，和身体护理一样不可忽视。
+        </p>
+
+        <p className="mt-8 font-semibold text-lg">
+          关节手术后的康复是一场需要耐心的持久战，没有捷径可走。遵循专业指导、循序渐进地增加活动量、照顾好自己的身心状态，您终将走过康复期，重新享受行动自由带来的生活品质。
+        </p>
+      </>
+    ),
+  },
+  {
+    slug: "home-safety-seniors",
+    title: "居家安全指南：如何降低乐龄人士跌倒与二次受伤风险",
+    description:
+      "组屋浴室滑、门槛高低差、走廊灯光不足，都是跌倒隐患。特别是术后恢复期或关节不便的乐龄人士，居家安全改造能大大降低风险。",
+    image: "/placeholder.svg?height=400&width=600&query=home safety grab bars elderly hdb flat singapore",
+    author: "HerbalBath 健康专家",
+    date: "2024-09-15",
+    content: (
+      <>
+        <p className="lead">
+          跌倒是新加坡乐龄人士受伤住院的主要原因之一，尤其对术后恢复期、关节不便或手脚容易麻痹的人士来说，一次跌倒可能意味着漫长的二次康复。好消息是，大部分居家跌倒都可以通过简单的安全改造来预防。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">组屋居家安全隐患知多少？</h3>
+        <div className="bg-red-50 p-6 rounded-lg mt-4">
+          <h4 className="font-bold text-lg mb-3">常见的高风险区域：</h4>
+          <ul className="space-y-2 text-sm">
+            <li>• <strong>浴室：</strong>地面湿滑，缺乏扶手，是跌倒发生率最高的区域</li>
+            <li>• <strong>门槛与台阶：</strong>组屋不同房间之间常有高低差，容易绊倒</li>
+            <li>• <strong>走廊与楼梯：</strong>夜间照明不足，视线不清晰</li>
+            <li>• <strong>杂物与电线：</strong>散落在通道上，容易绊脚</li>
+          </ul>
+        </div>
+
+        <p className="mt-4">
+          此外，长期处于空调环境（办公室、商场、巴士全天候冷气）会导致血管收缩、室内外温差造成循环紊乱，容易让手脚感觉麻痹或反应变慢——这也会间接增加跌倒风险，尤其是在起身或转身时。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">浴室安全改造清单</h3>
+        <div className="bg-blue-50 p-6 rounded-lg mt-4">
+          <ul className="space-y-2 text-sm">
+            <li>• 铺设防滑地垫或防滑贴条</li>
+            <li>• 在淋浴区和马桶旁加装扶手</li>
+            <li>• 使用坐式淋浴椅，减少久站的疲劳与风险</li>
+            <li>• 安装小夜灯，方便夜间起身如厕</li>
+            <li>• 移除浴室门槛，或加装明显的警示颜色</li>
+          </ul>
+        </div>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">新加坡乐龄人士的居家安全资源</h3>
+        <p>
+          新加坡建屋发展局（HDB）设有乐龄安居计划（EASE），为符合条件的乐龄住户提供家居适老化设施的安装协助，例如浴室扶手、防滑地砖、无障碍斜坡等。有兴趣的乐龄人士或家人，可以联系HDB或就近的社区中心（Community Club）了解详情与申请方式。
+        </p>
+
+        <h3 className="font-bold mt-6 mb-2 text-xl">术后与关节不便人士的额外建议</h3>
+        <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
+          <li>善用拐杖、助行器，不要因为"怕麻烦"而勉强独自行走</li>
+          <li>避免光脚或穿着过于滑的拖鞋走在瓷砖地面上</li>
+          <li>请家人协助改造高风险区域，定期检查扶手是否松动</li>
+          <li>将没药喷雾等日常护理用品放在触手可及的地方，减少起身走动次数</li>
+          <li>起身或转身时放慢速度，给身体反应的时间</li>
+        </ul>
+
+        <p className="mt-8 font-semibold text-lg">
+          居家安全改造往往只需要不高的成本和一次性的投入，却能大幅降低跌倒和二次受伤的风险。与其等到跌倒后才后悔，现在就花一个下午检查家中的高风险区域，为自己或家中的长辈打造一个更安心的居住环境。
+        </p>
+      </>
+    ),
+  },
 ]
