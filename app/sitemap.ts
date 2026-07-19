@@ -57,21 +57,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  // Landing pages
-  const landingPages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/landing/facebook`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${BASE_URL}/landing/tiktok`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+  // Ad-campaign landing pages (/landing/facebook, /landing/tiktok) are
+  // intentionally excluded here and marked noindex in their own metadata —
+  // they're near-duplicates of the homepage built for paid traffic, and
+  // listing near-duplicate content in the sitemap only dilutes ranking
+  // signals that should consolidate on the homepage.
 
-  return [...staticPages, ...blogPosts, ...painPointPages, ...landingPages]
+  return [...staticPages, ...blogPosts, ...painPointPages]
 }

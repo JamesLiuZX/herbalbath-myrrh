@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       "新加坡15,000+用户信赖。天然没药乳香配方，10秒见效。Singapore's #1 natural pain relief for seniors.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "HerbalBath SG - Natural Herbal Pain Relief",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HerbalBath SG - Natural Herbal Pain Relief",
     description: "Singapore's trusted natural pain relief. 15,000+ satisfied customers.",
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -85,10 +85,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
-    languages: {
-      "zh-SG": BASE_URL,
-      "en-SG": BASE_URL,
-    },
+    // The zh/en toggle is a client-side state switch on a single URL, not two
+    // distinct crawlable pages — hreflang requires each entry to point at its
+    // own unique URL, so claiming zh-SG and en-SG both resolve to BASE_URL is
+    // invalid and Google ignores it. Left unset until (if ever) English gets
+    // its own route; see the audit notes for the tradeoffs of adding one.
   },
   // TODO: Verify this domain in Google Search Console (search.google.com/search-console),
   // then add the verification code here, e.g.:

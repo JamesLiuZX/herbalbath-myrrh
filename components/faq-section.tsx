@@ -156,16 +156,6 @@ export function FAQSection({ language = "zh" }: FAQSectionProps) {
               />
             ))}
           </div>
-
-          {/* Additional SEO Keywords (visually hidden) */}
-          <div className="sr-only">
-            <p>
-              herbalbath, herbal bath singapore, herbalbath sg, herbal bath sg,
-              myrrh spray singapore, natural pain relief, 没药喷雾新加坡,
-              天然止痛喷雾, knee pain relief singapore, back pain elderly,
-              joint pain natural remedy
-            </p>
-          </div>
         </div>
       </section>
     </>

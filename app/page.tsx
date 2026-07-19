@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, Suspense } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame } from "lucide-react"
@@ -15,8 +15,24 @@ import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import Link from "next/link"
 
+// Real customer videos (same source as /testimonials) — previously the
+// homepage carousel only showed a "coming soon" placeholder here even though
+// these two videos already exist and are live on /testimonials.
+const realVideoTestimonials = [
+  { youtubeId: "hkTuQsdXSrQ", title: "客户见证合集 (第一集)" },
+  { youtubeId: "nMsJT527FWY", title: "客户见证合集 (第二集)" },
+]
+
 const useLanguage = () => {
   const [language, setLanguage] = useState<"zh" | "en">("zh")
+
+  // <html lang> was hardcoded to "zh" in the root layout regardless of which
+  // language was actually being displayed — wrong for screen readers and
+  // browser translate prompts whenever a visitor switched to English.
+  useEffect(() => {
+    document.documentElement.lang = language === "zh" ? "zh-SG" : "en-SG"
+  }, [language])
+
   return { language, setLanguage }
 }
 
@@ -463,6 +479,19 @@ function HomePageContent() {
               </div>
             </div>
 
+            {/* Real customer quote — reuses the one authentic testimonial quote
+                already published in the benefits section, rather than a faded
+                testimonial-screenshot background image, which would hurt text
+                contrast/legibility for our 55+ audience and add LCP-critical
+                image weight to the hero. */}
+            <div className="max-w-xl mx-auto mb-6 sm:mb-8 px-4 py-3 sm:py-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-primary/10 shadow-sm">
+              <div className="text-yellow-500 text-xs sm:text-sm mb-1.5">★★★★★</div>
+              <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed">
+                "{t.benefits.testimonial.quote}"
+              </p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-500 mt-1.5">{t.benefits.testimonial.author}</p>
+            </div>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
               <Button
                 size="lg"
@@ -516,6 +545,7 @@ function HomePageContent() {
             <div className="px-3 sm:px-4">
               <TestimonialsCarousel
                 screenshots={testimonialImages}
+                videos={realVideoTestimonials}
                 videoPlaceholder={{
                   title: t.testimonials_section.video_placeholder.title,
                   comingSoon: t.testimonials_section.video_placeholder.coming_soon,
