@@ -65,9 +65,9 @@ export const painPointsData: PainPoint[] = [
 我们的没药喷雾采用古老的没药和乳香配方，专为新加坡气候和乐龄人士需求优化：
 
 **独特优势：**
-- **10秒快速渗透** - 活性成分直达疼痛根源
-- **温和发热感** - 促进血液循环，缓解僵硬
-- **100%天然成分** - 无化学添加，无副作用
+- **10秒快速渗透** - 喷后很快感受到温热
+- **温和发热感** - 帮助放松，缓解僵硬感
+- **100%天然成分** - 无化学添加
 - **方便携带** - 随时随地使用，爬楼梯前喷一喷
 
 ### 日常膝盖护理建议
@@ -132,9 +132,9 @@ Singapore's unique HDB culture means many seniors face daily stair challenges:
 Our Myrrh Spray uses ancient myrrh and frankincense formula, optimized for Singapore's climate and senior needs:
 
 **Unique Benefits:**
-- **10-second fast penetration** - Active ingredients reach pain source directly
-- **Gentle warming sensation** - Promotes blood circulation, relieves stiffness
-- **100% natural ingredients** - No chemicals, no side effects
+- **10-second fast penetration** - Warmth you feel almost immediately
+- **Gentle warming sensation** - Helps you relax and eases stiffness
+- **100% natural ingredients** - No chemical additives
 - **Portable convenience** - Use anytime, spray before climbing stairs
 
 ### Daily Knee Care Tips

@@ -1,175 +1,95 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-
-import { Suspense, useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Copy, MessageCircle, Share2, Award, DollarSign, Users, TrendingUp } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { Card, CardContent } from "@/components/ui/card"
+import { Award, Store, MessageCircle, ArrowRight } from "lucide-react"
 import { useReferral } from "@/app/hooks/useReferral"
 import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
-import { getReferralStats, type ReferralStats } from "@/app/actions/trackReferral"
+import { CONTACT, CAPTAIN, WHOLESALE_TIERS } from "@/app/lib/growth-config"
 
-function PartnerPageContent() {
-  const [partnerId, setPartnerId] = useState("")
-  const [generatedLink, setGeneratedLink] = useState("")
-  const [stats, setStats] = useState<ReferralStats | null>(null)
-  const { toast } = useToast()
-  const whatsappNumber = "+6584261225"
-  const { getWhatsAppLink } = useReferral("Hi! I'm interested in becoming a partner for HerbalBath SG.")
+// This page used to be the referral program itself: it minted a
+// `?ref=<name>` URL and asked the partner to copy it to their clipboard.
+// That flow assumed someone comfortable selecting text, switching apps and
+// pasting — which is not the person actually doing the referring here, and
+// when any step failed it failed silently. It has been split into the two
+// motions that really exist:
+//
+//   /kit   — individuals (代理 / captains). Code + forwardable image.
+//   /trade — businesses. Wholesale ladder + trade enquiry.
+//
+// Keeping /partner as the fork preserves any printed or already-forwarded
+// links to this URL rather than 404ing people who have it.
 
-  const handleGenerateLink = async () => {
-    if (!partnerId.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter a unique name or ID.",
-        variant: "destructive",
-      })
-      return
-    }
-    const link = `${window.location.origin}/?ref=${encodeURIComponent(partnerId.trim())}`
-    setGeneratedLink(link)
-    setStats(await getReferralStats(partnerId.trim()))
-  }
-
-  const handleCopyLink = () => {
-    if (!generatedLink) return
-    navigator.clipboard.writeText(generatedLink)
-    toast({
-      title: "Copied!",
-      description: "Your referral link has been copied to the clipboard.",
-    })
-  }
+export default function PartnerPageClient() {
+  const { getWhatsAppLink } = useReferral("您好，我想了解合作方式。")
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20 md:pb-0">
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold text-red-700">
+        <div className="container mx-auto px-4 py-4">
+          <Link href="/" className="text-2xl font-bold text-red-700">
             草药浴 HerbalBath
-          </a>
-          <Button onClick={() => (window.location.href = "/")}>Back to Main Page</Button>
+          </Link>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 md:py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-lg font-medium mb-4">Partner Program</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900">Share the Healing, Share the Rewards</h1>
-          <p className="text-xl md:text-2xl text-gray-600 mt-4">
-            Join our mission to bring natural pain relief to everyone in Singapore.
-          </p>
+      <main className="container mx-auto px-4 py-10 md:py-16">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900">合作方式</h1>
+          <p className="text-lg md:text-xl text-gray-600 mt-4">请选择适合您的方式</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 my-12 md:my-16 text-center">
-          <div className="p-6">
-            <DollarSign className="w-12 h-12 text-green-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold">Generous Commissions</h3>
-            <p className="text-gray-600 mt-2">
-              Earn for every successful referral you bring. The more you share, the more you earn.
-            </p>
-          </div>
-          <div className="p-6">
-            <Share2 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold">Easy to Share</h3>
-            <p className="text-gray-600 mt-2">
-              Get your unique tracking link instantly. Share it on WhatsApp, Facebook, or anywhere else.
-            </p>
-          </div>
-          <div className="p-6">
-            <Users className="w-12 h-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold">Make a Difference</h3>
-            <p className="text-gray-600 mt-2">
-              Help friends and family find a real solution to their chronic pain and improve their lives.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <Card className="border-2 hover:border-red-300 transition-colors">
+            <CardContent className="p-8 flex flex-col h-full">
+              <Award className="w-12 h-12 text-red-600 mb-4" />
+              <h2 className="text-2xl font-bold">个人推荐大使</h2>
+              <p className="text-gray-600 mt-3 leading-relaxed flex-grow">
+                推荐给亲友和群组，赚取 {CAPTAIN.commissionPct}% 佣金。
+                不用囤货、不用收钱，我们直接送货。一分钟拿到您的介绍码和推荐图片。
+              </p>
+              <Button asChild className="w-full mt-6 py-6 text-lg bg-red-700 hover:bg-red-800">
+                <Link href="/kit">
+                  领取我的介绍码 <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 hover:border-gray-400 transition-colors">
+            <CardContent className="p-8 flex flex-col h-full">
+              <Store className="w-12 h-12 text-gray-700 mb-4" />
+              <h2 className="text-2xl font-bold">店铺批发合作</h2>
+              <p className="text-gray-600 mt-3 leading-relaxed flex-grow">
+                中医诊所、中药店、推拿足底反射、物理治疗中心。
+                起订 {WHOLESALE_TIERS[0].minUnits} 支，附免费试用装和柜台展示架。
+              </p>
+              <Button asChild variant="outline" className="w-full mt-6 py-6 text-lg border-2">
+                <Link href="/trade">
+                  查看批发价格 <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle className="text-2xl md:text-3xl text-center">Get Your Unique Referral Link</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="partnerId" className="text-lg">
-                Enter Your Name or a Unique ID
-              </Label>
-              <Input
-                id="partnerId"
-                placeholder="e.g., AuntieMary, JohnT"
-                value={partnerId}
-                onChange={(e) => setPartnerId(e.target.value)}
-                className="py-6 text-lg"
-              />
-            </div>
-            <Button onClick={handleGenerateLink} className="w-full py-6 text-lg">
-              <Award className="mr-2 h-5 w-5" /> Generate My Link
-            </Button>
-            {generatedLink && (
-              <div className="p-4 bg-gray-100 rounded-lg space-y-4">
-                <p className="text-sm text-gray-600">
-                  Your unique link is ready! Share it with your friends and family.
-                </p>
-                <div className="flex items-center space-x-2">
-                  <Input value={generatedLink} readOnly className="py-6 text-base bg-white" />
-                  <Button size="icon" onClick={handleCopyLink}>
-                    <Copy className="h-5 w-5" />
-                  </Button>
-                </div>
-                {stats?.configured ? (
-                  <div className="flex items-center gap-2 text-sm text-gray-700 bg-white rounded-md px-3 py-2 border">
-                    <TrendingUp className="h-4 w-4 text-green-600 flex-shrink-0" />
-                    <span>
-                      Tracked clicks so far: <strong>{stats.totalClicks}</strong>
-                    </span>
-                  </div>
-                ) : (
-                  <p className="text-xs text-gray-500">
-                    Click tracking connects once a Redis store is set up for this project — ask the
-                    team if you'd like live referral counts here.
-                  </p>
-                )}
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        <div className="text-center mt-12">
-          <h3 className="text-2xl font-bold">Have Questions?</h3>
-          <p className="text-gray-600 mt-2 mb-6">
-            Contact our partner manager to learn more about distributorship and bulk pricing.
-          </p>
+        <div className="text-center mt-14">
+          <p className="text-gray-600 mb-4 text-lg">有疑问？</p>
           <Button
             size="lg"
-            className="bg-green-600 hover:bg-green-700 text-lg"
-            onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+            className="bg-green-600 hover:bg-green-700 text-lg py-6"
+            onClick={() => window.open(getWhatsAppLink(CONTACT.whatsappNumber), "_blank")}
           >
-            <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp Us
+            <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp {CONTACT.whatsappDisplay}
           </Button>
         </div>
       </main>
 
-      <StickyMobileCTA onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")} callLabel="Call Now" />
+      <StickyMobileCTA
+        onWhatsAppClick={() => window.open(getWhatsAppLink(CONTACT.whatsappNumber), "_blank")}
+        callLabel="Call Now"
+      />
     </div>
-  )
-}
-
-export default function PartnerPageClient() {
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading...</p>
-          </div>
-        </div>
-      }
-    >
-      <PartnerPageContent />
-    </Suspense>
   )
 }

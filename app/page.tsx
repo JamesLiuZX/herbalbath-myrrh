@@ -70,7 +70,7 @@ const content = {
     },
     problems: {
       title: "其他产品让您失望了吗？",
-      subtitle: "虎标万金油、止痛贴只能暂时缓解，我们的没药喷雾10秒见效，深层治愈！",
+      subtitle: "一般药油和止痛贴只能暂时缓解，我们的没药喷雾10秒感受热感，舒缓更持久。",
       items: [
         { icon: "⏰", title: "效果短暂", desc: "其他产品只能暂时缓解，疼痛很快复发" },
         { icon: "🎯", title: "治标不治本", desc: "表面麻痹，无法解决深层组织问题" },
@@ -79,7 +79,7 @@ const content = {
       ],
     },
     usage: {
-      title: "正确使用方法 - 10秒见效",
+      title: "正确使用方法 - 10秒感受热感",
       subtitle: "掌握正确方法，释放没药的神奇力量",
       methods: [
         {
@@ -95,29 +95,29 @@ const content = {
           steps: ["喷雾在疼痛部位", "立即用手掌覆盖", "按压10秒钟", "感受滚浪般热感深入"],
         },
       ],
-      benefits: ["10秒内产生强烈热感", "深层渗透至筋骨组织", "解决风湿、关节炎根本问题", "一瓶可用3-4个月（每日2次）"],
+      benefits: ["10秒内产生强烈热感", "深层渗透，舒缓筋骨不适", "适合日常关节与肌肉保养", "一瓶可用3-4个月（每日2次）"],
       benefits_title: "为什么效果这么好？",
     },
     how_it_works: {
       title: "耶稣时代的神奇配方",
-      intro: "没药与乳香，耶稣诞生时东方三博士的珍贵礼物。两千年来，这些'神迹之药'一直被视为超越西药的天然疗愈圣品。",
+      intro: "没药与乳香，耶稣诞生时东方三博士的珍贵礼物。两千年来，这两种珍贵香料一直被视为天然的保养圣品。",
       story:
-        "在古代，没药比黄金更珍贵，被称为'神的眼泪'。乳香则是'天堂的香气'，两者结合创造了无数医疗奇迹。现代科学证实了古人的智慧 - 这些天然成分的抗炎镇痛效果远超化学药物，且无副作用。",
+        "在古代，没药比黄金更珍贵，被称为'神的眼泪'。乳香则是'天堂的香气'。两者流传至今，仍是许多传统外用配方的核心成分 —— 我们把这份古老智慧，做成方便日常使用的喷雾。",
       reasons: [
         {
           icon: Heart,
-          title: "没药：神迹镇痛",
-          desc: "耶稣时代的珍贵药材，深层渗透，瞬间激活血液循环，带来持久舒适。",
+          title: "没药：温热舒缓",
+          desc: "自古流传的珍贵香料，温热渗透，带来持久舒适感。",
         },
         {
           icon: Zap,
-          title: "乳香：天然消炎",
-          desc: "古代'液体黄金'，强效抗炎，从根源解决风湿关节问题。",
+          title: "乳香：传统外用配方",
+          desc: "古代'液体黄金'，传统上广泛用于筋骨与关节的日常保养。",
         },
         {
           icon: Sparkles,
-          title: "超强渗透配方",
-          desc: "现代萃取技术，让古老药材发挥最大功效，10秒直达病灶。",
+          title: "高渗透配方",
+          desc: "现代萃取技术，让古老配方更易吸收，10秒感受温热。",
         },
       ],
     },
@@ -126,15 +126,15 @@ const content = {
       comparison: {
         title: "对比其他产品",
         items: [
-          { feature: "见效时间", us: "10秒立即见效", others: "30分钟-数小时" },
+          { feature: "热感时间", us: "喷后约10秒感受热感", others: "一般较慢" },
           { feature: "热感强度", us: "滚浪般强烈热感", others: "微弱温热感" },
-          { feature: "持续时间", us: "深层治愈，持久有效", others: "暂时缓解，易复发" },
-          { feature: "成分安全", us: "100%天然草本", others: "含化学添加剂" },
+          { feature: "使用感受", us: "温热持久，舒适不刺激", others: "感受较短暂" },
+          { feature: "配方", us: "天然草本配方", others: "配方各异" },
           { feature: "使用周期", us: "一瓶用3-4个月", others: "消耗快，成本高" },
         ],
       },
       testimonial: {
-        quote: "用了三周，僵硬的肩膀松了很多，抬手很轻松。那种热感真的很神奇，比虎标万金油强太多了！",
+        quote: "用了三周，僵硬的肩膀松了很多，抬手很轻松。那种热感真的很舒服，比我之前用的药油持久！",
         author: "- 陈女士, 62岁",
       },
     },
@@ -146,11 +146,11 @@ const content = {
       cta: "WhatsApp咨询",
       phone_cta: "电话订购",
       guarantee: "30天不满意，全额退款",
-      features: ["✅ 10秒见效，深层治愈", "✅ 一瓶可用3-4个月", "✅ 100%天然成分", "✅ 买3送1优惠"],
+      features: ["✅ 10秒感受温热", "✅ 一瓶可用3-4个月", "✅ 100%天然成分", "✅ 买3送1优惠"],
     },
     final_cta: {
-      title: "不要再忍受疼痛",
-      subtitle: "15,000+用户已经重获新生，您还在等什么？今天就体验没药的神奇力量！",
+      title: "让身体轻松一点",
+      subtitle: "15,000+新加坡用户的选择，今天就试试没药喷雾的温热舒缓。",
       cta: "立即体验",
     },
   },
@@ -188,17 +188,17 @@ const content = {
     problems: {
       title: "Tired of Products That Don't Work?",
       subtitle:
-        "Tiger Balm and pain patches only provide temporary relief. Our Myrrh Spray works in 10 seconds with deep healing!",
+        "Ordinary medicated oils and pain patches fade fast. Our Myrrh Spray delivers warmth in 10 seconds, and it lasts.",
       items: [
-        { icon: "⏰", title: "Short-lived Relief", desc: "Other products only mask pain temporarily" },
-        { icon: "🎯", title: "Surface Treatment", desc: "Only numbs surface, can't reach deep tissue issues" },
-        { icon: "🔥", title: "Weak Heat", desc: "Insufficient warmth to activate deep circulation" },
-        { icon: "💊", title: "Chemical Ingredients", desc: "Contains additives with potential side effects" },
+        { icon: "⏰", title: "Short-lived Comfort", desc: "Many products fade within the hour" },
+        { icon: "🎯", title: "Surface Only", desc: "Sits on the skin instead of soaking in" },
+        { icon: "🔥", title: "Weak Heat", desc: "Barely-there warmth you can hardly feel" },
+        { icon: "💊", title: "Harsh Formulas", desc: "Strong chemical smell that lingers on clothes" },
       ],
     },
     usage: {
-      title: "Proper Usage - 10 Second Results",
-      subtitle: "Master the technique to unlock myrrh's miraculous power",
+      title: "Proper Usage - Warmth in 10 Seconds",
+      subtitle: "Master the technique to get the most from every spray",
       methods: [
         {
           icon: "🌊",
@@ -225,33 +225,33 @@ const content = {
       ],
       benefits: [
         "Intense heat sensation within 10 seconds",
-        "Deep penetration to muscle and bone",
-        "Addresses root cause of arthritis & rheumatism",
+        "Sinks in rather than sitting on the skin",
+        "Suited to everyday joint and muscle care",
         "One bottle lasts 3-4 months (twice daily)",
       ],
-      benefits_title: "Why Is It So Effective?",
+      benefits_title: "Why It Feels So Different",
     },
     how_it_works: {
-      title: "The Jesus-Era Miracle Formula",
+      title: "A Formula Two Thousand Years Old",
       intro:
-        "Myrrh and Frankincense - the precious gifts from the Three Wise Men at Jesus' birth. For two millennia, these 'miracle medicines' have been revered as natural healing treasures that surpass Western medicine.",
+        "Myrrh and Frankincense - the precious gifts from the Three Wise Men at Jesus' birth. For two millennia, these two resins have been treasured as natural comforts.",
       story:
-        "In ancient times, myrrh was more precious than gold, called 'God's Tears'. Frankincense was 'Heaven's Fragrance'. Together, they created countless medical miracles. Modern science confirms ancient wisdom - these natural compounds provide superior anti-inflammatory and pain relief compared to chemical drugs, with zero side effects.",
+        "In ancient times, myrrh was more precious than gold, called 'God's Tears'. Frankincense was 'Heaven's Fragrance'. Both remain core ingredients in traditional topical preparations to this day - we've simply made them easy to use, in a spray.",
       reasons: [
         {
           icon: Heart,
-          title: "Myrrh: Miraculous Relief",
-          desc: "Precious medicine from Jesus' era, penetrates deeply, instantly activates circulation for lasting comfort.",
+          title: "Myrrh: Warming Comfort",
+          desc: "A resin treasured since antiquity. Warms on contact and soaks in for lasting comfort.",
         },
         {
           icon: Zap,
-          title: "Frankincense: Natural Anti-inflammatory",
-          desc: "Ancient 'liquid gold', powerful anti-inflammatory that addresses rheumatic issues at the source.",
+          title: "Frankincense: A Traditional Topical",
+          desc: "Ancient 'liquid gold', long used in traditional preparations for everyday joint and muscle care.",
         },
         {
           icon: Sparkles,
-          title: "Super-Penetration Formula",
-          desc: "Modern extraction technology maximizes ancient medicine potency, reaching affected areas in 10 seconds.",
+          title: "High-Absorption Formula",
+          desc: "Modern extraction makes an ancient formula easier to absorb - warmth within 10 seconds.",
         },
       ],
     },
@@ -260,16 +260,16 @@ const content = {
       comparison: {
         title: "vs Other Products",
         items: [
-          { feature: "Effect Time", us: "10 seconds immediate", others: "30 minutes - hours" },
+          { feature: "Time to Warmth", us: "About 10 seconds", others: "Generally slower" },
           { feature: "Heat Intensity", us: "Rolling wave heat", others: "Weak warmth" },
-          { feature: "Duration", us: "Deep healing, lasting", others: "Temporary, returns quickly" },
-          { feature: "Safety", us: "100% natural herbs", others: "Chemical additives" },
+          { feature: "How It Feels", us: "Warm and lasting, not harsh", others: "Fades quickly" },
+          { feature: "Formula", us: "Natural herbal formula", others: "Varies by product" },
           { feature: "Value", us: "One bottle 3-4 months", others: "Quick consumption, costly" },
         ],
       },
       testimonial: {
         quote:
-          "After three weeks, my stiff shoulder loosened so much. The heat sensation is amazing - much stronger than Tiger Balm!",
+          "After three weeks, my stiff shoulder loosened so much. The heat sensation is wonderful - it lasts longer than the medicated oil I used before.",
         author: "- Mdm. Tan, 62",
       },
     },
@@ -282,16 +282,16 @@ const content = {
       phone_cta: "Call to Order",
       guarantee: "30-Day Money-Back Guarantee",
       features: [
-        "✅ 10-second results, deep healing",
+        "✅ Warmth in 10 seconds",
         "✅ One bottle lasts 3-4 months",
         "✅ 100% natural ingredients",
         "✅ Buy 3 Get 1 Free deal",
       ],
     },
     final_cta: {
-      title: "Stop Suffering in Pain",
+      title: "Move a Little Easier",
       subtitle:
-        "15,000+ users have reclaimed their lives. What are you waiting for? Experience myrrh's miraculous power today!",
+        "The choice of 15,000+ Singaporeans. Try the warmth of myrrh for yourself today.",
       cta: "Try Now",
     },
   },

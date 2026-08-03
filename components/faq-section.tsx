@@ -20,8 +20,8 @@ const faqItems: FAQItem[] = [
   {
     question: "没药喷雾对乐龄人士安全吗？",
     questionEn: "Is Myrrh Spray safe for seniors?",
-    answer: "是的，HerbalBath没药喷雾专为55岁以上的乐龄人士设计，采用100%天然成分，无化学添加剂，无副作用。我们已经服务超过15,000位新加坡用户超过8年，是新加坡乐龄人士信赖的选择。如果您有特殊健康状况，建议先咨询医生。",
-    answerEn: "Yes, HerbalBath Myrrh Spray is specially designed for seniors 55+, using 100% natural ingredients with no chemical additives and no side effects. We have served over 15,000 Singapore users for 8 years. If you have special health conditions, please consult your doctor first.",
+    answer: "是的，HerbalBath没药喷雾专为55岁以上的乐龄人士设计，采用100%天然成分，无化学添加剂。我们已经服务超过15,000位新加坡用户超过8年，是新加坡乐龄人士信赖的选择。初次使用建议先在小面积皮肤试用；如有敏感肌肤、皮肤破损，或正在服用药物、有特殊健康状况，请先咨询医生。",
+    answerEn: "Yes, HerbalBath Myrrh Spray is designed for seniors 55+, using 100% natural ingredients with no chemical additives. We have served over 15,000 Singapore users for 8 years. We recommend patch-testing on a small area first. If you have sensitive or broken skin, are taking medication, or have any specific health condition, please consult your doctor first.",
   },
   {
     question: "没药喷雾能缓解什么疼痛？",
