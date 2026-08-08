@@ -320,11 +320,24 @@ relationships. If it's cumulative, Phase 0 is a *reactivation* campaign and the
 business could plausibly double in 90 days without a single new channel. If
 it's active, Phase 1 matters much more.
 
+> **Answered (8 Aug 2026):** "15,000" is a rough lifetime estimate, not a
+> tracked figure. Actual current pace is ~15–20 sales/day (~450–600/month).
+> That rules out the optimistic fork above — there is no large dormant base to
+> blast a reactivation message at. Phase 1's channel work matters more than
+> Part 3 assumed. See `/internal/roadmap` for the corrected plan.
+
 **2. Do you have contactable phone numbers for them?** Everything in
 `GROWTH.md` and section 1.2 assumes yes. If those 15,000 exist only as
 marketplace order records with no reachable contact, then reconstructing that
 list — even partially, even approximately — is the highest-value work available
 to you, ahead of every channel here.
+
+> **Answered (8 Aug 2026):** No CRM — reorders arrive as individual inbound
+> WhatsApp chats/calls. Roughly 200–300 numbers are recoverable from that
+> history. Small enough to import in an afternoon and nudge for ~S$6 total at
+> utility rates — the reorder engine below was over-scoped for 15,000 but
+> works identically at this size. The real gap is that nothing captures new
+> numbers going forward; see `/internal/roadmap` for the fix.
 
 Third, less urgent but it sets the ceiling: **what is your landed cost per
 bottle?** It determines whether the wholesale ladder in `growth-config.ts` is

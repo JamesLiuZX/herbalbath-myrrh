@@ -1050,6 +1050,11 @@ function HomePageContent() {
             <p className="text-xs text-stone-400 mt-2">
               HerbalBath | Herbal Bath Singapore | HerbalBath SG | 新加坡天然草药疼痛缓解 | Natural Herbal Pain Relief
             </p>
+            <p className="text-xs text-stone-300 mt-3">
+              <Link href="/internal" rel="nofollow" className="hover:text-stone-500 transition-colors">
+                Team
+              </Link>
+            </p>
           </div>
         </div>
       </footer>
