@@ -64,30 +64,30 @@ export function BundleSelector({ language, onSelect }: BundleSelectorProps) {
               onSelect?.(language === "zh" ? opt.labelZh : opt.labelEn)
             }}
             className={`relative text-left p-3 sm:p-4 rounded-xl border-2 transition-colors ${
-              isSelected ? "border-green-600 bg-green-50" : "border-gray-200 bg-white hover:border-green-300"
+              isSelected ? "border-green-700 bg-green-50" : "border-gray-200 bg-white hover:border-green-300"
             }`}
           >
             {badge && (
-              <span className="absolute -top-2.5 right-3 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full">
+              <span className="absolute -top-3 right-3 bg-red-600 text-white text-sm font-bold px-2.5 py-0.5 rounded-full">
                 {badge}
               </span>
             )}
             <div className="flex items-center gap-2 mb-1.5">
               <span
-                className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                  isSelected ? "border-green-600 bg-green-600" : "border-gray-300"
+                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
+                  isSelected ? "border-green-700 bg-green-700" : "border-gray-300"
                 }`}
               >
-                {isSelected && <Check className="w-2.5 h-2.5 text-white" />}
+                {isSelected && <Check className="w-3 h-3 text-white" />}
               </span>
-              <span className="font-semibold text-xs sm:text-base">
+              <span className="font-semibold text-sm sm:text-base">
                 {language === "zh" ? opt.labelZh : opt.labelEn}
               </span>
             </div>
-            <div className="text-base sm:text-xl font-bold text-green-700">
+            <div className="text-lg sm:text-2xl font-bold text-green-800">
               {language === "zh" ? opt.totalZh : opt.totalEn}
             </div>
-            <div className="text-[11px] sm:text-sm text-gray-500">
+            <div className="text-sm sm:text-base text-stone-600">
               {language === "zh" ? opt.perBottleZh : opt.perBottleEn}
             </div>
           </button>

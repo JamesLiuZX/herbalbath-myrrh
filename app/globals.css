@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 240 10% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 340 72% 50%; /* A more sophisticated, deeper red for accents */
+    --primary: 163 94% 24%; /* Brand emerald — matches logo/packaging green */
     --primary-foreground: 0 0% 100%;
     --secondary: 45 93% 94%; /* Warm, natural beige for backgrounds */
     --secondary-foreground: 45 20% 20%;
@@ -22,8 +22,8 @@
     --destructive-foreground: 0 0% 100%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 340 72% 50%;
-    --radius: 0.5rem;
+    --ring: 163 94% 24%;
+    --radius: 0.75rem;
   }
 }
 
@@ -49,67 +49,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* WhatsApp button animation */
-@keyframes pulse-green {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
-  }
-}
-
-.animate-pulse-green {
-  animation: pulse-green 2s infinite;
-}
-
-/* Adding testimonial carousel scroll animations */
-@keyframes scroll-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-scroll-right {
-  animation: scroll-right 30s linear infinite;
-}
-
-.animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
-}
-
-/* Pause animation on hover for better UX */
-.animate-scroll-right:hover,
-.animate-scroll-left:hover {
-  animation-play-state: paused;
-}
-
 /* ============================================
    SENIOR-FRIENDLY UX IMPROVEMENTS (55+)
    ============================================ */
 
-/* Increased base font size for better readability */
+/* Increased base font size for better readability. Kept at 18px on mobile
+   too — research on elderly Chinese readers (MIIT elder-mode standard,
+   CJK legibility studies) puts the comfortable minimum for 65+ at ~18-24px,
+   and most of our traffic is mobile. */
 html {
   font-size: 18px; /* Base 18px instead of 16px */
-}
-
-@media (max-width: 640px) {
-  html {
-    font-size: 17px; /* Slightly smaller on mobile but still readable */
-  }
 }
 
 /* Improved line height for easier reading */
