@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     title: "常见疼痛问题 - HerbalBath SG",
     description: "新加坡乐龄人士常见疼痛问题的天然解决方案",
   },
+  alternates: {
+    // Without this the root layout's canonical (the homepage) is inherited,
+    // telling search engines this hub page is a duplicate of /.
+    canonical: "https://herbalbathsg.com/pain-points",
+  },
 }
 
 const painPointIcons: Record<string, string> = {

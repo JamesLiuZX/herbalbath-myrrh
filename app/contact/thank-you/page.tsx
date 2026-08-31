@@ -7,6 +7,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Thank You - Contact Received | HerbalBath SG",
   description: "Thank you for contacting HerbalBath SG. We'll get back to you shortly via WhatsApp.",
+  // Post-submission page: nothing worth ranking, and without its own
+  // canonical it would inherit the homepage canonical from the root layout.
+  robots: { index: false, follow: true },
+  alternates: { canonical: "https://herbalbathsg.com/contact/thank-you" },
 }
 
 export default function ThankYouPage() {

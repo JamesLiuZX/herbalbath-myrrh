@@ -5,9 +5,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Star, Users, Shield, Truck, Award, Zap, Heart } from "lucide-react"
 import { useReferral } from "@/app/hooks/useReferral"
+import { CONTACT } from "@/app/lib/growth-config"
 
 export default function FacebookLandingContent() {
-  const whatsappNumber = "+6584261225"
+  // wa.me links must be digits-only (no "+").
+  const whatsappNumber = CONTACT.whatsappNumber
   const baseWhatsappMessage = "Hi! I saw your Facebook ad about the Myrrh Spray. I'm interested!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 

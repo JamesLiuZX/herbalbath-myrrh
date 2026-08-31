@@ -1,5 +1,16 @@
 import { MessageCircle, Phone } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Us | HerbalBath SG",
+  description:
+    "Order the HerbalBath Myrrh Spray or ask us anything — WhatsApp 8426 1225. 通过 WhatsApp 订购或咨询。",
+  alternates: {
+    // Without this the root layout's canonical (the homepage) is inherited.
+    canonical: "https://herbalbathsg.com/contact",
+  },
+}
 
 const whatsappNumber = "6584261225"
 const whatsappMessage = encodeURIComponent("Hi HerbalBath SG! I'm interested in the Myrrh Spray and would like to place an order.")

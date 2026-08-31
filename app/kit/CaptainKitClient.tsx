@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Download, Image as ImageIcon, MessageCircle, Copy, Check } from "lucide-react"
+import { Image as ImageIcon, MessageCircle, Copy, Check } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { registerCaptain, recordCaptainShare } from "@/app/actions/captains"
 import {
@@ -19,6 +19,11 @@ import { CONTACT, RETAIL, CAPTAIN } from "@/app/lib/growth-config"
 // Everything on this page is sized for a 60+ user on a phone in bright light:
 // 18px floor on body text, 56px+ tap targets, one action per screenful.
 
+// James uploads the real PayNow QR here when ready; until then the card
+// renders without it and the UI says so. Never generate a stand-in QR —
+// a wrong payment QR is worse than none.
+const PAYNOW_QR_SRC = "/images/paynow-qr.png"
+
 export function CaptainKitClient() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
@@ -27,7 +32,16 @@ export function CaptainKitClient() {
   const [submitting, setSubmitting] = useState(false)
   const [generating, setGenerating] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [qrAvailable, setQrAvailable] = useState(false)
   const { toast } = useToast()
+
+  useEffect(() => {
+    // A missing QR must not fail card generation, and the captain should
+    // know the card won't carry one — probe once instead of 404ing silently.
+    const probe = new Image()
+    probe.onload = () => setQrAvailable(true)
+    probe.src = PAYNOW_QR_SRC
+  }, [])
 
   const handleRegister = async () => {
     setSubmitting(true)
@@ -60,7 +74,7 @@ export function CaptainKitClient() {
         price: `${RETAIL.currency}${RETAIL.singlePrice}`,
         bundleLine: `买3送1 · 4瓶 ${RETAIL.currency}${RETAIL.bundlePrice}`,
         productImageSrc: "/images/product-hero.png",
-        payNowQrSrc: "/images/paynow-qr.png",
+        payNowQrSrc: qrAvailable ? PAYNOW_QR_SRC : undefined,
       })
       if (!blob) {
         toast({ title: "生成失败", description: "请重试", variant: "destructive" })
@@ -191,6 +205,12 @@ export function CaptainKitClient() {
           <p className="text-base text-gray-500 -mt-1">
             会生成一张有您介绍码的图片，可直接转发到 WhatsApp 群。
           </p>
+          {!qrAvailable && (
+            <p className="text-base text-gray-500 bg-gray-50 border border-gray-200 rounded-lg p-3">
+              PayNow 付款二维码还在准备中，图片暂时不显示二维码。朋友照常
+              WhatsApp {CONTACT.whatsappDisplay} 订购付款就可以。
+            </p>
+          )}
 
           <Button
             onClick={handleCopyText}

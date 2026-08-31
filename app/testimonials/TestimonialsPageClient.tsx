@@ -10,6 +10,7 @@ import { useReferral } from "@/app/hooks/useReferral"
 import { testimonialImages } from "@/app/lib/testimonial-data"
 import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
 import Image from "next/image"
+import { CONTACT } from "@/app/lib/growth-config"
 
 const videoTestimonials = [
   {
@@ -41,7 +42,8 @@ function TestimonialsPageContent() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("masonry")
 
-  const whatsappNumber = "+6584261225"
+  // wa.me links must be digits-only (no "+").
+  const whatsappNumber = CONTACT.whatsappNumber
   const baseWhatsappMessage = "Hi! I saw all the amazing testimonials. I want to try the Myrrh Spray too!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 

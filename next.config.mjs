@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
+    // No ESLint config exists in this repo yet; kept ignored until one is
+    // set up deliberately (next lint would prompt interactively otherwise).
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // `tsc --noEmit` passes clean as of 2026-08-31, so type errors block the
+  // build again instead of being silently shipped.
   images: {
     // Vercel's built-in image optimization (resize + AVIF/WebP re-encoding
     // per device) was previously disabled here, which meant every visitor —

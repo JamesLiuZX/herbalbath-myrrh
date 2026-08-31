@@ -13,6 +13,7 @@ import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
 import { BundleSelector } from "@/components/bundle-selector"
 import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
+import { CONTACT } from "@/app/lib/growth-config"
 import Link from "next/link"
 
 // Real customer videos (same source as /testimonials) — previously the
@@ -303,7 +304,8 @@ function HomePageContent() {
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null)
   const t = content[language]
 
-  const whatsappNumber = "+6584261225"
+  // wa.me links must be digits-only (no "+"); tel: links keep the "+".
+  const whatsappNumber = CONTACT.whatsappNumber
   const baseWhatsappMessage = "Hi! I'm interested in the HerbalBath Myrrh Spray and would like to order."
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
@@ -773,7 +775,7 @@ function HomePageContent() {
                     size="lg"
                     variant="outline"
                     className="text-sm sm:text-base h-10 sm:h-12 w-full bg-transparent border-2 border-green-600 text-green-600 hover:bg-green-50"
-                    onClick={() => window.open(`tel:${whatsappNumber}`, "_blank")}
+                    onClick={() => window.open(`tel:${CONTACT.phone}`, "_blank")}
                   >
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     {t.product_cta.phone_cta}

@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Star, CheckCircle, Clock, Users } from "lucide-react"
 import { useReferral } from "@/app/hooks/useReferral"
+import { CONTACT } from "@/app/lib/growth-config"
 
 export default function TikTokLandingContent() {
-  const whatsappNumber = "+6584261225"
+  // wa.me links must be digits-only (no "+").
+  const whatsappNumber = CONTACT.whatsappNumber
   const baseWhatsappMessage = "Hi! I saw your TikTok video about the Myrrh Spray. I want to order!"
   const { getWhatsAppLink } = useReferral(baseWhatsappMessage)
 
