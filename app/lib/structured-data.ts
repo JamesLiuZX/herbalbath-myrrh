@@ -13,7 +13,9 @@ const BASE_URL = CONTACT.site
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  // OnlineStore is the Organization subtype Google documents for shops that
+  // sell online; it keeps every Organization property.
+  "@type": "OnlineStore",
   "@id": `${BASE_URL}/#organization`,
   name: "HerbalBath SG",
   alternateName: ["HerbalBath Singapore", "Herbal Bath SG", "Herbal Bath Singapore", "草本沐"],

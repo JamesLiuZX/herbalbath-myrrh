@@ -63,6 +63,7 @@ The hard rules are in `content/rules.json`; `scripts/content/lib.mjs` (`claimPro
   - people in lab coats;
   - addressing the reader's body or age in an ad ("你膝盖痛吗？", "Are you over 60?"). That's Meta's personal-attributes policy.
 - **The Shopee listing's own images carry claims these rules ban** (效果显著, 消除, 修复, 活血化瘀, 风湿关节显著效果, 排酸排毒, "Body pain?"). Don't reuse that wording. James decides whether to change the listing.
+  - Since 17 Oct 2026 the homepage shows the listing's ad creative and three panels of its infographic, because James asked for the listing images on the site. The panel with the sprain, rheumatism and detox claims (and the 58 ml bottle) is left out. That's James's call on his own images; it doesn't make the wording usable in new copy.
 - **Numbers that are unconfirmed, so never used in new content:**
   - "15,000+ customers": the portfolio says 30,000+;
   - "4.9 stars";
@@ -84,7 +85,9 @@ The hard rules are in `content/rules.json`; `scripts/content/lib.mjs` (`claimPro
 | `public/images/product-pack.webp` | New box and bottle, transparent background (738×1186). Use whenever the product is on screen. |
 | `public/images/product-pack-square.jpg` | Same, on cream, 1200×1200. |
 | `public/images/product-lifestyle.webp` | Box and bottle with candles and raw myrrh. Illustrative: the small label text is not legible. |
-| `public/images/logo.png` | Logo, 512×512 |
+| `public/images/details/` | The Shopee listing images on the homepage: `comfort.webp` (the ad creative), `formula.webp`, `climate.webp`, `family.webp` (infographic panels) and `pack-white.webp` (box and bottle on white). They carry the listing's own claims, so they're for the website, not for ads or posts. |
+| `public/images/og-image.jpg` | The site's social card, 1200×630, new box and bottle with approved wording only. |
+| `public/images/logo.png` | Logo, 512×512 (the old teal mark; the box carries the newer red-and-gold one) |
 | Brand colours | maroon #7F351E, copper #B87333, cream #FBF4E8, dark brown text #2B1A12 |
 
 **Image rule:** when the product appears, it is the real packaging (edit the photo; never let a model invent a bottle or label).
