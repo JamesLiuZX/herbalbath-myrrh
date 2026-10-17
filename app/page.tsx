@@ -3,7 +3,8 @@
 import { useState, useEffect, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame } from "lucide-react"
+import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame, QrCode, Users, Award } from "lucide-react"
+import Image from "next/image"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
@@ -13,7 +14,7 @@ import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
 import { BundleSelector } from "@/components/bundle-selector"
 import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
-import { CONTACT } from "@/app/lib/growth-config"
+import { CONTACT, SHOPEE_URL } from "@/app/lib/growth-config"
 import Link from "next/link"
 
 // Real customer videos (same source as /testimonials) — previously the
@@ -51,8 +52,11 @@ const content = {
       title: "告别疼痛,重获自由",
       subtitle: "没药喷雾，15,000+用户见证的神奇效果。天然草本，深层舒缓，让您重新享受无痛生活。",
       cta: "立即体验",
+      pay_cta: "立即订购 · PayNow",
       shopee_cta: "Shopee购买",
       whatsapp_cta: "WhatsApp咨询",
+      // Lifted verbatim from product_cta.features so the hero adds no new claim.
+      chips: ["10秒感受温热", "一瓶可用3-4个月"],
       trust_badges: {
         users: "15,000+ 新加坡人信赖",
         rating: "4.9星好评",
@@ -144,6 +148,7 @@ const content = {
       price: "S$39",
       original_price: "S$49",
       offer: "买3送1 + 免费送货",
+      pay_cta: "PayNow 立即付款",
       cta: "WhatsApp咨询",
       phone_cta: "电话订购",
       guarantee: "30天不满意，全额退款",
@@ -168,8 +173,10 @@ const content = {
       title: "Say Goodbye to Pain",
       subtitle: "Myrrh Spray with 15,000+ proven results. Natural herbs for deep relief and pain-free living.",
       cta: "Try Now",
+      pay_cta: "Order now · PayNow",
       shopee_cta: "View on Shopee",
       whatsapp_cta: "WhatsApp Us",
+      chips: ["Warmth in 10 seconds", "One bottle lasts 3-4 months"],
       trust_badges: {
         users: "Trusted by 15,000+ Singaporeans",
         rating: "4.9 Star Rating",
@@ -279,6 +286,7 @@ const content = {
       price: "S$39",
       original_price: "S$49",
       offer: "Buy 3 Get 1 Free + Free Delivery",
+      pay_cta: "Pay now with PayNow",
       cta: "WhatsApp Order",
       phone_cta: "Call to Order",
       guarantee: "30-Day Money-Back Guarantee",
@@ -302,6 +310,7 @@ function HomePageContent() {
   const { language, setLanguage } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null)
+  const [selectedPackageId, setSelectedPackageId] = useState<"single" | "bundle">("bundle")
   const t = content[language]
 
   // wa.me links must be digits-only (no "+"); tel: links keep the "+".
@@ -414,122 +423,142 @@ function HomePageContent() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20 text-center bg-secondary/50">
-          <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <span className="inline-block bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              {t.hero.badge}
-            </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 px-2">
-              {t.hero.title}
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 leading-relaxed">
-              {t.hero.subtitle}
-            </p>
+        {/* Hero: the product itself, the price, and one obvious way to pay.
+            Grid areas reorder it on phones to headline → product → price and
+            buttons, so the bottle is on screen before anyone scrolls. */}
+        <section className="relative overflow-hidden bg-[#FBF4E8]">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <div className="absolute -right-40 top-1/2 h-[44rem] w-[44rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(173,109,74,0.24),transparent_62%)]" />
+            <div className="absolute -left-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(97,151,137,0.16),transparent_60%)]" />
+          </div>
 
-            {/* Trust Badges Section */}
-            <div className="flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8 text-xs sm:text-sm">
-              {/* First row - Users and Rating */}
-              <div className="flex flex-col xs:flex-row items-center justify-center gap-2 sm:gap-3">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm min-w-0">
-                  <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="font-medium text-gray-700 truncate">{t.hero.trust_badges.users}</span>
+          <div className="container relative mx-auto max-w-6xl px-4 py-8 sm:py-12 lg:py-16">
+            <div className="grid items-center gap-x-12 gap-y-6 [grid-template-areas:'copy'_'image'_'actions'] lg:grid-cols-[1.1fr_0.9fr] lg:[grid-template-areas:'copy_image'_'actions_image']">
+              <div className="text-center [grid-area:copy] lg:self-end lg:text-left">
+                <div className="mb-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                  <span className="inline-block rounded-full bg-[#7F351E]/10 px-4 py-2 text-sm font-semibold text-[#7F351E] sm:text-base">
+                    {t.hero.badge}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
+                    className="rounded-full border border-stone-300 bg-white/70 px-4 py-2 text-sm font-medium text-stone-700 md:hidden"
+                  >
+                    {language === "zh" ? "English" : "中文"}
+                  </button>
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
-                  <div className="flex text-yellow-500">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-xs">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <span className="font-medium text-gray-700">{t.hero.trust_badges.rating}</span>
-                </div>
+                <h1 className="font-serif text-4xl font-bold leading-tight text-stone-900 sm:text-5xl lg:text-6xl">
+                  {t.hero.title}
+                </h1>
+                <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-stone-700 sm:text-xl lg:mx-0">
+                  {t.hero.subtitle}
+                </p>
               </div>
 
-              {/* Second row - Years and Platforms */}
-              <div className="flex flex-col xs:flex-row items-center justify-center gap-2 sm:gap-3">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                  <span className="font-medium text-gray-700">{t.hero.trust_badges.years}</span>
+              <div className="relative mx-auto w-full max-w-[22rem] [grid-area:image] sm:max-w-sm lg:max-w-md">
+                <div aria-hidden="true" className="absolute inset-x-8 bottom-1 h-10 rounded-[100%] bg-[#462013]/25 blur-2xl" />
+                <Image
+                  src="/images/product-cutout.webp"
+                  alt={language === "zh" ? "HerbalBath 没药舒缓喷雾 60ml 及包装盒" : "HerbalBath Myrrh Soreness Relief Spray, 60ml, with its box"}
+                  width={709}
+                  height={1500}
+                  priority
+                  sizes="(min-width: 1024px) 26rem, (min-width: 640px) 22rem, 70vw"
+                  className="relative mx-auto h-[320px] w-auto sm:h-[400px] lg:h-[540px]"
+                />
+                {t.hero.chips.map((chip, i) => (
+                  <span
+                    key={chip}
+                    className={`absolute rounded-full bg-white/95 px-3 py-1.5 text-sm font-semibold text-stone-800 shadow-md ring-1 ring-stone-200 sm:px-4 sm:py-2 sm:text-base ${
+                      i === 0 ? "left-0 top-[16%]" : "bottom-[20%] right-0"
+                    }`}
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+
+              <div className="[grid-area:actions] lg:self-start">
+                <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 lg:justify-start">
+                  <span className="text-4xl font-bold text-[#7F351E] sm:text-5xl">{t.product_cta.price}</span>
+                  <span className="text-xl text-stone-500 line-through">{t.product_cta.original_price}</span>
+                  <span className="rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white sm:text-base">
+                    {t.product_cta.offer}
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-sm">
-                  <div className="flex gap-1">
-                    <img
-                      src="/images/carousell-logo.png"
-                      alt="Carousell"
-                      className="w-3 h-3 sm:w-4 sm:h-4 rounded-sm flex-shrink-0"
-                    />
-                    <img
-                      src="/images/tiktok-shop-logo.png"
-                      alt="TikTok Shop"
-                      className="w-3 h-3 sm:w-4 sm:h-4 rounded-sm flex-shrink-0"
-                    />
-                    <img
-                      src="/images/facebook-logo.png"
-                      alt="Facebook"
-                      className="w-3 h-3 sm:w-4 sm:h-4 rounded-sm flex-shrink-0"
-                    />
-                    <img
-                      src="/images/shopee-logo.png"
-                      alt="Shopee"
-                      className="w-3 h-3 sm:w-4 sm:h-4 rounded-sm flex-shrink-0"
-                    />
-                  </div>
-                  <span className="font-medium text-gray-700 truncate">{t.hero.trust_badges.platforms}</span>
+
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                  <Link
+                    href="/pay?b=bundle"
+                    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-emerald-700 px-7 text-lg font-semibold text-white shadow-lg shadow-emerald-900/20 transition-colors hover:bg-emerald-800"
+                  >
+                    <QrCode className="h-6 w-6" />
+                    {t.hero.pay_cta}
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+                    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-green-600 bg-white px-7 text-lg font-semibold text-green-700 transition-colors hover:bg-green-50"
+                  >
+                    <MessageCircle className="h-6 w-6" />
+                    {t.hero.whatsapp_cta}
+                  </button>
+                </div>
+                <p className="mt-3 text-center text-base lg:text-left">
+                  <a
+                    href={SHOPEE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-orange-600 underline-offset-4 hover:underline"
+                  >
+                    {t.hero.shopee_cta} →
+                  </a>
+                </p>
+
+                <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-base text-stone-700 lg:justify-start">
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-yellow-500" aria-hidden="true">
+                      ★★★★★
+                    </span>
+                    {t.hero.trust_badges.rating}
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <Users className="h-5 w-5 text-emerald-700" />
+                    {t.hero.trust_badges.users}
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <Award className="h-5 w-5 text-emerald-700" />
+                    {t.hero.trust_badges.years}
+                  </li>
+                </ul>
+                <div className="mt-3 flex items-center justify-center gap-2 text-sm text-stone-600 lg:justify-start">
+                  {[
+                    ["/images/carousell-logo.png", "Carousell"],
+                    ["/images/tiktok-shop-logo.png", "TikTok Shop"],
+                    ["/images/facebook-logo.png", "Facebook"],
+                    ["/images/shopee-logo.png", "Shopee"],
+                  ].map(([src, alt]) => (
+                    <img key={alt} src={src} alt={alt} className="h-5 w-5 rounded-sm" />
+                  ))}
+                  <span>{t.hero.trust_badges.platforms}</span>
                 </div>
               </div>
             </div>
 
-            {/* Real customer quote — reuses the one authentic testimonial quote
-                already published in the benefits section, rather than a faded
-                testimonial-screenshot background image, which would hurt text
-                contrast/legibility for our 55+ audience and add LCP-critical
-                image weight to the hero. */}
-            <div className="max-w-xl mx-auto mb-6 sm:mb-8 px-4 py-3 sm:py-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-primary/10 shadow-sm">
-              <div className="text-yellow-500 text-xs sm:text-sm mb-1.5">★★★★★</div>
-              <p className="text-sm sm:text-base text-gray-700 italic leading-relaxed">
+            {/* Real customer quote — the one authentic testimonial quote already
+                published in the benefits section, kept as text (not a faded
+                screenshot) for contrast with a 55+ audience. */}
+            <figure className="mx-auto mt-10 max-w-2xl rounded-2xl bg-white/80 px-5 py-4 text-center shadow-sm ring-1 ring-stone-200">
+              <div className="mb-1 text-yellow-500" aria-hidden="true">
+                ★★★★★
+              </div>
+              <blockquote className="text-base italic leading-relaxed text-stone-700 sm:text-lg">
                 "{t.benefits.testimonial.quote}"
-              </p>
-              <p className="text-xs sm:text-sm font-semibold text-gray-500 mt-1.5">{t.benefits.testimonial.author}</p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 w-full sm:w-auto max-w-xs"
-                onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
-              >
-                {t.hero.cta}
-              </Button>
-
-              {/* Secondary Shopee CTA Button */}
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-orange-500 hover:bg-orange-600 text-white border-orange-600 hover:border-orange-700 text-sm sm:text-base h-11 sm:h-12 px-6 sm:px-8 w-full sm:w-auto max-w-xs"
-                onClick={() =>
-                  window.open(
-                    "https://shopee.sg/Myrrh-Soreness-Muscle-Relief-Spray-Herbalbath-Singapore-i.177895131.41413960917",
-                    "_blank",
-                  )
-                }
-              >
-                {t.hero.shopee_cta}
-              </Button>
-
-              {/* Mobile Language Toggle Button */}
-              <div className="block md:hidden w-full sm:w-auto max-w-xs">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-sm sm:text-base h-11 sm:h-12 w-full bg-background/80 backdrop-blur-sm w-full"
-                  onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
-                >
-                  {language === "zh" ? "English" : "中文"}
-                </Button>
-              </div>
-            </div>
+              </blockquote>
+              <figcaption className="mt-1.5 text-sm font-semibold text-stone-500 sm:text-base">
+                {t.benefits.testimonial.author}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -736,7 +765,13 @@ function HomePageContent() {
                 <p className="text-center text-sm sm:text-base font-medium text-gray-700 mb-3">
                   {language === "zh" ? "选择您的套餐" : "Choose your package"}
                 </p>
-                <BundleSelector language={language} onSelect={setSelectedPackage} />
+                <BundleSelector
+                  language={language}
+                  onSelect={(label, id) => {
+                    setSelectedPackage(label)
+                    setSelectedPackageId(id)
+                  }}
+                />
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
@@ -755,9 +790,17 @@ function HomePageContent() {
                 </div>
 
                 <div className="flex flex-col gap-3 sm:gap-4">
+                  <Link
+                    href={`/pay?b=${selectedPackageId}`}
+                    className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 text-lg font-semibold text-white shadow-lg shadow-emerald-900/20 transition-colors hover:bg-emerald-800"
+                  >
+                    <QrCode className="h-6 w-6" />
+                    {t.product_cta.pay_cta}
+                  </Link>
                   <Button
                     size="lg"
-                    className="bg-green-600 hover:bg-green-700 text-sm sm:text-base md:text-lg h-12 sm:h-14 w-full font-semibold"
+                    variant="outline"
+                    className="border-2 border-green-600 bg-white text-green-700 hover:bg-green-50 text-base md:text-lg h-14 w-full font-semibold"
                     onClick={() =>
                       window.open(
                         getWhatsAppLink(
@@ -902,14 +945,24 @@ function HomePageContent() {
             <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2">
               {t.final_cta.subtitle}
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-emerald-700 hover:bg-gray-100 text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-10 font-bold shadow-2xl"
-              onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
-            >
-              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-              {t.final_cta.cta}
-            </Button>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/pay?b=bundle"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-white px-8 text-lg font-bold text-emerald-800 shadow-2xl transition-colors hover:bg-gray-100"
+              >
+                <QrCode className="h-6 w-6" />
+                {t.hero.pay_cta}
+              </Link>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white text-lg h-14 px-8 font-bold"
+                onClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+              >
+                <MessageCircle className="w-6 h-6 mr-2" />
+                {t.final_cta.cta}
+              </Button>
+            </div>
           </div>
         </section>
       </main>
@@ -1013,6 +1066,11 @@ function HomePageContent() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/pay" className="text-stone-600 hover:text-emerald-600 transition-colors">
+                    {language === "zh" ? "PayNow 付款" : "Pay with PayNow"}
+                  </Link>
+                </li>
+                <li>
                   <Link href="/testimonials" className="text-stone-600 hover:text-emerald-600 transition-colors">
                     {language === "zh" ? "客户评价 Reviews" : "Testimonials"}
                   </Link>
@@ -1074,8 +1132,10 @@ function HomePageContent() {
 
       <StickyMobileCTA
         onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
-        whatsappLabel={t.hero.whatsapp_cta}
+        whatsappLabel="WhatsApp"
         callLabel={language === "zh" ? "立即拨打" : "Call Now"}
+        payHref="/pay?b=bundle"
+        payLabel={language === "zh" ? "PayNow 付款" : "Pay now"}
       />
     </div>
   )

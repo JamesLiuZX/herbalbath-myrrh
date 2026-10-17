@@ -345,7 +345,10 @@ function TestimonialsPageContent() {
         </section>
       </main>
 
-      <StickyMobileCTA onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")} />
+      <StickyMobileCTA
+        onWhatsAppClick={() => window.open(getWhatsAppLink(whatsappNumber), "_blank")}
+        payHref="/pay?b=bundle"
+      />
     </div>
   )
 }

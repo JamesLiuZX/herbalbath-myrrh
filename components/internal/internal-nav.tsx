@@ -4,6 +4,7 @@ const links = [
   { href: "/internal", label: "Overview" },
   { href: "/internal/roadmap", label: "Growth roadmap" },
   { href: "/internal/hsa-certifications", label: "HSA certifications" },
+  { href: "/internal/paynow", label: "PayNow" },
 ]
 
 export function InternalNav({ active }: { active: string }) {
