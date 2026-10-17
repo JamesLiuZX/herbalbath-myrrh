@@ -40,10 +40,10 @@ function ProductCard({ text, lang }: { text: string; lang: "zh" | "en" }) {
   return (
     <aside className="not-prose my-8 flex flex-col sm:flex-row gap-5 items-center rounded-2xl border border-amber-200 bg-amber-50/70 p-5 md:p-6">
       <Image
-        src="/images/product-cutout.webp"
-        alt={lang === "zh" ? "HerbalBath 没药喷雾" : "HerbalBath Myrrh Spray"}
-        width={96}
-        height={203}
+        src="/images/product-pack.webp"
+        alt={lang === "zh" ? "HerbalBath 没药草本能量油" : "HerbalBath Myrrh Herbal Energy Oil"}
+        width={738}
+        height={1186}
         className="h-36 w-auto flex-none"
       />
       <div className="space-y-3 text-center sm:text-left">

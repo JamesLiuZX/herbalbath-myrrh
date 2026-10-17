@@ -264,10 +264,10 @@ export default async function PainPointPage({ params }: PageProps) {
               <Card className="overflow-hidden">
                 <div className="bg-gradient-to-b from-brand-50 to-white px-6 pt-6">
                   <Image
-                    src="/images/product-cutout.webp"
-                    alt="HerbalBath 没药喷雾"
-                    width={709}
-                    height={1500}
+                    src="/images/product-pack.webp"
+                    alt="HerbalBath 没药草本能量油"
+                    width={738}
+                    height={1186}
                     sizes="96px"
                     className="mx-auto h-48 w-auto drop-shadow-xl"
                   />

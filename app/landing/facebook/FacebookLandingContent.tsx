@@ -58,8 +58,8 @@ export default function FacebookLandingContent() {
 
               <div className="relative">
                 <img
-                  src="/images/product-hero.png"
-                  alt="Myrrh Soreness Relief Spray"
+                  src="/images/product-pack-square.jpg"
+                  alt="HerbalBath Myrrh Herbal Energy Oil"
                   className="w-full h-auto rounded-2xl shadow-xl"
                 />
                 <div className="absolute -top-4 -right-4 bg-red-500 text-white rounded-full px-4 py-2 font-bold shadow-lg">
