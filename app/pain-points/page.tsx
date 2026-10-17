@@ -1,6 +1,24 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Phone, MessageCircle, Leaf, Shield, Clock, Star } from "lucide-react"
+import {
+  ArrowRight,
+  Phone,
+  MessageCircle,
+  Leaf,
+  Shield,
+  Clock,
+  Star,
+  Footprints,
+  PersonStanding,
+  Bone,
+  Hand,
+  Activity,
+  Moon,
+  Sunrise,
+  CloudRain,
+  HeartPulse,
+  type LucideIcon,
+} from "lucide-react"
 import { painPointsData } from "@/app/lib/pain-points-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -31,15 +49,25 @@ export const metadata: Metadata = {
   },
 }
 
-const painPointIcons: Record<string, string> = {
-  "knee-pain": "🦵",
-  "back-pain": "🔙",
-  "joint-arthritis": "🦴",
-  "numbness-tingling": "🤚",
-  "neck-shoulder-stiffness": "💪",
-  "sleep-difficulties": "😴",
-  "morning-stiffness": "🌅",
-  "weather-related-pain": "🌧️",
+// Line icons rather than emoji: clearer at a glance, and the same on every phone.
+const painPointIcons: Record<string, LucideIcon> = {
+  "knee-pain": Footprints,
+  "back-pain": PersonStanding,
+  "joint-arthritis": Bone,
+  "numbness-tingling": Hand,
+  "neck-shoulder-stiffness": Activity,
+  "sleep-difficulties": Moon,
+  "morning-stiffness": Sunrise,
+  "weather-related-pain": CloudRain,
+}
+
+function PainPointIcon({ slug }: { slug: string }) {
+  const Icon = painPointIcons[slug] ?? HeartPulse
+  return (
+    <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 ring-1 ring-brand-100">
+      <Icon className="h-7 w-7 text-brand-700" aria-hidden="true" />
+    </div>
+  )
 }
 
 // FAQ Schema for SEO
@@ -166,7 +194,7 @@ export default function PainPointsPage() {
                 <Link key={painPoint.slug} href={`/pain-points/${painPoint.slug}`}>
                   <Card className="h-full hover:shadow-lg hover:border-emerald-300 transition-all duration-300 cursor-pointer group">
                     <CardHeader className="pb-3">
-                      <div className="text-4xl mb-3">{painPointIcons[painPoint.slug] || "🩹"}</div>
+                      <PainPointIcon slug={painPoint.slug} />
                       <CardTitle className="text-xl font-bold text-emerald-800 group-hover:text-emerald-600 transition-colors">
                         {painPoint.titleZh}
                       </CardTitle>

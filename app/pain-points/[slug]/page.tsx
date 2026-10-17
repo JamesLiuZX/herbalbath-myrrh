@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight, Phone, MessageCircle, ArrowLeft, Clock, Shield, Leaf, Star, CheckCircle } from "lucide-react"
@@ -259,6 +260,30 @@ export default async function PainPointPage({ params }: PageProps) {
 
             {/* Sidebar */}
             <aside className="lg:col-span-1 space-y-6">
+              {/* The product, shown rather than described; approved claims only. */}
+              <Card className="overflow-hidden">
+                <div className="bg-gradient-to-b from-brand-50 to-white px-6 pt-6">
+                  <Image
+                    src="/images/product-cutout.webp"
+                    alt="HerbalBath 没药喷雾"
+                    width={709}
+                    height={1500}
+                    sizes="96px"
+                    className="mx-auto h-48 w-auto drop-shadow-xl"
+                  />
+                </div>
+                <CardContent className="pt-4 text-center">
+                  <p className="font-serif text-xl font-bold text-brand-900">HerbalBath 没药喷雾</p>
+                  <p className="mt-1 text-base text-stone-600">10秒感受温热 · 一瓶可用3-4个月 · 100%天然成分</p>
+                  <Link
+                    href="/pay?b=bundle"
+                    className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-xl bg-brand-700 text-lg font-semibold text-white transition-colors hover:bg-brand-800"
+                  >
+                    买3送1 · PayNow 购买
+                  </Link>
+                </CardContent>
+              </Card>
+
               {/* Trust Badges */}
               <Card>
                 <CardHeader>

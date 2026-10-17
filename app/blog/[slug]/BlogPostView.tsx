@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { MessageCircle, Phone, ArrowLeft, Clock, User, Calendar, BookOpen } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -217,43 +218,54 @@ export default function BlogPostView({ post }: { post: PostView }) {
 
               <RelatedPainPoints currentSlug={post.slug} />
 
-              <div className="mt-12 p-8 md:p-10 bg-gradient-to-r from-emerald-700 to-emerald-800 rounded-2xl text-white text-center">
-                {post.cta === "checked" ? (
-                  <>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif">{t.ctaTitle}</h2>
-                    <p className="text-lg text-emerald-100 mb-6 max-w-2xl mx-auto">{t.ctaText}</p>
-                  </>
-                ) : (
-                  <>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 font-serif">准备好体验真正的缓解了吗？</h2>
-                    <p className="text-lg text-emerald-100 mb-6 max-w-2xl mx-auto">
-                      HerbalBath没药喷雾结合了古老智慧与现代科技，为新加坡15,000+用户带来快速、深层的疼痛缓解。
-                    </p>
-                  </>
-                )}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* A light card so the bottle (itself maroon) stands out. */}
+              <div className="mt-12 grid items-center gap-6 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-brand-200 sm:grid-cols-[auto_1fr] md:p-10">
+                <Image
+                  src="/images/product-cutout.webp"
+                  alt={post.lang === "zh" ? "HerbalBath 没药喷雾" : "HerbalBath Myrrh Spray"}
+                  width={709}
+                  height={1500}
+                  sizes="112px"
+                  className="mx-auto h-44 w-auto drop-shadow-xl md:h-56"
+                />
+                <div className="text-center sm:text-left">
                   {post.cta === "checked" ? (
-                    <Link
-                      href="/pay?b=bundle"
-                      className="inline-flex items-center justify-center rounded-md bg-white text-emerald-700 hover:bg-emerald-50 text-lg font-semibold px-8 py-4"
+                    <>
+                      <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-brand-900">{t.ctaTitle}</h2>
+                      <p className="text-lg text-stone-700 mb-6">{t.ctaText}</p>
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="text-2xl md:text-3xl font-bold mb-3 font-serif text-brand-900">准备好体验真正的缓解了吗？</h2>
+                      <p className="text-lg text-stone-700 mb-6">
+                        HerbalBath没药喷雾结合了古老智慧与现代科技，为新加坡15,000+用户带来快速、深层的疼痛缓解。
+                      </p>
+                    </>
+                  )}
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                    {post.cta === "checked" ? (
+                      <Link
+                        href="/pay?b=bundle"
+                        className="inline-flex items-center justify-center rounded-xl bg-brand-700 text-white hover:bg-brand-800 text-lg font-semibold px-7 py-4"
+                      >
+                        {t.ctaPay}
+                      </Link>
+                    ) : null}
+                    <a
+                      href={whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center rounded-xl text-lg font-semibold px-7 py-4 ${post.cta === "checked" ? "border-2 border-green-600 text-green-700 hover:bg-green-50" : "bg-green-600 text-white hover:bg-green-700"}`}
                     >
-                      {t.ctaPay}
-                    </Link>
-                  ) : null}
-                  <a
-                    href={whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center rounded-md text-lg font-semibold px-8 py-4 ${post.cta === "checked" ? "border border-white text-white hover:bg-emerald-600" : "bg-white text-emerald-700 hover:bg-emerald-50"}`}
-                  >
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    {post.cta === "checked" ? t.ctaWhatsApp : "WhatsApp 咨询订购"}
-                  </a>
-                  {post.cta === "legacy" ? (
-                    <Link href="/" className="inline-flex items-center justify-center rounded-md border border-white text-white hover:bg-emerald-600 text-lg font-semibold px-8 py-4">
-                      了解更多产品信息
-                    </Link>
-                  ) : null}
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      {post.cta === "checked" ? t.ctaWhatsApp : "WhatsApp 咨询订购"}
+                    </a>
+                    {post.cta === "legacy" ? (
+                      <Link href="/" className="inline-flex items-center justify-center rounded-xl border-2 border-brand-700 text-brand-700 hover:bg-brand-50 text-lg font-semibold px-7 py-4">
+                        了解更多产品信息
+                      </Link>
+                    ) : null}
+                  </div>
                 </div>
               </div>
 

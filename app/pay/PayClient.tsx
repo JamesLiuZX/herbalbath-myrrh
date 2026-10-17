@@ -267,7 +267,7 @@ export function PayClient() {
                   }`}
                 >
                   {id === "bundle" && (
-                    <span className="absolute -top-3 right-4 rounded-full bg-[#7F351E] px-3 py-1 text-sm font-bold text-white">
+                    <span className="absolute -top-3 right-4 rounded-full bg-brand-700 px-3 py-1 text-sm font-bold text-white">
                       {t.popular}
                     </span>
                   )}
@@ -462,7 +462,7 @@ export function PayClient() {
 function StepTitle({ n, text }: { n: number; text: string }) {
   return (
     <h2 className="flex items-center gap-3 text-xl font-semibold sm:text-2xl">
-      <span className="grid h-9 w-9 place-items-center rounded-full bg-[#7F351E] text-lg font-bold text-white">{n}</span>
+      <span className="grid h-9 w-9 place-items-center rounded-full bg-brand-700 text-lg font-bold text-white">{n}</span>
       {text}
     </h2>
   )

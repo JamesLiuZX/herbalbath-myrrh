@@ -27,7 +27,7 @@ export function MonthlyOfferCountdown({ language }: MonthlyOfferCountdownProps) 
   if (days === null) return null
 
   return (
-    <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-700 border border-red-200 rounded-full px-3 py-1 text-xs sm:text-sm font-medium">
+    <div className="inline-flex items-center gap-1.5 bg-brand-50 text-brand-800 border border-brand-200 rounded-full px-3 py-1 text-xs sm:text-sm font-medium">
       <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
       {language === "zh" ? (
         <span>本月优惠还剩 {days} 天</span>
