@@ -12,7 +12,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/private/', '/internal/'],
+        // '/internal' without a trailing slash also covers the bare /internal
+        // page; '/internal/' only matched the pages under it.
+        disallow: ['/api/', '/private/', '/internal'],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

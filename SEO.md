@@ -27,12 +27,36 @@ Written 17 Oct 2026. Covers herbalbathsg.com as it stood on `main` (ed301c9) and
 | **The two content cron jobs only wrote to the log.** `generate-articles` listed topic gaps and published nothing (Vercel's filesystem is read-only at run time); `update-pain-points` computed seasonal tips and discarded them. | Looked automated; wasn't. | Both removed, with `app/lib/rag.ts`. The content engine replaces them (section 3). The reorder-nudge cron stays. |
 | **Pain-point pages linked only to hand-written posts.** | New articles could never appear as related reading. | They draw from every post. |
 
+### Second audit: SEOptimer, 17 Oct 2026
+
+The report graded the homepage B- (on-page A-, links F, usability B+, performance A-). Fixed in the pull request that added this section:
+
+| Finding | What changed |
+|---|---|
+| Title 70 characters; meta description 196 | Title "HerbalBath 草本沐 没药草本能量油 \| Myrrh Herbal Oil Singapore" (51). Description 128 characters, approved claims only. The social card text matches. |
+| Keyword consistency: the page's main words weren't in the title, description or headings | The H1 now opens with the brand and product name (HerbalBath 草本沐 · 没药草本能量油), the same words as the title and description, above James's tagline. |
+| Thin content (685 words) | The middle of the homepage is a Shopee-style detail column (`components/product-details.tsx`): the listing's own images with text panels for the story, how to use it, everyday moments, a specification table and the guarantees. It renders on the server, so it ships no JavaScript. |
+| /internal discoverable from the homepage | The footer link is gone, and robots.txt blocks `/internal` itself (the old `/internal/` rule only covered the pages under it). The pages were already `noindex`. |
+| No llms.txt | `public/llms.txt`: what the brand sells, prices, how to buy, the main pages. |
+| Render-blocking scripts | Google Analytics and the Meta and TikTok pixels load with `next/script` after the page is interactive, not as blocking tags in `<head>`. |
+| Image optimisation | Store logos were 225–1200 px PNGs (the Shopee one 254 KB) shown at 20–32 px; now 64 px WebP files through `next/image`. |
+| Social card showed the old spray box | New `public/images/og-image.jpg` with the 55 ml Herbal Energy Oil. |
+| Structured data | The organisation is typed `OnlineStore`, the Organization subtype Google documents for online shops. Still no `LocalBusiness`: there is no shop to visit. |
+
+Left for James, outside the code:
+
+- **Email records (DNS at Porkbun).** No SPF and no DMARC, so mail claiming to be from herbalbathsg.com is easy to spoof, and outreach email lands in spam more often. Add Resend's records when setting it up (ops/README.md §4), plus `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:hello@herbalbathsg.com`. Tighten to `p=quarantine` after a few clean weeks.
+- **One redirect hop instead of two.** The report measured a redirect chain on the way in (0.6 s on mobile). In Vercel → Project → Settings → Domains, make `herbalbathsg.com` the primary domain and set `www.herbalbathsg.com` to redirect straight to it. If GitHub Pages is switched on for this repository (it has a CNAME file), turn it off so only Vercel answers.
+- **Backlinks.** 85 links, almost all from link-farm domains. Google ignores those; don't buy more, and don't file a disavow unless Search Console shows a manual action. Real links come from the trade partners (each stockist page can link the site), Singapore directories, community and clan-association newsletters around 重阳 and CNY, and Chinese-language media.
+- **Social profiles.** No Facebook, Instagram or YouTube links yet. Once the Facebook Page exists, add its URL to `SOCIAL_PROFILES` (below).
+- **Meta Pixel.** Set `NEXT_PUBLIC_META_PIXEL_ID` in Vercel once there's a Pixel; it loads automatically.
+
 ### Waiting on James: seven decisions
 
 These are judgement calls about what the business claims, so nothing here was changed. As noted in REMINDERS.md, James wants to decide claims himself.
 
 1. **The star rating in the product markup.** `aggregateRating` says 4.9 stars from **15,000 reviews**. 15,000 is the customer count, and the reviews aren't on the page. Google requires a rating to summarise reviews that visitors can read where the markup is, and this is the kind of markup that earns a "spammy structured data" manual action, which strips rich results from the whole site. Either set `reviewCount` to the number of reviews actually shown (the testimonials page could carry them), or delete the block. It's in `app/lib/structured-data.ts`, marked ⚠️.
-2. **Effect and superlative claims in metadata and page copy.** Search results and social cards show "10秒见效" and "Singapore's #1" (`app/layout.tsx`), and the product markup says "Works in 10 seconds". Page copy carries 神奇, 奇效, 治愈, 治本, 告别疼痛, 无副作用 and "no side effects" on the homepage, pain-point pages, testimonials, the blog CTA and both ad landing pages. These are the same words `content/rules.json` bans in new articles. They matter for ads review (Meta and TikTok both reject health-effect claims), for health-product advertising rules (worth settling with the HSA classification REMINDERS.md already lists), and for trust on a health site. The approved wording used in new articles: 10秒感受温热, 一瓶可用3-4个月, 100%天然成分.
+2. **Effect and superlative claims in page copy.** (The title, description and social card were rewritten with approved wording in the second audit, so "10秒见效" and "Singapore's #1" are gone from them. The product markup still says "Works in 10 seconds".) Page copy carries 神奇, 奇效, 治愈, 治本, 告别疼痛, 无副作用 and "no side effects" on the homepage, pain-point pages, testimonials, the blog CTA and both ad landing pages. These are the same words `content/rules.json` bans in new articles. They matter for ads review (Meta and TikTok both reject health-effect claims), for health-product advertising rules (worth settling with the HSA classification REMINDERS.md already lists), and for trust on a health site. The approved wording used in new articles: 10秒感受温热, 一瓶可用3-4个月, 100%天然成分.
 3. **One customer number.** The site says 15,000+; James's portfolio says 30,000+. Pick the true one and use it everywhere.
 4. **"Since 2016" and "8年品质保证".** In the organisation markup (`foundingDate`) and the FAQ. Keep if accurate.
 5. **The Tiger Balm comparison** in the review quoted in the product markup ("much stronger than Tiger Balm"). It's a real testimonial, but naming a competitor in your own markup is a comparative claim. Keep it on the testimonials page if you like; consider a different review for the markup.
