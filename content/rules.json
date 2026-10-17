@@ -1,0 +1,34 @@
+{
+  "note": "The rules every article must pass before it can be published, by a person or by the content engine. Approved claims are copied word for word from the product page; anything that sounds like an effect and isn't on this list gets flagged. Keep in sync with the homepage when claims change.",
+  "product": {
+    "names": {
+      "zh": ["HerbalBath 没药喷雾", "没药喷雾", "HerbalBath 没药舒缓喷雾", "没药舒缓喷雾", "HerbalBath"],
+      "en": ["HerbalBath Myrrh Spray", "Myrrh Spray", "HerbalBath"]
+    },
+    "approvedClaims": {
+      "zh": ["10秒感受温热", "一瓶可用3-4个月", "100%天然成分", "买3送1", "30天不满意，全额退款"],
+      "en": ["warmth in 10 seconds", "one bottle lasts 3-4 months", "100% natural ingredients", "buy 3 get 1 free", "30-day money-back guarantee"]
+    },
+    "price": "S$39",
+    "payPath": "/pay"
+  },
+  "banned": {
+    "zh": ["无副作用", "根治", "治愈", "治本", "神奇", "奇效", "特效", "保证有效", "100%有效", "告别疼痛", "永久有效", "永久消除", "医生推荐", "临床证明", "消炎喷雾", "止痛喷雾", "使用前后", "第一品牌", "最有效"],
+    "en": ["no side effects", "cure", "cures", "cured", "miracle", "guaranteed results", "100% effective", "say goodbye to pain", "permanent relief", "doctor recommended", "clinically proven", "before and after", "number one", "#1", "most effective"]
+  },
+  "effectWords": {
+    "zh": ["缓解", "舒缓", "止痛", "消炎", "改善", "减轻", "治疗", "修复", "活血", "疗效", "见效"],
+    "en": ["relief", "relieve", "relieves", "soothe", "soothes", "soothing", "heal", "heals", "treat", "treats", "treatment", "reduce pain", "anti-inflammatory", "works in"]
+  },
+  "productWords": {
+    "zh": ["没药喷雾", "HerbalBath", "喷雾"],
+    "en": ["HerbalBath", "Myrrh Spray", "the spray"]
+  },
+  "healthClusters": ["knee", "back", "joints", "exercise", "diet", "sleep", "caregiving", "home-safety"],
+  "minSources": { "health": 2, "other": 0 },
+  "length": { "zhMinChars": 900, "enMinWords": 600, "titleMax": { "zh": 34, "en": 70 }, "descriptionRange": { "zh": [50, 100], "en": [110, 175] } },
+  "disclaimer": {
+    "zh": "本文仅供一般健康资讯参考，不能代替医生或物理治疗师的专业意见。如有持续或加重的疼痛、红肿或发烧，请及时就医。",
+    "en": "This article is general information, not medical advice. If pain persists or gets worse, or comes with swelling or fever, please see a doctor."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "hdb-ease-guide",
+  "lang": "zh",
+  "title": "乐龄易（EASE）申请指南：组屋扶手和防滑处理怎么申请、要多少钱",
+  "description": "家里有65岁以上长辈的组屋家庭，可以通过HDB的乐龄易（EASE）计划，以津贴价格安装扶手、做浴室防滑处理和加装斜坡。本文整理资格、项目、费用和申请步骤。",
+  "date": "2026-10-17",
+  "author": "HerbalBath 编辑部",
+  "cluster": "home-safety",
+  "keywords": ["乐龄易", "EASE 组屋", "组屋扶手", "浴室防滑", "乐龄易 申请"],
+  "image": null,
+  "body": [
+    { "type": "p", "text": "浴室地板湿滑、马桶旁边没有可以扶的地方，是很多家庭担心长辈跌倒的原因。建屋发展局（HDB）的**乐龄易计划（Enhancement for Active Seniors，简称EASE）**，让符合条件的组屋家庭以津贴后的价格，做好这些基本的安全改善。" },
+    { "type": "h2", "text": "乐龄易可以做什么？" },
+    {
+      "type": "ul",
+      "items": [
+        "**浴室防滑处理**：在厕所或浴室的地砖上做防滑处理。",
+        "**扶手**：安装在厕所、浴室，以及屋内其他需要的地方。",
+        "**斜坡**：在家门口或屋内有高低差的地方加装斜坡，方便行走或使用轮椅。"
+      ]
+    },
+    { "type": "h2", "text": "谁可以申请？" },
+    { "type": "p", "text": "根据HDB的资料，申请乐龄易（直接申请）需要是新加坡公民屋主家庭，并且家中有：" },
+    {
+      "type": "ul",
+      "items": [
+        "**65岁或以上**的家庭成员；或",
+        "**60至64岁**、在至少一项日常生活活动（洗澡、穿衣、进食、如厕、行走、上下床或椅子）上需要协助的家庭成员。这种情况要附上由合格评估者（例如在新加坡医药理事会注册的医生）签署的功能评估报告。"
+      ]
+    },
+    { "type": "h2", "text": "费用大约多少？" },
+    { "type": "p", "text": "政府会补贴大部分费用（约87.5%至95%），屋主只需付一小部分，金额按组屋类型而定。以下是HDB公布的津贴后价格示例（含消费税）：" },
+    {
+      "type": "table",
+      "head": ["项目", "1至3房式", "4房式", "5房式", "公寓式（Executive）"],
+      "rows": [
+        ["第一间厕所的扶手（一套）", "$26.15", "$39.20", "$52.30", "$65.40"],
+        ["一间厕所或浴室的防滑处理", "$11.95", "$17.95", "$23.95", "$29.95"]
+      ]
+    },
+    { "type": "p", "text": "价格可能会调整，申请前请以[HDB乐龄易网页](https://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat/for-our-seniors/ease)公布的最新资料为准。" },
+    { "type": "h2", "text": "申请前，先在家里看一看" },
+    { "type": "p", "text": "申请之前，可以陪长辈在家里走一遍，记下他们最需要帮助的地方，到时和承包商沟通会更清楚：" },
+    {
+      "type": "ul",
+      "items": [
+        "上厕所和洗澡时，长辈会扶着哪里站起来、坐下去？",
+        "家里有几间厕所，长辈平时用哪一间？",
+        "家门口或房间门口有没有门槛、高低差，推轮椅或用助行器会不会卡住？",
+        "晚上起床去厕所的路上，有没有需要扶的地方？"
+      ]
+    },
+    { "type": "h2", "text": "怎么申请？" },
+    {
+      "type": "ol",
+      "items": [
+        "上网使用HDB的**乐龄易（直接申请）电子服务**（提供四种官方语言），或使用**Mobile@HDB**手机应用申请。",
+        "家中成员是60至64岁的话，先准备好医生签署的功能评估报告。",
+        "申请获批后，按HDB的通知和承包商约时间，上门评估和安装。"
+      ]
+    },
+    { "type": "p", "text": "如果你的组屋正在进行家居改进计划（HIP），可以向HDB查询能否在HIP期间一并选择乐龄易项目。" },
+    { "type": "h2", "text": "住私宅怎么办？" },
+    { "type": "p", "text": "从2026年起，私宅住户也有类似的**EASE (Private)** 计划，由建设局（BCA）负责，津贴比例和项目价格与组屋不同。资格和申请方式请参考[EASE (Private) 官网](https://www.ease-private.gov.sg/)。" },
+    { "type": "h2", "text": "申请之外，家里还可以做的小改善" },
+    {
+      "type": "ul",
+      "items": [
+        "在床边放一盏伸手就能开的灯，方便夜里起床。",
+        "走道保持通畅，电线沿着墙边固定好。",
+        "浴室放一张有吸盘的防滑垫，并定期更换。",
+        "洗澡时可以坐在靠墙放稳的洗澡椅上。"
+      ]
+    },
+    { "type": "p", "text": "更多建议可以参考HealthHub的[防跌倒资料](https://www.healthhub.sg/programmes/aap/falls-prevention)和[居家安全贴士](https://healthhub.sg/live-healthy/home-safety-tips)，以及我们的[居家安全指南](/blog/home-safety-seniors)。" },
+    { "type": "tip", "title": "跌倒过，记得看医生", "text": "如果长辈最近跌倒过，或者差点跌倒，HealthHub建议去看医生，做进一步的跌倒风险评估。" }
+  ],
+  "faq": [
+    { "q": "家里长辈不到65岁，可以申请乐龄易吗？", "a": "如果长辈是60至64岁、在至少一项日常生活活动上需要协助，并附上医生签署的功能评估报告，就可以申请。" },
+    { "q": "乐龄易是免费的吗？", "a": "不是完全免费，但政府补贴大部分费用（约87.5%至95%），屋主只需付一小部分，金额按组屋类型而定。" },
+    { "q": "乐龄易和EASE (Private) 有什么不同？", "a": "乐龄易适用于组屋，由HDB负责；EASE (Private) 适用于私宅，由建设局（BCA）负责，津贴比例和价格也不同。" }
+  ],
+  "sources": [
+    { "title": "HDB：Enhancement for Active Seniors (EASE)", "url": "https://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat/for-our-seniors/ease" },
+    { "title": "BCA：EASE (Private)", "url": "https://www.ease-private.gov.sg/" },
+    { "title": "AgeWellSG：Living Environment", "url": "https://www.agewellsg.gov.sg/living-environment/" },
+    { "title": "HealthHub：You can prevent falls（防跌倒）", "url": "https://www.healthhub.sg/programmes/aap/falls-prevention" },
+    { "title": "HealthHub：Home safety tips（居家安全）", "url": "https://healthhub.sg/live-healthy/home-safety-tips" }
+  ],
+  "related": ["home-safety-seniors", "chongyang-gift-guide-singapore", "post-surgery-rehabilitation-tips", "walking-tips-seniors"]
+}

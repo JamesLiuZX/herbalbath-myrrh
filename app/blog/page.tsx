@@ -3,8 +3,12 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Phone, MessageCircle, ArrowRight, Leaf, Shield, Star } from "lucide-react"
-import { posts } from "@/app/lib/blog-data"
+import { allPosts } from "@/app/lib/all-posts"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { PostCover } from "@/components/blog/post-cover"
+
+// Newest first, hand-written posts and data articles together.
+const list = allPosts()
 
 export const metadata: Metadata = {
   title: "健康知识库 | Health Blog | HerbalBath SG",
@@ -40,7 +44,7 @@ const collectionSchema = {
   url: "https://herbalbathsg.com/blog",
   mainEntity: {
     "@type": "ItemList",
-    itemListElement: posts.map((post, index) => ({
+    itemListElement: list.map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `https://herbalbathsg.com/blog/${post.slug}`,
@@ -185,20 +189,20 @@ export default function BlogPage() {
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
+              {list.map((post, index) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="block group">
                   <Card className="h-full overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 group-hover:border-emerald-300">
-                    <div className="aspect-video overflow-hidden">
-                      <img
-                        src={post.image || "/placeholder.svg"}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
+                    <PostCover
+                      image={post.image}
+                      title={post.title}
+                      priority={index < 3}
+                      sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
+                    />
                     <CardHeader className="pb-2">
-                      <Badge className="mb-2 w-fit bg-emerald-100 text-emerald-700 hover:bg-emerald-200">
-                        {post.author}
-                      </Badge>
+                      <div className="mb-2 flex flex-wrap gap-2">
+                        <Badge className="w-fit bg-emerald-100 text-emerald-700 hover:bg-emerald-200">{post.author}</Badge>
+                        {post.lang === "en" ? <Badge className="w-fit bg-amber-100 text-amber-800 hover:bg-amber-200">English</Badge> : null}
+                      </div>
                       <CardTitle className="text-xl md:text-2xl group-hover:text-emerald-600 transition-colors text-emerald-900 font-serif line-clamp-2">
                         {post.title}
                       </CardTitle>

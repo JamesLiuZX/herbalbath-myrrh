@@ -1,0 +1,72 @@
+# Writes the week's article from content/calendar.json and opens a pull
+# request for review. Nothing goes live until someone merges it.
+#
+# Needs, once:
+#   - the ANTHROPIC_API_KEY repository secret (Settings > Secrets and variables > Actions)
+#   - Settings > Actions > General > Workflow permissions:
+#     "Allow GitHub Actions to create and approve pull requests"
+# See SEO.md, "The content engine".
+name: Content engine
+
+on:
+  schedule:
+    - cron: "17 1 * * 1" # Mondays, 09:17 in Singapore
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Calendar slug to write (blank for the entry due this week)
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: content-engine
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # An open pull request keeps its branch; don't write the same article twice.
+      - name: Find articles already waiting for review
+        id: open
+        run: echo "skip=$(git ls-remote --heads origin 'content/*' | sed 's#.*refs/heads/content/##' | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Write the article
+        id: write
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SKIP_SLUGS: ${{ steps.open.outputs.skip }}
+          SLUG: ${{ inputs.slug }}
+        run: node scripts/content/write-article.mjs "$SLUG"
+
+      - name: Open a pull request
+        if: steps.write.outputs.slug != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.write.outputs.slug }}
+        run: |
+          branch="content/$SLUG"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add content
+          git commit -F .content-engine/commit-message.txt
+          git push origin "$branch"
+          gh pr create --head "$branch" --title "$(cat .content-engine/pr-title.txt)" --body-file .content-engine/pr-body.md

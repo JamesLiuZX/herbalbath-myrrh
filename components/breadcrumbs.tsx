@@ -8,9 +8,11 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[]
+  /** Off when the page writes its own BreadcrumbList (blog posts use full titles there). */
+  schema?: boolean
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, schema = true }: BreadcrumbsProps) {
   // Generate BreadcrumbList schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -26,10 +28,12 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <>
       {/* JSON-LD for breadcrumbs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {schema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      ) : null}
 
       {/* Visual breadcrumbs */}
       <nav aria-label="Breadcrumb" className="py-4">

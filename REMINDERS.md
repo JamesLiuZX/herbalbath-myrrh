@@ -35,6 +35,17 @@ for periodic nudges, not the full picture.
 
 ## Recurring — worth a periodic check-in, not a one-time task
 
+- **Monday article pull request.** From 26 Oct 2026 the content engine opens
+  one blog pull request every Monday (see [`SEO.md`](./SEO.md)). Nudge if one
+  has been open for more than a week: review against the checklist in it and
+  merge, or close it and delete its branch.
+- **Search Console.** Not verified as of Oct 2026. Until it is, there's no
+  data on what the blog ranks for. Setup is SEO.md §3 step 1 (five minutes).
+  Once live, a monthly look at Performance (SEO.md §4) is the check-in.
+- **Content engine setup.** Needs the `ANTHROPIC_API_KEY` repository secret
+  and "Allow GitHub Actions to create and approve pull requests" ticked
+  (SEO.md §3). Ask whether the first pull request arrived.
+
 - **Contact capture.** Every inbound WhatsApp reorder should get logged into
   the customer base (there was no CRM as of Aug 2026 — ~200–300 numbers
   known from history, growing only if this becomes a habit). Ask
@@ -53,6 +64,9 @@ for periodic nudges, not the full picture.
   reframe. James said he wants to decide this himself rather than have it
   auto-fixed — a good periodic nudge is "have you decided on the claims/
   bundle fix yet?", not doing it for him.
+- **SEO decisions.** SEO.md lists seven, mostly claims. The most urgent is
+  the 4.9-star / "15,000 reviews" rating in the product markup, which can
+  draw a Google manual action. Same rule as above: ask, don't fix.
 - **HSA classification.** Hasn't been run through HSA's official
   classification tool yet as of Aug 2026 (see `/internal/hsa-certifications`
   for why this matters — it determines whether a lightweight notification or
@@ -61,3 +75,5 @@ for periodic nudges, not the full picture.
 ## Changelog
 
 - 8 Aug 2026 — created.
+- 17 Oct 2026 — SEO audit and weekly content engine (SEO.md); added the
+  Monday pull request, Search Console and SEO-decision items.

@@ -31,6 +31,15 @@ export const RETAIL = {
   },
 } as const
 
+/**
+ * Public social profiles, used as `sameAs` in the site's Organization markup.
+ * Add a URL only once the profile is live and shows HerbalBath branding: a
+ * sameAs pointing at an unclaimed handle tells Google that whoever claims it
+ * later is you. (The old markup listed facebook.com/herbalbathsg and
+ * tiktok.com/@herbalbathsg; neither turned up in a search in Oct 2026.)
+ */
+export const SOCIAL_PROFILES: readonly string[] = []
+
 export const SHOPEE_URL =
   "https://shopee.sg/Myrrh-Soreness-Muscle-Relief-Spray-Herbalbath-Singapore-i.177895131.41413960917"
 
