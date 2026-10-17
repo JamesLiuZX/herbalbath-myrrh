@@ -57,7 +57,6 @@ export function TestimonialsCarousel({
               src={item.src}
               index={index}
               onImageClick={setSelectedImage}
-              priority={index < 6}
             />
           ),
         )}
