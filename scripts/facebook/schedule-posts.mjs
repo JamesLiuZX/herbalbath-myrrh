@@ -18,9 +18,9 @@
 import { writeFileSync, readFileSync } from "node:fs"
 import path from "node:path"
 import { ROOT, claimProblems, loadRules } from "../content/lib.mjs"
+import { SITE, absolute, postsCsv, tagged } from "./posts-lib.mjs"
 
 const POSTS = path.join(ROOT, "marketing/facebook/posts.json")
-const SITE = "https://herbalbathsg.com"
 const GRAPH = `https://graph.facebook.com/${process.env.FB_GRAPH_VERSION || "v26.0"}`
 const WINDOW_DAYS = 28
 const MIN_LEAD_MINUTES = 15
@@ -31,28 +31,9 @@ const dryRun = args.has("--dry-run")
 /** "2026-10-18 08:00" in Singapore time, as a Date. */
 const when = (publishAt) => new Date(`${publishAt.replace(" ", "T")}:00+08:00`)
 
-/** Our own links get UTM tags so GA4 can tell which post brought the visit. */
-function tagged(link, id) {
-  if (!link?.startsWith(SITE)) return link
-  const url = new URL(link)
-  url.searchParams.set("utm_source", "facebook")
-  url.searchParams.set("utm_medium", "social")
-  url.searchParams.set("utm_campaign", id)
-  return url.toString()
-}
-
-const absolute = (image) => (image?.startsWith("/") ? `${SITE}${image}` : image)
-
 function writeCsv(posts) {
-  const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`
-  const rows = [["date", "time (SGT)", "language", "pillar", "text", "link", "image", "image prompt (Kino)"]]
-  for (const p of posts) {
-    const [date, time] = p.publishAt.split(" ")
-    rows.push([date, time, p.lang, p.pillar, p.text, tagged(p.link, p.id), absolute(p.image), p.imagePrompt])
-  }
   const file = path.join(ROOT, "marketing/facebook/posts.csv")
-  // A byte-order mark so Excel opens the Chinese text as UTF-8.
-  writeFileSync(file, `﻿${rows.map((r) => r.map(cell).join(",")).join("\r\n")}\r\n`)
+  writeFileSync(file, postsCsv(posts))
   console.log(`Wrote ${path.relative(ROOT, file)} (${posts.length} posts).`)
 }
 
@@ -124,7 +105,8 @@ async function main() {
       console.log(`· ${label}: already scheduled`)
       continue
     }
-    const notReady = await linkProblem(p.link)
+    // Pictures made by the creative agent are served from the site, so they must be deployed first.
+    const notReady = (await linkProblem(p.link)) ?? (p.image ? await linkProblem(absolute(p.image)) : null)
     if (notReady) {
       console.log(`… ${label}: waiting, ${notReady}`)
       continue

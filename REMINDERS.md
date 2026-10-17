@@ -39,6 +39,11 @@ for periodic nudges, not the full picture.
   one blog pull request every Monday (see [`SEO.md`](./SEO.md)). Nudge if one
   has been open for more than a week: review against the checklist in it and
   merge, or close it and delete its branch.
+- **Autopilot (the AI marketing team).** Built 17 Oct 2026, idle until its
+  secrets are set: `OPS_DATA_KEY` and `ANTHROPIC_API_KEY` first, then
+  Telegram, Facebook, Resend and RunPod ([`ops/README.md`](./ops/README.md) §Setup).
+  Ask which steps are done. Once Telegram is connected, nudge if trade-email
+  drafts have been waiting for /approve for more than two days.
 - **Facebook Page.** Not created as of 17 Oct 2026. Setup takes about 15
   minutes ([`marketing/facebook/README.md`](./marketing/facebook/README.md)).
   35 posts are written through 1 Jan 2027, and the scheduler needs re-running
@@ -82,4 +87,5 @@ for periodic nudges, not the full picture.
 - 8 Aug 2026 — created.
 - 17 Oct 2026 — SEO audit and weekly content engine (SEO.md); added the
   Monday pull request, Search Console and SEO-decision items. Facebook Page
-  kit (marketing/facebook); added the Facebook Page item.
+  kit (marketing/facebook); added the Facebook Page item. Autopilot, the AI
+  marketing team (ops/); added its setup item.

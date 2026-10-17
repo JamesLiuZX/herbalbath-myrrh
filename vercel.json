@@ -4,5 +4,6 @@
       "path": "/api/cron/reorder-nudges",
       "schedule": "0 2 * * *"
     }
-  ]
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)ops' ':(exclude)marketing'"
 }

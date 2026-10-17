@@ -1,5 +1,7 @@
 # Herbalbathsg redesign
 
+**Running the business side:** [`ops/README.md`](ops/README.md) (Autopilot, the AI marketing team) · [`SEO.md`](SEO.md) (blog and the weekly content engine) · [`marketing/facebook/README.md`](marketing/facebook/README.md) (the Facebook Page) · [`GROWTH.md`](GROWTH.md) and [`STRATEGY.md`](STRATEGY.md) (strategy).
+
 *Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jamesliuzxs-projects/v0-herbalbathsg-redesign)

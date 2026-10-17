@@ -29,3 +29,6 @@ next-env.d.ts
 
 # content engine scratch output (scripts/content/write-article.mjs)
 .content-engine/
+
+# Autopilot scratch output (decks, exports, run summaries)
+.ops/
