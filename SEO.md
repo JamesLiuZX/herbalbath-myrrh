@@ -41,7 +41,7 @@ These are judgement calls about what the business claims, so nothing here was ch
 
 ### Still to do (not decisions, just work)
 
-- **Social profiles.** The old markup claimed facebook.com/herbalbathsg and tiktok.com/@herbalbathsg; neither turned up in a search. Once the Facebook page exists (a kit is coming), add its URL to `SOCIAL_PROFILES` in `app/lib/growth-config.ts`.
+- **Social profiles.** The old markup claimed facebook.com/herbalbathsg and tiktok.com/@herbalbathsg; neither turned up in a search. Once the Facebook Page exists ([`marketing/facebook/README.md`](./marketing/facebook/README.md) has the setup), add its URL to `SOCIAL_PROFILES` in `app/lib/growth-config.ts`.
 - **Content gaps.** Pain-point pages name 11 related articles that don't exist yet (they're simply not shown): evening-relaxation-routine, morning-stretching-routine, hip-strengthening-exercises, joint-protection-daily-activities, hand-exercises-arthritis, ergonomic-tips-seniors, foot-care-diabetics, shoe-selection-guide, hydration-tips-seniors, housework-pain-prevention, sitting-posture-guide. Good calendar material, each needing two health sources first.
 - **The 22 hand-written posts** in `app/lib/blog-data.tsx` predate the rules: no sources, and several claim words (治愈, 治本, 神奇, 最有效, 见效). Refresh the best performers once Search Console shows which they are, by moving them into `content/blog/` as JSON so the checks apply.
 - **English pages.** The homepage's English toggle is client-side state on one URL, so English versions can't be indexed separately. Separate `/en` routes would be needed if English search matters; the blog already handles it by publishing English articles as their own posts.
@@ -68,7 +68,7 @@ These are judgement calls about what the business claims, so nothing here was ch
 
 **What every article does** is in `content/WRITING.md`: answers the search in the first paragraph, Singapore specifics, facts only from listed sources, a practical list or table, an FAQ, 2 to 4 internal links, and at most one optional product mention using approved claims. The checks in `scripts/content/lib.mjs` enforce the hard rules mechanically.
 
-**Distribution.** Each article becomes a Facebook post (the Facebook kit) and a WhatsApp-forwardable link. Family chats are where 55+ content travels in Singapore. Don't buy links. The links worth earning come from community partners (Active Ageing Centres, clan associations, senior fellowships) when an article is genuinely useful to their members.
+**Distribution.** Each article becomes a Facebook post ([`marketing/facebook`](./marketing/facebook/README.md) has 35 written ahead, Monday's always being the new article) and a WhatsApp-forwardable link. Family chats are where 55+ content travels in Singapore. Don't buy links. The links worth earning come from community partners (Active Ageing Centres, clan associations, senior fellowships) when an article is genuinely useful to their members.
 
 ## 3. The content engine
 

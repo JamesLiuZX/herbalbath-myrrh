@@ -1,4 +1,4 @@
-# Runs the content rules on pull requests that touch articles. (The content
+# Runs the content rules on pull requests that touch articles or social posts. (The content
 # engine checks its own articles before opening a pull request; GitHub doesn't
 # start workflows for pull requests opened with a workflow's token, but your
 # own pushes to that branch do trigger this.)
@@ -10,6 +10,7 @@ on:
       - "content/**"
       - "scripts/content/**"
       - "app/lib/blog-data.tsx"
+      - "marketing/facebook/**"
 
 jobs:
   check:
@@ -21,4 +22,4 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/content/check.mjs
-      - run: node --test app/lib/articles.test.mjs
+      - run: node --test app/lib/articles.test.mjs app/lib/facebook-posts.test.mjs

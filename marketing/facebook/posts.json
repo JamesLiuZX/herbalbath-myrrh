@@ -1,0 +1,299 @@
+{
+  "note": "Pre-written posts for the HerbalBath Facebook Page, 18 Oct 2026 to 1 Jan 2027, three a week (Mon 08:30 article, Wed 20:00 tip or community, Sat 09:00 family or product), plus festival days. Times are Singapore time. Checked by pnpm test against content/rules.json, the same rules as the blog. Scheduled by scripts/facebook/schedule-posts.mjs; see README.md. Links to herbalbathsg.com get UTM tags added when scheduled, and a post that links to an article waits until the article is live. Product posts are at most one in five.",
+  "posts": [
+    {
+      "id": "2026-10-18-chongyang",
+      "publishAt": "2026-10-18 08:00",
+      "lang": "zh",
+      "pillar": "festival",
+      "text": "今天是重阳节（农历九月初九），也是敬老的日子。🌿\n\n给长辈最好的礼物，往往是一顿饭、一个下午的陪伴。如果还想准备一份小礼物，我们整理了8个实用又贴心的点子，从居家安全小物到兴趣课程，也写了送礼的小禁忌（比如不送钟）。\n\n祝天下的长辈身体健康、天天开心！\n\n#重阳节 #敬老 #新加坡乐龄",
+      "link": "https://herbalbathsg.com/blog/chongyang-gift-guide-singapore"
+    },
+    {
+      "id": "2026-10-19-ease",
+      "publishAt": "2026-10-19 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "家里浴室湿滑、马桶旁边没有扶手？住组屋的家庭，可以通过HDB的乐龄易（EASE）计划，以津贴价格安装扶手、做浴室防滑处理和加装斜坡。\n\n✅ 新加坡公民屋主家庭，家中有65岁或以上的成员就可以申请（60至64岁、日常生活需要协助的，也可以申请）\n✅ 政府补贴大部分费用，约87.5%至95%\n\n资格、费用和申请步骤，我们整理成一篇看得懂的指南 👇\n\n#乐龄易 #组屋 #居家安全",
+      "link": "https://herbalbathsg.com/blog/hdb-ease-guide",
+      "sources": ["hdb-ease"]
+    },
+    {
+      "id": "2026-10-21-aac-question",
+      "publishAt": "2026-10-21 20:00",
+      "lang": "zh",
+      "pillar": "community",
+      "text": "想问问大家：家里的长辈平时最喜欢什么活动？唱卡拉OK、打太极、做手工，还是和老朋友喝咖啡？☕\n\n在新加坡，60岁或以上的公民和永久居民，都可以参加住家附近乐龄活动中心（AAC）的活动，大多数免费。不知道附近有哪一间？上SupportGoWhere搜索，或打AIC热线1800-650-6060。\n\n找中心和报名的方法都在这里 👇",
+      "link": "https://herbalbathsg.com/blog/active-ageing-centre-guide",
+      "sources": ["aic-aac"]
+    },
+    {
+      "id": "2026-10-24-meet-us",
+      "publishAt": "2026-10-24 09:00",
+      "lang": "zh",
+      "pillar": "product",
+      "text": "认识一下我们：HerbalBath 没药喷雾，以没药和乳香调制，100%天然成分。\n\n很多长辈习惯在晨练后、做完家务或晚上休息前，按一按肩颈和腿脚。喷上之后，10秒感受温热；一瓶可用3-4个月。\n\n有问题随时WhatsApp我们：8426 1225。",
+      "link": "https://herbalbathsg.com/"
+    },
+    {
+      "id": "2026-10-26-helper-massage",
+      "publishAt": "2026-10-26 08:30",
+      "lang": "en",
+      "pillar": "article",
+      "text": "For helpers and families: a gentle daily massage can be a calm, caring routine for an elderly parent. Warm your hands, keep the pressure light, and keep asking how it feels.\n\nOur new guide walks through a simple shoulder, neck and calf routine, good hygiene, and when to stop (broken skin, swelling, or new or sharp pain). AIC's Caregivers Training Grant can also help pay for a formal caregiving course.",
+      "link": "https://herbalbathsg.com/blog/helper-guide-gentle-massage-routine",
+      "sources": ["aic-ctg"]
+    },
+    {
+      "id": "2026-10-28-falls-check",
+      "publishAt": "2026-10-28 20:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "HealthHub提醒：长辈跌倒受伤，大多发生在家里。今晚花十分钟，陪长辈看看家里这三个地方：\n\n1️⃣ 浴室：地板滑不滑？有没有可以扶的地方？\n2️⃣ 走道：有没有电线、杂物挡路？\n3️⃣ 夜里起床的路：从床边到厕所，有没有小夜灯？\n\n小小的改变，就能让家里安全很多。\n\n#居家安全 #防跌倒",
+      "link": "https://herbalbathsg.com/blog/home-safety-seniors",
+      "sources": ["healthhub-falls"]
+    },
+    {
+      "id": "2026-10-31-gift-ideas-en",
+      "publishAt": "2026-10-31 09:00",
+      "lang": "en",
+      "pillar": "article",
+      "text": "Looking for a gift your parents will actually use? We put together 10 ideas for Singapore homes: a safer bathroom (HDB's EASE scheme subsidises grab bars and slip-resistant floors), a class at an Active Ageing Centre, a printed family photo book, help setting up their phone, and more. Several cost little or nothing.",
+      "link": "https://herbalbathsg.com/blog/gift-ideas-elderly-parents-singapore",
+      "sources": ["hdb-ease", "aic-aac"]
+    },
+    {
+      "id": "2026-11-02-discharge",
+      "publishAt": "2026-11-02 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "长辈出院回家的第一个星期，家人往往手忙脚乱。我们整理了一份清单：出院前要问医生的问题、药物和复诊日期、家里怎么布置（扶手、防滑、通道），还有照顾者自己也要记得休息。\n\n文章也介绍了乐龄易（EASE）和居家照护津贴（Home Caregiving Grant）的资格要点。\n\n#照顾长辈 #出院",
+      "link": "https://herbalbathsg.com/blog/hospital-discharge-home-checklist",
+      "sources": ["aic-hcg", "hdb-ease"]
+    },
+    {
+      "id": "2026-11-04-scam-ads",
+      "publishAt": "2026-11-04 20:00",
+      "lang": "zh",
+      "pillar": "protection",
+      "text": "⚠️ 请转告家里的长辈：警方提醒，有骗子在Facebook和TikTok上投放“乐龄活动”广告，邀请长辈加入“退休人士群组”，再通过WhatsApp要求安装一个APK应用程序。这其实是恶意软件，会偷偷删除Singpass、ScamShield等应用。接着，又有人冒充律政部或警察部队反诈骗中心的官员，要求转账或交出手机。\n\n记住三件事：\n• 不要安装来历不明的APK或应用程序\n• 政府官员不会在电话里要求您转账，或索取银行登录资料\n• 不确定时，打ScamShield热线1799（24小时）\n\n也说明一下：HerbalBath 绝不会要求您安装任何应用程序，也不会索取Singpass或银行登录资料。\n\n#防骗 #ScamShield",
+      "link": "https://ask.gov.sg/scamshield/questions/cmqrqgzef001c4401gkqh1dqs",
+      "sources": ["scamshield-senior-activity-ads", "scamshield-1799"]
+    },
+    {
+      "id": "2026-11-07-bundle",
+      "publishAt": "2026-11-07 09:00",
+      "lang": "zh",
+      "pillar": "product",
+      "text": "家里有几位长辈，一次准备好。\n\nHerbalBath 没药喷雾现在买3送1：4瓶只算3瓶的价钱，一瓶可用3-4个月，全岛免费送货。用PayNow付款，几分钟就能完成 👇",
+      "link": "https://herbalbathsg.com/pay?b=bundle"
+    },
+    {
+      "id": "2026-11-08-deepavali",
+      "publishAt": "2026-11-08 09:00",
+      "lang": "en",
+      "pillar": "festival",
+      "text": "Happy Deepavali to everyone celebrating in Singapore! May the Festival of Lights bring warmth and togetherness to your family. 🪔\n\n祝庆祝屠妖节的朋友节日快乐！",
+      "imagePrompt": "Close-up of lit clay diyas and marigold flowers on a wooden ledge at dusk, warm golden light, a softly blurred Singapore HDB corridor with festive lights in the background, photorealistic, no text"
+    },
+    {
+      "id": "2026-11-09-grandchildren-stretches",
+      "publishAt": "2026-11-09 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "帮忙带孙子，是甜蜜的负担：抱小孩、弯腰、推车，一天下来肩颈腰背都累了。\n\n我们整理了5个随时能做、坐着也能做的温和伸展，每个动作都写清楚怎么做、做几次，还有什么情况要停下来。\n\n#带孙子 #伸展运动",
+      "link": "https://herbalbathsg.com/blog/stretches-after-minding-grandchildren"
+    },
+    {
+      "id": "2026-11-11-how-much-activity",
+      "publishAt": "2026-11-11 20:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "每个星期要动多少才够？\n\n根据新加坡体育活动指南，65岁或以上的长者，每周最好有150至300分钟的中等强度活动，比如快走（走路时还能说话，但没办法唱歌）。每周至少3天，也做一些加强肌肉和平衡的运动。\n\n不必一次做完：每天几次、每次10分钟的散步，也一样算数。\n\n#乐龄运动 #健康生活",
+      "link": "https://healthhub.sg/programmes/MoveIt/moveit-singapore-physical-activity-guidelines",
+      "sources": ["spag"]
+    },
+    {
+      "id": "2026-11-14-therapeutic-garden",
+      "publishAt": "2026-11-14 09:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "周末想带长辈出去走走？🌳\n\nNParks在一些公园设有疗愈花园（Therapeutic Garden），种了很多可以看、可以闻、可以摸的植物，也设计得适合长辈慢慢逛。West Coast Park的疗愈花园，就特别照顾到长辈和有特殊需要的孩子。\n\n出门记得带水、戴帽子，走累了就坐下来休息。",
+      "link": "https://www.nparks.gov.sg/news/news-detail/nparks-opens-new-therapeutic-garden-at-west-coast-park-with-features-that-cater-to-diverse-range-of-users--including-seniors-and-children-with-special-needs",
+      "sources": ["nparks-west-coast-tg"]
+    },
+    {
+      "id": "2026-11-16-scam-guide",
+      "publishAt": "2026-11-16 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "骗子的手法一直在变：冒充政府官员、假的“乐龄活动”广告、要求安装APK……\n\n我们整理了一份给长辈和家人的防骗指南：常见的手法、怎么分辨，还有不确定时该找谁（ScamShield热线1799）。值得转发到家庭群组。\n\n#防骗",
+      "link": "https://herbalbathsg.com/blog/senior-scam-protection-guide",
+      "sources": ["scamshield-1799"]
+    },
+    {
+      "id": "2026-11-18-healthy-plate",
+      "publishAt": "2026-11-18 20:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "一个好记的吃饭原则：“我的健康餐盘”（My Healthy Plate）\n\n🥬 半个盘子：蔬菜和水果\n🍚 四分之一：全谷类，例如糙米饭\n🐟 四分之一：鱼、肉、豆腐等蛋白质\n\n在小贩中心也用得上：多点一份青菜，白饭换成糙米饭。\n\n#健康饮食",
+      "link": "https://www.healthhub.sg/programmes/55/my-healthy-plate",
+      "sources": ["healthhub-plate"]
+    },
+    {
+      "id": "2026-11-21-guarantee",
+      "publishAt": "2026-11-21 09:00",
+      "lang": "zh",
+      "pillar": "product",
+      "text": "第一次买，怕不适合？HerbalBath 没药喷雾提供30天不满意，全额退款。\n\n100%天然成分，喷上之后10秒感受温热。第一次用，建议先在一小块皮肤上试试；如果皮肤敏感、有伤口，或正在服药，请先问问医生。",
+      "link": "https://herbalbathsg.com/"
+    },
+    {
+      "id": "2026-11-23-myrrh-explained",
+      "publishAt": "2026-11-23 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "没药和乳香到底是什么？它们从哪里来、传统上怎么用，现代研究知道些什么、还不知道些什么？\n\n我们用简单的话整理了一篇，也老实说明哪些说法还没有足够的证据。",
+      "link": "https://herbalbathsg.com/blog/myrrh-and-frankincense-explained"
+    },
+    {
+      "id": "2026-11-25-caregiver",
+      "publishAt": "2026-11-25 20:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "照顾家人的您，也要照顾好自己。🤍\n\n如果家里有需要长期照顾的长辈，可以了解AIC的居家照护津贴（Home Caregiving Grant）：符合条件的家庭每个月可以领取现金补贴，分担照顾的开销。资格和申请方法，请以AIC网站的最新资料为准，也可以打AIC热线1800-650-6060询问。\n\n#照顾者",
+      "link": "https://www.aic.sg/Financial-Assistance/Home-Caregiving-Grant",
+      "sources": ["aic-hcg"]
+    },
+    {
+      "id": "2026-11-28-first-job",
+      "publishAt": "2026-11-28 09:00",
+      "lang": "zh",
+      "pillar": "community",
+      "text": "周末的一个小提议：今天问问家里的长辈，年轻时做过什么工作？第一份薪水花在哪里？\n\n很多故事，不问就不会知道。欢迎在留言里分享您家的故事 👇",
+      "imagePrompt": "An elderly Singaporean Chinese grandfather showing an old black-and-white photo album to his adult granddaughter at a kitchen table in an HDB flat, warm afternoon light, both smiling, photorealistic, no text"
+    },
+    {
+      "id": "2026-11-30-parks",
+      "publishAt": "2026-11-30 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "带长辈去公园，最好路平、有遮阴、有厕所、有地方坐。我们整理了几个适合长辈慢慢走的新加坡公园，还有出门前的小准备。\n\n#新加坡公园 #乐龄生活",
+      "link": "https://herbalbathsg.com/blog/senior-friendly-parks-singapore"
+    },
+    {
+      "id": "2026-12-02-rainy-season",
+      "publishAt": "2026-12-02 20:00",
+      "lang": "zh",
+      "pillar": "tip",
+      "text": "年底下雨天多，家里和组屋走廊都容易湿滑。☔\n\n• 门口放一块防滑垫\n• 浴室用完，随手把地板擦干\n• 出门穿防滑、合脚的鞋，走慢一点\n\n住组屋的家庭，也可以通过乐龄易（EASE）申请浴室防滑处理。\n\n#居家安全",
+      "link": "https://herbalbathsg.com/blog/hdb-ease-guide",
+      "sources": ["healthhub-falls", "hdb-ease"]
+    },
+    {
+      "id": "2026-12-05-year-end-gift",
+      "publishAt": "2026-12-05 09:00",
+      "lang": "zh",
+      "pillar": "product",
+      "text": "冬至、新年，回家看长辈的日子越来越近了。\n\n如果想准备一份实用的小礼物：HerbalBath 没药喷雾买3送1，可以一次送给家里几位长辈。100%天然成分，一瓶可用3-4个月，全岛免费送货。",
+      "link": "https://herbalbathsg.com/pay?b=bundle"
+    },
+    {
+      "id": "2026-12-07-cny-gifts",
+      "publishAt": "2026-12-07 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "2027年的农历新年在2月6日。送长辈的年礼，除了年饼和红包，还可以选什么？\n\n我们整理了一份实用又有心意的清单，也附上送礼的小禁忌。\n\n#农历新年 #送礼",
+      "link": "https://herbalbathsg.com/blog/cny-gift-ideas-for-parents-2027"
+    },
+    {
+      "id": "2026-12-09-caregiving-schemes-en",
+      "publishAt": "2026-12-09 20:00",
+      "lang": "en",
+      "pillar": "tip",
+      "text": "Caring for a parent at home? Two AIC schemes worth knowing:\n\n• Home Caregiving Grant: a monthly cash payout for eligible families caring for someone who needs long-term help at home.\n• Caregivers Training Grant: helps pay for approved caregiving courses, for family members and helpers.\n\nCheck the latest eligibility rules on AIC's website, or call AIC on 1800-650-6060.",
+      "link": "https://www.aic.sg/Financial-Assistance/Home-Caregiving-Grant",
+      "sources": ["aic-hcg", "aic-ctg"]
+    },
+    {
+      "id": "2026-12-12-tangyuan",
+      "publishAt": "2026-12-12 09:00",
+      "lang": "zh",
+      "pillar": "community",
+      "text": "冬至快到了（12月22日）。您家冬至吃汤圆吗？是红白小汤圆，还是包了馅的大汤圆？🥣\n\n留言告诉我们，您家的冬至传统是什么。",
+      "imagePrompt": "A bowl of pink and white glutinous rice balls (tang yuan) in clear ginger syrup on a wooden table, steam rising, grandmother's hands in the background, warm home lighting, photorealistic, no text"
+    },
+    {
+      "id": "2026-12-14-dongzhi",
+      "publishAt": "2026-12-14 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "“冬至大过年”。在新加坡，你家怎么过冬至？\n\n冬至的由来、汤圆的意思，还有和长辈一起过节的小提议，都在这篇里。\n\n#冬至",
+      "link": "https://herbalbathsg.com/blog/dongzhi-traditions-singapore"
+    },
+    {
+      "id": "2026-12-16-shopping-scams",
+      "publishAt": "2026-12-16 20:00",
+      "lang": "zh",
+      "pillar": "protection",
+      "text": "年底网购多，也是骗子最活跃的时候。小心这些信号：\n\n• 价格低得不合理\n• 要求先转账，或把您带到别的聊天软件“私下交易”\n• 发来来历不明的付款链接\n\n不确定时，先停一停、问问家人，或打ScamShield热线1799。\n\n#防骗",
+      "link": "https://www.scamshield.gov.sg/check-for-scams/scamshield-helpline/",
+      "sources": ["scamshield-1799", "spf-scams"]
+    },
+    {
+      "id": "2026-12-19-how-to-order",
+      "publishAt": "2026-12-19 09:00",
+      "lang": "zh",
+      "pillar": "service",
+      "text": "想订购，又不想下载任何应用程序？\n\n在 herbalbathsg.com/pay 选好数量，用PayNow扫码付款就完成了。有问题也可以直接WhatsApp 8426 1225，我们一步一步帮您。",
+      "link": "https://herbalbathsg.com/pay"
+    },
+    {
+      "id": "2026-12-21-travel",
+      "publishAt": "2026-12-21 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "年底带长辈出国或回乡？行程排得松一点、药物带足、提前安排好需要的协助……\n\n我们整理了一份带长辈出门旅行的实用清单。\n\n#带长辈旅行",
+      "link": "https://herbalbathsg.com/blog/travelling-with-elderly-parents-tips"
+    },
+    {
+      "id": "2026-12-22-dongzhi-greeting",
+      "publishAt": "2026-12-22 09:00",
+      "lang": "zh",
+      "pillar": "festival",
+      "text": "冬至快乐！今天记得早点回家，和长辈一起吃一碗热腾腾的汤圆。🥣\n\n祝大家团团圆圆，平平安安。",
+      "imagePrompt": "Three generations of a Singaporean Chinese family sharing bowls of tang yuan at a round dining table in an HDB flat at night, warm light, candid and happy, photorealistic, no text"
+    },
+    {
+      "id": "2026-12-25-christmas",
+      "publishAt": "2026-12-25 09:00",
+      "lang": "en",
+      "pillar": "festival",
+      "text": "Merry Christmas from all of us at HerbalBath! Wishing you a warm, restful day with the people you love. 🎄\n\n圣诞快乐！",
+      "imagePrompt": "A small Christmas tree with warm fairy lights beside a window in a Singapore HDB living room, a wrapped gift and a cup of tea on the table, soft morning light, photorealistic, no text"
+    },
+    {
+      "id": "2026-12-28-new-year-movement",
+      "publishAt": "2026-12-28 08:30",
+      "lang": "zh",
+      "pillar": "article",
+      "text": "新年新开始：给长辈的每日活动计划，从每天10分钟散步开始，再慢慢加上伸展和平衡练习。简单、做得到，最重要的是能坚持。\n\n#新年计划 #乐龄运动",
+      "link": "https://herbalbathsg.com/blog/new-year-daily-movement-plan-seniors"
+    },
+    {
+      "id": "2026-12-30-thank-you",
+      "publishAt": "2026-12-30 20:00",
+      "lang": "zh",
+      "pillar": "community",
+      "text": "2026年快结束了。谢谢每一位支持HerbalBath的朋友，也谢谢在WhatsApp和我们分享故事的长辈和家人。🙏\n\n新的一年，您希望我们多写哪些主题？居家安全、乐龄活动、照顾长辈、节日习俗……欢迎留言告诉我们！"
+    },
+    {
+      "id": "2027-01-01-new-year",
+      "publishAt": "2027-01-01 09:00",
+      "lang": "zh",
+      "pillar": "festival",
+      "text": "新年快乐！祝大家在2027年身体健康、出入平安。🎉\n\nHappy New Year from all of us at HerbalBath!",
+      "imagePrompt": "Sunrise over the Singapore skyline seen from a park, an elderly couple walking together on a path in the foreground, fresh and hopeful mood, photorealistic, no text"
+    }
+  ]
+}
