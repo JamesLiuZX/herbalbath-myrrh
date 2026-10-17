@@ -1,0 +1,63 @@
+{
+  "slug": "active-ageing-centre-guide",
+  "lang": "zh",
+  "title": "乐龄活动中心（AAC）怎么找？免费活动、资格和报名方式一次看懂",
+  "description": "新加坡60岁以上的公民和永久居民，都可以到住家附近的乐龄活动中心参加唱歌、手工、烹饪和运动等活动，大部分免费。本文整理资格、活动内容和找中心的方法。",
+  "date": "2026-10-17",
+  "author": "HerbalBath 编辑部",
+  "cluster": "active-living",
+  "keywords": ["乐龄活动中心", "Active Ageing Centre", "乐龄活动", "新加坡 长者 活动", "乐龄 运动"],
+  "image": null,
+  "body": [
+    { "type": "p", "text": "退休以后，很多长辈最怕的不是没钱，而是没事做、没人聊天。新加坡各区的**乐龄活动中心（Active Ageing Centre，简称AAC）**，让长辈在住家附近，就能找到朋友、动一动、学点新东西。" },
+    { "type": "h2", "text": "乐龄活动中心是什么？" },
+    { "type": "p", "text": "乐龄活动中心由护联中心（AIC）委任的社区机构运营，分布在全岛各个组屋区。中心会举办各种活动，也会为独居或比较少出门的长辈安排探访和电话问候，并协助长辈了解和申请乐龄相关的援助计划。" },
+    { "type": "h2", "text": "谁可以参加？" },
+    { "type": "p", "text": "根据AIC的资料，**60岁或以上的新加坡公民和永久居民**都可以参加，不论住哪一种房子、收入多少。" },
+    { "type": "h2", "text": "有哪些活动？" },
+    {
+      "type": "ul",
+      "items": ["卡拉OK和唱歌活动", "手工艺和绘画", "烹饪班", "运动和健身课程", "义工和社区活动"]
+    },
+    { "type": "p", "text": "根据AgeWellSG的资料，大部分活动是免费的；个别特别的活动可能要付少量费用，视中心而定。" },
+    { "type": "h2", "text": "怎么找住家附近的中心？" },
+    {
+      "type": "ol",
+      "items": [
+        "上**SupportGoWhere**网站搜索“Active Ageing Centre”，输入邮区编号就能找到附近的中心。",
+        "打电话给AIC热线**1800-650-6060**查询。",
+        "在**LifeSG**手机应用里，也可以看到附近正在举办的乐龄活动。",
+        "直接走进住家附近的中心，询问最近的活动时间表。"
+      ]
+    },
+    { "type": "h2", "text": "去之前，可以先问清楚这几件事" },
+    {
+      "type": "ul",
+      "items": [
+        "**活动时间表**：哪些天有活动？早上还是下午？有些活动需要先报名。",
+        "**用什么语言**：活动用华语、英语还是方言进行？长辈听得懂、聊得来，才会想再去。",
+        "**怎么去**：从家里走过去要多久？有没有电梯或坡道？行动比较慢的长辈，可以先陪他们走一次路线。",
+        "**可不可以带朋友或家人**：有熟人一起，第一次去会自在很多。"
+      ]
+    },
+    { "type": "h2", "text": "子女可以怎么帮忙？" },
+    { "type": "p", "text": "很多长辈不太会上网查资料，也不好意思打电话问。子女可以先帮忙查好附近的中心和活动时间，挑一两个长辈可能有兴趣的活动，再约一个时间陪他们去看看。去过一两次，认识了朋友，长辈自然就会想去。" },
+    { "type": "p", "text": "如果长辈本身身体不错、喜欢帮忙，也可以问问中心有没有义工的机会。帮忙招待新朋友、带活动，对很多退休长辈来说，是很有成就感的事。" },
+    { "type": "h2", "text": "动起来：政府建议的活动量" },
+    { "type": "p", "text": "根据新加坡体育活动指南，65岁或以上的长者，每周最好有**150至300分钟的中等强度活动**（例如快走：运动时还可以说话，但没办法唱歌），并且每周至少3天，做一些加强肌肉力量和平衡的综合运动。" },
+    { "type": "p", "text": "不需要一次做完。每天分几次、每次10分钟的散步或伸展，也一样算数。乐龄活动中心的运动课，正好是开始的好地方。动作可以参考我们的[乐龄温和运动指南](/blog/gentle-exercises-for-seniors)和[乐龄散步指南](/blog/walking-tips-seniors)。" },
+    { "type": "tip", "title": "陪长辈去第一次", "text": "第一次去新的地方，很多长辈会害羞或不习惯。如果可以，陪他们去第一次，认识中心的职员和其他参加者，之后他们就比较容易自己去了。" }
+  ],
+  "faq": [
+    { "q": "参加乐龄活动中心的活动要收费吗？", "a": "大部分活动免费；个别特别的活动可能要付少量费用，视中心而定。" },
+    { "q": "不是新加坡公民可以参加吗？", "a": "60岁或以上的新加坡永久居民也可以参加。" },
+    { "q": "怎么知道附近的中心有什么活动？", "a": "可以直接打电话或走进中心询问活动时间表，也可以在LifeSG应用里查看附近的乐龄活动，或拨打AIC热线1800-650-6060。" }
+  ],
+  "sources": [
+    { "title": "AIC：Active Ageing Centres（乐龄活动中心）", "url": "https://www.aic.sg/care-services/active-ageing-centres" },
+    { "title": "AgeWellSG：Active Ageing", "url": "https://agewellsg.gov.sg/active-ageing" },
+    { "title": "HealthHub：Singapore Physical Activity Guidelines", "url": "https://healthhub.sg/programmes/MoveIt/moveit-singapore-physical-activity-guidelines" },
+    { "title": "HPB：新加坡体育活动指南修订（新闻稿）", "url": "https://www.hpb.gov.sg/newsroom/singapore-s-physical-activity-guidelines-revised-to-tackle-sedentarism-and-promote-variation-in-physical-activity" }
+  ],
+  "related": ["gentle-exercises-for-seniors", "walking-tips-seniors", "grandparent-grandchild-activities", "chongyang-gift-guide-singapore"]
+}

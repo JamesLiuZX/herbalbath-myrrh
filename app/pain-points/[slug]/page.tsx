@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight, Phone, MessageCircle, ArrowLeft, Clock, Shield, Leaf, Star, CheckCircle } from "lucide-react"
-import { painPointsData, getPainPointBySlug, getAllPainPointSlugs } from "@/app/lib/pain-points-data"
-import { posts } from "@/app/lib/blog-data"
+import { painPointsData, getPainPointBySlug, getAllPainPointSlugs, PAIN_POINTS_PUBLISHED } from "@/app/lib/pain-points-data"
+import { allPosts } from "@/app/lib/all-posts"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -52,7 +52,7 @@ export default async function PainPointPage({ params }: PageProps) {
   }
 
   // Get related blog posts
-  const relatedPosts = posts.filter((post) =>
+  const relatedPosts = allPosts().filter((post) =>
     painPoint.relatedBlogSlugs.includes(post.slug)
   )
 
@@ -79,7 +79,7 @@ export default async function PainPointPage({ params }: PageProps) {
         url: "https://herbalbathsg.com/images/logo.png",
       },
     },
-    datePublished: painPoint.lastUpdated,
+    datePublished: PAIN_POINTS_PUBLISHED,
     dateModified: painPoint.lastUpdated,
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -384,16 +384,6 @@ export default async function PainPointPage({ params }: PageProps) {
                 </CardContent>
               </Card>
             </aside>
-          </div>
-
-          {/* Keywords for SEO (visually hidden) */}
-          <div className="sr-only">
-            <p>
-              Keywords: {painPoint.keywords.join(", ")}
-            </p>
-            <p>
-              HerbalBath, Herbal Bath Singapore, HerbalBath SG, natural pain relief, myrrh spray, frankincense, 没药喷雾, 天然止痛, Singapore seniors, elderly pain relief
-            </p>
           </div>
         </div>
 

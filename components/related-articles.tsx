@@ -1,10 +1,13 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
-import { posts, type Post } from "@/app/lib/blog-data"
+import { allPosts, type PostSummary } from "@/app/lib/all-posts"
+import { PostCover } from "@/components/blog/post-cover"
 
 interface RelatedArticlesProps {
   currentSlug: string
+  /** Slugs the article itself names as related; they come first. */
+  preferred?: string[]
   maxArticles?: number
 }
 
@@ -77,28 +80,29 @@ const relatedPostsMap: Record<string, string[]> = {
   ],
 }
 
-function getRelatedPosts(currentSlug: string, maxArticles: number): Post[] {
-  const relatedSlugs = relatedPostsMap[currentSlug] || []
-  
-  // Get posts by related slugs
-  const relatedPosts = relatedSlugs
-    .map(slug => posts.find(p => p.slug === slug))
-    .filter((p): p is Post => p !== undefined)
+function getRelatedPosts(currentSlug: string, preferred: string[], maxArticles: number): PostSummary[] {
+  const all = allPosts()
+  const relatedSlugs = [...preferred, ...(relatedPostsMap[currentSlug] || [])]
+
+  const relatedPosts = [...new Set(relatedSlugs)]
+    .filter((slug) => slug !== currentSlug)
+    .map((slug) => all.find((p) => p.slug === slug))
+    .filter((p): p is PostSummary => p !== undefined)
     .slice(0, maxArticles)
-  
-  // If not enough related posts, fill with other random posts
+
+  // Not enough named ones: fill with the newest other posts.
   if (relatedPosts.length < maxArticles) {
-    const otherPosts = posts
-      .filter(p => p.slug !== currentSlug && !relatedSlugs.includes(p.slug))
+    const otherPosts = all
+      .filter((p) => p.slug !== currentSlug && !relatedPosts.some((r) => r.slug === p.slug))
       .slice(0, maxArticles - relatedPosts.length)
     relatedPosts.push(...otherPosts)
   }
-  
+
   return relatedPosts.slice(0, maxArticles)
 }
 
-export function RelatedArticles({ currentSlug, maxArticles = 3 }: RelatedArticlesProps) {
-  const relatedPosts = getRelatedPosts(currentSlug, maxArticles)
+export function RelatedArticles({ currentSlug, preferred = [], maxArticles = 3 }: RelatedArticlesProps) {
+  const relatedPosts = getRelatedPosts(currentSlug, preferred, maxArticles)
   
   if (relatedPosts.length === 0) return null
 
@@ -114,14 +118,9 @@ export function RelatedArticles({ currentSlug, maxArticles = 3 }: RelatedArticle
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {relatedPosts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <Card className="h-full hover:shadow-lg hover:border-emerald-300 transition-all duration-300 cursor-pointer group">
-              <div className="aspect-video overflow-hidden rounded-t-lg">
-                <img
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+            <Card className="h-full overflow-hidden hover:shadow-lg hover:border-emerald-300 transition-all duration-300 cursor-pointer group">
+              <PostCover image={post.image} title={post.title} sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 100vw" />
+
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg font-bold text-emerald-800 group-hover:text-emerald-600 transition-colors line-clamp-2">
                   {post.title}

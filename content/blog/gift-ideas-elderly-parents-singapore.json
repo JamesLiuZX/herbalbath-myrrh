@@ -1,0 +1,76 @@
+{
+  "slug": "gift-ideas-elderly-parents-singapore",
+  "lang": "en",
+  "title": "Gift Ideas for Elderly Parents in Singapore: 10 They'll Actually Use",
+  "description": "Practical gifts for elderly parents and grandparents in Singapore, from subsidised HDB safety upgrades to free Active Ageing Centre classes, plus gift etiquette worth knowing.",
+  "date": "2026-10-17",
+  "author": "HerbalBath Editorial",
+  "cluster": "gifting",
+  "keywords": ["gift ideas for elderly parents singapore", "gifts for grandparents singapore", "chong yang festival gift", "gifts for seniors singapore"],
+  "image": null,
+  "body": [
+    { "type": "p", "text": "Ask an elderly parent what they want and you will usually hear “nothing, don't waste money”. What they mean is: nothing that ends up in a cupboard. The gifts that land make an ordinary day a little easier, or bring the family round the table." },
+    { "type": "p", "text": "With Chong Yang Festival on **18 October 2026**, here is a list built for Singapore homes." },
+    { "type": "h2", "text": "Before you buy: three questions" },
+    {
+      "type": "ol",
+      "items": [
+        "**What does a normal day look like?** Market in the morning, a walk downstairs in the evening, minding the grandchildren? Pick something that fits into that day.",
+        "**What has started to feel awkward?** A slippery bathroom floor, small print, finding the light switch at night.",
+        "**Will they actually use it?** Precious things get saved for “later”. Everyday things get used."
+      ]
+    },
+    { "type": "h2", "text": "10 gift ideas that get used" },
+    { "type": "h3", "text": "1. A morning together" },
+    { "type": "p", "text": "A dim sum breakfast, a stroll along the park connector, or cooking their favourite dishes at home. For many parents this beats anything you can wrap." },
+    { "type": "h3", "text": "2. A safer bathroom" },
+    { "type": "p", "text": "A non-slip mat with suction cups and a sturdy shower chair are small, practical gifts. If your parents live in an HDB flat, help them apply for **EASE**: the government subsidises grab bars, slip-resistant floor treatment and ramps. On HDB's published table, the first toilet's grab-bar set costs a 4-room household $39.20 after subsidy. Our [Chinese-language EASE guide](/blog/hdb-ease-guide) walks through eligibility and costs." },
+    { "type": "h3", "text": "3. Light for night-time trips" },
+    { "type": "p", "text": "A bedside lamp they can reach without getting up, or plug-in night lights along the way to the toilet." },
+    { "type": "h3", "text": "4. Big, clear and loud" },
+    { "type": "p", "text": "A large-print calendar and clock, a magnifier with a light, or a phone that flashes when it rings." },
+    { "type": "h3", "text": "5. Walking shoes that fit" },
+    { "type": "p", "text": "Light, easy to slip on, with a grippy sole. Go shopping together so they can try them on." },
+    { "type": "h3", "text": "6. A class at an Active Ageing Centre" },
+    { "type": "p", "text": "Singapore Citizens and PRs aged 60 and above can join activities at Active Ageing Centres near home, from karaoke and crafts to exercise classes, and most are free. Find one on SupportGoWhere or call AIC on 1800-650-6060. Going along the first time makes it much easier for them to return." },
+    { "type": "h3", "text": "7. A printed family photo book" },
+    { "type": "p", "text": "Pull the best family photos off your phone and print them. They will be shown to every visitor." },
+    { "type": "h3", "text": "8. Something warm for air-conditioned rooms" },
+    { "type": "p", "text": "A light shawl or a good insulated flask, for the cold mall, clinic or living room." },
+    { "type": "h3", "text": "9. A small daily ritual" },
+    { "type": "product", "text": "If your parents like a warm massage after their morning walk or before bed, consider HerbalBath Myrrh Spray: warmth in 10 seconds, and one bottle lasts 3-4 months. The Buy 3 Get 1 Free deal covers several relatives at once." },
+    { "type": "h3", "text": "10. Help with their phone" },
+    { "type": "p", "text": "Turn on large text, set up WhatsApp video calls with the grandchildren, and show them how to spot scams. The ScamShield helpline is 1799 if they are ever unsure." },
+    { "type": "h2", "text": "Gift etiquette worth knowing" },
+    {
+      "type": "ul",
+      "items": [
+        "**Skip clocks.** In Chinese, “giving a clock” sounds like attending a funeral, and many elders mind.",
+        "**Avoid the number four** in quantities or ang bao amounts.",
+        "**Wrap in red or gold** rather than plain white or black.",
+        "**Hand it over with both hands** and a blessing such as “祝您身体健康”."
+      ]
+    },
+    { "type": "h2", "text": "Can't be there in person?" },
+    {
+      "type": "ul",
+      "items": [
+        "Book a video call and get the grandchildren on screen.",
+        "Have the gift delivered with a photo of a handwritten card.",
+        "Ask a relative who lives nearby to take them out for a meal, on you."
+      ]
+    },
+    { "type": "tip", "title": "A ten-minute safety walk-through", "text": "When you visit, check the bathroom floor, clutter in walkways and lighting on the way to the toilet. HealthHub notes that most fall-related injuries happen at home, and small fixes go a long way." }
+  ],
+  "faq": [
+    { "q": "When is Chong Yang Festival in 2026?", "a": "18 October 2026, the ninth day of the ninth lunar month." },
+    { "q": "Is HDB's EASE programme free?", "a": "Not entirely, but the government subsidises most of the cost (roughly 87.5% to 95%), and households pay a small share that depends on flat type." },
+    { "q": "What is a good gift for an 80-year-old parent?", "a": "Time together first, then practical safety items: a bathroom mat with suction cups, a shower chair, a bedside lamp, and help applying for EASE if they live in an HDB flat." }
+  ],
+  "sources": [
+    { "title": "HDB: Enhancement for Active Seniors (EASE)", "url": "https://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat/for-our-seniors/ease" },
+    { "title": "AIC: Active Ageing Centres", "url": "https://www.aic.sg/care-services/active-ageing-centres" },
+    { "title": "HealthHub: You can prevent falls", "url": "https://www.healthhub.sg/programmes/aap/falls-prevention" }
+  ],
+  "related": ["hdb-ease-guide", "active-ageing-centre-guide", "chongyang-gift-guide-singapore", "home-safety-seniors"]
+}

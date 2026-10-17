@@ -8,11 +8,19 @@ export interface PainPoint {
   contentZh: string
   contentEn: string
   relatedBlogSlugs: string[]
+  /**
+   * The day this entry's content last changed (YYYY-MM-DD). Edit it by hand when
+   * you change the text. Never new Date(): a date that moves on every build is a
+   * fake freshness signal, and Google learns to ignore the site's dates.
+   */
   lastUpdated: string
   seasonalRelevance?: string[]
 }
 
 // Massively expanded pain points data - 16 comprehensive topics for SEO domination
+/** When these pages first went live (git history), for their datePublished. */
+export const PAIN_POINTS_PUBLISHED = "2026-03-15"
+
 export const painPointsData: PainPoint[] = [
   // ============================================
   // ORIGINAL 8 PAIN POINTS (ENHANCED)
@@ -165,7 +173,7 @@ Our Myrrh Spray uses ancient myrrh and frankincense formula, optimized for Singa
 ✅ **100% satisfaction guarantee** - Money back if not satisfied
     `,
     relatedBlogSlugs: ['knee-pain-relief-singapore', 'anti-inflammatory-diet-guide', 'gentle-exercises-for-seniors', 'hdb-stair-climbing-knee-protection'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year', 'monsoon'],
   },
   {
@@ -311,7 +319,7 @@ Our Myrrh Spray is specially effective for back pain management:
 4. Use anytime during pain flare-ups
     `,
     relatedBlogSlugs: ['office-neck-shoulder-pain', 'improve-blood-circulation-naturally', 'better-sleep-with-chronic-pain', 'posture-correction-seniors'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -447,7 +455,7 @@ Myrrh and frankincense have been natural enemies of rheumatism since ancient tim
 - Both synergize to enhance anti-inflammatory effects
     `,
     relatedBlogSlugs: ['tcm-vs-western-pain-relief', 'myrrh-frankincense-miracle-herbs', 'anti-inflammatory-diet-guide', 'understanding-rheumatism'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['monsoon', 'rainy-season'],
   },
   {
@@ -583,7 +591,7 @@ Active ingredients in Myrrh Spray can:
 - Reduce frequency of numbness
     `,
     relatedBlogSlugs: ['improve-blood-circulation-naturally', 'gentle-exercises-for-seniors', 'diabetes-joint-care'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -723,7 +731,7 @@ The warming sensation of Myrrh Spray effectively counters AC damage:
 - Helps recovery after exercise
     `,
     relatedBlogSlugs: ['office-neck-shoulder-pain', 'improve-blood-circulation-naturally', 'posture-correction-seniors'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -863,7 +871,7 @@ Establish a bedtime relaxation ritual including Myrrh Spray to signal your body 
 3. Focus on breathing, not pain
     `,
     relatedBlogSlugs: ['better-sleep-with-chronic-pain', 'improve-blood-circulation-naturally', 'evening-relaxation-routine'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -995,7 +1003,7 @@ Keep a bottle of Myrrh Spray by your bedside as the first step of morning care:
 4. Rotate ankles and wrists
     `,
     relatedBlogSlugs: ['gentle-exercises-for-seniors', 'better-sleep-with-chronic-pain', 'morning-stretching-routine'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1158,7 +1166,7 @@ Keep a bottle of Myrrh Spray by your bedside as the first step of morning care:
 4. Focus on sensitive joints
     `,
     relatedBlogSlugs: ['myrrh-frankincense-miracle-herbs', 'tcm-vs-western-pain-relief', 'anti-inflammatory-diet-guide', 'monsoon-joint-care-guide'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['monsoon', 'rainy-season', 'all-year'],
   },
 
@@ -1299,7 +1307,7 @@ Myrrh Spray is particularly effective for hip joint pain:
 4. Use 2-3 times daily or when painful
     `,
     relatedBlogSlugs: ['gentle-exercises-for-seniors', 'hip-strengthening-exercises', 'joint-protection-daily-activities'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1442,7 +1450,7 @@ The small bottle design of Myrrh Spray is perfect for finger care:
 4. Massage before bed
     `,
     relatedBlogSlugs: ['hand-exercises-arthritis', 'improve-blood-circulation-naturally', 'ergonomic-tips-seniors'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1579,7 +1587,7 @@ Myrrh Spray effectively soothes foot discomfort:
 4. Step down slowly, avoid impact on first step
     `,
     relatedBlogSlugs: ['foot-care-diabetics', 'walking-tips-seniors', 'shoe-selection-guide'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1717,7 +1725,7 @@ Many seniors have experienced this: waking up in the middle of the night from a 
 4. Keep legs warm
     `,
     relatedBlogSlugs: ['improve-blood-circulation-naturally', 'better-sleep-with-chronic-pain', 'hydration-tips-seniors'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1846,7 +1854,7 @@ Tennis elbow is inflammation or degeneration of the tendons on the outer elbow (
 4. Combine with cold compress to reduce inflammation
     `,
     relatedBlogSlugs: ['office-neck-shoulder-pain', 'hand-exercises-arthritis', 'housework-pain-prevention'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -1989,7 +1997,7 @@ Myrrh Spray can help relieve sciatica-related discomfort:
 4. Most painful areas
     `,
     relatedBlogSlugs: ['back-pain-prevention', 'gentle-exercises-for-seniors', 'sitting-posture-guide'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -2126,7 +2134,7 @@ During acute gout attacks, the priority is to seek medical treatment for appropr
 - Daily joint maintenance
     `,
     relatedBlogSlugs: ['anti-inflammatory-diet-guide', 'understanding-rheumatism', 'gout-diet-singapore'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
   {
@@ -2259,7 +2267,7 @@ Post-operative care must follow doctor's guidance. The following suggestions are
 4. Promote local blood circulation
     `,
     relatedBlogSlugs: ['gentle-exercises-for-seniors', 'post-surgery-rehabilitation-tips', 'home-safety-seniors'],
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: "2026-08-03",
     seasonalRelevance: ['all-year'],
   },
 ]

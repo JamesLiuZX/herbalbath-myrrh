@@ -15,6 +15,7 @@ import { BundleSelector } from "@/components/bundle-selector"
 import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import { CONTACT, SHOPEE_URL } from "@/app/lib/growth-config"
+import { jsonLd, productSchema } from "@/app/lib/structured-data"
 import Link from "next/link"
 
 // Real customer videos (same source as /testimonials) — previously the
@@ -1143,7 +1144,10 @@ function HomePageContent() {
 
 export default function HomePage() {
   return (
-    <Suspense
+    <>
+      {/* Outside the Suspense boundary so it's always in the server HTML. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(productSchema)} />
+      <Suspense
       fallback={
         <div className="min-h-screen bg-background flex items-center justify-center">
           <div className="text-center">
@@ -1155,5 +1159,6 @@ export default function HomePage() {
     >
       <HomePageContent />
     </Suspense>
+    </>
   )
 }

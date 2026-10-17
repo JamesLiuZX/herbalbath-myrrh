@@ -1,0 +1,26 @@
+{
+  "note": "Sources the content engine may cite. Every URL was checked against the publisher's own site in October 2026. Add to this list rather than letting a model invent links; the engine drops any source that isn't here.",
+  "sources": [
+    { "id": "hdb-ease", "title": "HDB: Enhancement for Active Seniors (EASE)", "url": "https://www.hdb.gov.sg/cs/infoweb/residential/living-in-an-hdb-flat/for-our-seniors/ease", "topics": ["home-safety", "hdb", "grab bars", "subsidy"] },
+    { "id": "ease-private", "title": "BCA: EASE (Private)", "url": "https://www.ease-private.gov.sg/", "topics": ["home-safety", "private housing", "subsidy"] },
+    { "id": "agewell-living", "title": "AgeWellSG: Living Environment", "url": "https://www.agewellsg.gov.sg/living-environment/", "topics": ["home-safety", "ageing in place"] },
+    { "id": "agewell-active", "title": "AgeWellSG: Active Ageing", "url": "https://agewellsg.gov.sg/active-ageing", "topics": ["active-living", "community"] },
+    { "id": "healthhub-falls", "title": "HealthHub: You can prevent falls", "url": "https://www.healthhub.sg/programmes/aap/falls-prevention", "topics": ["home-safety", "falls", "balance"] },
+    { "id": "healthhub-home-safety", "title": "HealthHub: Home safety tips", "url": "https://healthhub.sg/live-healthy/home-safety-tips", "topics": ["home-safety", "falls"] },
+    { "id": "aic-aac", "title": "AIC: Active Ageing Centres", "url": "https://www.aic.sg/care-services/active-ageing-centres", "topics": ["active-living", "community", "befriending"] },
+    { "id": "aic-hcg", "title": "AIC: Home Caregiving Grant", "url": "https://www.aic.sg/Financial-Assistance/Home-Caregiving-Grant", "topics": ["caregiving", "financial assistance"] },
+    { "id": "aic-ctg", "title": "AIC: Caregivers Training Grant", "url": "https://www.aic.sg/Financial-Assistance/Caregivers-Training-Grant", "topics": ["caregiving", "helpers", "training"] },
+    { "id": "sgw-hcg", "title": "SupportGoWhere: Home Caregiving Grant", "url": "https://supportgowhere.life.gov.sg/schemes/HCG/home-caregiving-grant-hcg", "topics": ["caregiving", "financial assistance"] },
+    { "id": "spag", "title": "HealthHub: Singapore Physical Activity Guidelines", "url": "https://healthhub.sg/programmes/MoveIt/moveit-singapore-physical-activity-guidelines", "topics": ["exercise", "active-living", "strength", "balance"] },
+    { "id": "hpb-spag-2022", "title": "HPB: Singapore's physical activity guidelines revised", "url": "https://www.hpb.gov.sg/newsroom/singapore-s-physical-activity-guidelines-revised-to-tackle-sedentarism-and-promote-variation-in-physical-activity", "topics": ["exercise", "sedentary"] },
+    { "id": "healthhub-active-ageing-pa", "title": "HealthHub: Physical Activity Is Key to Active Ageing", "url": "https://www.healthhub.sg/well-being-and-lifestyle/exercise-and-fitness/physicalactivity_akeytohealthyageing_pdf", "topics": ["exercise", "active-living"] },
+    { "id": "healthhub-plate", "title": "HealthHub: My Healthy Plate", "url": "https://www.healthhub.sg/programmes/55/my-healthy-plate", "topics": ["diet", "nutrition"] },
+    { "id": "healthhub-eat-well", "title": "HealthHub: Age Well by Eating Well", "url": "https://www.healthhub.sg/well-being-and-lifestyle/food-diet-and-nutrition/age-well-by-eating-well", "topics": ["diet", "nutrition", "seniors"] },
+    { "id": "healthhub-protein", "title": "HealthHub: Older Adults Need More Protein", "url": "https://www.healthhub.sg/well-being-and-lifestyle/active-ageing/seniors-need-more-protein", "topics": ["diet", "protein", "muscle"] },
+    { "id": "scamshield-1799", "title": "ScamShield: Call the 1799 Helpline to check", "url": "https://www.scamshield.gov.sg/check-for-scams/scamshield-helpline/", "topics": ["scams", "safety"] },
+    { "id": "scamshield-impersonation", "title": "ScamShield: Government officials impersonation scams", "url": "https://www.scamshield.gov.sg/i-want-protection-from-scams/learn-to-recognise-scams/government-officials-impersonation-scams/", "topics": ["scams", "safety"] },
+    { "id": "spf-scams", "title": "Singapore Police Force: Scam advisories", "url": "https://www.police.gov.sg/Advisories/Scams", "topics": ["scams", "safety"] },
+    { "id": "nparks-parks-for-health", "title": "NParks: Parks for Health framework", "url": "https://www.nparks.gov.sg/news/news-detail/nparks-introduces-new-parks-for-health-framework-aimed-at-leveraging-existing-parks-and-therapeutic-landscapes-to-boost-community-well-being", "topics": ["parks", "walking", "active-living"] },
+    { "id": "nparks-west-coast-tg", "title": "NParks: Therapeutic Garden at West Coast Park", "url": "https://www.nparks.gov.sg/news/news-detail/nparks-opens-new-therapeutic-garden-at-west-coast-park-with-features-that-cater-to-diverse-range-of-users--including-seniors-and-children-with-special-needs", "topics": ["parks", "walking", "gardens"] }
+  ]
+}

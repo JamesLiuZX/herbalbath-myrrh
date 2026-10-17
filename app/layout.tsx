@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Lora } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
+import { jsonLd, organizationSchema, websiteSchema } from "@/app/lib/structured-data"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const lora = Lora({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-lora" })
@@ -91,9 +92,10 @@ export const metadata: Metadata = {
     // invalid and Google ignores it. Left unset until (if ever) English gets
     // its own route; see the audit notes for the tradeoffs of adding one.
   },
-  // TODO: Verify this domain in Google Search Console (search.google.com/search-console),
-  // then add the verification code here, e.g.:
-  // verification: { google: "abc123..." },
+  // Google Search Console: add a "URL prefix" property for https://herbalbathsg.com,
+  // choose the HTML tag method, and put the content="..." value in Vercel as
+  // GOOGLE_SITE_VERIFICATION. Nothing renders until it's set.
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
 }
 
 export const viewport: Viewport = {
@@ -102,124 +104,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: "#1a5f4a",
-}
-
-// JSON-LD Structured Data
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#organization`,
-  name: "HerbalBath SG",
-  alternateName: ["HerbalBath Singapore", "Herbal Bath SG", "Herbal Bath Singapore"],
-  description:
-    "Singapore's trusted natural herbal pain relief spray. Specializing in myrrh and frankincense-based products for seniors.",
-  url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.png`,
-  image: `${BASE_URL}/images/product-hero.png`,
-  telephone: "+65 8426 1225",
-  email: "hello@herbalbathsg.com",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "SG",
-    addressRegion: "Singapore",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 1.3521,
-    longitude: 103.8198,
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "Singapore",
-  },
-  priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "00:00",
-    closes: "23:59",
-  },
-  sameAs: [
-    "https://www.facebook.com/herbalbathsg",
-    "https://www.tiktok.com/@herbalbathsg",
-    "https://wa.me/6584261225",
-  ],
-}
-
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: "HerbalBath Myrrh Spray 没药喷雾",
-  description:
-    "100% natural myrrh and frankincense spray for joint and muscle pain relief. Works in 10 seconds.",
-  image: `${BASE_URL}/images/product-hero.png`,
-  brand: {
-    "@type": "Brand",
-    name: "HerbalBath",
-  },
-  offers: {
-    "@type": "Offer",
-    url: BASE_URL,
-    price: "39",
-    priceCurrency: "SGD",
-    availability: "https://schema.org/InStock",
-    itemCondition: "https://schema.org/NewCondition",
-    seller: {
-      "@type": "Organization",
-      name: "HerbalBath SG",
-    },
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "15000",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  // Mirrors the testimonial already published in the on-page copy
-  // (see product_cta/benefits section) — structured data should describe
-  // real, existing content, not invented quotes.
-  review: {
-    "@type": "Review",
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-    },
-    author: {
-      "@type": "Person",
-      name: "陈女士 (Mdm. Tan)",
-    },
-    reviewBody:
-      "用了三周，僵硬的肩膀松了很多，抬手很轻松。那种热感真的很神奇，比虎标万金油强太多了！ (After three weeks, my stiff shoulder loosened so much. The heat sensation is amazing - much stronger than Tiger Balm!)",
-  },
-}
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "HerbalBath SG",
-  url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.png`,
-  description: "Singapore's trusted natural herbal pain relief brand since 2016.",
-  foundingDate: "2016",
-  areaServed: "Singapore",
-  slogan: "唤醒身体自愈力 - Awaken Your Body's Natural Healing Power",
-}
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "HerbalBath SG",
-  url: BASE_URL,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${BASE_URL}/blog?search={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 }
 
 // Ad platform pixels are opt-in via env vars so the site never ships a broken
@@ -237,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh" className={`${inter.variable} ${lora.variable}`}>
+    <html lang="zh-SG" className={`${inter.variable} ${lora.variable}`}>
       <head>
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF0GB41LM" />
@@ -281,31 +165,8 @@ export default function RootLayout({
             }}
           />
         )}
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
+        {/* Site-wide JSON-LD. Product markup lives on the homepage only (app/page.tsx). */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd([organizationSchema, websiteSchema])} />
       </head>
       <body className="font-sans antialiased">
         {children}
