@@ -39,6 +39,11 @@ for periodic nudges, not the full picture.
   one blog pull request every Monday (see [`SEO.md`](./SEO.md)). Nudge if one
   has been open for more than a week: review against the checklist in it and
   merge, or close it and delete its branch.
+- **Facebook Page.** Not created as of 17 Oct 2026. Setup takes about 15
+  minutes ([`marketing/facebook/README.md`](./marketing/facebook/README.md)).
+  35 posts are written through 1 Jan 2027, and the scheduler needs re-running
+  every 3–4 weeks (Meta only accepts 30 days ahead). Ask whether the Page is
+  up and whether the next batch is scheduled.
 - **Search Console.** Not verified as of Oct 2026. Until it is, there's no
   data on what the blog ranks for. Setup is SEO.md §3 step 1 (five minutes).
   Once live, a monthly look at Performance (SEO.md §4) is the check-in.
@@ -76,4 +81,5 @@ for periodic nudges, not the full picture.
 
 - 8 Aug 2026 — created.
 - 17 Oct 2026 — SEO audit and weekly content engine (SEO.md); added the
-  Monday pull request, Search Console and SEO-decision items.
+  Monday pull request, Search Console and SEO-decision items. Facebook Page
+  kit (marketing/facebook); added the Facebook Page item.

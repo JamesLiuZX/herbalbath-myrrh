@@ -68,6 +68,34 @@ function sentences(text) {
 const containsWord = (text, word, en) => (en ? new RegExp(`(^|[^a-z])${word.replace(/[.*+?^${}()|[\]\\#]/g, "\\$&")}([^a-z]|$)`, "i").test(text) : text.includes(word))
 
 /**
+ * Banned phrases anywhere, and effect words in any sentence that names the
+ * product. Shared by articles and social posts (marketing/facebook).
+ */
+export function claimProblems(texts, lang, rules = loadRules()) {
+  const en = lang === "en"
+  const errors = []
+  const approved = rules.product.approvedClaims[lang].map((c) => c.toLowerCase())
+  for (const text of texts) {
+    const lower = plain(text).toLowerCase()
+    for (const w of rules.banned[lang]) if (containsWord(lower, w.toLowerCase(), en)) errors.push(`banned phrase “${w}” in: ${text.slice(0, 60)}…`)
+    // In English text a Chinese ban list still applies to Chinese quotes, and vice versa.
+    for (const w of rules.banned[en ? "zh" : "en"]) if (containsWord(lower, w.toLowerCase(), !en)) errors.push(`banned phrase “${w}” in: ${text.slice(0, 60)}…`)
+  }
+  for (const text of texts) {
+    for (const s of sentences(text)) {
+      const lower = s.toLowerCase()
+      const mentionsProduct = rules.productWords[lang].some((w) => lower.includes(w.toLowerCase()))
+      if (!mentionsProduct) continue
+      const scrubbed = approved.reduce((acc, c) => acc.split(c).join(" "), lower)
+      for (const w of rules.effectWords[lang]) {
+        if (containsWord(scrubbed, w.toLowerCase(), en)) errors.push(`“${w}” next to the product makes an effect claim: ${s.slice(0, 70)}`)
+      }
+    }
+  }
+  return [...new Set(errors)]
+}
+
+/**
  * Returns { errors, warnings } as plain sentences. Errors block publishing;
  * warnings are for the reviewer.
  */
@@ -122,25 +150,8 @@ export function validateArticle(a, { rules = loadRules(), sources = loadSources(
   for (const r of a.related ?? []) if (!slugs.has(r)) errors.push(`related article "${r}" doesn't exist`)
 
   // Compliance.
-  const texts = articleTexts(a)
+  errors.push(...claimProblems(articleTexts(a), lang, rules))
   const approved = rules.product.approvedClaims[lang].map((c) => c.toLowerCase())
-  for (const text of texts) {
-    const lower = plain(text).toLowerCase()
-    for (const w of rules.banned[lang]) if (containsWord(lower, w.toLowerCase(), en)) errors.push(`banned phrase “${w}” in: ${text.slice(0, 60)}…`)
-    // In English text a Chinese ban list still applies to Chinese quotes, and vice versa.
-    for (const w of rules.banned[en ? "zh" : "en"]) if (containsWord(lower, w.toLowerCase(), !en)) errors.push(`banned phrase “${w}” in: ${text.slice(0, 60)}…`)
-  }
-  for (const text of texts) {
-    for (const s of sentences(text)) {
-      const lower = s.toLowerCase()
-      const mentionsProduct = rules.productWords[lang].some((w) => lower.includes(w.toLowerCase()))
-      if (!mentionsProduct) continue
-      const scrubbed = approved.reduce((acc, c) => acc.split(c).join(" "), lower)
-      for (const w of rules.effectWords[lang]) {
-        if (containsWord(scrubbed, w.toLowerCase(), en)) errors.push(`“${w}” next to the product makes an effect claim: ${s.slice(0, 70)}`)
-      }
-    }
-  }
   for (const [i, b] of (a.body ?? []).entries()) {
     if (b.type !== "product") continue
     const lower = (b.text ?? "").toLowerCase()
