@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -57,9 +58,13 @@ export default function FacebookLandingContent() {
               </div>
 
               <div className="relative">
-                <img
+                <Image
                   src="/images/product-pack-square.jpg"
                   alt="HerbalBath Myrrh Herbal Energy Oil"
+                  width={1200}
+                  height={1200}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto rounded-2xl shadow-xl"
                 />
                 <div className="absolute -top-4 -right-4 bg-red-500 text-white rounded-full px-4 py-2 font-bold shadow-lg">
@@ -147,13 +152,13 @@ export default function FacebookLandingContent() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="overflow-hidden">
                 <CardContent className="p-0">
-                  <img src="/images/testimonial-1.png" alt="Customer testimonial" className="w-full h-auto" />
+                  <Image src="/images/testimonial-1.png" alt="Customer testimonial" width={1206} height={2232} sizes="(max-width: 768px) 100vw, 448px" className="w-full h-auto" />
                 </CardContent>
               </Card>
 
               <Card className="overflow-hidden">
                 <CardContent className="p-0">
-                  <img src="/images/testimonial-2.png" alt="Customer payment confirmation" className="w-full h-auto" />
+                  <Image src="/images/testimonial-2.png" alt="Customer payment confirmation" width={1206} height={2190} sizes="(max-width: 768px) 100vw, 448px" className="w-full h-auto" />
                 </CardContent>
               </Card>
             </div>
