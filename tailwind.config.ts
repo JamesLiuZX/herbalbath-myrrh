@@ -1,5 +1,21 @@
 import type { Config } from "tailwindcss"
 const { fontFamily } = require("tailwindcss/defaultTheme")
+const colors = require("tailwindcss/colors")
+
+// The brand palette, sampled from the bottle: rust-maroon, copper and cream.
+const brand = {
+  50: "#FCF4EE",
+  100: "#F8E6D9",
+  200: "#F0CAB2",
+  300: "#E3A584",
+  400: "#CF7C55",
+  500: "#B45A33",
+  600: "#984426",
+  700: "#7F351E",
+  800: "#62281A",
+  900: "#451C13",
+  950: "#2A100A",
+}
 
 const config: Config = {
   darkMode: ["class"],
@@ -25,7 +41,24 @@ const config: Config = {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         serif: ["var(--font-lora)", ...fontFamily.serif],
       },
+      // Written for readers aged 55+: body text is 18px and nothing is smaller
+      // than 15px. Spacing is unchanged; only the type scale moves.
+      fontSize: {
+        xs: ["0.9375rem", { lineHeight: "1.375rem" }],
+        sm: ["1.0625rem", { lineHeight: "1.625rem" }],
+        base: ["1.125rem", { lineHeight: "1.875rem" }],
+        lg: ["1.25rem", { lineHeight: "1.875rem" }],
+        xl: ["1.375rem", { lineHeight: "2rem" }],
+      },
       colors: {
+        brand,
+        copper: { 400: "#D08A4E", 500: "#B87333", 600: "#9A5E28" },
+        cream: "#FBF4E8",
+        // The pages were built in emerald and gray. Pointing those at the brand
+        // palette and warm stone moves the whole site over in one place; new
+        // code should say brand-* directly.
+        emerald: brand,
+        gray: colors.stone,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

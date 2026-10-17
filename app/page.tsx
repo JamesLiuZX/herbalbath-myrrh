@@ -3,7 +3,29 @@
 import { useState, useEffect, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, Menu, Phone, Zap, Heart, Sparkles, Flame, QrCode, Users, Award } from "lucide-react"
+import {
+  MessageCircle,
+  Menu,
+  Phone,
+  Zap,
+  Heart,
+  Sparkles,
+  Flame,
+  QrCode,
+  Users,
+  Award,
+  Timer,
+  Target,
+  Pill,
+  SprayCan,
+  Star,
+  CircleCheck,
+  Footprints,
+  PersonStanding,
+  Bone,
+  Activity,
+  type LucideIcon,
+} from "lucide-react"
 import Image from "next/image"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useReferral } from "@/app/hooks/useReferral"
@@ -16,6 +38,25 @@ import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import { CONTACT, SHOPEE_URL } from "@/app/lib/growth-config"
 import { jsonLd, productSchema } from "@/app/lib/structured-data"
+
+// The copy marks cards with emoji; they render as line icons, which read more
+// clearly at a glance and look the same on every phone.
+const CARD_ICONS: Record<string, LucideIcon> = { "⏰": Timer, "🎯": Target, "🔥": Flame, "💊": Pill, "🌊": SprayCan }
+
+function CardIcon({ emoji, className }: { emoji: string; className: string }) {
+  const Icon = CARD_ICONS[emoji] ?? Sparkles
+  return <Icon className={className} aria-hidden="true" />
+}
+
+function Stars({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <span className="inline-flex text-copper-500" aria-hidden="true">
+      {Array.from({ length: 5 }, (_, i) => (
+        <Star key={i} className={`${className} fill-current`} />
+      ))}
+    </span>
+  )
+}
 import Link from "next/link"
 
 // Real customer videos (same source as /testimonials) — previously the
@@ -437,7 +478,7 @@ function HomePageContent() {
             <div className="grid items-center gap-x-12 gap-y-6 [grid-template-areas:'copy'_'image'_'actions'] lg:grid-cols-[1.1fr_0.9fr] lg:[grid-template-areas:'copy_image'_'actions_image']">
               <div className="text-center [grid-area:copy] lg:self-end lg:text-left">
                 <div className="mb-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                  <span className="inline-block rounded-full bg-[#7F351E]/10 px-4 py-2 text-sm font-semibold text-[#7F351E] sm:text-base">
+                  <span className="inline-block rounded-full bg-brand-700/10 px-4 py-2 text-sm font-semibold text-brand-700 sm:text-base">
                     {t.hero.badge}
                   </span>
                   <button
@@ -481,7 +522,7 @@ function HomePageContent() {
 
               <div className="[grid-area:actions] lg:self-start">
                 <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 lg:justify-start">
-                  <span className="text-4xl font-bold text-[#7F351E] sm:text-5xl">{t.product_cta.price}</span>
+                  <span className="text-4xl font-bold text-brand-700 sm:text-5xl">{t.product_cta.price}</span>
                   <span className="text-xl text-stone-500 line-through">{t.product_cta.original_price}</span>
                   <span className="rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white sm:text-base">
                     {t.product_cta.offer}
@@ -518,9 +559,7 @@ function HomePageContent() {
 
                 <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-base text-stone-700 lg:justify-start">
                   <li className="flex items-center gap-1.5">
-                    <span className="text-yellow-500" aria-hidden="true">
-                      ★★★★★
-                    </span>
+                    <Stars />
                     {t.hero.trust_badges.rating}
                   </li>
                   <li className="flex items-center gap-1.5">
@@ -550,8 +589,8 @@ function HomePageContent() {
                 published in the benefits section, kept as text (not a faded
                 screenshot) for contrast with a 55+ audience. */}
             <figure className="mx-auto mt-10 max-w-2xl rounded-2xl bg-white/80 px-5 py-4 text-center shadow-sm ring-1 ring-stone-200">
-              <div className="mb-1 text-yellow-500" aria-hidden="true">
-                ★★★★★
+              <div className="mb-1 flex justify-center">
+                <Stars />
               </div>
               <blockquote className="text-base italic leading-relaxed text-stone-700 sm:text-lg">
                 "{t.benefits.testimonial.quote}"
@@ -588,24 +627,26 @@ function HomePageContent() {
           </div>
         </section>
 
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-red-50">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-brand-50">
           <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
             <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
                 {t.problems.title}
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-red-600 font-semibold px-2 leading-relaxed">
+              <p className="text-base md:text-lg text-brand-700 font-semibold px-2 leading-relaxed">
                 {t.problems.subtitle}
               </p>
             </div>
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto">
               {t.problems.items.map((problem, index) => (
-                <div key={index} className="text-center p-3 sm:p-4 bg-white rounded-lg shadow-sm">
-                  <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{problem.icon}</div>
+                <div key={index} className="text-center p-4 sm:p-5 bg-white rounded-2xl shadow-sm ring-1 ring-brand-100">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-brand-50">
+                    <CardIcon emoji={problem.icon} className="h-6 w-6 text-brand-700" />
+                  </div>
                   <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">
                     {problem.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{problem.desc}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{problem.desc}</p>
                 </div>
               ))}
             </div>
@@ -623,16 +664,18 @@ function HomePageContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto mb-8 sm:mb-12">
               {t.usage.methods.map((method, index) => (
-                <Card key={index} className="p-4 sm:p-6 bg-gradient-to-br from-orange-50 to-red-50 border-orange-200">
+                <Card key={index} className="p-5 sm:p-6 bg-white border-brand-200 shadow-sm">
                   <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="text-3xl sm:text-4xl flex-shrink-0">{method.icon}</div>
+                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-brand-50">
+                      <CardIcon emoji={method.icon} className="h-7 w-7 text-brand-700" />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
                       <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">{method.desc}</p>
                       <ol className="space-y-2">
                         {method.steps.map((step, stepIndex) => (
-                          <li key={stepIndex} className="flex items-start space-x-2 text-xs sm:text-sm">
-                            <span className="bg-orange-500 text-white rounded-full w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                          <li key={stepIndex} className="flex items-start space-x-3 text-base">
+                            <span className="bg-brand-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">
                               {stepIndex + 1}
                             </span>
                             <span className="text-gray-700 leading-relaxed">{step}</span>
@@ -645,15 +688,15 @@ function HomePageContent() {
               ))}
             </div>
 
-            <div className="bg-green-50 rounded-2xl p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
+            <div className="bg-brand-50 rounded-2xl p-5 sm:p-6 md:p-8 max-w-4xl mx-auto">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
                 {t.usage.benefits_title}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {t.usage.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                    <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{benefit}</span>
+                    <Flame className="w-5 h-5 text-copper-500 flex-shrink-0 mt-1" aria-hidden="true" />
+                    <span className="text-gray-700 text-base leading-relaxed">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -661,7 +704,7 @@ function HomePageContent() {
           </div>
         </section>
 
-        <section id="how-it-works" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-amber-50">
+        <section id="how-it-works" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-cream">
           <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
             <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
@@ -670,7 +713,7 @@ function HomePageContent() {
               <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed px-2">
                 {t.how_it_works.intro}
               </p>
-              <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border-l-4 border-amber-500">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border-l-4 border-copper-500">
                 <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base">{t.how_it_works.story}</p>
               </div>
             </div>
@@ -680,8 +723,8 @@ function HomePageContent() {
                   key={index}
                   className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-4 sm:p-6 bg-white rounded-2xl shadow-lg"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-amber-100 rounded-full flex items-center justify-center">
-                    <reason.icon className="w-6 h-6 sm:w-8 sm:h-8 text-amber-600" />
+                  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 bg-brand-50 rounded-full flex items-center justify-center">
+                    <reason.icon className="w-7 h-7 sm:w-8 sm:h-8 text-copper-600" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-2 sm:mb-3">
@@ -707,19 +750,41 @@ function HomePageContent() {
               <h3 className="text-lg sm:text-xl font-bold text-center mb-6 sm:mb-8 px-2">
                 {t.benefits.comparison.title}
               </h3>
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="grid grid-cols-3 bg-gray-50 font-semibold text-xs sm:text-sm md:text-base">
-                  <div className="p-2 sm:p-4 text-center">{language === "zh" ? "对比项目" : "Comparison"}</div>
-                  <div className="p-2 sm:p-4 text-center bg-green-100 text-green-800">
+              {/* On phones, one card per row: three narrow columns don't fit at a readable size. */}
+              <div className="space-y-3 sm:hidden">
+                {t.benefits.comparison.items.map((item, index) => (
+                  <div key={index} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-200">
+                    <p className="mb-2 font-semibold text-stone-900">{item.feature}</p>
+                    <p className="flex gap-2 text-brand-800">
+                      <CircleCheck className="mt-1 h-5 w-5 flex-shrink-0 text-brand-600" aria-hidden="true" />
+                      <span>
+                        <span className="font-semibold">{language === "zh" ? "我们的产品：" : "Ours: "}</span>
+                        {item.us}
+                      </span>
+                    </p>
+                    <p className="mt-1 flex gap-2 text-stone-600">
+                      <span className="mt-0.5 w-5 flex-shrink-0 text-center" aria-hidden="true">–</span>
+                      <span>
+                        <span className="font-semibold">{language === "zh" ? "其他产品：" : "Others: "}</span>
+                        {item.others}
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="hidden bg-white rounded-2xl shadow-xl overflow-hidden sm:block">
+                <div className="grid grid-cols-3 bg-stone-50 font-semibold text-base">
+                  <div className="p-4 text-center">{language === "zh" ? "对比项目" : "Comparison"}</div>
+                  <div className="p-4 text-center bg-brand-100 text-brand-800">
                     {language === "zh" ? "我们的产品" : "Our Product"}
                   </div>
-                  <div className="p-2 sm:p-4 text-center">{language === "zh" ? "其他产品" : "Other Products"}</div>
+                  <div className="p-4 text-center">{language === "zh" ? "其他产品" : "Other Products"}</div>
                 </div>
                 {t.benefits.comparison.items.map((item, index) => (
-                  <div key={index} className="grid grid-cols-3 border-t text-xs sm:text-sm md:text-base">
-                    <div className="p-2 sm:p-4 font-medium bg-gray-50">{item.feature}</div>
-                    <div className="p-2 sm:p-4 bg-green-50 text-green-800 font-semibold">{item.us}</div>
-                    <div className="p-2 sm:p-4 text-gray-600">{item.others}</div>
+                  <div key={index} className="grid grid-cols-3 border-t text-base">
+                    <div className="p-4 font-medium bg-stone-50">{item.feature}</div>
+                    <div className="p-4 bg-brand-50 text-brand-800 font-semibold">{item.us}</div>
+                    <div className="p-4 text-stone-600">{item.others}</div>
                   </div>
                 ))}
               </div>
@@ -738,10 +803,10 @@ function HomePageContent() {
 
         <section
           id="product-cta"
-          className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-green-50 to-blue-50"
+          className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-b from-brand-50 to-cream"
         >
           <div className="container mx-auto px-3 sm:px-4 max-w-7xl">
-            <Card className="max-w-5xl mx-auto p-4 sm:p-6 md:p-10 shadow-2xl bg-white border-2 border-green-200">
+            <Card className="max-w-5xl mx-auto p-4 sm:p-6 md:p-10 shadow-2xl bg-white border-2 border-brand-200">
               <div className="text-center mb-6 sm:mb-8">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
                   {t.product_cta.title}
@@ -750,14 +815,14 @@ function HomePageContent() {
                   <MonthlyOfferCountdown language={language} />
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-green-600">
+                  <span className="text-4xl md:text-6xl font-bold text-brand-700">
                     {t.product_cta.price}
                   </span>
                   <div className="text-center sm:text-left">
                     <div className="text-lg sm:text-xl md:text-2xl text-gray-500 line-through">
                       {t.product_cta.original_price}
                     </div>
-                    <div className="text-red-600 font-bold text-sm md:text-base">{t.product_cta.offer}</div>
+                    <div className="text-brand-600 font-bold text-base">{t.product_cta.offer}</div>
                   </div>
                 </div>
               </div>
@@ -778,12 +843,13 @@ function HomePageContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div className="space-y-3 sm:space-y-4">
                   {t.product_cta.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-2 sm:space-x-3">
-                      <span className="text-green-600 text-sm sm:text-base md:text-lg">{feature}</span>
+                    <div key={index} className="flex items-center gap-3">
+                      <CircleCheck className="h-6 w-6 flex-shrink-0 text-brand-600" aria-hidden="true" />
+                      <span className="text-stone-800 text-base md:text-lg">{feature.replace(/^✅\s*/, "")}</span>
                     </div>
                   ))}
-                  <div className="bg-green-100 p-3 sm:p-4 rounded-lg mt-4 sm:mt-6">
-                    <p className="text-green-800 font-semibold text-center text-sm sm:text-base">
+                  <div className="bg-brand-50 p-4 rounded-xl mt-4 sm:mt-6 ring-1 ring-brand-100">
+                    <p className="text-brand-800 font-semibold text-center text-base">
                       {t.product_cta.guarantee}
                     </p>
                   </div>
@@ -849,33 +915,33 @@ function HomePageContent() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link
                 href="/pain-points/knee-pain"
-                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+                className="p-6 bg-brand-50 rounded-2xl text-center ring-1 ring-brand-100 hover:bg-brand-100 hover:shadow-md transition-all"
               >
-                <span className="text-3xl mb-2 block">🦵</span>
+                <Footprints className="mx-auto mb-3 h-9 w-9 text-brand-700" aria-hidden="true" />
                 <span className="font-medium text-emerald-800 block">膝盖疼痛</span>
                 <span className="text-sm text-stone-500">Knee Pain</span>
               </Link>
               <Link
                 href="/pain-points/back-pain"
-                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+                className="p-6 bg-brand-50 rounded-2xl text-center ring-1 ring-brand-100 hover:bg-brand-100 hover:shadow-md transition-all"
               >
-                <span className="text-3xl mb-2 block">🔙</span>
+                <PersonStanding className="mx-auto mb-3 h-9 w-9 text-brand-700" aria-hidden="true" />
                 <span className="font-medium text-emerald-800 block">腰酸背痛</span>
                 <span className="text-sm text-stone-500">Back Pain</span>
               </Link>
               <Link
                 href="/pain-points/joint-arthritis"
-                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+                className="p-6 bg-brand-50 rounded-2xl text-center ring-1 ring-brand-100 hover:bg-brand-100 hover:shadow-md transition-all"
               >
-                <span className="text-3xl mb-2 block">🦴</span>
+                <Bone className="mx-auto mb-3 h-9 w-9 text-brand-700" aria-hidden="true" />
                 <span className="font-medium text-emerald-800 block">风湿关节炎</span>
                 <span className="text-sm text-stone-500">Arthritis</span>
               </Link>
               <Link
                 href="/pain-points/neck-shoulder-stiffness"
-                className="p-6 bg-emerald-50 rounded-xl text-center hover:bg-emerald-100 hover:shadow-md transition-all"
+                className="p-6 bg-brand-50 rounded-2xl text-center ring-1 ring-brand-100 hover:bg-brand-100 hover:shadow-md transition-all"
               >
-                <span className="text-3xl mb-2 block">💪</span>
+                <Activity className="mx-auto mb-3 h-9 w-9 text-brand-700" aria-hidden="true" />
                 <span className="font-medium text-emerald-800 block">肩颈僵硬</span>
                 <span className="text-sm text-stone-500">Neck Stiffness</span>
               </Link>

@@ -4,26 +4,28 @@
 
 @layer base {
   :root {
-    --background: 240 10% 99%; /* Softer off-white */
-    --foreground: 240 10% 3.9%;
-    --card: 240 10% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 240 10% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 340 72% 50%; /* A more sophisticated, deeper red for accents */
+    /* Warm cream page, near-black brown text, the bottle's rust-maroon for
+       actions (brand-700 in tailwind.config.ts). */
+    --background: 38 70% 97%;
+    --foreground: 20 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 30% 12%;
+    --primary: 14 62% 31%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 93% 94%; /* Warm, natural beige for backgrounds */
-    --secondary-foreground: 45 20% 20%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 45 93% 94%;
-    --accent-foreground: 45 20% 20%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 30 60% 93%;
+    --secondary-foreground: 20 30% 18%;
+    --muted: 35 30% 93%;
+    --muted-foreground: 25 10% 33%;
+    --accent: 30 60% 93%;
+    --accent-foreground: 20 30% 18%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 340 72% 50%;
-    --radius: 0.5rem;
+    --border: 30 25% 85%;
+    --input: 30 25% 80%;
+    --ring: 14 62% 31%;
+    --radius: 0.75rem;
   }
 }
 
@@ -32,7 +34,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-base text-foreground antialiased;
   }
   h1,
   h2,

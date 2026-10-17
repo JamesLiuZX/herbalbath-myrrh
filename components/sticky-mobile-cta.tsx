@@ -32,8 +32,8 @@ export function StickyMobileCTA({
         <a
           href={`tel:${phoneNumber}`}
           aria-label={callLabel}
-          className={`flex items-center justify-center gap-2 bg-emerald-800 text-white py-3.5 rounded-xl text-base font-medium active:bg-emerald-900 transition-colors ${
-            payHref ? "w-14 shrink-0" : "flex-1"
+          className={`flex items-center justify-center gap-2 bg-stone-800 text-white py-3.5 rounded-xl text-base font-medium active:bg-stone-900 transition-colors ${
+            payHref ? "w-12 shrink-0" : "flex-1"
           }`}
         >
           <Phone className="h-5 w-5" />
@@ -42,17 +42,17 @@ export function StickyMobileCTA({
         <button
           type="button"
           onClick={onWhatsAppClick}
-          className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-3.5 rounded-xl text-base font-medium active:bg-green-700 transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 whitespace-nowrap bg-green-600 text-white py-3.5 rounded-xl text-base font-medium active:bg-green-700 transition-colors"
         >
-          <MessageCircle className="h-5 w-5" />
+          <MessageCircle className="h-5 w-5 shrink-0" />
           {whatsappLabel}
         </button>
         {payHref && (
           <Link
             href={payHref}
-            className="flex-1 flex items-center justify-center gap-2 bg-[#7F351E] text-white py-3.5 rounded-xl text-base font-semibold active:bg-[#6a2b18] transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 whitespace-nowrap bg-brand-700 text-white py-3.5 rounded-xl text-base font-semibold active:bg-brand-800 transition-colors"
           >
-            <QrCode className="h-5 w-5" />
+            <QrCode className="h-5 w-5 shrink-0" />
             {payLabel}
           </Link>
         )}
