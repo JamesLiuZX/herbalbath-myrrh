@@ -1,0 +1,154 @@
+# Autopilot's hands: the jobs that act on the outside world with the keys the
+# agents never see. Telegram inbox (commands, approvals, files), Facebook
+# scheduling, trade emails, and the media renderer (Kino on this runner, RunPod
+# for GPU work). Each job skips quietly until its secrets are set.
+name: Autopilot executors
+
+on:
+  schedule:
+    - cron: "*/30 0-15 * * *" # inbox: every 30 min, 08:00 to midnight SGT
+    - cron: "41 1 * * *" # facebook: daily 09:41 SGT
+    - cron: "47 2 * * 1-5" # emails: weekdays 10:47 SGT
+    - cron: "53 4 * * *" # media: daily 12:53 SGT
+  workflow_dispatch:
+    inputs:
+      task:
+        description: Which job
+        type: choice
+        options: [inbox, facebook, emails, media]
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  inbox:
+    if: github.event.schedule == '*/30 0-15 * * *' || inputs.task == 'inbox'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: autopilot-inbox
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Check for messages
+        id: peek
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then echo "new=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          count=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates" -H 'content-type: application/json' -d '{"timeout":0}' | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log((JSON.parse(s).result||[]).length)}catch{console.log(0)}})')
+          echo "new=$count" >> "$GITHUB_OUTPUT"
+      - if: steps.peek.outputs.new != '0'
+        run: pnpm install --frozen-lockfile
+      - if: steps.peek.outputs.new != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPS_DATA_KEY: ${{ secrets.OPS_DATA_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUNPOD_ENDPOINT_ID: ${{ secrets.RUNPOD_ENDPOINT_ID }}
+          AUTOPILOT_PAUSED: ${{ vars.AUTOPILOT_PAUSED }}
+          AUTOPILOT_MODEL: ${{ vars.AUTOPILOT_MODEL }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/ops/inbox.mjs --commit
+
+  facebook:
+    if: github.event.schedule == '41 1 * * *' || inputs.task == 'facebook'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Schedule the next 28 days on the Page
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          AUTOPILOT_PAUSED: ${{ vars.AUTOPILOT_PAUSED }}
+        run: |
+          if [ -z "$FB_PAGE_TOKEN" ] || [ "$AUTOPILOT_PAUSED" = "true" ]; then echo "Facebook: not set up or paused."; exit 0; fi
+          node scripts/facebook/schedule-posts.mjs
+
+  emails:
+    if: github.event.schedule == '47 2 * * 1-5' || inputs.task == 'emails'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: autopilot-emails
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - env:
+          OPS_DATA_KEY: ${{ secrets.OPS_DATA_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          OUTREACH_FROM: ${{ secrets.OUTREACH_FROM }}
+          OUTREACH_REPLY_TO: ${{ secrets.OUTREACH_REPLY_TO }}
+          OUTREACH_BCC: ${{ secrets.OUTREACH_BCC }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AUTOPILOT_PAUSED: ${{ vars.AUTOPILOT_PAUSED }}
+        run: |
+          if [ -z "$OPS_DATA_KEY" ]; then echo "Emails: OPS_DATA_KEY isn't set."; exit 0; fi
+          node scripts/ops/send-emails.mjs --commit
+
+  media:
+    if: github.event.schedule == '53 4 * * *' || inputs.task == 'media'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: autopilot-media
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Anything to make?
+        id: queued
+        env:
+          RUNPOD_ENDPOINT_ID: ${{ secrets.RUNPOD_ENDPOINT_ID }}
+        run: |
+          # Briefs waiting for a GPU only count once RunPod is connected.
+          pattern='"status": "queued"'
+          [ -n "$RUNPOD_ENDPOINT_ID" ] && pattern='"status": "\(queued\|waiting-gpu\)"'
+          n=$(grep -l "$pattern" ops/creative/queue/*.json 2>/dev/null | wc -l)
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+      - if: steps.queued.outputs.count != '0'
+        uses: actions/checkout@v4
+        with:
+          repository: JamesLiuZX/james-portfolio
+          path: kino-src
+          sparse-checkout: kino
+      - if: steps.queued.outputs.count != '0'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - if: steps.queued.outputs.count != '0'
+        name: Install ffmpeg, a Chinese caption font, and Kino
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-wqy-zenhei > /dev/null
+          (cd kino-src/kino && npm install --omit=dev --no-audit --no-fund)
+      - if: steps.queued.outputs.count != '0'
+        env:
+          KINO_DIR: kino-src/kino
+          OPS_DATA_KEY: ${{ secrets.OPS_DATA_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RUNPOD_ENDPOINT_ID: ${{ secrets.RUNPOD_ENDPOINT_ID }}
+          RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AUTOPILOT_PAUSED: ${{ vars.AUTOPILOT_PAUSED }}
+        run: node scripts/ops/render-media.mjs --commit

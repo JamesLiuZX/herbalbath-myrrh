@@ -2,8 +2,8 @@
   "note": "The rules every article must pass before it can be published, by a person or by the content engine. Approved claims are copied word for word from the product page; anything that sounds like an effect and isn't on this list gets flagged. Keep in sync with the homepage when claims change.",
   "product": {
     "names": {
-      "zh": ["HerbalBath 没药喷雾", "没药喷雾", "HerbalBath 没药舒缓喷雾", "没药舒缓喷雾", "HerbalBath"],
-      "en": ["HerbalBath Myrrh Spray", "Myrrh Spray", "HerbalBath"]
+      "zh": ["HerbalBath 没药喷雾", "没药喷雾", "HerbalBath 没药舒缓喷雾", "没药舒缓喷雾", "没药草本能量油", "草本沐", "HerbalBath"],
+      "en": ["HerbalBath Myrrh Spray", "Myrrh Spray", "Myrrh Herbal Energy Oil", "HerbalBath"]
     },
     "approvedClaims": {
       "zh": ["10秒感受温热", "一瓶可用3-4个月", "100%天然成分", "买3送1", "30天不满意，全额退款"],
@@ -21,8 +21,8 @@
     "en": ["relief", "relieve", "relieves", "soothe", "soothes", "soothing", "heal", "heals", "treat", "treats", "treatment", "reduce pain", "anti-inflammatory", "works in"]
   },
   "productWords": {
-    "zh": ["没药喷雾", "HerbalBath", "喷雾"],
-    "en": ["HerbalBath", "Myrrh Spray", "the spray"]
+    "zh": ["没药喷雾", "HerbalBath", "喷雾", "能量油", "草本沐"],
+    "en": ["HerbalBath", "Myrrh Spray", "the spray", "Herbal Energy Oil"]
   },
   "healthClusters": ["knee", "back", "joints", "exercise", "diet", "sleep", "caregiving", "home-safety"],
   "minSources": { "health": 2, "other": 0 },
