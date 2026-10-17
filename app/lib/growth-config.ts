@@ -31,6 +31,21 @@ export const RETAIL = {
   },
 } as const
 
+export const SHOPEE_URL =
+  "https://shopee.sg/Myrrh-Soreness-Muscle-Relief-Spray-Herbalbath-Singapore-i.177895131.41413960917"
+
+/**
+ * Hosted card checkout (cards, Apple Pay, Google Pay, GrabPay) via Stripe
+ * payment links created inside Aspire. The /pay page shows the card option
+ * only once these are set, so an unconfigured link never renders a dead
+ * button. NEXT_PUBLIC_* values are inlined at build time: set them in Vercel,
+ * then redeploy.
+ */
+export const CARD_PAYMENT_LINKS = {
+  single: process.env.NEXT_PUBLIC_CARD_LINK_SINGLE || "",
+  bundle: process.env.NEXT_PUBLIC_CARD_LINK_BUNDLE || "",
+} as const
+
 /** A bottle is marketed as lasting 3–4 months of twice-daily use. */
 export const USAGE = {
   bottleLastsDaysMin: 90,

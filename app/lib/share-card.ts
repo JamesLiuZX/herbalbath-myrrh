@@ -32,7 +32,7 @@ const WIDTH = 1080
 const HEIGHT = 1350
 
 // Chinese first — this card is going into Mandarin-speaking WhatsApp groups.
-const CJK_STACK = '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Heiti SC", sans-serif'
+export const CJK_STACK = '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Heiti SC", sans-serif'
 
 function loadImage(src: string): Promise<HTMLImageElement | null> {
   return new Promise((resolve) => {

@@ -38,8 +38,8 @@ const faqItems: FAQItem[] = [
   {
     question: "如何购买HerbalBath没药喷雾？",
     questionEn: "How can I purchase HerbalBath Myrrh Spray?",
-    answer: "您可以通过多种方式购买：1) WhatsApp联系我们的客服 2) 拨打电话订购 3) 在Shopee、Carousell、TikTok Shop等平台购买。新加坡全岛免费送货，支持货到付款。现在购买还有买3送1的优惠！",
-    answerEn: "You can purchase through: 1) WhatsApp our customer service 2) Call to order 3) Buy on Shopee, Carousell, TikTok Shop. Free delivery island-wide in Singapore, cash on delivery available. Buy 3 get 1 free promotion now!",
+    answer: "您可以通过多种方式购买：1) 在 herbalbathsg.com/pay 用 PayNow 付款（金额和参考号自动填好）2) WhatsApp联系我们的客服 3) 拨打电话订购 4) 在Shopee、Carousell、TikTok Shop等平台购买。新加坡全岛免费送货，支持货到付款。现在购买还有买3送1的优惠！",
+    answerEn: "You can purchase through: 1) Pay by PayNow at herbalbathsg.com/pay (amount and reference filled in for you) 2) WhatsApp our customer service 3) Call to order 4) Buy on Shopee, Carousell, TikTok Shop. Free delivery island-wide in Singapore, cash on delivery available. Buy 3 get 1 free promotion now!",
   },
   {
     question: "HerbalBath有退款保证吗？",

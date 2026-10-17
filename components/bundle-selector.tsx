@@ -44,7 +44,7 @@ const OPTIONS: BundleOption[] = [
 
 interface BundleSelectorProps {
   language: "zh" | "en"
-  onSelect?: (label: string) => void
+  onSelect?: (label: string, id: BundleOption["id"]) => void
 }
 
 export function BundleSelector({ language, onSelect }: BundleSelectorProps) {
@@ -61,7 +61,7 @@ export function BundleSelector({ language, onSelect }: BundleSelectorProps) {
             type="button"
             onClick={() => {
               setSelected(opt.id)
-              onSelect?.(language === "zh" ? opt.labelZh : opt.labelEn)
+              onSelect?.(language === "zh" ? opt.labelZh : opt.labelEn, opt.id)
             }}
             className={`relative text-left p-3 sm:p-4 rounded-xl border-2 transition-colors ${
               isSelected ? "border-green-600 bg-green-50" : "border-gray-200 bg-white hover:border-green-300"

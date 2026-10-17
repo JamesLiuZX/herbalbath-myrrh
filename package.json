@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test": "node --test app/lib/*.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -59,6 +60,7 @@
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "uqr": "0.1.2",
     "vaul": "latest",
     "zod": "^3.24.1"
   },
