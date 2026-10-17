@@ -236,10 +236,10 @@ export function PayClient() {
       <main className="mx-auto max-w-2xl space-y-5 px-4 pt-6">
         <div className="flex items-center gap-4">
           <Image
-            src="/images/product-cutout.webp"
-            alt="HerbalBath 没药舒缓喷雾"
-            width={709}
-            height={1500}
+            src="/images/product-pack.webp"
+            alt="HerbalBath 没药草本能量油"
+            width={738}
+            height={1186}
             className="h-24 w-auto shrink-0 drop-shadow-md"
             priority
           />

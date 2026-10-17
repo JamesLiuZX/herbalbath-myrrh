@@ -500,10 +500,10 @@ function HomePageContent() {
               <div className="relative mx-auto w-full max-w-[22rem] [grid-area:image] sm:max-w-sm lg:max-w-md">
                 <div aria-hidden="true" className="absolute inset-x-8 bottom-1 h-10 rounded-[100%] bg-[#462013]/25 blur-2xl" />
                 <Image
-                  src="/images/product-cutout.webp"
-                  alt={language === "zh" ? "HerbalBath 没药舒缓喷雾 60ml 及包装盒" : "HerbalBath Myrrh Soreness Relief Spray, 60ml, with its box"}
-                  width={709}
-                  height={1500}
+                  src="/images/product-pack.webp"
+                  alt={language === "zh" ? "HerbalBath 草本沐没药草本能量油 55ml 及包装盒" : "HerbalBath Myrrh Herbal Energy Oil, 55ml, with its box"}
+                  width={738}
+                  height={1186}
                   priority
                   sizes="(min-width: 1024px) 26rem, (min-width: 640px) 22rem, 70vw"
                   className="relative mx-auto h-[320px] w-auto sm:h-[400px] lg:h-[540px]"
@@ -713,8 +713,18 @@ function HomePageContent() {
               <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed px-2">
                 {t.how_it_works.intro}
               </p>
-              <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border-l-4 border-copper-500">
-                <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base">{t.how_it_works.story}</p>
+              <div className="grid items-center gap-6 text-left md:grid-cols-[2fr_3fr]">
+                <Image
+                  src="/images/product-lifestyle.webp"
+                  alt={language === "zh" ? "没药草本能量油和没药原料" : "Myrrh Herbal Energy Oil with raw myrrh resin"}
+                  width={547}
+                  height={730}
+                  sizes="(min-width: 768px) 22rem, 90vw"
+                  className="mx-auto w-full max-w-xs rounded-2xl shadow-lg md:max-w-none"
+                />
+                <div className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border-l-4 border-copper-500">
+                  <p className="text-gray-700 leading-relaxed italic text-base">{t.how_it_works.story}</p>
+                </div>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">

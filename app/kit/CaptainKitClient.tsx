@@ -73,7 +73,7 @@ export function CaptainKitClient() {
         site: "herbalbathsg.com",
         price: `${RETAIL.currency}${RETAIL.singlePrice}`,
         bundleLine: `买3送1 · 4瓶 ${RETAIL.currency}${RETAIL.bundlePrice}`,
-        productImageSrc: "/images/product-hero.png",
+        productImageSrc: "/images/product-pack-square.jpg",
         payNowQrSrc: qrAvailable ? PAYNOW_QR_SRC : undefined,
       })
       if (!blob) {

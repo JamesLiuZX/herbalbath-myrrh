@@ -221,10 +221,10 @@ export default function BlogPostView({ post }: { post: PostView }) {
               {/* A light card so the bottle (itself maroon) stands out. */}
               <div className="mt-12 grid items-center gap-6 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-brand-200 sm:grid-cols-[auto_1fr] md:p-10">
                 <Image
-                  src="/images/product-cutout.webp"
-                  alt={post.lang === "zh" ? "HerbalBath 没药喷雾" : "HerbalBath Myrrh Spray"}
-                  width={709}
-                  height={1500}
+                  src="/images/product-pack.webp"
+                  alt={post.lang === "zh" ? "HerbalBath 没药草本能量油" : "HerbalBath Myrrh Herbal Energy Oil"}
+                  width={738}
+                  height={1186}
                   sizes="112px"
                   className="mx-auto h-44 w-auto drop-shadow-xl md:h-56"
                 />
