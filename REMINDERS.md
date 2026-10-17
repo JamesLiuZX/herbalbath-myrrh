@@ -55,6 +55,10 @@ for periodic nudges, not the full picture.
 - **Content engine setup.** Needs the `ANTHROPIC_API_KEY` repository secret
   and "Allow GitHub Actions to create and approve pull requests" ticked
   (SEO.md §3). Ask whether the first pull request arrived.
+- **SEO work outside the code** (SEO.md, "Second audit"). As of 17 Oct 2026:
+  no SPF or DMARC records for herbalbathsg.com (DNS at Porkbun), and visitors
+  pass through two redirects (fix in Vercel → Domains: apex primary, www
+  redirects to it). Ask whether both are done; they take about 15 minutes.
 
 - **Contact capture.** Every inbound WhatsApp reorder should get logged into
   the customer base (there was no CRM as of Aug 2026 — ~200–300 numbers
@@ -77,6 +81,16 @@ for periodic nudges, not the full picture.
 - **SEO decisions.** SEO.md lists seven, mostly claims. The most urgent is
   the 4.9-star / "15,000 reviews" rating in the product markup, which can
   draw a Google manual action. Same rule as above: ask, don't fix.
+- **The Shopee images on the homepage.** Since 17 Oct 2026 the homepage's
+  product-detail column shows the Shopee listing's own ad creative and
+  infographic panels, at James's request. They carry wording the claims
+  rules ban (效果显著, 消除, 舒缓, "Body pain?"); the infographic's panel with
+  the sprain, rheumatism and detox claims was left out. Worth a nudge
+  alongside the claims decision above: keep, re-edit the images, or drop them.
+- **Product name and numbers.** The site now names the product as the box
+  does (没药草本能量油) in the title, the H1 and the detail column, but other
+  pages and the product markup still say 没药喷雾 (spray). Also still open:
+  15,000+ or 30,000+ customers, and how the new bottle is applied.
 - **HSA classification.** Hasn't been run through HSA's official
   classification tool yet as of Aug 2026 (see `/internal/hsa-certifications`
   for why this matters — it determines whether a lightweight notification or
@@ -85,6 +99,8 @@ for periodic nudges, not the full picture.
 ## Changelog
 
 - 8 Aug 2026 — created.
+- 17 Oct 2026 (later) — Shopee-style homepage and the SEOptimer fixes; added
+  the SEO-outside-the-code, Shopee-images and product-name items.
 - 17 Oct 2026 — SEO audit and weekly content engine (SEO.md); added the
   Monday pull request, Search Console and SEO-decision items. Facebook Page
   kit (marketing/facebook); added the Facebook Page item. Autopilot, the AI
