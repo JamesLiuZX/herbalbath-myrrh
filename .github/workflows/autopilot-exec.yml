@@ -129,6 +129,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: JamesLiuZX/kino
+          # Kino's trunk, named so the job never depends on which branch
+          # GitHub currently shows as that repository's default.
+          ref: main
           path: kino
       - if: steps.queued.outputs.count != '0'
         uses: actions/setup-node@v4
