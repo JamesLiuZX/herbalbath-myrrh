@@ -3,9 +3,10 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { Play, ExternalLink } from "lucide-react"
+import { Play, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 export interface VideoTestimonial {
   youtubeId: string
@@ -62,18 +63,21 @@ export function TestimonialsCarousel({
         )}
       </div>
 
-      {/* View All Button */}
+      {/* View All Button: same-tab navigation, because seniors rely on the Back
+          button and a surprise new tab breaks it. */}
       {showViewAllButton && (
         <div className="text-center pt-4 sm:pt-6">
           <Button
             variant="outline"
             size="lg"
             className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-sm sm:text-base px-4 sm:px-6 h-10 sm:h-12"
-            onClick={() => window.open("/testimonials", "_blank")}
+            asChild
           >
-            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            <span className="hidden xs:inline">查看全部见证 ({screenshots.length}+ 张图片 + 视频)</span>
-            <span className="xs:hidden">查看全部见证</span>
+            <Link href="/testimonials">
+              <span className="hidden xs:inline">查看全部见证 ({screenshots.length}+ 张图片 + 视频)</span>
+              <span className="xs:hidden">查看全部见证</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+            </Link>
           </Button>
         </div>
       )}

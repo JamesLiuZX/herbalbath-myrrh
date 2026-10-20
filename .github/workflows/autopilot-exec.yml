@@ -128,9 +128,11 @@ jobs:
       - if: steps.queued.outputs.count != '0'
         uses: actions/checkout@v4
         with:
-          repository: JamesLiuZX/james-portfolio
-          path: kino-src
-          sparse-checkout: kino
+          repository: JamesLiuZX/kino
+          # Kino's trunk, named so the job never depends on which branch
+          # GitHub currently shows as that repository's default.
+          ref: main
+          path: kino
       - if: steps.queued.outputs.count != '0'
         uses: actions/setup-node@v4
         with:
@@ -140,10 +142,10 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-wqy-zenhei > /dev/null
-          (cd kino-src/kino && npm install --omit=dev --no-audit --no-fund)
+          (cd kino && npm install --omit=dev --no-audit --no-fund)
       - if: steps.queued.outputs.count != '0'
         env:
-          KINO_DIR: kino-src/kino
+          KINO_DIR: kino
           OPS_DATA_KEY: ${{ secrets.OPS_DATA_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           RUNPOD_ENDPOINT_ID: ${{ secrets.RUNPOD_ENDPOINT_ID }}
