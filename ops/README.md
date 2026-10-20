@@ -84,7 +84,7 @@ Create the Page and get a Page token: see [`marketing/facebook/README.md`](../ma
 
 Without a GPU, Autopilot already makes camera-move videos and captioned Reels and TikTok ads from the real product photo. For product scenes (the box and bottle placed into new settings) and generated pictures:
 
-1. Set up a RunPod Serverless endpoint with [`kino/runpod/README.md`](https://github.com/JamesLiuZX/james-portfolio/tree/main/kino/runpod) in the portfolio repo.
+1. Set up a RunPod Serverless endpoint with [`runpod/README.md`](https://github.com/JamesLiuZX/kino/tree/HEAD/runpod) in the Kino repo.
 2. Add the secrets `RUNPOD_ENDPOINT_ID` and `RUNPOD_API_KEY`.
 
 Finished media arrives in Telegram. Videos are yours to post on TikTok: its API doesn't allow scheduling without app review. Pictures for Facebook posts are attached automatically.

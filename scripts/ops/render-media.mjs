@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Makes the creative queue (ops/creative/queue) with Kino, running inside this
-// process: no server, no browser.
-//   KINO_DIR=../james-portfolio/kino node scripts/ops/render-media.mjs [--commit]
+// process: no server, no browser. KINO_DIR is a checkout of
+// https://github.com/JamesLiuZX/kino, by default a clone next to this repo.
+//   KINO_DIR=../kino node scripts/ops/render-media.mjs [--commit]
 //
 // Without a GPU, camera-move videos and ads built only from the real product
 // photo still work (ffmpeg). With RUNPOD_ENDPOINT_ID and RUNPOD_API_KEY, product
@@ -104,8 +105,8 @@ async function main() {
     .slice(0, PER_RUN)
   if (!todo.length) return console.log("Media: nothing queued.")
 
-  const kinoDir = path.resolve(process.env.KINO_DIR ?? path.join(ROOT, "..", "james-portfolio", "kino"))
-  if (!existsSync(path.join(kinoDir, "src", "server.mjs"))) throw new Error(`Kino isn't at ${kinoDir}; set KINO_DIR.`)
+  const kinoDir = path.resolve(process.env.KINO_DIR ?? path.join(ROOT, "..", "kino"))
+  if (!existsSync(path.join(kinoDir, "src", "server.mjs"))) throw new Error(`Kino isn't at ${kinoDir}; clone https://github.com/JamesLiuZX/kino there or set KINO_DIR.`)
   useNewPackaging(kinoDir)
   const dataDir = mkdtempSync(path.join(os.tmpdir(), "kino-"))
   const { createStudio } = await import(path.join(kinoDir, "src", "server.mjs"))
