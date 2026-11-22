@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "test": "node --test app/lib/*.test.mjs"
+    "test": "node --test app/lib/*.test.mjs scripts/ops/*.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

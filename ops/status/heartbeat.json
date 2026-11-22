@@ -1,15 +1,31 @@
 {
   "note": "Written by the operator at the end of every run (ops/OPERATOR.md). Public file: counts and dates only, never names, addresses or email text. .github/workflows/heartbeat.yml fails if lastRun is more than 9 days old.",
-  "lastRun": "2026-11-22T05:00:00Z",
-  "shift": "setup",
+  "lastRun": "2026-11-22T23:17:43Z",
+  "shift": "produce",
   "paused": false,
   "engines": {
     "site": "live",
-    "social": "waiting: publishing key",
-    "email": "waiting: Resend key and DNS",
-    "orders": "waiting: Upstash",
-    "media": "waiting: fal key (silent captioned video works without it)"
+    "email": "waiting: Resend key and sender address",
+    "orders": "waiting: orders token",
+    "social": "waiting: publisher not built, publishing key",
+    "media": "waiting: fal key"
   },
-  "runwayDays": 0,
-  "counts": {}
+  "runwayDays": 39,
+  "counts": {
+    "postsScheduled": 18,
+    "articlesPublished": 5,
+    "articlesOverdue": 4,
+    "media": {
+      "queued": 2
+    },
+    "leads": 0,
+    "emails": {}
+  },
+  "privateStore": "attached",
+  "needsJames": [
+    "Publishing key for the social accounts (posts are written 39 days ahead; none can go out)",
+    "Resend key, sender address and DNS (trade emails)",
+    "Upstash and ORDERS_API_TOKEN (orders feed)",
+    "fal key (2 post pictures are queued)"
+  ]
 }

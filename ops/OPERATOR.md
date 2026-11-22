@@ -54,7 +54,7 @@ These are his answers, and they are the whole of your permission to act outside 
    push message.
 2. `pnpm install --frozen-lockfile`.
 3. Read `ops/autonomy.json`. If `paused` is true, write the heartbeat and stop.
-4. `node scripts/ops/doctor.mjs` (once it exists; see the build queue) to learn which engines
+4. `OPS_PRIVATE_DIR=<command>/herbalbath node scripts/ops/doctor.mjs --json` to learn which engines
    are live. An engine that is waiting on a key is not an error: do everything up to the send
    or publish step and leave the work queued.
 5. Do today's shift (Singapore weekday), then one build-queue item if the shift left room.
@@ -95,8 +95,9 @@ Take the first unticked item you are allowed to do. Tick it with the date and co
 marked (interactive) are for a session James is in; skip them.
 
 - [x] (interactive) Storefront: promotions engine, compliant copy switch, order capture on `/pay`. Landed 22 Nov 2026.
-- [ ] `scripts/ops/doctor.mjs`: one harmless authenticated call per credential, content
-      runway, queue sizes, heartbeat age. Tests alongside.
+- [x] `scripts/ops/doctor.mjs`: one harmless authenticated call per credential, content
+      runway, queue sizes, heartbeat age. Tests alongside. Landed 23 Nov 2026 (email and orders have a call;
+      social and media get one when their scripts exist).
 - [ ] `scripts/social/publish.mjs`: publish and schedule through the publishing API, record
       what was scheduled, dry-run without a key. Tests with an injected fetch.
 - [ ] `scripts/ops/send-outbox.mjs`: send approved emails through Resend with the daily cap,
