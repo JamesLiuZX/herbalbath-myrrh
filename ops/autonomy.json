@@ -1,14 +1,32 @@
 {
-  "note": "What Autopilot may do on its own. mode: auto = public changes go live without review; review = they wait in a pull request; off = the agent doesn't run. actions.emails: review = each trade email waits for /approve on Telegram; auto = approved drafts go out within limits.emailsPerDay. To stop everything: set paused to true, send /pause all to the bot, or set the AUTOPILOT_PAUSED repository variable to true.",
+  "note": "What the operator may do on its own (ops/OPERATOR.md). runtime: claude-session = the scheduled Claude session runs the team; the GitHub Actions agents below are off unless run by hand. actions.emails: review = each trade email batch waits for James; auto = approved drafts go out within limits.emailsPerDay (James sets this after approving the first batch). To stop everything: set paused to true. To stop one engine: set its paused to true.",
   "paused": false,
   "model": "claude-opus-5-5",
   "agents": {
-    "research": { "mode": "auto", "schedule": "Mon 07:03 SGT" },
-    "cmo": { "mode": "auto", "schedule": "Mon 08:07 SGT" },
-    "social": { "mode": "auto", "schedule": "Mon, Wed, Fri 10:13 SGT" },
-    "creative": { "mode": "auto", "schedule": "Tue, Fri 11:19 SGT" },
-    "b2b": { "mode": "auto", "schedule": "Wed 09:23 SGT" },
-    "finance": { "mode": "auto", "schedule": "1st of the month 09:29 SGT" }
+    "research": {
+      "mode": "auto",
+      "schedule": "Mon 07:03 SGT"
+    },
+    "cmo": {
+      "mode": "auto",
+      "schedule": "Mon 08:07 SGT"
+    },
+    "social": {
+      "mode": "auto",
+      "schedule": "Mon, Wed, Fri 10:13 SGT"
+    },
+    "creative": {
+      "mode": "auto",
+      "schedule": "Tue, Fri 11:19 SGT"
+    },
+    "b2b": {
+      "mode": "auto",
+      "schedule": "Wed 09:23 SGT"
+    },
+    "finance": {
+      "mode": "auto",
+      "schedule": "1st of the month 09:29 SGT"
+    }
   },
   "actions": {
     "emails": "review"
@@ -16,9 +34,41 @@
   "limits": {
     "emailsPerDay": 5,
     "followUps": 2,
-    "followUpDays": [5, 12],
+    "followUpDays": [
+      5,
+      12
+    ],
     "mediaJobsPerWeek": 12,
     "productPostShare": 0.2,
     "agentTurns": 40
+  },
+  "runtime": "claude-session",
+  "approved": {
+    "by": "James",
+    "on": "2026-11-22",
+    "autonomy": "auto within guardrails",
+    "sender": "James",
+    "copy": "HSA-compliant wording, existing copy switched"
+  },
+  "engines": {
+    "social": {
+      "paused": false
+    },
+    "email": {
+      "paused": false
+    },
+    "campaigns": {
+      "paused": false
+    },
+    "content": {
+      "paused": false
+    }
+  },
+  "budget": {
+    "monthlySgd": 150,
+    "toolsSgd": 30,
+    "shopeeAdsDailySgd": 4,
+    "shopeeRoasTarget": 3.5,
+    "falMonthlyUsd": 15
   }
 }

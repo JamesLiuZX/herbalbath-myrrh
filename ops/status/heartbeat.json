@@ -1,0 +1,15 @@
+{
+  "note": "Written by the operator at the end of every run (ops/OPERATOR.md). Public file: counts and dates only, never names, addresses or email text. .github/workflows/heartbeat.yml fails if lastRun is more than 9 days old.",
+  "lastRun": "2026-11-22T05:00:00Z",
+  "shift": "setup",
+  "paused": false,
+  "engines": {
+    "site": "live",
+    "social": "waiting: publishing key",
+    "email": "waiting: Resend key and DNS",
+    "orders": "waiting: Upstash",
+    "media": "waiting: fal key (silent captioned video works without it)"
+  },
+  "runwayDays": 0,
+  "counts": {}
+}

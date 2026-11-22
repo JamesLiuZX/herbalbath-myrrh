@@ -1,0 +1,24 @@
+# Watches the watcher. The operator session (ops/OPERATOR.md) writes
+# ops/status/heartbeat.json at the end of every run. If that file goes stale,
+# this job fails and GitHub emails the repository owner. A dead operator can
+# no longer look like a quiet week. Needs no secrets.
+name: Operator heartbeat
+
+on:
+  schedule:
+    - cron: "37 3 * * *" # daily 11:37 SGT
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/ops/heartbeat-check.mjs

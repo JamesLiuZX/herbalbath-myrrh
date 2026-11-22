@@ -6,11 +6,13 @@
 #   - Settings > Actions > General > Workflow permissions:
 #     "Allow GitHub Actions to create and approve pull requests"
 # See SEO.md, "The content engine".
+#
+# Schedule removed on 22 Nov 2026: the key was never set, so the Monday run
+# failed every week. The operator session (ops/OPERATOR.md) writes the weekly
+# article now. A manual run still works once the key exists.
 name: Content engine
 
 on:
-  schedule:
-    - cron: "17 1 * * 1" # Mondays, 09:17 in Singapore
   workflow_dispatch:
     inputs:
       slug:

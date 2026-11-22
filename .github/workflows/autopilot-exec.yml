@@ -2,14 +2,11 @@
 # agents never see. Telegram inbox (commands, approvals, files), Facebook
 # scheduling, trade emails, and the media renderer (Kino on this runner, RunPod
 # for GPU work). Each job skips quietly until its secrets are set.
+# Schedules removed on 22 Nov 2026 (no scheduled run ever had its secrets); the scheduled
+# Claude session in ops/OPERATOR.md does this work now. Manual runs still work.
 name: Autopilot executors
 
 on:
-  schedule:
-    - cron: "*/30 0-15 * * *" # inbox: every 30 min, 08:00 to midnight SGT
-    - cron: "41 1 * * *" # facebook: daily 09:41 SGT
-    - cron: "47 2 * * 1-5" # emails: weekdays 10:47 SGT
-    - cron: "53 4 * * *" # media: daily 12:53 SGT
   workflow_dispatch:
     inputs:
       task:

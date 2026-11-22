@@ -2,6 +2,15 @@
 
 Six AI agents that run HerbalBath's marketing on a schedule, act through a fixed set of tools, and report to you on Telegram. They research the market, plan the week, write Facebook posts, make product pictures and video ads, find trade partners and write to them, and keep the books. Everything they know about the product comes from one file, [`knowledge/product.md`](knowledge/product.md). Change it, and every agent follows from its next run.
 
+> **Since 22 Nov 2026 the team runs as one scheduled Claude session, not on GitHub Actions.**
+> [`OPERATOR.md`](OPERATOR.md) is its runbook and James's standing authorisation: read that first.
+> The Actions agents described below never ran: their secrets were never set, and every scheduled
+> run exited quietly while reporting success. Their schedules are now off (manual runs still work
+> if the keys are ever set). The tools, rules and tests on this page are still what does the work:
+> the operator calls them through `node scripts/ops/tool.mjs`. Private data (leads, email drafts)
+> lives in the private command repository instead of the encrypted vault, so no vault key is needed.
+> A daily heartbeat check (`.github/workflows/heartbeat.yml`) fails loudly if the operator goes quiet.
+
 ```
                  ┌──────────── Telegram (you) ────────────┐
                  │ reports · drafts to approve · questions │
