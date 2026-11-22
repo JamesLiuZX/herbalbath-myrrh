@@ -103,7 +103,6 @@ export const painPointsData: PainPoint[] = [
 ✅ **8年品牌历史** - 新加坡本土品牌，了解本地需求
 ✅ **15,000+满意用户** - 口碑推荐，好评如潮
 ✅ **免费咨询服务** - WhatsApp 8426 1225 随时答疑
-✅ **100%满意保证** - 无效退款，零风险尝试
     `,
     contentEn: `
 ## Why Do Singapore Seniors Often Experience Knee Pain?
@@ -170,7 +169,6 @@ Our Myrrh Spray uses ancient myrrh and frankincense formula, optimized for Singa
 ✅ **8 years brand history** - Local Singapore brand, understands local needs
 ✅ **15,000+ satisfied users** - Word-of-mouth recommendations
 ✅ **Free consultation** - WhatsApp 8426 1225 anytime
-✅ **100% satisfaction guarantee** - Money back if not satisfied
     `,
     relatedBlogSlugs: ['knee-pain-relief-singapore', 'anti-inflammatory-diet-guide', 'gentle-exercises-for-seniors', 'hdb-stair-climbing-knee-protection'],
     lastUpdated: "2026-08-03",

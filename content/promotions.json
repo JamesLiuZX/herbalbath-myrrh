@@ -1,0 +1,15 @@
+{
+  "note": "The single source for prices and dated promotions. The site (app/lib/promotions.ts), the gate (scripts/content/check.mjs) and the operator (ops/OPERATOR.md) all read this file. evergreen.packages is the standing price list. A campaign of kind content-only changes the banner and message, never a price. A campaign of kind price may add or override packages, and is live only while permit.number is set and permit.validUntil has not passed: HSA requires a sales-promotion permit for discounts and multi-pack offers on medicated oils. Packages marked requiresPermit, and the listPrice strike-through, follow the same rule. Dates are Singapore dates, inclusive. Only James changes prices.",
+  "permit": { "number": "", "validUntil": "" },
+  "floorPerBottle": 29,
+  "maxDiscountPct": 25,
+  "evergreen": {
+    "listPrice": 49,
+    "packages": [
+      { "id": "single", "bottles": 1, "price": 39, "label": { "zh": "单瓶装", "en": "1 bottle" } },
+      { "id": "pair", "bottles": 2, "price": 72, "label": { "zh": "2瓶装", "en": "2 bottles" }, "requiresPermit": true },
+      { "id": "bundle", "bottles": 4, "price": 117, "label": { "zh": "4瓶装", "en": "4 bottles" }, "default": true }
+    ]
+  },
+  "campaigns": []
+}

@@ -94,7 +94,7 @@ shops. Those are trade buyers, so they may be sent the trade deck, which is mark
 Take the first unticked item you are allowed to do. Tick it with the date and commit. Items
 marked (interactive) are for a session James is in; skip them.
 
-- [ ] (interactive) Storefront: promotions engine, compliant copy switch, order capture on `/pay`.
+- [x] (interactive) Storefront: promotions engine, compliant copy switch, order capture on `/pay`. Landed 22 Nov 2026.
 - [ ] `scripts/ops/doctor.mjs`: one harmless authenticated call per credential, content
       runway, queue sizes, heartbeat age. Tests alongside.
 - [ ] `scripts/social/publish.mjs`: publish and schedule through the publishing API, record

@@ -57,7 +57,7 @@ function ProductCard({ text, lang }: { text: string; lang: "zh" | "en" }) {
             href="/pay?b=bundle"
             className="inline-flex items-center rounded-full bg-emerald-700 px-5 py-2.5 text-base font-semibold text-white hover:bg-emerald-800"
           >
-            {lang === "zh" ? "买3送1，立即购买" : "Buy 3 Get 1 Free"}
+            {lang === "zh" ? `${RETAIL.bundleBottles}瓶装 ${RETAIL.currency}${RETAIL.bundlePrice}，立即购买` : `${RETAIL.bundleBottles} bottles for ${RETAIL.currency}${RETAIL.bundlePrice}`}
           </Link>
         </div>
       </div>

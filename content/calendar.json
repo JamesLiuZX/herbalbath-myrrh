@@ -85,7 +85,7 @@
       "status": "planned",
       "keyword": "新年礼物 送长辈",
       "secondary": ["孝心礼盒", "2027 新年 送父母"],
-      "angle": "2027年农历新年（2月6日）送长辈的礼物清单：年货、实用的居家用品、一起拍全家福、陪伴。送礼的吉祥话和禁忌。产品只作为其中一个选项，只用核准的说法和买3送1优惠。",
+      "angle": "2027年农历新年（2月6日）送长辈的礼物清单：年货、实用的居家用品、一起拍全家福、陪伴。送礼的吉祥话和禁忌。产品只作为其中一个选项，只用核准的说法，价格以 content/promotions.json 为准。",
       "sources": ["hdb-ease", "aic-aac"],
       "related": ["chongyang-gift-guide-singapore", "gift-ideas-elderly-parents-singapore"]
     },

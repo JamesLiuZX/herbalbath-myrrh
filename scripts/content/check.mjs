@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-// Checks every article in content/blog against content/rules.json.
-//   node scripts/content/check.mjs            all articles
-//   node scripts/content/check.mjs <slug>...  just these
-// Exits non-zero when any article has errors.
+// Checks every article in content/blog against content/rules.json, and
+// content/promotions.json against its price and wording guards.
+//   node scripts/content/check.mjs            everything
+//   node scripts/content/check.mjs <slug>...  just these articles
+// Exits non-zero when anything has errors.
 
 import { legacySlugs, loadArticles, loadRules, loadSources, validateArticle } from "./lib.mjs"
+import { promotionProblems } from "./promotions.mjs"
 
 const only = new Set(process.argv.slice(2))
 const rules = loadRules()
@@ -22,5 +24,11 @@ for (const { file, article } of articles) {
   for (const e of errors) console.log(`       error: ${e}`)
   for (const w of warnings) console.log(`       warn:  ${w}`)
   if (errors.length) failed++
+}
+if (!only.size) {
+  const problems = promotionProblems(undefined, rules)
+  console.log(`${problems.length ? "FAIL" : "ok  "} promotions.json`)
+  for (const e of problems) console.log(`       error: ${e}`)
+  if (problems.length) failed++
 }
 process.exit(failed ? 1 : 0)

@@ -32,7 +32,7 @@ Google holds health pages to a higher standard, and so do we.
 The articles exist to help the reader. The product may appear once, after the main help, as an option, never as the answer.
 
 - **At most one product block**, placed in the second half of the article. It must read as optional: 如果……可以考虑 / if you'd like…
-- **Use at least one approved claim word for word** (the list is in `rules.json`): 10秒感受温热, 一瓶可用3-4个月, 100%天然成分, 买3送1, 30天不满意，全额退款.
+- **Use at least one approved claim word for word** (the list is in `rules.json`): 10秒感受温热, 一瓶可用3-4个月, 100%天然成分. Prices are set prices from `content/promotions.json` (4瓶装 S$117); never 买3送1, 免费, 退款 or a "was" price.
 - **Never tie the product to an effect.** No 缓解, 舒缓, 止痛, 改善, 治疗, relief, soothe, heal, treat… in any sentence that names the product or "the spray". Those words are fine elsewhere when they describe general advice from a source.
 - **No conditions next to the product**: no 风湿, 关节炎, 痛风, arthritis, rheumatism in the product block.
 - No prices in the text (the product card under the block shows the current price), no comparisons with other brands, no before/after, no testimonials, no "doctor recommended".

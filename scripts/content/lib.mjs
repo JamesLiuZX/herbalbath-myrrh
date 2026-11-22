@@ -12,6 +12,7 @@ const readJson = (file) => JSON.parse(readFileSync(file, "utf8"))
 export const loadRules = () => readJson(path.join(CONTENT, "rules.json"))
 export const loadSources = () => readJson(path.join(CONTENT, "sources.json")).sources
 export const loadCalendar = () => readJson(path.join(CONTENT, "calendar.json"))
+export const loadPromotions = () => readJson(path.join(CONTENT, "promotions.json"))
 
 export function loadArticles() {
   if (!existsSync(BLOG_DIR)) return []
@@ -68,8 +69,9 @@ function sentences(text) {
 const containsWord = (text, word, en) => (en ? new RegExp(`(^|[^a-z])${word.replace(/[.*+?^${}()|[\]\\#]/g, "\\$&")}([^a-z]|$)`, "i").test(text) : text.includes(word))
 
 /**
- * Banned phrases anywhere, and effect words in any sentence that names the
- * product. Shared by articles and social posts (marketing/facebook).
+ * Banned phrases anywhere, and effect words or promotion words (free, refund,
+ * trial) in any sentence that names the product. Shared by articles and
+ * social posts (marketing/facebook).
  */
 export function claimProblems(texts, lang, rules = loadRules()) {
   const en = lang === "en"
@@ -89,6 +91,9 @@ export function claimProblems(texts, lang, rules = loadRules()) {
       const scrubbed = approved.reduce((acc, c) => acc.split(c).join(" "), lower)
       for (const w of rules.effectWords[lang]) {
         if (containsWord(scrubbed, w.toLowerCase(), en)) errors.push(`“${w}” next to the product makes an effect claim: ${s.slice(0, 70)}`)
+      }
+      for (const w of rules.promoTerms?.[lang] ?? []) {
+        if (containsWord(scrubbed, w.toLowerCase(), en)) errors.push(`“${w}” next to the product is promotion wording HSA bans for medicated oils: ${s.slice(0, 70)}`)
       }
     }
   }

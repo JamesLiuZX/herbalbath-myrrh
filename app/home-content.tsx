@@ -11,9 +11,11 @@ import { testimonialImages } from "@/app/lib/testimonial-data" // Import from th
 import { FAQSection } from "@/components/faq-section"
 import { StickyMobileCTA } from "@/components/sticky-mobile-cta"
 import { BundleSelector } from "@/components/bundle-selector"
-import { MonthlyOfferCountdown } from "@/components/monthly-offer-countdown"
+import { CampaignChip } from "@/components/campaign-chip"
 import { ReorderReminderButton } from "@/components/reorder-reminder-button"
 import { CONTACT, SHOPEE_URL } from "@/app/lib/growth-config"
+import { usePromotion } from "@/app/hooks/usePromotion"
+import { findPackage, formatPrice, type PromoSnapshot } from "@/app/lib/promotions"
 
 function Stars({ className = "h-5 w-5" }: { className?: string }) {
   return (
@@ -103,13 +105,10 @@ const content = {
     },
     product_cta: {
       title: "选择套餐",
-      price: "S$39",
-      original_price: "S$49",
-      offer: "买3送1 + 免费送货",
       pay_cta: "PayNow 立即付款",
       cta: "WhatsApp咨询",
       phone_cta: "电话订购",
-      guarantee: "30天不满意，全额退款",
+      assurance: "新加坡品牌 · 全岛包邮 · WhatsApp 真人客服",
     },
   },
   en: {
@@ -152,26 +151,33 @@ const content = {
     },
     product_cta: {
       title: "Choose a package",
-      price: "S$39",
-      original_price: "S$49",
-      offer: "Buy 3 Get 1 Free + Free Delivery",
       pay_cta: "Pay now with PayNow",
       cta: "WhatsApp Order",
       phone_cta: "Call to Order",
-      guarantee: "30-Day Money-Back Guarantee",
+      assurance: "Singapore brand · Delivery included · Real people on WhatsApp",
     },
   },
 }
 
 /** Server-rendered product details for each language (components/product-details.tsx). */
-type HomePageContentProps = { details: Record<"zh" | "en", ReactNode> }
+/** initialPromo: the offer resolved on the server from content/promotions.json. */
+type HomePageContentProps = { details: Record<"zh" | "en", ReactNode>; initialPromo: PromoSnapshot }
 
-export function HomePageContent({ details }: HomePageContentProps) {
+export function HomePageContent({ details, initialPromo }: HomePageContentProps) {
   const { language, setLanguage } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null)
-  const [selectedPackageId, setSelectedPackageId] = useState<"single" | "bundle">("bundle")
+  const [selectedPackageId, setSelectedPackageId] = useState<string>(initialPromo.defaultId)
   const t = content[language]
+
+  // Prices and the running campaign: one source, content/promotions.json.
+  const promo = usePromotion(initialPromo)
+  const defaultPackage = findPackage(promo, promo.defaultId)
+  const payPackageId = promo.packages.some((p) => p.id === selectedPackageId) ? selectedPackageId : promo.defaultId
+  const offerLine =
+    language === "zh"
+      ? `${defaultPackage.bottles}瓶装 ${formatPrice(defaultPackage.price)} · 全岛包邮`
+      : `${defaultPackage.bottles} bottles ${formatPrice(defaultPackage.price)} · Delivery included`
 
   // wa.me links must be digits-only (no "+"); tel: links keep the "+".
   const whatsappNumber = CONTACT.whatsappNumber
@@ -341,10 +347,10 @@ export function HomePageContent({ details }: HomePageContentProps) {
 
               <div className="[grid-area:actions] lg:self-start">
                 <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 lg:justify-start">
-                  <span className="text-4xl font-bold text-brand-700 sm:text-5xl">{t.product_cta.price}</span>
-                  <span className="text-xl text-stone-500 line-through">{t.product_cta.original_price}</span>
+                  <span className="text-4xl font-bold text-brand-700 sm:text-5xl">{formatPrice(promo.singlePrice)}</span>
+                  {promo.listPrice && <span className="text-xl text-stone-500 line-through">{formatPrice(promo.listPrice)}</span>}
                   <span className="rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white sm:text-base">
-                    {t.product_cta.offer}
+                    {offerLine}
                   </span>
                 </div>
 
@@ -448,11 +454,13 @@ export function HomePageContent({ details }: HomePageContentProps) {
           <div className="mx-auto max-w-[600px] bg-white px-5 py-9 ring-1 ring-stone-200 sm:rounded-3xl sm:px-8 sm:py-10">
             <h2 className="text-center font-serif text-3xl font-bold text-brand-800 sm:text-4xl">{t.product_cta.title}</h2>
             <div className="mt-4 flex justify-center">
-              <MonthlyOfferCountdown language={language} />
+              <CampaignChip language={language} campaign={promo.campaign} />
             </div>
             <div className="mt-7">
               <BundleSelector
                 language={language}
+                packages={promo.packages}
+                defaultId={promo.defaultId}
                 onSelect={(label, id) => {
                   setSelectedPackage(label)
                   setSelectedPackageId(id)
@@ -461,7 +469,7 @@ export function HomePageContent({ details }: HomePageContentProps) {
             </div>
             <div className="mt-6 flex flex-col gap-3">
               <Link
-                href={`/pay?b=${selectedPackageId}`}
+                href={`/pay?b=${payPackageId}`}
                 className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-emerald-700 text-lg font-semibold text-white shadow-lg shadow-emerald-900/20 transition-colors hover:bg-emerald-800"
               >
                 <QrCode className="h-6 w-6" />
@@ -493,7 +501,7 @@ export function HomePageContent({ details }: HomePageContentProps) {
                 </a>
               </div>
             </div>
-            <p className="mt-6 text-center text-base font-semibold text-brand-800">{t.product_cta.guarantee}</p>
+            <p className="mt-6 text-center text-base font-semibold text-brand-800">{t.product_cta.assurance}</p>
             <div className="mt-3 flex justify-center">
               <ReorderReminderButton language={language} />
             </div>

@@ -8,6 +8,7 @@ import {
   NUDGE_QUEUE_KEY,
   type CustomerRecord,
 } from "@/app/lib/reorder"
+import { bearerOk } from "@/app/lib/orders"
 
 // Vercel CRON — daily reorder nudges. See vercel.json.
 //
@@ -29,8 +30,9 @@ const BATCH_LIMIT = 200
 
 export async function GET(request: Request) {
   if (process.env.NODE_ENV === "production") {
-    const authHeader = request.headers.get("authorization")
-    if (authHeader !== `Bearer ${CRON_SECRET}`) {
+    // bearerOk refuses everything while CRON_SECRET is unset. The old string
+    // comparison accepted the literal header "Bearer undefined" in that case.
+    if (!bearerOk(request.headers.get("authorization"), CRON_SECRET)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
   }
@@ -91,10 +93,18 @@ export async function GET(request: Request) {
       if (result.dryRun) dryRun = true
 
       if (!result.ok) {
-        console.error(`[CRON reorder] Send failed for ${phone}:`, result.error)
+        console.error(`[CRON reorder] Send failed for …${phone.slice(-4)}:`, result.error)
         failed++
         // Leave the queue entry in place so tomorrow's run retries it. A
         // transient Graph API error should not silently cost a reorder.
+        continue
+      }
+
+      if (result.dryRun) {
+        // Counted, never recorded. A dry run used to add to nudgesSent and move
+        // the customer down the queue, so rehearsing the cron spent the two
+        // real nudges each customer gets.
+        sent++
         continue
       }
 

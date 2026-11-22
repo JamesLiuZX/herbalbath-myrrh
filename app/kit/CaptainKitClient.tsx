@@ -72,7 +72,7 @@ export function CaptainKitClient() {
         whatsappDisplay: CONTACT.whatsappDisplay,
         site: "herbalbathsg.com",
         price: `${RETAIL.currency}${RETAIL.singlePrice}`,
-        bundleLine: `买3送1 · 4瓶 ${RETAIL.currency}${RETAIL.bundlePrice}`,
+        bundleLine: `${RETAIL.bundleBottles}瓶 ${RETAIL.currency}${RETAIL.bundlePrice}（每瓶 ${RETAIL.currency}${RETAIL.bundlePerBottle}）`,
         productImageSrc: "/images/product-pack-square.jpg",
         payNowQrSrc: qrAvailable ? PAYNOW_QR_SRC : undefined,
       })

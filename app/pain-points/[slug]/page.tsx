@@ -279,7 +279,7 @@ export default async function PainPointPage({ params }: PageProps) {
                     href="/pay?b=bundle"
                     className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-xl bg-brand-700 text-lg font-semibold text-white transition-colors hover:bg-brand-800"
                   >
-                    买3送1 · PayNow 购买
+                    4瓶装 S$117 · PayNow 购买
                   </Link>
                 </CardContent>
               </Card>

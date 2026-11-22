@@ -2,7 +2,7 @@
 
 HerbalBath (草本沐), herbalbathsg.com: the Singapore storefront and the marketing system behind it. Next.js with pnpm. What runs the business side is linked from `README.md`: `ops/README.md` (Autopilot, the AI marketing team), `SEO.md`, `GROWTH.md`, `STRATEGY.md`. The dated items and the decisions still waiting on James are in `REMINDERS.md`.
 
-The marketing runs as a scheduled Claude session. Its runbook, and what it may and may not do unattended, is `ops/OPERATOR.md`.
+The marketing runs as a scheduled Claude session. Its runbook, and what it may and may not do unattended, is `ops/OPERATOR.md`. Prices and dated promotions have one source, `content/promotions.json`; only James changes a price.
 
 This is a live revenue site for a 55+ audience. Take care with the homepage and the `/pay` path.
 

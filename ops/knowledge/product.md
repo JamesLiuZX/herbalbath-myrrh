@@ -2,12 +2,12 @@
 
 The single source of truth for every Autopilot agent (and for anyone writing about HerbalBath). Agents read this file at the start of every run. **If a fact isn't here, an agent doesn't state it.** Each fact says where it comes from; anything marked **unconfirmed** is never stated as fact in public copy.
 
-Last reviewed: 17 Oct 2026. To change a fact, edit this file. Every agent follows it from its next run.
+Last reviewed: 22 Nov 2026. To change a fact, edit this file. The operator (ops/OPERATOR.md) follows it from its next run.
 
 ## The company
 
 - **Brand:** HerbalBath; Chinese name **草本沐** (on the logo). Website herbalbathsg.com.
-- **Company:** a Singapore-registered company (stated on the /pay page). Payments go to an Aspire business account via PayNow.
+- **Company:** HERBALBATH PTE. LTD., UEN 202115082R (the PayNow payee, `app/lib/paynow.ts`). The box artwork prints "HerbalBath SG Pte Ltd, 60 Paya Lebar Road #06-33, Paya Lebar Square, Singapore 409051"; the postal code matches the PayNow record. Payments go to an Aspire business account via PayNow.
 - **Contact:** WhatsApp / phone **8426 1225** (+65 8426 1225), email hello@herbalbathsg.com.
 - **Where it's sold:** herbalbathsg.com/pay (PayNow, amount and reference filled in), WhatsApp orders, cash on delivery by arrangement, and Shopee ([listing](https://shopee.sg/Myrrh-Soreness-Muscle-Relief-Spray-Herbalbath-Singapore-i.177895131.41413960917)). The site also shows Carousell, TikTok Shop and Facebook logos: unconfirmed which of those are live stores.
 
@@ -18,32 +18,32 @@ From the current packaging (Shopee listing images, Oct 2026):
 - **Name on the box:** **Myrrh Herbal Energy Oil**, Chinese **没药草本能量油**. 55 ml.
 - **Look:** a red-and-gold box with a gold teardrop logo (草本沐 HERBAL BATH) and a photo of myrrh resin. Inside is an amber glass bottle with a tall gold cap and a gold-on-maroon label (MYRRH HERBAL ENERGY OIL, 没药草本能量油, 55ml).
 - **Box text:** "SOOTHES: Muscle Strain · Joint Discomfort · Sore Knee & Heels · Lower Back Tension · Stiff Neck & Shoulder". That's packaging wording; our own copy doesn't repeat it as a claim (see Claims).
-- **Ingredients we can name:** myrrh and frankincense (the site has always said so). The Shopee infographic says "up to 15 Chinese herbs, high concentration, synergistic formula". Safe to say: 多达15味中草药 / up to 15 Chinese herbs. The full ingredient list is **unconfirmed**; don't list other herbs by name.
+- **Ingredients we can name:** the ingredient artwork for the 55 ml bottle (Drive, Jan 2026) lists fifteen: olive fruit oil 橄榄果油, myrrh 没药, frankincense 乳香, safflower 红花, angelica root 当归根, chuanxiong rhizome 川芎, ginger root 姜根, thyme 麝香草, peppermint 薄荷, dragon's blood 麒麟竭, rhodiola 红景天, atractylodes root 白术根, baikal skullcap 黄芩, notoginseng root 三七根, lithospermum root 紫草根. Name them as ingredients only; never say what any of them does. Safe summary: 多达15味中草药 / up to 15 Chinese herbs.
 - **Sensation:** a warm feeling within about 10 seconds (approved claim: 10秒感受温热). The Shopee listing calls it a strong heat sensation (热感强烈).
 - **Made:** the ad creative carries a "Formulated in Singapore / Singapore brand" seal. Safe to say 新加坡品牌 / a Singapore brand.
 
 Earlier versions you'll still see on the site and in old photos: "Myrrh Soreness Relief Spray" (60 ml spray bottle, old box with "Rapid Pain Relief" on the label), and a 58 ml bottle in the Shopee infographic.
 
-### Unconfirmed: how it's applied
+### How it's applied
 
-The website and the Shopee title call it a **spray** (没药喷雾), and the homepage teaches spraying from 5–10 cm. The new 55 ml bottle has a white fitment under the cap, which could be a roll-on, a dropper insert or a spray. The Shopee infographic says "只需每天几滴" (a few drops a day).
+The 55 ml box artwork (Drive, Dec 2025) gives the directions: 按压几滴，涂抹，按摩至完全吸收，每日2~3次 / "Press out a few drops, apply and massage until fully absorbed. Use 2–3 times daily or as needed." So the current product is an oil applied in drops, not a spray. James approved recording this on 22 Nov 2026.
 
-**Until James confirms, describe use without the mechanism:**
-- 使用 / 涂抹在肩颈、腰背、膝盖, 用手掌轻轻按压约10秒, 每天2次
-- in English: apply to the shoulders, back or knees, then press gently with your palm for about 10 seconds, twice a day
-
-Never write 喷 / spray / roll / drops in new copy.
+- In new copy: 按压几滴，涂抹在肩颈、腰背、膝盖，轻轻按摩至吸收 / press out a few drops, apply to the shoulders, back or knees, and massage in gently.
+- The label says 2–3 times a day; the approved claim 一瓶可用3-4个月 was worked out at twice a day, so keep saying 每天2次 next to it.
+- Older pages still say 喷雾 / spray and teach spraying from 5–10 cm. The `/pay` page now names the product as the box does. Renaming the rest of the site is still James's call (question 2 below). Never write 喷 / spray in new copy.
 
 ## Prices and offers
 
-These come from `app/lib/growth-config.ts`, which is authoritative. If the two ever disagree, that file wins.
+These come from `content/promotions.json`, which is authoritative (`app/lib/growth-config.ts` reads it). If the two ever disagree, that file wins. Only James changes a price.
+
+**How we word prices and offers (HSA, 22 Nov 2026).** HSA's rules for advertising medicated oils ban "free", "complimentary", "get a gift", trial wording and any offer of a refund, and treat discounts and multi-pack offers as sales promotions that need a permit. So: state set prices (4瓶装 S$117), say delivery is included (包邮), and never write 买3送1, 免费, 赠送, 试用, 退款, "was S$49", "save 25%", free, gift with purchase or money-back. `content/rules.json` (`promoTerms`) enforces this next to the product. Describing the product as a gift for someone (送给爸妈的礼物) is fine: that is not a gift with purchase.
 
 | | |
 |---|---|
-| One bottle | **S$39** (was S$49) |
-| Buy 3 Get 1 Free (买3送1) | 4 bottles for **S$117** (S$29.25 a bottle) |
-| Delivery | free, island-wide (新加坡全岛免费送货) |
-| Guarantee | **30-day money-back guarantee** (30天不满意，全额退款) |
+| One bottle | **S$39** |
+| Set of 4 (4瓶装) | **S$117** (S$29.25 a bottle) |
+| Set of 2 (2瓶装) | S$72, only once a sales-promotion permit is recorded in `content/promotions.json` |
+| Delivery | included, island-wide (新加坡全岛包邮) |
 | How long a bottle lasts | 3–4 months at twice a day (approved claim: 一瓶可用3-4个月) |
 | Paying | herbalbathsg.com/pay (PayNow QR) · WhatsApp 8426 1225 |
 
@@ -53,7 +53,7 @@ Reorder reminders go out on day 75, with a follow-up on day 105 (the reorder eng
 
 The hard rules are in `content/rules.json`; `scripts/content/lib.mjs` (`claimProblems`) enforces them on articles, posts and agent output.
 
-- **Approved claims, word for word:** 10秒感受温热 · 一瓶可用3-4个月 · 100%天然成分 · 买3送1 · 30天不满意，全额退款 (English: warmth in 10 seconds · one bottle lasts 3-4 months · 100% natural ingredients · buy 3 get 1 free · 30-day money-back guarantee).
+- **Approved claims, word for word:** 10秒感受温热 · 一瓶可用3-4个月 · 100%天然成分 (English: warmth in 10 seconds · one bottle lasts 3-4 months · 100% natural ingredients). 买3送1 and the 30-day money-back guarantee were removed on 22 Nov 2026: HSA does not allow that wording.
 - **Never next to the product:** 缓解, 舒缓, 止痛, 消炎, 改善, 减轻, 治疗, 修复, 活血, 疗效, 见效, or relief, relieve, soothe(s), heal, treat, reduce pain, anti-inflammatory, works in. The product makes no therapeutic promise; it's warmth, tradition, ritual and a gift.
 - **Never anywhere:** 无副作用, 根治, 治愈, 神奇, 奇效, 特效, 保证有效, 100%有效, 告别疼痛, 医生推荐, 临床证明, 使用前后, 第一品牌, 最有效, or no side effects, cure, miracle, guaranteed results, permanent relief, doctor recommended, clinically proven, before and after, number one, #1, most effective.
 - **Also never:**
@@ -70,13 +70,13 @@ The hard rules are in `content/rules.json`; `scripts/content/lib.mjs` (`claimPro
   - "since 2016 / 8 years".
 
   The site still shows them. SEO.md, decisions 1–4.
-- **Regulatory status:** the HSA classification hasn't been done (REMINDERS.md). Consumer advertising with medicinal claims would need an HSA permit. Material aimed only at people who sell the product in their trade is treated differently (GROWTH.md §3), which is why `/trade` is noindex. Trade emails can link `/trade`; consumer content never makes medicinal claims.
+- **Regulatory status:** HSA's page on advertising medicinal products names medicated oils and balms: an advertisement with medicinal claims needs a permit, and so does a sales promotion (S$111 each, valid one year). "Advertisements with no medicinal claims do not need prior permit approval", which is why everything the operator writes is claim-free. No permit is held yet (`permit` in `content/promotions.json` is empty). Material aimed only at people who sell the product in their trade is treated differently (GROWTH.md §3), which is why `/trade` is noindex. Trade emails can link `/trade`; consumer content never makes medicinal claims.
 
 ## Proof we can use
 
 - Real customer WhatsApp screenshots and two video compilations on /testimonials. Use them only on the site; ads with customer content need their consent first.
 - One published quote (陈女士 Mdm Tan) about warmth and a loosened shoulder after three weeks. On the site only, without the Tiger Balm comparison.
-- The 30-day guarantee and free delivery: real and safe to repeat.
+- Delivery is included island-wide: real and safe to repeat (包邮, never 免费). The refund guarantee is no longer advertised.
 
 ## Assets
 

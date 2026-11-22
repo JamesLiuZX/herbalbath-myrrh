@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   // 120-160 characters, approved claims only (ops/knowledge/product.md).
   description:
-    "HerbalBath 草本沐没药草本能量油：新加坡品牌，没药、乳香配多达15味中草药，10秒感受温热，一瓶可用3-4个月。买3送1，30天不满意全额退款，全岛免费送货，PayNow付款。Myrrh Herbal Energy Oil, Singapore.",
+    "HerbalBath 草本沐没药草本能量油：新加坡品牌，没药、乳香配多达15味中草药，10秒感受温热，一瓶可用3-4个月。4瓶装 S$117，全岛包邮，PayNow付款。Myrrh Herbal Energy Oil, Singapore.",
   keywords: [
     // Primary target keywords
     "herbalbath",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "HerbalBath SG",
     title: "HerbalBath 草本沐 没药草本能量油 | Myrrh Herbal Energy Oil",
-    description: "没药乳香配多达15味中草药的草本油。10秒感受温热，一瓶可用3-4个月，买3送1，新加坡全岛免费送货。",
+    description: "没药乳香配多达15味中草药的草本油。10秒感受温热，一瓶可用3-4个月，4瓶装 S$117，新加坡全岛包邮。",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HerbalBath Myrrh Herbal Energy Oil",
     description:
-      "Myrrh Herbal Energy Oil from a Singapore brand. Warmth in 10 seconds, one bottle lasts 3-4 months, free delivery island-wide.",
+      "Myrrh Herbal Energy Oil from a Singapore brand. Warmth in 10 seconds, one bottle lasts 3-4 months, delivery included island-wide.",
     images: ["/images/og-image.jpg"],
   },
   robots: {

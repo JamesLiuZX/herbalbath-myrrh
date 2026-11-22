@@ -38,14 +38,14 @@ const faqItems: FAQItem[] = [
   {
     question: "如何购买HerbalBath没药喷雾？",
     questionEn: "How can I purchase HerbalBath Myrrh Spray?",
-    answer: "您可以通过多种方式购买：1) 在 herbalbathsg.com/pay 用 PayNow 付款（金额和参考号自动填好）2) WhatsApp联系我们的客服 3) 拨打电话订购 4) 在Shopee、Carousell、TikTok Shop等平台购买。新加坡全岛免费送货，支持货到付款。现在购买还有买3送1的优惠！",
-    answerEn: "You can purchase through: 1) Pay by PayNow at herbalbathsg.com/pay (amount and reference filled in for you) 2) WhatsApp our customer service 3) Call to order 4) Buy on Shopee, Carousell, TikTok Shop. Free delivery island-wide in Singapore, cash on delivery available. Buy 3 get 1 free promotion now!",
+    answer: "您可以通过多种方式购买：1) 在 herbalbathsg.com/pay 用 PayNow 付款（金额和参考号自动填好）2) WhatsApp联系我们的客服 3) 拨打电话订购 4) 在Shopee、Carousell、TikTok Shop等平台购买。新加坡全岛包邮，支持货到付款。4瓶装 S$117。",
+    answerEn: "You can purchase through: 1) Pay by PayNow at herbalbathsg.com/pay (amount and reference filled in for you) 2) WhatsApp our customer service 3) Call to order 4) Buy on Shopee, Carousell, TikTok Shop. Delivery is included island-wide in Singapore, and cash on delivery is available. A set of 4 bottles is S$117.",
   },
   {
-    question: "HerbalBath有退款保证吗？",
-    questionEn: "Does HerbalBath offer a refund guarantee?",
-    answer: "是的！我们提供30天不满意全额退款保证。如果您对产品效果不满意，可以在30天内联系我们申请退款。我们对产品质量充满信心，这就是为什么我们敢于提供这样的保证。",
-    answerEn: "Yes! We offer a 30-day money-back guarantee. If you're not satisfied with the results, contact us within 30 days for a full refund. We're confident in our product quality, which is why we offer this guarantee.",
+    question: "收到的产品有问题怎么办？",
+    questionEn: "What if there is a problem with my order?",
+    answer: "请通过 WhatsApp 8426 1225 联系我们，告诉我们订单参考号和情况，我们会尽快为您处理。真人回复，中文英文都可以。",
+    answerEn: "Message us on WhatsApp at 8426 1225 with your order reference and what happened, and we will sort it out quickly. A real person replies, in English or Chinese.",
   },
 ]
 

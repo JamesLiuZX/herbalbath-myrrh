@@ -3,12 +3,14 @@
 // Pricing was previously duplicated across page.tsx, bundle-selector.tsx and
 // faq-section.tsx, which is how the S$39 / S$117 figures drifted apart once
 // already. New channels (captain kit, trade/wholesale, reorder nudges) all
-// read from here so there is exactly one place to change a price.
+// read from here; retail prices themselves live in content/promotions.json.
 //
 // ⚠️ REVIEW BEFORE LAUNCH: the wholesale ladder below is a proposed starting
 // structure, not a confirmed one. Confirm your landed cost per unit and your
 // own margin floor before sending these numbers to a single clinic owner —
 // once a trade price is quoted it is very hard to walk back.
+
+import { PROMOTIONS } from "./promotions-data"
 
 export const CONTACT = {
   /** Digits only, in wa.me format (no +, no spaces). */
@@ -19,13 +21,20 @@ export const CONTACT = {
   site: "https://herbalbathsg.com",
 } as const
 
+// Prices come from content/promotions.json (the evergreen price list), so a
+// price is changed in exactly one place. These are the standing prices; what
+// is on offer on a given day, campaigns included, is resolvePromotions().
+const EVERGREEN = PROMOTIONS.evergreen.packages
+const SINGLE = EVERGREEN.find((p) => p.bottles === 1 && !p.requiresPermit) ?? EVERGREEN[0]
+const BUNDLE = EVERGREEN.find((p) => p.default) ?? EVERGREEN[EVERGREEN.length - 1]
+
 export const RETAIL = {
   currency: "S$",
-  singlePrice: 39,
-  originalPrice: 49,
-  /** Buy 3 get 1 free — 4 bottles for the price of 3. */
-  bundleBottles: 4,
-  bundlePrice: 117,
+  singlePrice: SINGLE.price,
+  originalPrice: PROMOTIONS.evergreen.listPrice ?? SINGLE.price,
+  /** The standing multi-bottle set: 4 bottles at a set price. */
+  bundleBottles: BUNDLE.bottles,
+  bundlePrice: BUNDLE.price,
   get bundlePerBottle() {
     return +(this.bundlePrice / this.bundleBottles).toFixed(2)
   },

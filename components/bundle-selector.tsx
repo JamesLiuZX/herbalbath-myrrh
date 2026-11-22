@@ -1,67 +1,45 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Check } from "lucide-react"
-
-interface BundleOption {
-  id: "single" | "bundle"
-  labelZh: string
-  labelEn: string
-  totalZh: string
-  totalEn: string
-  perBottleZh: string
-  perBottleEn: string
-  badgeZh?: string
-  badgeEn?: string
-}
-
-// Pricing mirrors the existing "买3送1" offer already advertised elsewhere on
-// the site (S$39/bottle, buy 3 get 1 free) — this just makes the per-bottle
-// savings visible and lets the customer's choice flow into their WhatsApp
-// message, instead of only stating the offer in passing.
-const OPTIONS: BundleOption[] = [
-  {
-    id: "single",
-    labelZh: "单瓶尝鲜",
-    labelEn: "Single Bottle",
-    totalZh: "S$39",
-    totalEn: "S$39",
-    perBottleZh: "每瓶 S$39",
-    perBottleEn: "S$39 / bottle",
-  },
-  {
-    id: "bundle",
-    labelZh: "买3送1",
-    labelEn: "Buy 3 Get 1 Free",
-    totalZh: "S$117（共4瓶）",
-    totalEn: "S$117 (4 bottles)",
-    perBottleZh: "每瓶仅 S$29.25 · 省25%",
-    perBottleEn: "Only S$29.25 / bottle · Save 25%",
-    badgeZh: "最受欢迎",
-    badgeEn: "Most Popular",
-  },
-]
+import { formatPrice, perBottle, type Lang, type PromoPackage } from "@/app/lib/promotions"
 
 interface BundleSelectorProps {
-  language: "zh" | "en"
-  onSelect?: (label: string, id: BundleOption["id"]) => void
+  language: Lang
+  /** What is on offer now, from content/promotions.json (app/lib/promotions.ts). */
+  packages: PromoPackage[]
+  defaultId: string
+  onSelect?: (label: string, id: string) => void
 }
 
-export function BundleSelector({ language, onSelect }: BundleSelectorProps) {
-  const [selected, setSelected] = useState<BundleOption["id"]>("bundle")
+const total = (pkg: PromoPackage, lang: Lang) =>
+  pkg.bottles === 1 ? formatPrice(pkg.price) : lang === "zh" ? `${formatPrice(pkg.price)}（共${pkg.bottles}瓶）` : `${formatPrice(pkg.price)} (${pkg.bottles} bottles)`
+
+const each = (pkg: PromoPackage, lang: Lang) => (lang === "zh" ? `每瓶 ${formatPrice(perBottle(pkg))}` : `${formatPrice(perBottle(pkg))} / bottle`)
+
+// Set prices only: the selector states what each set costs and what that is
+// per bottle. No "free", "save" or "try" wording, which HSA does not allow in
+// advertising for a medicated oil.
+export function BundleSelector({ language, packages, defaultId, onSelect }: BundleSelectorProps) {
+  const [selected, setSelected] = useState(defaultId)
+
+  // A campaign can start or end while the page is open; never leave a package selected that is no longer on offer.
+  useEffect(() => {
+    if (!packages.some((p) => p.id === selected)) setSelected(defaultId)
+  }, [packages, defaultId, selected])
 
   return (
-    <div className="grid grid-cols-2 gap-3">
-      {OPTIONS.map((opt) => {
-        const isSelected = selected === opt.id
-        const badge = language === "zh" ? opt.badgeZh : opt.badgeEn
+    <div className={packages.length > 2 ? "grid grid-cols-1 gap-3 sm:grid-cols-3" : "grid grid-cols-2 gap-3"}>
+      {packages.map((pkg) => {
+        const isSelected = selected === pkg.id
+        const badge = pkg.id === defaultId ? (language === "zh" ? "最受欢迎" : "Most Popular") : null
         return (
           <button
-            key={opt.id}
+            key={pkg.id}
             type="button"
             onClick={() => {
-              setSelected(opt.id)
-              onSelect?.(language === "zh" ? opt.labelZh : opt.labelEn, opt.id)
+              setSelected(pkg.id)
+              onSelect?.(pkg.label[language], pkg.id)
             }}
             className={`relative text-left p-3 sm:p-4 rounded-xl border-2 transition-colors ${
               isSelected ? "border-brand-600 bg-brand-50" : "border-gray-200 bg-white hover:border-brand-300"
@@ -80,16 +58,10 @@ export function BundleSelector({ language, onSelect }: BundleSelectorProps) {
               >
                 {isSelected && <Check className="w-3 h-3 text-white" />}
               </span>
-              <span className="font-semibold text-sm sm:text-base">
-                {language === "zh" ? opt.labelZh : opt.labelEn}
-              </span>
+              <span className="font-semibold text-sm sm:text-base">{pkg.label[language]}</span>
             </div>
-            <div className="text-lg sm:text-xl font-bold text-brand-700">
-              {language === "zh" ? opt.totalZh : opt.totalEn}
-            </div>
-            <div className="text-xs sm:text-sm text-gray-600">
-              {language === "zh" ? opt.perBottleZh : opt.perBottleEn}
-            </div>
+            <div className="text-lg sm:text-xl font-bold text-brand-700">{total(pkg, language)}</div>
+            <div className="text-xs sm:text-sm text-gray-600">{each(pkg, language)}</div>
           </button>
         )
       })}

@@ -334,12 +334,12 @@ function TestimonialsPageContent() {
                   立即体验 - WhatsApp咨询
                 </Button>
                 <div className="flex flex-col sm:flex-row gap-2 text-sm opacity-90">
-                  <span>💰 S$39 (原价S$49)</span>
-                  <span>🚚 免费送货</span>
-                  <span>📞 买3送1</span>
+                  <span>💰 S$39 一瓶</span>
+                  <span>🚚 全岛包邮</span>
+                  <span>📦 4瓶装 S$117</span>
                 </div>
               </div>
-              <div className="mt-6 text-sm opacity-75">⭐ 30天不满意，全额退款保证</div>
+              <div className="mt-6 text-sm opacity-75">💬 WhatsApp 8426 1225，真人回复</div>
             </div>
           </Card>
         </section>

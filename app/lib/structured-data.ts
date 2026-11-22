@@ -8,6 +8,7 @@
 // - Structured data must not claim features the site doesn't have (the old
 //   WebSite SearchAction pointed at a blog search that doesn't exist).
 import { CONTACT, RETAIL, SOCIAL_PROFILES } from "./growth-config"
+import type { PromoSnapshot } from "./promotions"
 
 const BASE_URL = CONTACT.site
 
@@ -49,7 +50,11 @@ export const websiteSchema = {
   publisher: { "@id": `${BASE_URL}/#organization` },
 }
 
-export const productSchema = {
+/**
+ * Product markup for the homepage. Pass the day's offer so the price matches
+ * what the page shows; priceValidUntil appears only while a price campaign runs.
+ */
+export const buildProductSchema = (promo?: PromoSnapshot) => ({
   "@context": "https://schema.org",
   "@type": "Product",
   name: "HerbalBath Myrrh Spray 没药喷雾",
@@ -59,8 +64,9 @@ export const productSchema = {
   offers: {
     "@type": "Offer",
     url: `${BASE_URL}/pay`,
-    price: String(RETAIL.singlePrice),
+    price: String(promo?.singlePrice ?? RETAIL.singlePrice),
     priceCurrency: "SGD",
+    ...(promo?.campaign?.kind === "price" ? { priceValidUntil: promo.campaign.end } : {}),
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@id": `${BASE_URL}/#organization` },
@@ -87,7 +93,10 @@ export const productSchema = {
     reviewBody:
       "用了三周，僵硬的肩膀松了很多，抬手很轻松。那种热感真的很神奇，比虎标万金油强太多了！ (After three weeks, my stiff shoulder loosened so much. The heat sensation is amazing - much stronger than Tiger Balm!)",
   },
-}
+})
+
+/** The standing-price version, for callers that have no offer snapshot. */
+export const productSchema = buildProductSchema()
 
 /** Renders one or more JSON-LD objects. `<` is escaped so text can't close the script tag. */
 export function jsonLd(data: object): { __html: string } {
