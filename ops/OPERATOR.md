@@ -80,7 +80,7 @@ These are his answers, and they are the whole of your permission to act outside 
 | Sun | Health | Heartbeat only. |
 
 Every weekday, after the shift: send approved emails when the email engine is live
-(`node scripts/ops/send-outbox.mjs`, once it exists).
+(`OPS_PRIVATE_DIR=<command>/herbalbath node scripts/ops/send-outbox.mjs`).
 
 **Trade segments.** Until 3 Feb 2027 (Chinese New Year gifting): insurance and financial
 advisory agency leaders, hamper and gift companies, eldercare product shops, home-care
@@ -100,8 +100,10 @@ marked (interactive) are for a session James is in; skip them.
       social and media get one when their scripts exist).
 - [ ] `scripts/social/publish.mjs`: publish and schedule through the publishing API, record
       what was scheduled, dry-run without a key. Tests with an injected fetch.
-- [ ] `scripts/ops/send-outbox.mjs`: send approved emails through Resend with the daily cap,
-      reusing `sendViaResend` from `scripts/ops/send-emails.mjs` and the private store.
+      Skipped 24 Nov 2026: no file names the publishing API. Waiting on James to say which
+      service he connected (or will connect); the operator must not guess one.
+- [x] `scripts/ops/send-outbox.mjs`: send approved emails through Resend with the daily cap,
+      reusing `sendViaResend` from `scripts/ops/send-emails.mjs` and the private store. Landed 24 Nov 2026.
 - [ ] Re-date the 35 written Facebook posts in `marketing/facebook/posts.json` that are now in
       the past, dropping the ones tied to a festival that has gone.
 - [ ] `/gift` page: send it to Mum and Dad with a message card and a real last-order date.

@@ -1,7 +1,7 @@
 {
   "note": "Written by the operator at the end of every run (ops/OPERATOR.md). Public file: counts and dates only, never names, addresses or email text. .github/workflows/heartbeat.yml fails if lastRun is more than 9 days old.",
-  "lastRun": "2026-11-22T23:17:43Z",
-  "shift": "produce",
+  "lastRun": "2026-11-23T23:15:54Z",
+  "shift": "calendar",
   "paused": false,
   "engines": {
     "site": "live",
@@ -10,22 +10,24 @@
     "social": "waiting: publisher not built, publishing key",
     "media": "waiting: fal key"
   },
-  "runwayDays": 39,
+  "runwayDays": 38,
   "counts": {
-    "postsScheduled": 18,
+    "postsScheduled": 17,
     "articlesPublished": 5,
     "articlesOverdue": 4,
     "media": {
       "queued": 2
     },
     "leads": 0,
-    "emails": {}
+    "emails": {},
+    "campaignsUpcoming": 1
   },
   "privateStore": "attached",
   "needsJames": [
-    "Publishing key for the social accounts (posts are written 39 days ahead; none can go out)",
-    "Resend key, sender address and DNS (trade emails)",
+    "Which publishing service the social accounts use, and its key (the publisher cannot be built until this is known; posts are written 38 days ahead)",
+    "Resend key, sender address and DNS, then actions.emails to auto (the sender is built and holds until then)",
     "Upstash and ORDERS_API_TOKEN (orders feed)",
-    "fal key (2 post pictures are queued)"
+    "fal key (2 post pictures are queued)",
+    "Sales-promotion permit decision (Shopee vouchers and price campaigns wait on it)"
   ]
 }

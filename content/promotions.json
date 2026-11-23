@@ -11,5 +11,13 @@
       { "id": "bundle", "bottles": 4, "price": 117, "label": { "zh": "4瓶装", "en": "4 bottles" }, "default": true }
     ]
   },
-  "campaigns": []
+  "campaigns": [
+    {
+      "id": "dongzhi-2026",
+      "kind": "content-only",
+      "start": "2026-12-08",
+      "end": "2026-12-22",
+      "banner": { "zh": "冬至团圆，给长辈准备一份心意", "en": "Dongzhi reunion: something thoughtful for your parents" }
+    }
+  ]
 }
