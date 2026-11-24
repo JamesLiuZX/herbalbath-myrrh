@@ -77,7 +77,7 @@ export function mediaQueue(root = ROOT) {
   return tally(readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => readJson(path.join(dir, f), {})))
 }
 
-export async function diagnose({ env = process.env, fetchImpl = fetch, root = ROOT, store = new PlainStore({ dir: env.OPS_PRIVATE_DIR, root }), now = new Date() } = {}) {
+export async function diagnose({ env = process.env, fetchImpl = fetch, root = ROOT, store = new PlainStore({ dir: env.OPS_PRIVATE_DIR ?? null, root }), now = new Date() } = {}) {
   const today = sgToday(now).date
   const engines = { site: "live" }
   try {

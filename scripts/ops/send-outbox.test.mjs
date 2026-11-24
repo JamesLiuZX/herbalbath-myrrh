@@ -38,7 +38,7 @@ test("a held run makes no call and changes nothing", async () => {
   assert.equal(out.sent, 0)
   assert.equal(calls.length, 0)
   assert.equal(s.read("outbox").emails[0].status, "approved")
-  assert.equal((await sendOutbox({ store: new PlainStore({ dir: undefined }), config: config(), env, now: TUESDAY })).held, "command repo not attached")
+  assert.equal((await sendOutbox({ store: new PlainStore({ dir: null }), config: config(), env, now: TUESDAY })).held, "command repo not attached")
 })
 
 test("sends oldest approved first, within what is left of the daily cap", async () => {
