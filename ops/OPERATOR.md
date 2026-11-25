@@ -106,6 +106,9 @@ marked (interactive) are for a session James is in; skip them.
       reusing `sendViaResend` from `scripts/ops/send-emails.mjs` and the private store. Landed 24 Nov 2026.
 - [ ] Re-date the 35 written Facebook posts in `marketing/facebook/posts.json` that are now in
       the past, dropping the ones tied to a festival that has gone.
+      Part done 26 Nov 2026: 7 re-dated to 2 to 23 Jan 2027 (Wed and Sat slots; Mondays are left
+      for article posts), 2 festival posts dropped. 9 past posts remain: 4 link to articles not
+      yet written, 5 wait for slots (add_post allows 60 days ahead).
 - [ ] `/gift` page: send it to Mum and Dad with a message card and a real last-order date.
 - [ ] `/gifts/corporate` page: claim-free, quote on request, no public discount tiers.
 - [ ] Trade deck and corporate gifting deck (English and 中文) with `make_deck`.
