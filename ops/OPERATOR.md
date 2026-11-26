@@ -110,8 +110,15 @@ marked (interactive) are for a session James is in; skip them.
       for article posts), 2 festival posts dropped. 9 past posts remain: 4 link to articles not
       yet written, 5 wait for slots (add_post allows 60 days ahead).
 - [ ] `/gift` page: send it to Mum and Dad with a message card and a real last-order date.
-- [ ] `/gifts/corporate` page: claim-free, quote on request, no public discount tiers.
+      Skipped 27 Nov 2026: `ops/knowledge/product.md` does not say that a message card can be
+      included or what the last order date for Chinese New Year delivery is. Waiting on James
+      for both facts; the operator must not promise either.
+- [x] `/gifts/corporate` page: claim-free, quote on request, no public discount tiers. Landed 27 Nov 2026
+      (copy in `app/lib/corporate-gifts.ts`, held to the promotion-copy rules by its test).
 - [ ] Trade deck and corporate gifting deck (English and 中文) with `make_deck`.
+      Part done 27 Nov 2026: the corporate gifting deck is made in both languages (private store,
+      `decks/`). The trade deck waits on James confirming the wholesale prices, which
+      `ops/knowledge/playbook.md` marks "review before launch".
 - [ ] First 40 researched leads for the CNY segments.
 - [ ] The four articles that were due between 26 Oct and 16 Nov in `content/calendar.json`.
 
