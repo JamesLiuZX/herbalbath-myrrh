@@ -79,6 +79,11 @@ These are his answers, and they are the whole of your permission to act outside 
 | Sat | Brief | Refresh the Control Room, then one push: orders this week, what went out, at most five decisions, and the setup steps still open with minutes each. |
 | Sun | Health | Heartbeat only. |
 
+**The Control Room** is James's private phone page with its own small database (ArtifactData
+tool). Its address and collections are in the private store's `README.md`. Each run reads his
+switches, answers and email approvals from it before the shift; Saturday rewrites its status,
+decisions, setup steps, drafts and leads.
+
 Every weekday, after the shift: send approved emails when the email engine is live
 (`OPS_PRIVATE_DIR=<command>/herbalbath node scripts/ops/send-outbox.mjs`).
 
